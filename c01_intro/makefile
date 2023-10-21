@@ -1,6 +1,9 @@
 
 environment:
 	julia --project . setupPyCall.jl
+	pip install -r requirements.txt
+	python -m nltk.downloader punkt
+
 l0101_helloWorld:
 	julia --project=. l0101_helloWorld.jl
 l0102_comprehension:
@@ -38,4 +41,4 @@ l0117_randomWalks:
 l0118_usingR:
 	julia --project=. l0118_usingR.jl
 l0120_usingPython:
-	julia --project=. l0120_usingPython.jl
+	PYTHON=$(shell which python) julia --project=. l0120_usingPython.jl
