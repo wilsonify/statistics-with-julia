@@ -1,8 +1,10 @@
 using CSV, DataFrames, RCall
 
-data1 = CSV.read("../data/machine1.csv", header=false)[:,1]
-data2 = CSV.read("../data/machine2.csv", header=false)[:,1]
-data3 = CSV.read("../data/machine3.csv", header=false)[:,1]
+path_to_here = @__DIR__
+path_to_there = "$path_to_here/../data"
+data1 = CSV.read("$path_to_there/data/machine1.csv", header=false)[:,1]
+data2 = CSV.read("$path_to_there/machine2.csv", header=false)[:,1]
+data3 = CSV.read("$path_to_there/machine3.csv", header=false)[:,1]
 
 function R_ANOVA(allData)
 
