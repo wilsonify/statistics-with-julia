@@ -8,10 +8,10 @@ data = Array{Float64,1}(undef, N)
 
 x = 808
 for i in 1:N
-    data[i] = x/m
+    data[i] = x / m
     global x = next(x)
 end
 
-p1 = scatter(1:1000, data[1:1000], c=:blue, m=4, msw=0)
-p2 = histogram(data, bins=50, normed=:true, ylims=(0,1.1))
-plot(p1, p2, size=(800, 400), legend=:none)
+p1 = scatter(1:1000, data[1:1000], c = :blue, m = 4, msw = 0)
+p2 = histogram(data, bins = 50, normed = :true, ylims = (0,1.1))
+plot(p1, p2, size = (800, 400), legend = :none)

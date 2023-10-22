@@ -2,14 +2,14 @@ using CSV, DataFrames, RCall
 
 path_to_here = @__DIR__
 path_to_there = abspath("$path_to_here/../data")
-data1 = CSV.read("$path_to_there/machine1.csv", DataFrame , header=false)[:,1]
-data2 = CSV.read("$path_to_there/machine2.csv", DataFrame, header=false)[:,1]
-data3 = CSV.read("$path_to_there/machine3.csv", DataFrame, header=false)[:,1]
+data1 = CSV.read("$path_to_there/machine1.csv", DataFrame , header = false)[:,1]
+data2 = CSV.read("$path_to_there/machine2.csv", DataFrame, header = false)[:,1]
+data3 = CSV.read("$path_to_there/machine3.csv", DataFrame, header = false)[:,1]
 
 function R_ANOVA(allData)
 
     data = vcat([ [x fill(i, length(x))] for (i, x) in
-    			enumerate(allData) ]...)
+                enumerate(allData) ]...)
     df = DataFrame(data, [:Diameter, :MachNo])
     @rput df
 

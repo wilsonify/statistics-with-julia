@@ -1,7 +1,7 @@
 using Plots, Random; pyplot()
 
 N = 5000
-function path(rng,alpha)
+function path(rng, alpha)
     x, y = 0.0, 0.0
     xDat, yDat = [], []
     for _ in 1:N
@@ -11,9 +11,9 @@ function path(rng,alpha)
         elseif flip == 2
             y += 1
         elseif flip == 3
-            x -= (2+alpha)*rand(rng)
+            x -= (2 + alpha) * rand(rng)
         elseif flip == 4
-            y -= (2+alpha)*rand(rng)
+            y -= (2 + alpha) * rand(rng)
         end
         push!(xDat,x)
         push!(yDat,y)
@@ -23,13 +23,13 @@ end
 
 alphaRange = [0.2, 0.21, 0.22]
 
-p1 = plot(path(MersenneTwister(27), alphaRange[1]), c=:blue)
-p1 = plot!(path(MersenneTwister(27), alphaRange[2]), c=:red)
-p1 = plot!(path(MersenneTwister(27), alphaRange[3]), c=:green) 
+p1 = plot(path(MersenneTwister(27), alphaRange[1]), c = :blue)
+p1 = plot!(path(MersenneTwister(27), alphaRange[2]), c = :red)
+p1 = plot!(path(MersenneTwister(27), alphaRange[3]), c = :green)
 
 rng = MersenneTwister(27)
-p2 = plot(path(rng, alphaRange[1]), c=:blue)
-p2 = plot!(path(rng, alphaRange[2]), c=:red)
-p2 = plot!(path(rng, alphaRange[3]), c=:green) 
+p2 = plot(path(rng, alphaRange[1]), c = :blue)
+p2 = plot!(path(rng, alphaRange[2]), c = :red)
+p2 = plot!(path(rng, alphaRange[3]), c = :green)
 
-plot(p1, p2, size=(800, 400), legend=:none, xlims=(-150,50), ylims=(-250,50))
+plot(p1, p2, size = (800, 400), legend = :none, xlims = (-150,50), ylims = (-250,50))
