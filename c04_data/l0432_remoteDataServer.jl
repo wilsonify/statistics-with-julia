@@ -1,12 +1,12 @@
 using LibPQ, DataFrames, CSV
 
-host     = "remoteHost"
-dbname   = "db1"
-user     = "username"
+host = "remoteHost"
+dbname = "db1"
+user = "username"
 password = "userPwd"
-port     = "1111"
+port = "1111"
 
-conStr= "host=" *host *
+conStr = "host=" *host *
         " port=" *port *
         " dbname=" *dbname *
         " user=" *user *

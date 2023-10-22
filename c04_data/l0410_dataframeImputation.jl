@@ -1,5 +1,5 @@
 using DataFrames, CSV, Statistics
-path_to_here=@__DIR__
+path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
 data = CSV.read("$path_to_data/purchaseData.csv", DataFrame)
@@ -15,7 +15,7 @@ replace!(x -> ismissing(x) ? "31/06/2008" : x, data.Date)
 grPr = combine(groupby(dropmissing(data), :Grade), :Price => x -> round(mean(x), digits=-3))
 
 
-d = Dict(grPr[:,1] .=> grPr[:,2])
+d = Dict(grPr[:,1] . => grPr[:,2])
 nearIndx(v, x) = findmin(abs.(v.-x))[2]
 for i in 1:nrow(data)
     if ismissing(data[i, :Price]) 

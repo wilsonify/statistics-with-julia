@@ -14,18 +14,18 @@ function bruteSetsProbabilityAllMiss(n)
         push!(matchEvents,event)
     end
     noMatch = setdiff(omega,union(matchEvents...))
-    return length(noMatch)/length(omega)
+    return length(noMatch) / length(omega)
 end
 
-formulaCalcAllMiss(n) = sum([(-1)^k/factorial(k) for k in 0:n])
+formulaCalcAllMiss(n) = sum([(-1)^k / factorial(k) for k in 0:n])
 
-function mcAllMiss(n,N)
+function mcAllMiss(n, N)
     function envelopeStuffer()
         envelopes = Random.shuffle!(collect(1:n))
         return sum([envelopes[i] == i for i in 1:n]) == 0
     end
     data = [envelopeStuffer() for _ in 1:N]
-    return sum(data)/N
+    return sum(data) / N
 end
 
 N = 10^6
@@ -35,6 +35,6 @@ for n in 1:6
     bruteForce = bruteSetsProbabilityAllMiss(n)
     fromFormula = formulaCalcAllMiss(n)
     fromMC = mcAllMiss(n,N)
-    println(n,"\t",round(bruteForce,digits=4),"\t\t",round(fromFormula,digits=4),
-	"\t\t",round(fromMC,digits=4),"\t\t",round(1/MathConstants.e,digits=4))
+    println(n,"\t",round(bruteForce,digits = 4),"\t\t",round(fromFormula,digits = 4),
+    "\t\t",round(fromMC,digits = 4),"\t\t",round(1 / MathConstants.e,digits = 4))
 end

@@ -1,5 +1,5 @@
 using DataFrames, CSV
-path_to_here=@__DIR__
+path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 print("path_to_data=$path_to_data")
 data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)

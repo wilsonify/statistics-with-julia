@@ -6,16 +6,16 @@ data = rand(Normal(),n)
 l, m = minimum(data), maximum(data)
 
 delta = 0.3;
-bins = [(x,x+delta) for x in l:delta:m-delta]
+bins = [(x,x + delta) for x in l:delta:m - delta]
 if last(bins)[2] < m 
     push!(bins,(last(bins)[2],m)) 
 end
 L = length(bins)
 
-inBin(x,j) = first(bins[j]) <= x && x < last(bins[j])
+inBin(x, j) = first(bins[j]) <= x && x < last(bins[j])
 sizeBin(j) = last(bins[j]) - first(bins[j])
-f(j) = sum([inBin(x,j)  for x in data])/n
-h(x) = sum([f(j)/sizeBin(j) * inBin(x,j) for j in 1:L])
+f(j) = sum([inBin(x,j)  for x in data]) / n
+h(x) = sum([f(j) / sizeBin(j) * inBin(x,j) for j in 1:L])
 
 xGrid = -4:0.01:4
 histogram(data,normed=true, bins=L, 

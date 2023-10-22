@@ -1,8 +1,8 @@
 using DataFrames, CSV, Statistics
-path_to_here=@__DIR__
+path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
-data = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols=true)
+data = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols = true)
 brisT = data.Brisbane
 gcT = data.GoldCoast
 

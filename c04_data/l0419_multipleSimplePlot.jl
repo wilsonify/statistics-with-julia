@@ -1,5 +1,5 @@
 using DataFrames, CSV, Statistics, Dates, Plots, Measures; pyplot()
-path_to_here=@__DIR__
+path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
 data = CSV.read("$path_to_data/temperatures.csv", DataFrame)
@@ -17,16 +17,16 @@ fortnightRange = 250:263
 brisFortnight = brisbane[fortnightRange]
 goldFortnight = goldcoast[fortnightRange]
 
-default(xlabel="Time", ylabel="Temperature")
-default(label=["Brisbane" "Gold Coast"])
+default(xlabel = "Time", ylabel = "Temperature")
+default(label = ["Brisbane" "Gold Coast"])
 
 p1 = plot(dates, [brisbane goldcoast], 
-        c=[:blue :red])
+        c = [:blue :red])
 p2 = plot(dates[fortnightRange], [brisFortnight goldFortnight],
-        c=[:blue :red], m=(:dot, 5, Plots.stroke(1)))
+        c = [:blue :red], m = (:dot, 5, Plots.stroke(1)))
 p3 = plot(dates, diff, 
-        c=:black, ylabel="Temperature Difference",legend=false)
-p4 = histogram(diff, bins=-4:0.5:6, 
-        ylims=(0,140), legend = false,
-        xlabel="Temperature Difference", ylabel="Frequency")
+        c = :black, ylabel = "Temperature Difference",legend = false)
+p4 = histogram(diff, bins = -4:0.5:6,
+        ylims = (0,140), legend = false,
+        xlabel = "Temperature Difference", ylabel = "Frequency")
 plot(p1,p2,p3,p4, size = (800,500), margin = 5mm)

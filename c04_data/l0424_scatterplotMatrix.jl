@@ -5,7 +5,7 @@ println("Number of rows: ", nrow(data))
 
 insertSpace(name) = begin
     i = findlast(isuppercase,name)
-    name[1:i-1]*" "*name[i:end]
+    name[1:i - 1] * " "*name[i:end]
 end
 
 featureNames = insertSpace.(string.(names(data)))[1:4]
