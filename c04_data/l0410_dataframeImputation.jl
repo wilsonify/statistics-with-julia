@@ -1,5 +1,8 @@
 using DataFrames, CSV, Statistics
-data = CSV.read("../data/purchaseData.csv")
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
+
+data = CSV.read("$path_to_data/purchaseData.csv", DataFrame)
 
 rowsKeep = .!(ismissing.(data.Grade) .& ismissing.(data.Price))
 data = data[rowsKeep, :]

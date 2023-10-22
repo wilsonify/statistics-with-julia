@@ -1,6 +1,8 @@
 using DataFrames, CSV
-data1 = CSV.read("../data/purchaseData.csv")
-data2 = CSV.read("../data/purchaseData.csv", copycols=true)
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
+data1 = CSV.read("$path_to_data/purchaseData.csv", DataFrame)
+data2 = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols=true)
 
 try data1[1, :Name] = "YARDEN" catch; @warn "Cannot: data1 is immutable" end 
 

@@ -1,6 +1,6 @@
 using CSV, CategoricalArrays, Plots; pyplot()
 
-df = CSV.read("../data/companyData.csv")
+df = CSV.read("$path_to_data/companyData.csv")
 mktCap = reshape(df.MarketCap, 5, 3)
 years  = levels(df.Year)
 

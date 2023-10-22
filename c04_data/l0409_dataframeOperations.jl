@@ -1,5 +1,8 @@
 using DataFrames, CSV, Dates, Statistics
-data = dropmissing(CSV.read("../data/purchaseData.csv", copycols=true))
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
+
+data = dropmissing(CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols=true))
 
 data[!,:Date] = Date.(data[!,:Date], "d/m/y")
 println(first(sort(data, :Date), 3),"\n")

@@ -1,6 +1,6 @@
 using StatsPlots, Distributions, CSV, DataFrames, Measures; pyplot()
 
-realData = CSV.read("../data/temperatures.csv")
+realData = CSV.read("$path_to_data/temperatures.csv")
 
 N = 10^5
 include("../data/mvParams.jl")

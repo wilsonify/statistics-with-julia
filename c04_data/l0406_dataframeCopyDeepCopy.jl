@@ -1,12 +1,15 @@
 using DataFrames, CSV
-data1 = CSV.read("../data/purchaseData.csv", copycols=true)
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
+
+data1 = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols=true)
 println("Original value: ", data1.Name[1],"\n")
 
 data2 = data1
 data2.Name[1] = "EMILY"
 @show data1.Name[1]
 
-data1 = CSV.read("../data/purchaseData.csv", copycols=true)
+data1 = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols=true)
 data2 = copy(data1)
 data2.Name[1] = "EMILY"
 @show data1.Name[1]

@@ -1,6 +1,6 @@
 using DataFrames, CSV, Dates, StatsBase, Plots, TimeSeries; pyplot()
 
-data = CSV.read("../data/temperatures.csv",copycols = true)
+data = CSV.read("$path_to_data/temperatures.csv",DataFrame, copycols = true)
 brisbane = data.Brisbane
 dates = [Date(
             Year(data.Year[i]), 

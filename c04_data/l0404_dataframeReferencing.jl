@@ -1,5 +1,7 @@
 using DataFrames, CSV
-data = CSV.read("../data/purchaseData.csv", copycols = true)
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
+data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
 
 println("Grade of person 1: ", data[1, 3], 
         ", ", data[1,:Grade], 

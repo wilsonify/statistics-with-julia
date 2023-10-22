@@ -1,6 +1,8 @@
 using DataFrames, CSV, Statistics
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
 
-data = CSV.read("../data/temperatures.csv", copycols=true)
+data = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols=true)
 brisT = data.Brisbane
 gcT = data.GoldCoast
 
@@ -15,4 +17,4 @@ covMat = [sigB^2  covBG
 outfile = open("../data/mvParams.jl","w")
 write(outfile,"meanVect = $meanVect \ncovMat = $covMat")
 close(outfile)
-print(read("../data/mvParams.jl", String))
+print(read("$path_to_data/mvParams.jl", String))
