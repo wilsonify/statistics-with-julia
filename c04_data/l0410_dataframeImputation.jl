@@ -10,8 +10,10 @@ data = data[rowsKeep, :]
 replace!(x -> ismissing(x) ? "QQ" : x, data.Name)
 replace!(x -> ismissing(x) ? "31/06/2008" : x, data.Date)
 
-grPr = by(dropmissing(data), :Grade, :Price=>x -> 
-	AvgPrice = round(mean(x), digits=-3))
+# by function was removed from DataFrames.jl. Use the `combine(groupby(...), ...)` or `combine(f, groupby(...))` instead.
+#grPr = by(dropmissing(data), :Grade, :Price=>x -> AvgPrice = round(mean(x), digits=-3))
+grPr = combine(groupby(dropmissing(data), :Grade), :Price => x -> round(mean(x), digits=-3))
+
 
 d = Dict(grPr[:,1] .=> grPr[:,2])
 nearIndx(v, x) = findmin(abs.(v.-x))[2]

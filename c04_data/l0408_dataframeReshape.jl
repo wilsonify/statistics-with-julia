@@ -15,7 +15,10 @@ println(first(data, 3), "\n")
 data = vcat(data, newRow, cols=:union) 
 println(last(data, 3), "\n")
 
-data = leftjoin(data, newData, on=:Name)
+#data = leftjoin(data, newData, on=:Name)
+data = leftjoin(data, newData, on=:Name, matchmissing=:notequal)
+
+
 println(data, "\n")
 
 select!(data,[:Name,:Job])

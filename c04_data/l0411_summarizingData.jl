@@ -1,5 +1,8 @@
-using CSV, Statistics, StatsBase
-data = CSV.read("$path_to_data/temperatures.csv")[:,4]
+using CSV, Statistics, StatsBase, DataFrames
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
+
+data = CSV.read("$path_to_data/temperatures.csv",DataFrame)[:,4]
 
 println("Sample Mean: ", mean(data))
 println("Harmonic <= Geometric <= Arithmetic ", 
