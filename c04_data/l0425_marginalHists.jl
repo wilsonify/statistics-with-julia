@@ -1,6 +1,8 @@
 using StatsPlots, Distributions, CSV, DataFrames, Measures; pyplot()
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
 
-realData = CSV.read("$path_to_data/temperatures.csv")
+realData = CSV.read("$path_to_data/temperatures.csv", DataFrame)
 
 N = 10^5
 include("../data/mvParams.jl")

@@ -8,4 +8,4 @@ function directorySearch(directory, searchString)
     close(outfile)
 end
 
-directorySearch(pwd(),".jl")
+directorySearch(@__DIR__,".jl")

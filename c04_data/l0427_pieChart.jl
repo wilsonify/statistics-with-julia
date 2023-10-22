@@ -1,6 +1,8 @@
 using CSV, CategoricalArrays, Plots; pyplot()
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
 
-df = CSV.read("$path_to_data/companyData.csv")
+df = CSV.read("$path_to_data/companyData.csv", DataFrame)
 companies = levels(df.Type)
 
 year2012 = df[df.Year .== 2012, :MarketCap]
