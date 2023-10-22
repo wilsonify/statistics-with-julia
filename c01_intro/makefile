@@ -1,6 +1,6 @@
 
 environment:
-	julia --project . setupPyCall.jl
+	julia --project . setup.jl
 	pip install -r requirements.txt
 	python -m nltk.downloader punkt
 

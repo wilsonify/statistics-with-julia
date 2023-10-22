@@ -1,6 +1,8 @@
 using DataFrames, CSV, Statistics, Dates, Plots, Measures; pyplot()
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
 
-data = CSV.read("$path_to_data/temperatures.csv")
+data = CSV.read("$path_to_data/temperatures.csv", DataFrame)
 brisbane = data.Brisbane
 goldcoast = data.GoldCoast
 

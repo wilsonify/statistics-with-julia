@@ -1,6 +1,8 @@
 using DataFrames, CSV, Plots; pyplot()
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
 
-df = CSV.read("$path_to_data/companyData.csv")
+df = CSV.read("$path_to_data/companyData.csv", DataFrame)
 dividends = reshape(df[:Dividend], (5,:))
 stkPrice  = reshape(df[:StockPrice], (5,:))
 
