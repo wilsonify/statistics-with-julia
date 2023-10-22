@@ -52,8 +52,8 @@ l0323_gammaDist:
 	julia --project=. l0323_gammaDist.jl
 l0324_betaDist:
 	julia --project=. l0324_betaDist.jl
-l0324_gammafunctionIntegration:
-	julia --project=. l0324_gammafunctionIntegration.jl
+l0325_gammafunctionIntegration:
+	julia --project=. l0325_gammafunctionIntegration.jl
 l0326_weibullHazard:
 	julia --project=. l0326_weibullHazard.jl
 l0327_normalCalculus:
