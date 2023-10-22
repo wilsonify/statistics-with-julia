@@ -1,16 +1,16 @@
 using Distributions, Plots, LaTeXStrings; pyplot()
 
-function statPair(dist,n)
+function statPair(dist, n)
     sample = rand(dist,n)
-    [mean(sample),var(sample)]
+    [mean(sample), var(sample)]
 end
 
 stdUni = Uniform(-sqrt(3),sqrt(3))
 n, N = 3, 10^5
 
-dataUni     = [statPair(stdUni,n) for _ in 1:N]
-dataUniInd  = [[mean(rand(stdUni,n)),var(rand(stdUni,n))] for _ in 1:N]
-dataNorm    = [statPair(Normal(),n) for _ in 1:N]
+dataUni = [statPair(stdUni,n) for _ in 1:N]
+dataUniInd = [[mean(rand(stdUni,n)), var(rand(stdUni,n))] for _ in 1:N]
+dataNorm = [statPair(Normal(),n) for _ in 1:N]
 dataNormInd = [[mean(rand(Normal(),n)),var(rand(Normal(),n))] for _ in 1:N]
 
 p1 = scatter(first.(dataUni), last.(dataUni), 

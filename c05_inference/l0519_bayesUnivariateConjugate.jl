@@ -21,8 +21,8 @@ println("Computational Bayes Estimate: ", bayesEstimate)
 println("Closed form Bayes Estimate: ", closedFormBayesEstimate)
 
 plot(lamRange, prior.(lamRange), 
-	c=:blue, label="Prior distribution")
+    c = :blue, label = "Prior distribution")
 plot!(lamRange, posterior.(lamRange), 
-	c=:red, label="Posterior distribution", 
-	xlims=(0, 10), ylims=(0, 1.2),
-    	xlabel=L"\lambda",ylabel="Density")
+    c = :red, label = "Posterior distribution",
+    xlims = (0, 10), ylims = (0, 1.2),
+        xlabel = L"\lambda",ylabel = "Density")

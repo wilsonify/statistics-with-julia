@@ -2,13 +2,13 @@ using Distributions, Plots; pyplot()
 
 N = 10^5
 nMin, nStep, nMax = 10, 10, 200
-nn = Int(nMax/nStep)
+nn = Int(nMax / nStep)
 sampleSizes = nMin:nStep:nMax
 trueB = 5
 trueDist = Uniform(-2, trueB)
 
 MLEest(data) = maximum(data)
-MMest(data)  = mean(data) + sqrt(3)*std(data)
+MMest(data) = mean(data) + sqrt(3) * std(data)
 
 res = Dict{Symbol,Array{Float64}}(
     ((sym) -> sym => Array{Float64}(undef,nn)).(
