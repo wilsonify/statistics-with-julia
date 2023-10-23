@@ -6,8 +6,8 @@ M = length(O)
 n = sum(O)
 E = n*p
 
-testStatistic = sum((O-E).^2 ./E)
-pVal = ccdf(Chisq(M-1), testStatistic)
+testStatistic = sum((O - E).^2 ./E)
+pVal = ccdf(Chisq(M - 1), testStatistic)
 
 println("Manually calculated test statistic: ", testStatistic)
 println("Manually calculated p-value: ", pVal,"\n")

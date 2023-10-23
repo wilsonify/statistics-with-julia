@@ -1,6 +1,6 @@
 using CSV, PyPlot
 
-data1 = CSV.read("machine1.csv", header=false, allowmissing=:none)[:,1]
+data1 = CSV.read("machine1.csv", header = false, allowmissing = :none)[:,1]
 data2 = CSV.read("machine2.csv", header=false, allowmissing=:none)[:,1]
 data3 = CSV.read("machine3.csv", header=false, allowmissing=:none)[:,1]
 
