@@ -12,14 +12,14 @@ MMest(data) = mean(data) + sqrt(3) * std(data)
 
 res = Dict{Symbol,Array{Float64}}(
     ((sym) -> sym => Array{Float64}(undef,nn)).(
-        [:MSeMLE,:MSeMM, :VarMLE,:VarMM,:BiasMLE,:BiasMM]))
+        [:MSeMLE, :MSeMM, :VarMLE, :VarMM, :BiasMLE, :BiasMM]))
 
 for (i, n) in enumerate(sampleSizes)
     mleEst, mmEst = Array{Float64}(undef, N), Array{Float64}(undef, N) 
     for j in 1:N
-        sample    = rand(trueDist,n)
+        sample = rand(trueDist,n)
         mleEst[j] = MLEest(sample)
-        mmEst[j]  = MMest(sample)
+        mmEst[j] = MMest(sample)
     end
     meanMLE, meanMM = mean(mleEst), mean(mmEst)
     varMLE, varMM = var(mleEst), var(mmEst)
@@ -32,12 +32,12 @@ for (i, n) in enumerate(sampleSizes)
     res[:BiasMM][i] = meanMM - trueB
 end
 
-p1 = scatter(sampleSizes, [res[:MSeMLE] res[:MSeMM]], c=[:blue :red],
-    label=["Mean sq.err (MLE)" "Mean sq.err (MM)"])
-p2 = scatter(sampleSizes, [res[:VarMLE] res[:VarMM]], c=[:blue :red],
-    label=["Variance (MLE)" "Variance (MM)"])
-p3 = scatter(sampleSizes, [res[:BiasMLE] res[:BiasMM]], c=[:blue :red],
-    label=["Bias (MLE)" "Bias (MM)"])
+p1 = scatter(sampleSizes, [res[:MSeMLE] res[:MSeMM]], c = [:blue :red],
+    label = ["Mean sq.err (MLE)" "Mean sq.err (MM)"])
+p2 = scatter(sampleSizes, [res[:VarMLE] res[:VarMM]], c = [:blue :red],
+    label = ["Variance (MLE)" "Variance (MM)"])
+p3 = scatter(sampleSizes, [res[:BiasMLE] res[:BiasMM]], c = [:blue :red],
+    label = ["Bias (MLE)" "Bias (MM)"])
 
-plot(p1, p2, p3, ms=10, shape=:xcross, xlabel="n", 
-    layout=(1,3), size=(1200, 400))
+plot(p1, p2, p3, ms = 10, shape = :xcross, xlabel = "n",
+    layout = (1,3), size = (1200, 400))

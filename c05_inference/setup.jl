@@ -1,0 +1,17 @@
+using Pkg
+path_to_here = @__DIR__
+Pkg.activate("$path_to_here")
+Pkg.add("Random")
+Pkg.add("SpecialFunctions")
+Pkg.add("CSV")
+Pkg.add("Roots")
+Pkg.add("StatsPlots")
+Pkg.add("PyPlot")
+Pkg.add("DataFrames")
+Pkg.add("Statistics")
+Pkg.add("Plots")
+Pkg.add("NLsolve")
+Pkg.add("Distributions")
+Pkg.add("LaTeXStrings")
+Pkg.add("Combinatorics")
+Pkg.add("StatsBase")
