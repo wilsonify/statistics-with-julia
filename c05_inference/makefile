@@ -1,3 +1,6 @@
+clean:
+	julia -e "using Pkg; Pkg.gc();"
+
 Project.toml:
 	julia setup.jl
 

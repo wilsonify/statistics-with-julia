@@ -1,6 +1,7 @@
 using Combinatorics, Statistics, DataFrames, CSV
-
-data = CSV.read("../data/fertilizer.csv")
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../data")
+data = CSV.read("$path_to_data/fertilizer.csv", DataFrame)
 control = data.Control
 fertilizer = data.FertilizerX
 
