@@ -1,6 +1,8 @@
-using CSV, DataFrames, CategoricalArrays
+using CSV, DataFrames, CategoricalArrays, DataFrames
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../data")
 
-data = CSV.read("../data/purchaseData.csv", copycols = true)
+data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
 println("Levels of Grade: ", levels(data.Grade))
 println("Data points: ", nrow(data))
 
