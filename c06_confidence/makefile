@@ -1,3 +1,5 @@
+all: l0601_onePopVKnown l0602_onePopVUnknown l0603_twoPopVKnown l0604_twoPopMVUnknownAEqual l0605_twoPopMVUnknownAUnequal l0606_vDOF_comparison l0607_proportionCI l0608_proportionCIsampleSize l0609_propCIcoverageAccuracy l0610_varianceCI l0611_sampleVarDists l0612_varianceCIalphas l0613_bCI l0614_bootstrapCI l0615_predictionInterval l0616_credible
+
 Project.toml:
 	julia setup.jl
 
