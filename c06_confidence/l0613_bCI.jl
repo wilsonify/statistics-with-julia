@@ -1,7 +1,10 @@
-using Random, CSV, Distributions, Plots; pyplot()
+using DataFrames, Random, CSV, Distributions, Plots; pyplot()
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../data")
+
 Random.seed!(0)
 
-sampleData = CSV.read("../data/machine1.csv", header=false)[:,1]
+sampleData = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false)[:,1]
 n, N = length(sampleData), 10^6
 alpha = 0.1
 
