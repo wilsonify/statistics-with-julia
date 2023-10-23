@@ -1,17 +1,17 @@
 using Random, Plots, Distributions, Measures; pyplot()
 
-N = 5*10^3
+N = 5 * 10^3
 alpha = 0.05
 confLevel = 1 - alpha
-z = quantile(Normal(),1-alpha/2) 
+z = quantile(Normal(),1 - alpha / 2)
 
-function randCI(n,p)
+function randCI(n, p)
     sample = rand(n) .< p
-    pHat = sum(sample)/n 
-    serr = sqrt(pHat*(1-pHat)/n)
+    pHat = sum(sample) / n
+    serr = sqrt(pHat * (1 - pHat) / n)
     (pHat - z*serr, pHat + z*serr) 
 end
-cover(p,ci) = ci[1] <= p && p <= ci[2]
+cover(p, ci) = ci[1] <= p && p <= ci[2]
 
 pGrid = 0.1:0.01:0.9
 nGrid = 5:1:50
