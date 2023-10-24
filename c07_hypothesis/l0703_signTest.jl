@@ -1,7 +1,7 @@
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here=@__DIR__
 path_to_data = abspath("$path_to_here/../data")
-data = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false, allowmissing=:none)[:,1]
+data = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false)[:,1]
 n = length(data)
 mu0A, mu0B = 52.2, 53
 

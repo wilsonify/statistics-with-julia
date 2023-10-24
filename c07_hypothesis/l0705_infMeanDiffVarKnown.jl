@@ -1,8 +1,8 @@
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here=@__DIR__
 path_to_data = abspath("$path_to_here/../data")
-data1 = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false, allowmissing=:none)[:,1]
-data2 = CSV.read("$path_to_data/machine2.csv", DataFrame, header=false, allowmissing=:none)[:,1]
+data1 = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false)[:,1]
+data2 = CSV.read("$path_to_data/machine2.csv", DataFrame, header=false)[:,1]
 xBar1, n1 = mean(data1), length(data1)
 xBar2, n2 = mean(data2), length(data2)
 sig1, sig2 = 1.2, 1.6
