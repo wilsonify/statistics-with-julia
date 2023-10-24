@@ -1,6 +1,7 @@
-using CSV, Distributions, HypothesisTests
-
-data = CSV.read("machine1.csv", header=false)[:,1]
+using CSV, Distributions, HypothesisTests, DataFrames
+path_to_here=@__DIR__
+path_to_data = abspath("$path_to_here/../data")
+data = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false)[:,1]
 xBar, n = mean(data), length(data)
 sigma = 1.2
 mu0A, mu0B = 52.2, 53
