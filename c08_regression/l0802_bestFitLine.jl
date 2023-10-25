@@ -16,7 +16,7 @@ for _ in 1:N
         beta1 = rBeta
         bestL1Cost = L1Cost
     end
-    L2Cost = norm(rAlpha .+ rBeta*xVals  - yVals)
+    L2Cost = norm(rAlpha .+ rBeta*xVals - yVals)
     if L2Cost < bestL2Cost
         alpha2 = rAlpha
         beta2 = rBeta
@@ -24,27 +24,27 @@ for _ in 1:N
     end
 end
 
-fig = figure(figsize=(12,4))
+fig = figure(figsize = (12,4))
 ax1 = fig.add_subplot(1,3,1)
 ax1.set_aspect("equal")
-plot(xVals,yVals,"k.",ms=10)
-plot([0,10],[alpha1, alpha1 .+ beta1*10],"b",label="L1 minimized")
-legend(loc="upper left")
+plot(xVals,yVals,"k.",ms = 10)
+plot([0, 10],[alpha1, alpha1 .+ beta1 * 10],"b",label = "L1 minimized")
+legend(loc = "upper left")
 xlim(0,10);ylim(0,10)
 
 ax2 = fig.add_subplot(1,3,2)
 ax2.set_aspect("equal")
-plot(xVals,yVals,"k.",ms=10)
-plot([0,10],[alpha2, alpha2 .+ beta2*10],"r",label="L2 minimized")
-legend(loc="upper left")
+plot(xVals,yVals,"k.",ms = 10)
+plot([0, 10],[alpha2, alpha2 .+ beta2 * 10],"r",label = "L2 minimized")
+legend(loc = "upper left")
 xlim(0,10);ylim(0,10)
 
 ax3 = fig.add_subplot(1,3,3)
 ax3.set_aspect("equal")
-plot(xVals,yVals,"k.",ms=10)
-plot([0,10],[alpha1, alpha1 .+ beta1*10],"b",label="L1 minimized")
-plot([0,10],[alpha2, alpha2 .+ beta2*10],"r",label="L2 minimized")
-legend(loc="upper left")
+plot(xVals,yVals,"k.",ms = 10)
+plot([0, 10],[alpha1, alpha1 .+ beta1 * 10],"b",label = "L1 minimized")
+plot([0, 10],[alpha2, alpha2 .+ beta2 * 10],"r",label = "L2 minimized")
+legend(loc = "upper left")
 xlim(0,10);ylim(0,10)
 
 d = yVals - (alpha2 .+ beta2*xVals)
