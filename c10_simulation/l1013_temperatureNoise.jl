@@ -12,7 +12,7 @@ xTraj, xHatTraj = [X], [Xhat]
 for t in 1:T
     global X = a*X + rand(Normal(0,sqrt(varX)))
     global Y = X + rand(Normal(0,sqrt(varY)))
-    global Xhat = alpha*Xhat + k*(Y-Xhat)
+    global Xhat = alpha*Xhat + k * (Y - Xhat)
 
     push!(xTraj,X)
     push!(xHatTraj,Xhat)
@@ -22,10 +22,10 @@ for t in 1:T
     end
 end
 
-figure("MM vs MLE comparision", figsize=(12,4))
+figure("MM vs MLE comparision", figsize = (12,4))
 subplot(121)
-plot(xTraj,"b.",label="System trajectory")
-plot(xHatTraj,"r.",label="Kalman filter tracking")
+plot(xTraj,"b.",label = "System trajectory")
+plot(xHatTraj,"r.",label = "Kalman filter tracking")
 xlabel("Time");ylabel("X")
 xlim(0, 120)
 legend(loc="upper right")
