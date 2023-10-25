@@ -3,18 +3,18 @@ using Flux: onehotbatch, onecold, crossentropy, throttle, @epochs
 using Base.Iterators: repeated, partition
 Random.seed!(1)
 
-imgs   = MNIST.images()
+imgs = MNIST.images()
 labels = onehotbatch(MNIST.labels(), 0:9)
 
-train  = [(cat(float.(imgs[i])..., dims = 4), labels[:,i])
-		for i in partition(1:50000, 1000)]
-test   = [(cat(float.(imgs[i])..., dims = 4), labels[:,i])
-		for i in partition(50001:60000, 1000)]
+train = [(cat(float.(imgs[i])..., dims = 4), labels[:, i])
+        for i in partition(1:50000, 1000)]
+test = [(cat(float.(imgs[i])..., dims = 4), labels[:, i])
+        for i in partition(50001:60000, 1000)]
 
 m = Chain(
-  Conv((5,5), 1=>8, relu),
+  Conv((5,5), 1 => 8, relu),
   x -> maxpool(x, (2,2)),
-  Conv((3,3), 8=>16, relu),
+  Conv((3,3), 8 => 16, relu),
   x -> maxpool(x, (2,2)),
   x -> reshape(x, :, size(x, 4)),
   Dense(400, 10), softmax)
@@ -29,7 +29,7 @@ evalcb = throttle(10) do
     push!( A, mean( [ accuracy( test[i][1],  test[i][2] ) for i in 1:10] ) )
 end
 
-@epochs 3 Flux.train!(loss, train, opt, cb=evalcb)
+@epochs 3 Flux.train!(loss, train, opt, cb = evalcb)
 
-plot( 1:length(L) , L, label="loss function","bo-")
-plot( 1:length(A) , A, label="accuracy","ro-")
+plot( 1:length(L) , L, label = "loss function","bo-")
+plot( 1:length(A) , A, label = "accuracy","ro-")
