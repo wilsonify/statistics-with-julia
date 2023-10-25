@@ -1,9 +1,9 @@
-# Statistics with Julia: Fundamentals for Data Science, Machine Learning and Artificial Intelligence
 
+based on 
+Statistics with Julia: Fundamentals for Data Science, Machine Learning and Artificial Intelligence
 
-This repository is a collection of all code blocks contained within our book. A preliminary draft version of the book is available here: [Statistics with Julia (draft)](https://people.smp.uq.edu.au/YoniNazarathy/julia-stats/StatisticsWithJulia.pdf).
-
-The book is comprised of the following ten chapters and three appendices:
+This repository is a collection of code blocks contained within that book. 
+It contains the following ten chapters and three appendices:
 
 1. Introducing Julia
 2. Basic Probability

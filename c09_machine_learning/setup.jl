@@ -1,7 +1,6 @@
 using Pkg
 path_to_here = @__DIR__
 Pkg.activate("$path_to_here")
-Pkg.add("Flux: onehotbatch")
 Pkg.add("GLM")
 Pkg.add("Flux.Data.MNIST")
 Pkg.add("PyPlot")
@@ -19,7 +18,7 @@ Pkg.add("CSV")
 Pkg.add("Random")
 Pkg.add("onecold")
 Pkg.add("LinearAlgebra")
-Pkg.add("Base.Iterators: repeated")
+Pkg.add("Base.Iterators")
 Pkg.add("MultivariateStats")
 Pkg.add("Flux")
 Pkg.add("DataFrames")
