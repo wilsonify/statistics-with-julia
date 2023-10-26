@@ -1,3 +1,4 @@
+# Transmitted (Tx) and Received (Rx) Bayes
 using Random
 Random.seed!(1)
 

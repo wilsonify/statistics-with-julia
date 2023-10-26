@@ -1,3 +1,4 @@
+# Lattice paths
 using Random, Combinatorics, Plots, LaTeXStrings ; pyplot()
 Random.seed!(12)
 

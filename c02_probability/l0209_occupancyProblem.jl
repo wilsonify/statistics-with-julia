@@ -1,3 +1,4 @@
+# An occupancy problem
 using Plots ; pyplot()
 
 occupancyAnalytic(n, r) = sum([(-1)^k*binomial(n,k) * (1 - k / n)^r for k in 0:n])

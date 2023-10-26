@@ -1,3 +1,4 @@
+# The Monty Hall problem
 using Random
 Random.seed!(1)
 

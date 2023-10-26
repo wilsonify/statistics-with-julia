@@ -1,3 +1,4 @@
+# Even sum of two dice
 N, faces = 10^6, 1:6
 
 numSol = sum([iseven(i + j) for i in faces, j in faces]) / length(faces)^2

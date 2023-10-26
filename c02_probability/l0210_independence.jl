@@ -1,3 +1,4 @@
+# Independent events
 using Random
 Random.seed!(1)
 

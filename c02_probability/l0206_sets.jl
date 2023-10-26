@@ -1,3 +1,4 @@
+# Basic set operations
 A = Set([2, 7, 2, 3])
 B = Set(1:6)
 omega = Set(1:10)

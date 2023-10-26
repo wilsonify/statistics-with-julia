@@ -1,3 +1,5 @@
+all: l0501_statisticsOfARandomSample l0502_friendOfANormalDistribution l0503_meanVarIndependence l0504_tDistribution l0505_fDistribution l0506_centralLimitTheorem l0507_stdVarBiasEstimate l0508_parametersNumerical l0509_gammaLikelihood l0510_mleGamma l0511_mm_vs_mle l0512_confidenceIntervalConcept l0513_ciCoverage l0514_teststatPvalRejectregion l0515_simpleHypothesisTest l0516_receiverOperatingCurve l0517_randomizationTest l0518_bayesUnivariate l0519_bayesUnivariateConjugate l0520_bayesMCMC
+
 clean:
 	julia -e "using Pkg; Pkg.gc();"
 

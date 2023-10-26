@@ -1,3 +1,4 @@
+# An innocent mistake with Monte Carlo
 using Random, StatsBase
 Random.seed!(1)
 

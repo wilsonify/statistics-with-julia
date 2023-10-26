@@ -1,3 +1,4 @@
+# The birthday problem
 using StatsBase, Combinatorics, Plots ; pyplot()
 
 matchExists1(n) = 1 - prod([k / 365 for k in 365:-1:365 - n + 1])

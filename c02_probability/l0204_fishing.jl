@@ -1,3 +1,4 @@
+# Fishing with and without replacement
 using StatsBase, Plots ; pyplot()
 
 function proportionFished(gF, sF, n, N, withReplacement = false)
