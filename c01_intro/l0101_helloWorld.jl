@@ -1,5 +1,5 @@
+# Hello world and perfect squares
 println("There is more than one way to say hello:")
-
 # This is an array consisting of three strings
 helloArray = ["Hello", "G'day", "Shalom"]
 

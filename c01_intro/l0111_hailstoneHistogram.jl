@@ -1,3 +1,4 @@
+# Histogram of hailstone sequence lengths
 using Plots; pyplot()
 
 function hailLength(x::Int)

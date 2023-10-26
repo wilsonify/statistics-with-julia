@@ -1,3 +1,4 @@
+# Steady state of a Markov chain in several ways
 using LinearAlgebra, StatsBase
 
 # Transition probability matrix

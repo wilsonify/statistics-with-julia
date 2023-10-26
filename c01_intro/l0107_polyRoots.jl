@@ -1,3 +1,4 @@
+# Roots of a polynomial
 using Roots
 
 function polynomialGenerator(a...)

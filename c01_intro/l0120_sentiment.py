@@ -1,3 +1,6 @@
+"""
+Demo Python code
+"""
 from textblob import TextBlob
 
 str = """

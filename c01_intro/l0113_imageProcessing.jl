@@ -1,3 +1,4 @@
+# Working with images
 using Plots, Images, ImageMagick; pyplot()
 
 img = load("stars.png")

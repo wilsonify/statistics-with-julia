@@ -1,3 +1,4 @@
+# Random walks and seeds
 using Plots, Random; pyplot()
 
 N = 5000

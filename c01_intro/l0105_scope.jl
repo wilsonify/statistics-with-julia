@@ -1,3 +1,4 @@
+# Variable scope and the global keyword
 data = [1, 2, 3]
 s = 0
 beta, gamma = 2, 1

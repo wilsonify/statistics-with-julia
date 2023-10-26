@@ -1,3 +1,4 @@
+using Pkg
 path_to_here = @__DIR__
 Pkg.activate("$path_to_here")
 ENV["PYTHON"] = "/home/thom/venvs/venv310/bin/python"

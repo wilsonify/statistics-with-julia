@@ -1,3 +1,4 @@
+# Basic plotting
 using Plots, LaTeXStrings, Measures; pyplot()
 
 f(x, y) = x^2 + y^2

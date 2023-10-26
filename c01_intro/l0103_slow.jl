@@ -1,3 +1,4 @@
+# Slow code example
 using Statistics
 
 @time begin

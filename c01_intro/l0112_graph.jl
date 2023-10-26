@@ -1,3 +1,4 @@
+# Animated edges of a graph
 using Plots; pyplot()
 
 function graphCreator(n::Int)
@@ -8,9 +9,8 @@ function graphCreator(n::Int)
     yPts = last.(coords)
     edges = []
     for v in vertices, u in (v+1):n
-        push!(edges,(v,u)) 
+        push!(edges,(v,u))
     end
-
     anim = Animation()
     scatter(xPts, yPts, c = :blue, msw = 0, ratio = 1,
         xlims = (-1.5,1.5), ylims = (-1.5,1.5), legend = :none)

@@ -1,3 +1,4 @@
+# Estimating π
 using Random, LinearAlgebra, Plots; pyplot()
 Random.seed!()
 

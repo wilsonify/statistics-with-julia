@@ -1,3 +1,4 @@
+# Pseudorandom number generation
 using Random
 
 Random.seed!(1974)
