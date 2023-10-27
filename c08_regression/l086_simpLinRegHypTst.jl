@@ -1,6 +1,7 @@
 using DataFrames, GLM, PyPlot, Distributions, CSV
-
-data = CSV.read("weightHeight.csv")
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../data")
+data = CSV.read("$path_to_data/weightHeight.csv")
 sData = sort(data, :Weight)[1:20,:]
 
 model = lm(@formula(Height ~ Weight), sData)

@@ -1,8 +1,9 @@
-using GLM, Distributions, DataFrames
-
-data1 = parse.(Float64, readlines("machine1.csv"))
-data2 = parse.(Float64, readlines("machine2.csv"))
-data3 = parse.(Float64, readlines("machine3.csv"))
+using GLM, Distributions, DataFrames, CategoricalArrays
+path_to_here=@__DIR__
+path_to_data=abspath("$path_to_here/../data")
+data1 = parse.(Float64, readlines("$path_to_data/machine1.csv"))
+data2 = parse.(Float64, readlines("$path_to_data/machine2.csv"))
+data3 = parse.(Float64, readlines("$path_to_data/machine3.csv"))
 
 function manualANOVA(allData)
     nArray = length.(allData)

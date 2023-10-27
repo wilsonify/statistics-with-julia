@@ -1,4 +1,4 @@
-using Random
+using Random, Statistics
 Random.seed!(1)
 x1Dat = rand(24)
 x2Dat = rand(15)
