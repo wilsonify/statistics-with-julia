@@ -1,3 +1,4 @@
+# Variance of X as the mean of Y
 using Distributions, Plots; pyplot()
 
 dist = TriangularDist(4,6,5)

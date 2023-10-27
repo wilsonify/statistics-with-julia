@@ -1,3 +1,4 @@
+# Families of discrete distributions
 using Distributions
 dists = [
     DiscreteUniform(10,20),

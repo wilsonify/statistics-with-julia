@@ -1,3 +1,4 @@
+# Generating random vectors with desired mean and covariance
 using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots; pyplot()
 Random.seed!(1)
 

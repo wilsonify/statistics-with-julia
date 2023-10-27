@@ -1,3 +1,4 @@
+# The Poisson distribution
 using StatsBase, Distributions, Plots; pyplot()
 
 function prn(lambda)

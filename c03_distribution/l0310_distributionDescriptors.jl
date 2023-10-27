@@ -1,3 +1,4 @@
+# Descriptors of Distribution objects
 using Distributions
 dist = TriangularDist(0,2,1)
 

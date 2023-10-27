@@ -1,3 +1,4 @@
+# Bivariate normal data
 using Distributions, Plots; pyplot()
 
 include("../data/mvParams.jl")

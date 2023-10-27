@@ -1,3 +1,4 @@
+# The inverse CDF
 using Plots, LaTeXStrings; pyplot()
 
 xGrid = 0:0.01:10

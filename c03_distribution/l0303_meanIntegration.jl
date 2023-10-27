@@ -1,3 +1,4 @@
+# Expectation via numerical integration
 using QuadGK
 
 sup = (-1,1)

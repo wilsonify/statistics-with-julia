@@ -1,3 +1,4 @@
+# The negative binomial distribution
 using StatsBase, Distributions, Plots
 
 function rouletteSpins(r, p)

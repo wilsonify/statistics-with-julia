@@ -1,3 +1,4 @@
+# A sum of two triangular random variables
 using Distributions, Statistics, Plots; pyplot()
 
 dist1 = TriangularDist(0,1,1)

@@ -1,3 +1,4 @@
+# CDF from the Riemann sum of a PDF
 using Plots, LaTeXStrings; pyplot()
 
 f2(x) = (x < 0 ? x + 1 : 1 - x) * (abs(x) < 1 ? 1 : 0)

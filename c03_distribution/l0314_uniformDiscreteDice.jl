@@ -1,3 +1,4 @@
+# Discrete uniform die toss
 using StatsBase, Plots; pyplot()
 
 faces, N = 1:6, 10^6

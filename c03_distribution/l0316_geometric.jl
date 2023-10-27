@@ -1,3 +1,4 @@
+# The geometric distribution
 using StatsBase, Distributions, Plots; pyplot()
 
 function rouletteSpins(p)

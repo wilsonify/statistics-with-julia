@@ -1,3 +1,5 @@
+all: l0301_randomVariable l0302_discreteContinuous l0303_meanIntegration l0304_varianceTransformation l0305_cdfFromPdf l0306_inverseCDF l0307_mgf l0308_weightVector l0309_triangularDist l0310_distributionDescriptors l0311_basicDistRand l0312_triangularDistInv l0313_discreteDists l0314_uniformDiscreteDice l0315_binomialCoinFlip l0316_geometric l0317_negativeBinomial l0318_hypergeometric l0319_poisson l0320_continuousDists l0321_continuousUniform l0322_expGeom l0323_gammaDist l0324_betaDist l0325_gammafunctionIntegration l0326_weibullHazard l0327_normalCalculus l0328_rayleigh l0329_normalDistribution l0330_cauchyCMA l0331_jointPDF l0332_multiRVgeneration l0333_multiDimensionalIntegration l0334_bivariateNormal
+
 clean:
 	find . -type f -name "*.png" -exec rm {} \;
 
@@ -10,8 +12,6 @@ l0302_discreteContinuous:
 	julia --project=. l0302_discreteContinuous.jl
 l0303_meanIntegration:
 	julia --project=. l0303_meanIntegration.jl
-l0304_basicDistRand:
-	julia --project=. l0304_basicDistRand.jl
 l0304_varianceTransformation:
 	julia --project=. l0304_varianceTransformation.jl
 l0305_cdfFromPdf:
@@ -26,6 +26,8 @@ l0309_triangularDist:
 	julia --project=. l0309_triangularDist.jl
 l0310_distributionDescriptors:
 	julia --project=. l0310_distributionDescriptors.jl
+l0311_basicDistRand:
+	julia --project=. l0311_basicDistRand.jl
 l0312_triangularDistInv:
 	julia --project=. l0312_triangularDistInv.jl
 l0313_discreteDists:

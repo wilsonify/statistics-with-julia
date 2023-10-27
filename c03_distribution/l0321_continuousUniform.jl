@@ -1,3 +1,4 @@
+# Uniformly distributed angles
 using Distributions, Plots, LaTeXStrings; pyplot()
 
 cUnif = Uniform(0,2π)

@@ -1,3 +1,4 @@
+# Families of continuous distributions
 using Distributions
 dists = [
     Uniform(10,20),

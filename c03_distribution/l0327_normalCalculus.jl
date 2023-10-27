@@ -1,3 +1,4 @@
+# Numerical derivatives of the normal density
 using Distributions, Calculus, SpecialFunctions, Plots; pyplot()
 
 xGrid = -5:0.01:5

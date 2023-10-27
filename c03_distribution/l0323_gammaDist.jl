@@ -1,3 +1,4 @@
+# Gamma random variable as a sum of exponentials
 using Distributions, Plots; pyplot()
 
 lambda, N = 1 / 3, 10^5

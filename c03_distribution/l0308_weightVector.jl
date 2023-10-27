@@ -1,3 +1,4 @@
+# Sampling from a weight vector
 using StatsBase, Random
 Random.seed!(1)
 

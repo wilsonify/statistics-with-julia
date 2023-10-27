@@ -1,3 +1,4 @@
+# Flooring an exponential random variable
 using StatsBase, Distributions, Plots; pyplot()
 
 lambda, N = 1, 10^6

@@ -1,3 +1,4 @@
+# Coin ﬂipping and the binomial distribution
 using StatsBase, Distributions, Plots; pyplot()
 
 binomialRV(n, p) = sum(rand(n) .< p)

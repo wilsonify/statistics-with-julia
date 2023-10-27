@@ -1,3 +1,4 @@
+# Multidimensional integration
 using HCubature
 
 M = 4.5

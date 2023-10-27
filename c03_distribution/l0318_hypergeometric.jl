@@ -1,3 +1,4 @@
+# Comparison of several hypergeometric distributions
 using Distributions, Plots; pyplot()
 
 L, K, n  = 500, [450, 400, 250, 100, 50], 30

@@ -1,3 +1,4 @@
+# Using the pdf(), cdf(), and quantile() functions with Distributions
 using Distributions, Plots, LaTeXStrings; pyplot()
 
 dist = TriangularDist(0,2,1)

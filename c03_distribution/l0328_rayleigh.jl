@@ -1,3 +1,4 @@
+# Alternative representations of Rayleigh random variables
 using Distributions, Random
 Random.seed!(1)
 

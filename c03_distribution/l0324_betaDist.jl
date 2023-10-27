@@ -1,3 +1,4 @@
+# The gamma and beta special functions
 using SpecialFunctions, Distributions
 
 a, b = 0.2, 0.7

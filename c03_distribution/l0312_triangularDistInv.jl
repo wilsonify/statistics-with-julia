@@ -1,3 +1,4 @@
+# Inverse transform sampling
 using Distributions, Plots; pyplot()
 
 triangDist = TriangularDist(0,2,1)

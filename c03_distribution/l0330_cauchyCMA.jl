@@ -1,3 +1,4 @@
+# The law of large numbers breaks down with very heavy tails
 using Random, Plots; pyplot()
 Random.seed!(808)
 

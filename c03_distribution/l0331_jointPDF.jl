@@ -1,3 +1,4 @@
+# Visualizing a bivariate density
 using Plots, LaTeXStrings, Measures; pyplot()
 
 delta = 0.01
