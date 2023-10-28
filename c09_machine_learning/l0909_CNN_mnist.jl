@@ -1,5 +1,7 @@
 using Flux, Flux.Data.MNIST, Statistics, BSON, Random, Plots; pyplot()
+
 using Flux: onehotbatch, onecold, crossentropy
+
 Random.seed!(0)
 
 epochs = 30

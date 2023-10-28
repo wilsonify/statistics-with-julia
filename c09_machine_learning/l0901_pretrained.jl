@@ -3,8 +3,9 @@ using Flux: onecold
 model= Chain(Conv((5, 5), 1=>8, relu), MaxPool((2,2)),
              Conv((3, 3), 8=>16, relu), MaxPool((2,2)),
              flatten, Dense(400, 10), softmax)
-
-BSON.@load "../data/mnistConv.bson" modelParams
+path_to_here=@__DIR__
+path_to_model=abspath("$path_to_here/../data")
+BSON.@load "$path_to_model/mnistConv.bson" modelParams
 Flux.loadparams!(model, modelParams)
 
 function predictor(img)
