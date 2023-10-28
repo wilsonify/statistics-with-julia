@@ -11,13 +11,13 @@ targetNumVars = 3
 lambdaStep = 0.2
 lamGrid = collect(0:lambdaStep:150)
 lassoFit = fit(LassoPath,X, Y, λ = lamGrid);
-dd = Array(lassoFit.coefs)’
+dd = Array(lassoFit.coefs)'
 nV = sum(dd .!= 0.0 ,dims=2)
 
 goodLambda = lamGrid[findfirst((n)->n==targetNumVars,nV)]
 newFit = fit(LassoPath,X, Y, λ = [goodLambda - lambdaStep, goodLambda])
 println(newFit)
-println("Coefficients: ", Array(newFit.coefs)’[2,:])
+println("Coefficients: ", Array(newFit.coefs)'[2,:])
 
 p1 = plot(lassoFit.λ, dd, label = ["Freq" "MMin" "MMax" "Cach" "ChMin" "ChMax"],
 ylabel = "Coefficient Value")

@@ -3,8 +3,10 @@ using MLDatasets, StatsBase, Measures, Plots; pyplot()
 xTrain, yTrain = MLDatasets.MNIST.traindata(Float32)
 xTest, yTest = MLDatasets.MNIST.testdata(Float32)
 nTrain, nTest = size(xTrain)[3], size(xTest)[3]
-trainData = [xTrain[:,:,k]’ for k in 1:nTrain]
-testData = [xTest[:,:,k]’ for k in 1:nTest]
+
+trainData = [xTrain[:,:,k]' for k in 1:nTrain]
+
+testData = [xTest[:,:,k]' for k in 1:nTest]
 positiveTrain = trainData[yTrain .== 1]
 negativeTrain = trainData[yTrain .!= 1]
 testLabels = yTest .== 1

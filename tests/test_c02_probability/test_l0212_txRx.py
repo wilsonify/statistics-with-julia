@@ -2,7 +2,7 @@
 Transmitted (Tx) and Received (Rx) Bayes
 ====
 As an example, consider a communication channel involving a stream of transmitted bits
-(0’s and #1’s), where 70% of the bits are 1, and the rest 0.
+(0's and #1's), where 70% of the bits are 1, and the rest 0.
 A typical snippet from the channel  ...0101101011101111101...
 
 The channel is imperfect due to physical disturbances such as interfering radio signals,
@@ -12,7 +12,7 @@ and similarly there is a chance (ε1 ) of interpreting a bit as 0 when it is act
 Now say that we received (Rx) a bit, and interpreted it as 1.
 This is the posterior outcome.
 What is the chance that it was in fact transmitted (Tx) as a 1?
-Applying Bayes’ rule:
+Applying Bayes' rule:
 P(Tx1 | Rx1) = (P(Rx1 | Tx1) * P(Tx1)) / P(Rx1) =  ((1 − ε1)*0.7)/(0.7*(1-ε1)+0.3*ε0)
 For example, if ε0 = 0.1 and ε1 = 0.05 we have that P(Tx 1 | Rx 1) = 0.9568.
 Listing 2.12 illustrates

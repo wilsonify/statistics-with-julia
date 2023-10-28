@@ -1,4 +1,4 @@
-# NLP via Python’s TextBlob
+# NLP via Python's TextBlob
 using PyCall
 TB = pyimport("textblob")
 
