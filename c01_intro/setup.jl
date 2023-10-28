@@ -15,5 +15,6 @@ Pkg.add("PyPlot")
 Pkg.add("RCall")
 Pkg.add("Roots")
 Pkg.add("StatsBase")
-
 Pkg.build("PyCall")
+Pkg.add("SafeTestsets")
+#Pkg.precompile()

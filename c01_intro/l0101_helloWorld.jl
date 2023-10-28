@@ -1,22 +1,38 @@
-# Hello world and perfect squares
-println("There is more than one way to say hello:")
-# This is an array consisting of three strings
-helloArray = ["Hello", "G'day", "Shalom"]
-
-for i in 1:3
-    println("\t", helloArray[i], " World!")
+function tab_separated_string(arr)
+    result = ""
+    for i in 1:length(arr)
+        result = string(result, "\t", arr[i])
+    end
+    return result
 end
 
-println("\nThese squares are just perfect:")
-
-# This construct is called a `comprehension' (or 'list comprehension')
-squares = [i^2 for i in 0:10]
-
-# You can loop on elements of arrays without having to use indexing
-for s in squares
-    print("  ",s)
+function squares(arr)
+    return [i^2 for i in arr]
 end
 
-# The last line of every code snippet is also evaluated as output (in addition to
-# any figures and printing output generated previously).
-sqrt.(squares)
+
+function hello()
+    helloArray = ["Hello", "G'day", "Shalom"]
+    helloString = tab_separated_string(helloArray)
+
+    println("There is more than one way to say hello:")
+    println("\n$helloString")
+
+end
+
+function hello_squares()
+    squares = squares(0:10)
+    SquaresString = tab_separated_string(squares)
+
+    println("\nThese squares are just perfect:")
+    println("\n$SquaresString")
+end
+
+function main()
+    hello()
+    hello_squares()
+end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main()
+end
