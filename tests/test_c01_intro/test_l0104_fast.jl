@@ -11,10 +11,10 @@ include("$path_to_module/l0104_fast.jl")
     @test length(result) ==  100
 end
 
-@testset "Test summarize_data function" begin
+@testset "Test calculate_quantiles function" begin
     Random.seed!(0)
     data = comprehension_generate_data(100,10)
-    result = summarize_data(data)
+    result = calculate_quantiles(data)
     result = round.(result, digits = 2)
-    @test result == (0.31, 0.66)
+    @test result == (0.26, 0.69)
 end

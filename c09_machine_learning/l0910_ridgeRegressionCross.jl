@@ -19,9 +19,9 @@ trainSet(k) = setdiff(1:n, testSet(k))
 yTest(k) = convert(Array{Float64, 1}, df[testSet(k), :Perf])
 yTrain(k) = convert(Array{Float64, 1}, df[trainSet(k), :Perf])
 
-# Modify xTrain and xTest to convert the relevant columns to arrays
-xTest(k) = convert(Array{Float64, 2}, df[testSet(k), [:Cach, :ChMin]])
-xTrain(k) = convert(Array{Float64, 2}, df[trainSet(k), [:Cach, :ChMin]])
+# Modify xTrain and xTest to extract the values from DataFrame columns as arrays
+xTest(k) = [values(df[testSet(k), :Cach]) values(df[testSet(k), :ChMin])]
+xTrain(k) = [values(df[trainSet(k), :Cach]) values(df[trainSet(k), :ChMin])]
 
 betas = [ridge(xTrain(k), yTrain(k), lamVals[k]) for k in 1:K]
 errs = [norm([ones(nG) xTest(k)] * betas[k] - yTest(k)) for k in 1:K]
@@ -35,7 +35,7 @@ println("Tried lambdas: ", @RR lamVals)
 println("Errors: ", @RR errs)
 println("Found the best lambda for regularization: ", bestLambda)
 
-betaFinal = ridge(convert(Array{Float64, 2}, df[:, [:MMin, :Cach, :ChMin]]),
+betaFinal = ridge([values(df[:, :MMin]) values(df[:, :Cach]) values(df[:, :ChMin])],
                    convert(Array{Float64, 1}, df[:, :Perf]), bestLambda)
 
 println("Beta estimate: ", betaFinal)

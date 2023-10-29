@@ -23,3 +23,4 @@ function sumData(beta)
 end
 println("Sum of data in a function: ", sumData(beta / 2))
 @show s
+
