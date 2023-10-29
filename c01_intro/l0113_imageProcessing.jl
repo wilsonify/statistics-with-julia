@@ -1,7 +1,8 @@
 # Working with images
 using Plots, Images, ImageMagick; pyplot()
-
-img = load("stars.png")
+path_to_here = @__DIR__
+path_to_data=abspath("$path_to_here/../data")
+img = load("$path_to_data/stars.png")
 gImg = red.(img) * 0.299 + green.(img) * 0.587 + blue.(img) * 0.114
 rows, cols = size(img)
 
