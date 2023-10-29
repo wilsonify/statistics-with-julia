@@ -1,3 +1,5 @@
+using Test
+
 # Bubble sort
 function bubbleSort!(a)
     n = length(a)
