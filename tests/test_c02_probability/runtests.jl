@@ -2,10 +2,9 @@ using Test
 using SafeTestsets
 
 @time @safetestset "c02_probability" begin
-    @time @safetestset "smoke Test" begin
-      @test true
-    end
-  @time @safetestset "l0201_diceSumEven.jl Tests" begin     path_to_here = @__DIR__     include("$path_to_here/test_l0201_diceSumEven.jl")   end
+  @time @safetestset "smoke Test" begin
+    @test true
+  end
 
   @time @safetestset "l0201_diceSumEven.jl Tests" begin
       path_to_here = @__DIR__
@@ -51,10 +50,7 @@ using SafeTestsets
       path_to_here = @__DIR__
       include("$path_to_here/test_l0211_conditionalProbability.jl")
   end
-  @time @safetestset "l0212_txRx.py Tests" begin
-      path_to_here = @__DIR__
-      include("$path_to_here/test_l0212_txRx.py")
-  end
+
   @time @safetestset "l0212_txRxBayes.jl Tests" begin
       path_to_here = @__DIR__
       include("$path_to_here/test_l0212_txRxBayes.jl")

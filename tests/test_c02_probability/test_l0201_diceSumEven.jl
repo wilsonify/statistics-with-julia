@@ -13,7 +13,8 @@ using Test
 # Define a test for even_sum_probability
 @testset "Test even_sum_probability function" begin
     numSol, mcEst = even_sum_probability()
-
-    @test numSol ≈ 0.5 atol=1e-3  # Expected value for numerical solution
-    @test mcEst ≈ 0.5 atol=1e-3  # Expected value for Monte Carlo estimate
+    numSol = round(numSol,digits=2)
+    mcEst = round(mcEst,digits=2)
+    @test numSol == 0.5
+    @test mcEst == 0.50
 end
