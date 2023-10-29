@@ -1,7 +1,7 @@
 using CSV, DataFrames, RCall
 
 function read_machine_data(machine_number)
-    path_to_here=@__DIR__
+    path_to_here = @__DIR__
     path_to_data = abspath("$path_to_here/../../data")
     filename = "machine$machine_number.csv"
     data = CSV.read(joinpath(path_to_data, filename), DataFrame, header = false)[:, 1]
@@ -51,9 +51,12 @@ end
     data1 = [1.0, 2.0, 3.0, 4.0, 5.0]
     data2 = [2.0, 3.0, 4.0, 5.0, 6.0]
     data3 = [3.0, 4.0, 5.0, 6.0, 7.0]
-    DataFrame(Diameter=vcat(data1,data2,data3),MachNo=vcat([1, 1, 1, 1, 1],[2,2,2,2,2],[3,3,3,3,3]))
+    dataf = DataFrame(
+      Diameter = vcat(data1, data2, data3),
+      MachNo = vcat([1, 1, 1, 1, 1],[2, 2, 2, 2, 2],[3, 3, 3, 3, 3]
+    ))
     # Call the r_anova function with synthetic data
-    r_anova([data1, data2, data3])
+    r_anova(dataf)
 
     # Add assertions to check the output or behavior
     # For example, you can check the f-value and p-value.
