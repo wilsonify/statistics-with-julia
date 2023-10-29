@@ -1,9 +1,16 @@
-# Pseudorandom number generation
 using Random
 
-Random.seed!(1974)
-println("Seed 1974: ",rand(),"\t", rand(), "\t", rand())
-Random.seed!(1975)
-println("Seed 1975: ",rand(),"\t", rand(), "\t", rand())
-Random.seed!(1974)
-println("Seed 1974: ",rand(),"\t", rand(), "\t", rand())
+function really_rand()
+    return (rand(), rand(), rand())
+end
+
+function main()
+    Random.seed!(1974)
+    println("Seed 1974: ", really_rand())
+    Random.seed!(1975)
+    println("Seed 1975: ", really_rand())
+    Random.seed!(1974)
+    println("Seed 1974: ", really_rand())
+end
+
+

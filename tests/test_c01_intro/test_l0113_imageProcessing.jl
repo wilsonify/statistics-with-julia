@@ -1,7 +1,8 @@
 using Plots, Images, ImageMagick; pyplot()
 
 function grayscale_conversion(image)
-    return red(image) * 0.299 + green(image) * 0.587 + blue(image) * 0.114
+    gImg = red.(img) * 0.299 + green.(img) * 0.587 + blue.(img) * 0.114
+    return gImg
 end
 
 function apply_box_blur(image, d)
