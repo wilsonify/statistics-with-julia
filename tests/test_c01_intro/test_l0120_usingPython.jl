@@ -46,7 +46,7 @@ end
 
     sentiments = analyze_sentiments(text)
 
-    @test typeof(sentiments) == Vector{PyCall.PyObject}
+    @test typeof(sentiments) == Array{Tuple{Float64,Float64},1}
     @test length(sentiments) == 3
 
     # Add more specific assertions based on expected sentiment values.

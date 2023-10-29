@@ -37,10 +37,6 @@ test_l0117_randomWalks:
 	julia --project="/mnt/SSD1/mrepos/github.com/wilsonify/statistics-with-julia/c01_intro" test_l0117_randomWalks.jl
 test_l0118_usingR:
 	julia --project="/mnt/SSD1/mrepos/github.com/wilsonify/statistics-with-julia/c01_intro" test_l0118_usingR.jl
-test_l0120_sentiment.py:
-	julia --project="/mnt/SSD1/mrepos/github.com/wilsonify/statistics-with-julia/c01_intro" test_l0120_sentiment.py
-test_l0120_setupPyCall:
-	julia --project="/mnt/SSD1/mrepos/github.com/wilsonify/statistics-with-julia/c01_intro" test_l0120_setupPyCall.jl
 test_l0120_usingPython:
 	julia --project="/mnt/SSD1/mrepos/github.com/wilsonify/statistics-with-julia/c01_intro" test_l0120_usingPython.jl
 test_l0121_usingC:
