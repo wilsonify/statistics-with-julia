@@ -1,15 +1,19 @@
 # Slow code example
-using Statistics
+using Statistics, Random
 
-@time begin
-        data = Float64[]
-            for _ in 1:10^6
-                group = Float64[]
-                    for _ in 1:5 * 10^2
-                        push!(group,rand())
-                    end
-                push!(data,mean(group))
-            end
-        println("98% of the means lie in the estimated range: ",
-                        (quantile(data,0.01),quantile(data,0.99)) )
+path_to_here = @__DIR__
+path_to_module = abspath("$path_to_here/../../c01_intro")
+include("$path_to_module/l0103_slow.jl")
+
+
+@testset "Test generate_data function" begin
+    result = generate_data(100,10)
+    @test length(result) ==  100
+end
+@testset "Test summarize_data function" begin
+    Random.seed!(0)
+    data = generate_data(100,10)
+    result = summarize_data(data)
+    result = round.(result, digits = 2)
+    @test result == (0.24, 0.67)
 end
