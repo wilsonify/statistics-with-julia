@@ -15,7 +15,7 @@ iter, gradNorm = 0, 1.0
 while gradNorm >= epsilon
     gs = gradient(()->loss(xVals,yVals),params(b))
     update!(opt,b,gs[b])
-    gradNorm = norm(gs[b])
+    global gradNorm = norm(gs[b])
     global iter += 1
 end
 println("Number of iterations: ", iter)
