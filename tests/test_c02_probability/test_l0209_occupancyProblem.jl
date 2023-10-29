@@ -29,3 +29,20 @@ plot(1:max_n, analytic, c = [:blue :red :green],
 scatter!(1:max_n, monteCarlo, mc = :black, shape = :+,
     label = "", xlims = (0,max_n),ylims = (0,1),
     xlabel = "n Envelopes", ylabel = "Probability", legend = :topright)
+
+using Test
+
+function test_occupancy_problem()
+    max_n, N, Kvals = 100, 10^3, [2, 3, 4]
+
+    for (i, k) in enumerate(Kvals)
+        for n in 1:max_n
+            analytic_result = occupancyAnalytic(big(n), big(k * n))
+            monte_carlo_result = occupancyMC(n, k * n, N)
+
+            @test isapprox(analytic_result, monte_carlo_result, atol=1e-3, rtol=1e-3)
+        end
+    end
+end
+
+test_occupancy_problem()

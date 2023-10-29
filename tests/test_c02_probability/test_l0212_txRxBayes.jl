@@ -1,26 +1,17 @@
-# Transmitted (Tx) and Received (Rx) Bayes
 using Random
-Random.seed!(1)
 
-N = 10^5
-prob1 = 0.7
-eps0, eps1 = 0.1, 0.05
-
-flipWithProb(bit, prob) = rand() < prob ? xor(bit,1) : bit
-
-TxData = rand(N) .< prob1
-RxData = [x == 0 ? flipWithProb(x,eps0) : flipWithProb(x,eps1) for x in TxData]
-
-numTx1 = 0
-totalRx1 = 0
-for i in 1:N
-   if RxData[i] == 1
-        global totalRx1 += 1
-        global numTx1 += TxData[i]
-    end
+function flip_with_prob(bit, prob)
+    return rand() < prob ? xor(bit,1) : bit
 end
 
-monteCarlo = numTx1 / totalRx1
-analytic = ((1 - eps1) * 0.7) / ((1 - eps1) * 0.7 + 0.3 * eps0)
+function bayes_rule(prob1, eps0, eps1)
+    return ((1 - eps1) * prob1) / ((1 - eps1) * prob1 + (1 - prob1) * eps0)
+end
 
-println("Monte Carlo: ", monteCarlo, "\t\tAnalytic: ", analytic)
+using Test
+
+@testset "Bayes Rule Tests" begin
+    result = simulate_and_calculate(10^5, 0.7, 0.1, 0.05)
+    expected_result = bayes_rule(0.7, 0.1, 0.05)
+    @test isapprox(result, expected_result, atol = 1e-4)
+end

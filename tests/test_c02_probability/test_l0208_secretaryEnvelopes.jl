@@ -36,6 +36,24 @@ for n in 1:6
     bruteForce = bruteSetsProbabilityAllMiss(n)
     fromFormula = formulaCalcAllMiss(n)
     fromMC = mcAllMiss(n,N)
-    println(n,"\t",round(bruteForce,digits = 4),"\t\t",round(fromFormula,digits = 4),
-    "\t\t",round(fromMC,digits = 4),"\t\t",round(1 / MathConstants.e,digits = 4))
+    println(n,"\t",round(bruteForce,digits = 4),"\t\t",round(fromFormula,digits = 4),    "\t\t",round(fromMC,digits = 4),"\t\t",round(1 / MathConstants.e,digits = 4))
 end
+
+
+using Test
+
+function test_secretary_with_envelopes()
+    N = 10^6
+
+    for n in 1:6
+        bruteForce = bruteSetsProbabilityAllMiss(n)
+        fromFormula = formulaCalcAllMiss(n)
+        fromMC = mcAllMiss(n, N)
+
+        @test isapprox(bruteForce, fromFormula, atol=1e-4)  # Check if bruteForce is close to the expected value from the formula
+        @test isapprox(bruteForce, fromMC, atol=1e-4)  # Check if bruteForce is close to the Monte Carlo estimation
+        @test isapprox(fromFormula, fromMC, atol=1e-4)  # Check if the formula result is close to the Monte Carlo estimation
+    end
+end
+
+test_secretary_with_envelopes()

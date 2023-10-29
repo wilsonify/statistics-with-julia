@@ -1,19 +1,16 @@
-# Basic set operations
+using Test
+
 A = Set([2, 7, 2, 3])
 B = Set(1:6)
 omega = Set(1:10)
 
-AunionB = union(A, B)
-AintersectionB = intersect(A, B)
-BdifferenceA = setdiff(B,A)
-Bcomplement = setdiff(omega,B)
-AsymDifferenceB = union(setdiff(A,B),setdiff(B,A))
-println("A = $A, B = $B")
-println("A union B = $AunionB")
-println("A intersection B = $AintersectionB")
-println("B diff A = $BdifferenceA")
-println("B complement = $Bcomplement")
-println("A symDifference B = $AsymDifferenceB")
-println("The element '6' is an element of A: $(in(6,A))")
-println("Symmetric difference and intersection are subsets of the union: ",
-        issubset(AsymDifferenceB,AunionB),", ", issubset(AintersectionB,AunionB))
+@testset "Basic Set Operations" begin
+    @test union(A, B) == Set([1, 2, 3, 4, 5, 6, 7])
+    @test intersect(A, B) == Set([2, 3])
+    @test setdiff(B, A) == Set([1, 4, 5, 6])
+    @test setdiff(omega, B) == Set([8, 9, 10])
+    @test union(setdiff(A, B), setdiff(B, A)) == Set([1, 4, 5, 6])
+    @test in(6, A) == true
+    @test issubset(Set([1, 4, 5, 6]), Set([1, 2, 3, 4, 5, 6, 7])) == true
+    @test issubset(intersect(A, B), Set([1, 2, 3, 4, 5, 6, 7])) == true
+end
