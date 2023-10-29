@@ -44,3 +44,6 @@ l0118_usingR:
 	julia --project=. l0118_usingR.jl
 l0120_usingPython:
 	PYTHON=$(shell which python) julia --project=. l0120_usingPython.jl
+
+l0121_usingPython:
+	julia --project=. l0121_usingC.jl

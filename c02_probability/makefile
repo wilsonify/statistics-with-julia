@@ -1,4 +1,8 @@
 
+clean:
+	rm -f Manifest.toml
+	rm -f Project.toml
+
 environment:
 	julia setup.jl
 
