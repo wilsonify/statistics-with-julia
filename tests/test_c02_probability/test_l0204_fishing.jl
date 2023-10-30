@@ -1,10 +1,10 @@
 using StatsBase, Plots; pyplot()
 
+
 # Function to perform fishing simulation
 function fishing_simulation(gF, sF, n, N, withReplacement)
     fishInPond = [ones(Int64, gF); zeros(Int64, sF)]
     fishCaught = Int64[]
-
     for fish in 1:n
         fished = rand(fishInPond)
         push!(fishCaught, fished)
@@ -12,7 +12,6 @@ function fishing_simulation(gF, sF, n, N, withReplacement)
             deleteat!(fishInPond, findfirst(x -> x == fished, fishInPond))
         end
     end
-
     return sum(fishCaught)
 end
 
@@ -25,8 +24,8 @@ end
 
 # Function to plot fishing proportions
 function plot_fishing_proportions(gF, sF, n, N, withReplacement)
+    plot()
     x, proportions = estimate_proportion(gF, sF, n, N, withReplacement)
-
     if withReplacement
         plot!(x, proportions, line = :stem, marker = :circle, c = :blue,
             ms = 6, msw = 0, label = "With replacement",
@@ -37,11 +36,6 @@ function plot_fishing_proportions(gF, sF, n, N, withReplacement)
     end
 end
 
-N = 10^6
-goldFish, silverFish, n = 3, 4, 3
-plot()
-plot_fishing_proportions(goldFish, silverFish, n, N, false)
-plot_fishing_proportions(goldFish, silverFish, n, N, true)
 
 
 using Test
@@ -70,8 +64,7 @@ end
 # Test the plot_fishing_proportions function
 @testset "Test plot_fishing_proportions function" begin
     goldFish, silverFish, n = 3, 4, 3
-    N = 10^6
-    plot()
+    N = 10^3
     plot_fishing_proportions(goldFish, silverFish, n, N, false)
     plot_fishing_proportions(goldFish, silverFish, n, N, true)
     # Manual inspection for plotting function

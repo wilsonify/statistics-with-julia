@@ -42,6 +42,7 @@ end
 
 # Function to plot upper and non-upper lattice paths
 function plotLatticePaths(n)
+    plot()
     omega = unique(permutations([zeros(Int, n); ones(Int, n)]))
     A = omega[isUpperLattice.(omega)]
     upper_path = rand(A)
@@ -90,6 +91,8 @@ function lattice_paths_simulation(n, N)
     plotLatticePaths(n)
 end
 
+using Test
+
 # Test the functions
 @testset "Lattice Paths Simulation Tests" begin
     n, N = 5, 100
@@ -102,10 +105,9 @@ end
 end
 
 # Test the plotLatticePaths function (manual inspection)
-@test "Test plotLatticePaths function" begin
+@testset "Test plotLatticePaths function" begin
     n = 5
-    plot()
     plotLatticePaths(n)
     # Manual inspection for plotting function
-    true
+    @test true
 end
