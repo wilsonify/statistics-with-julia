@@ -1,6 +1,6 @@
 # The inverse CDF
 using Plots, LaTeXStrings; pyplot()
-
+function main()
 xGrid = 0:0.01:10
 uGrid = 0:0.01:1
 busy = 0.8
@@ -17,3 +17,4 @@ p2 = plot(uGrid,invF.(uGrid), c = :blue, xlims = (0,0.95), ylims = (0,maximum(xG
     xlabel = L"u", ylabel = L"F^{-1}(u)")
     
 plot(p1, p2, legend = :none, size = (800, 400))
+end

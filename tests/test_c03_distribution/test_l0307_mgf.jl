@@ -1,6 +1,6 @@
 # A sum of two triangular random variables
 using Distributions, Statistics, Plots; pyplot()
-
+function main()
 dist1 = TriangularDist(0,1,1)
 dist2 = TriangularDist(0,1,0)
 N = 10^6
@@ -24,3 +24,4 @@ p2 = plot!( [minimum(sGrid), maximum(sGrid)],
     c = :black, xlabel = "s", ylabel = "MGF")
 
 plot(p1, p2, legend = :none, size = (800, 400))
+end

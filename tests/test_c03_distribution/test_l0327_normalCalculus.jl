@@ -1,6 +1,7 @@
 # Numerical derivatives of the normal density
 using Distributions, Calculus, SpecialFunctions, Plots; pyplot()
 
+function main()
 xGrid = -5:0.01:5
 
 PhiA(x) = 0.5 * (1 + erf(x / sqrt(2)))
@@ -17,3 +18,4 @@ d2 = second_derivative.(normalDensity, xGrid)
 
 plot(xGrid, [d0 d1 d2], c = [:blue :red :green],label = [L"f(x)" L"f'(x)" L"f''(x)"])
 plot!([-5, 5],[0, 0],  color = :black, lw = 0.5, xlabel = "x", xlims = (-5,5), label = "")
+end

@@ -1,5 +1,6 @@
 # Alternative representations of Rayleigh random variables
 using Distributions, Random
+function main()
 Random.seed!(1)
 
 N = 10^6
@@ -14,3 +15,4 @@ distR = Rayleigh(sig)
 data3 = rand(distR,N)
 
 mean.([data1, data2, data3])
+end

@@ -1,7 +1,10 @@
 # Bivariate normal data
 using Distributions, Plots; pyplot()
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../../data")
+include("$path_to_data/mvParams.jl")
 
-include("../data/mvParams.jl")
+function main()
 biNorm = MvNormal(meanVect,covMat)
 
 N = 10^3
@@ -19,3 +22,4 @@ p2 = surface(support, support, z, lw = 0.1, c = cgrad([:blue, :red]),
          legend = :none, xlabel = "x", ylabel = "y",camera = (-35,20))
 
 plot(p1, p2, size = (800, 400))
+end

@@ -1,6 +1,7 @@
 # Multidimensional integration
 using HCubature
 
+function main()
 M = 4.5
 maxD = 10
 
@@ -11,4 +12,5 @@ for n in 1:maxD
     b = M*ones(n)
     I,e = hcubature(f, a, b, maxevals = 10^7)
     println("n = $(n), integral = $(I), error (estimate) = $(e)")
+end
 end

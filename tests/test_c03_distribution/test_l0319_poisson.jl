@@ -10,6 +10,7 @@ function prn(lambda)
     return k - 1
 end
 
+function main()
 xGrid, lambda, N = 0:16, 5.5, 10^6
 
 pDist = Poisson(lambda)
@@ -22,3 +23,4 @@ plot( xGrid, data,
 plot!( xGrid, bPmf, line = :stem,
     marker = :xcross, c = :red, ms = 6, msw = 0, lw = 2, label = "PMF",
     ylims = (0,0.2), xlabel = "x", ylabel = "Probability of x events")
+end

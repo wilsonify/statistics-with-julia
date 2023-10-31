@@ -1,6 +1,7 @@
 # Gamma random variable as a sum of exponentials
 using Distributions, Plots; pyplot()
 
+function main()
 lambda, N = 1 / 3, 10^5
 bulbs = [1, 10, 50]
 xGrid = 0:0.1:10
@@ -19,3 +20,4 @@ stephist( normalizedData.(dists), bins = 50,
     normed = :true, c = C, xlims = (0,maximum(xGrid)),ylims = (0,1),
     xlabel = "x", ylabel = "Density", label = "")
 plot!(xGrid, [pdf.(i,xGrid) for i in dists], c = C, label = reshape(L, 1,:))
+end

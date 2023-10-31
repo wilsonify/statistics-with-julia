@@ -1,5 +1,7 @@
 # Generating random vectors with desired mean and covariance
 using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots; pyplot()
+
+function main()
 Random.seed!(1)
 
 N = 10^5
@@ -35,3 +37,4 @@ scatter!(first.(data[2]), last.(data[2]), c = :red, ms = 1, msw = 0, label = "Un
 scatter!(first.(data[3]), last.(data[3]), c = :green, ms = 1, msw = 0, label = "Exponential",
     xlims = (0,40), ylims = (0,40), legend = :bottomright, ratio = :equal,
     xlabel = L"X_1", ylabel = L"X_2")
+end

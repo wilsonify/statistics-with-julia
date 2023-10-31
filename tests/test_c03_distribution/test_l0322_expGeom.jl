@@ -1,6 +1,7 @@
 # Flooring an exponential random variable
 using StatsBase, Distributions, Plots; pyplot()
 
+function main()
 lambda, N = 1, 10^6
 xGrid = 0:6
 
@@ -17,3 +18,4 @@ plot!( xGrid, pdf.(geomDist,xGrid),
     c = :red, ms = 6, msw = 0, lw = 2,
     label = "Geometric", ylims = (0,1),
     xlabel = "x", ylabel = "Probability")
+end

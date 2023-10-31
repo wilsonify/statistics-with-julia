@@ -1,6 +1,7 @@
 # Hazard rates and the Weibull distribution
 using Distributions, Plots, LaTeXStrings; pyplot()
 
+function main()
 alphas = [0.5, 1.5, 1]
 lam = 2
 
@@ -25,3 +26,4 @@ Lb = [L"\lambda=" * string(lambda(d)) * ",   " * L"\alpha =" * string(shape(d))
 
 plot(xGrid, hazardsA, c=Cl, label=reshape(Lb, 1,:), xlabel="x",
     ylabel="Instantaneous failure rate", xlims=(0,10), ylims=(0,10))
+end
