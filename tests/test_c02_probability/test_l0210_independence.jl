@@ -2,52 +2,44 @@
 using Random
 Random.seed!(1)
 
-numbers = 10:25
-N = 10^7
-
+numberchoice(range_of_choices) = rand(range_of_choices)
 firstDigit(x) = Int(floor(x / 10))
 secondDigit(x) = x % 10
+isThirteen(x) = x == 13
 
-numThirteen, numFirstIsOne, numSecondIsThree = 0, 0, 0
-
-for _ in 1:N
-    X = rand(numbers)
-    global numThirteen += X == 13 
-    global numFirstIsOne += firstDigit(X) == 1 
-    global numSecondIsThree += secondDigit(X) == 3
-end
-
-probThirteen, probFirstIsOne, probSecondIsThree =
-    (numThirteen,numFirstIsOne,numSecondIsThree)./N
-
-println("P(13) = ", round(probThirteen, digits = 4),
-        "\nP(1_) = ",round(probFirstIsOne, digits = 4),
-        "\nP(_3) = ", round(probSecondIsThree, digits = 4),
-        "\nP(1_)*P(_3) = ",round(probFirstIsOne*probSecondIsThree, digits = 4))
-
-
-using Test
-
-function test_independent_events()
-    numbers = 10:25
-    N = 10^7
-
+function simulation(N)
     numThirteen, numFirstIsOne, numSecondIsThree = 0, 0, 0
-
     for _ in 1:N
-        X = rand(numbers)
-        numThirteen += X == 13
+        X = numberchoice(10:25)
+        numThirteen += isThirteen(X)
         numFirstIsOne += firstDigit(X) == 1
         numSecondIsThree += secondDigit(X) == 3
     end
-
-    probThirteen, probFirstIsOne, probSecondIsThree =
-        (numThirteen, numFirstIsOne, numSecondIsThree) ./ N
-
-    @test isapprox(probThirteen, 1 / 16, atol=0.01)
-    @test isapprox(probFirstIsOne, 1 / 16, atol=0.01)
-    @test isapprox(probSecondIsThree, 1 / 16, atol=0.01)
-    @test isapprox(probFirstIsOne * probSecondIsThree, 1 / 256, atol=0.01)
+   probThirteen, probFirstIsOne, probSecondIsThree = (numThirteen,numFirstIsOne,numSecondIsThree)./N
+   probThirteen = round(probThirteen,digits=4)
+   probFirstIsOne = round(probFirstIsOne,digits=4)
+   probSecondIsThree = round(probSecondIsThree,digits=4)
+   return probThirteen, probFirstIsOne, probSecondIsThree
 end
 
-test_independent_events()
+function main()
+    probThirteen, probFirstIsOne, probSecondIsThree = simulation(10^7)
+    probJoint = probFirstIsOne*probSecondIsThree
+    println("P(13) = $probThirteen")
+    println("P(1_) = $probFirstIsOne")
+    println("P(_3) = $probSecondIsThree")
+    println("P(1_)*P(_3) = $probJoint")
+end
+
+using Test
+
+@testset "test_independent_events" begin
+    Random.seed!(12)
+    probThirteen, probFirstIsOne, probSecondIsThree = simulation(10^7)
+    @test isapprox(probThirteen, 0.0625, atol=0.01)
+    @test isapprox(probFirstIsOne, 0.625, atol=0.01)
+    @test isapprox(probSecondIsThree, 0.125, atol=0.01)
+    @test isapprox(probFirstIsOne * probSecondIsThree, 0.0781, atol=0.01)
+end
+
+
