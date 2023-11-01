@@ -10,6 +10,57 @@
 
 using DataFrames, CSV
 using Test
+using DataFrames
+
+function are_lists_equal(list1, list2)
+    # Check if the element types of the two lists are the same
+    if eltype(list1) != eltype(list2)
+        return false
+    end
+
+    # Check if the values of the two lists are the same
+    for (a, b) in zip(list1, list2)
+        if ismissing(a) && ismissing(b)
+            continue  # Both are missing, move on to the next element
+        elseif a != b
+            return false  # Values are not equal, and not both missing
+        end
+    end
+
+    return true
+end
+
+
+function are_dataframes_equal(df1::DataFrame, df2::DataFrame)
+    # Check if the DataFrames have the same number of rows and columns
+    if size(df1) != size(df2)
+        return false
+    end
+
+    # Check if the column names are the same
+    if names(df1) != names(df2)
+        return false
+    end
+
+    # Check if the column types are the same
+    if eltype(df1) != eltype(df2)
+        return false
+    end
+
+    # Check if the values of the DataFrames are the same
+    for col in 1:size(df1, 2)
+        for row in 1:size(df1, 1)
+            if ismissing(df1[row, col]) && ismissing(df2[row, col])
+                continue  # Both are missing, move on to the next element
+            elseif df1[row, col] != df2[row, col]
+                return false  # Values are not equal, and not both missing
+            end
+        end
+    end
+
+    return true
+end
+
 
 reference_data = DataFrame(
     Name = Union{Missing, String15}["MARYANNA", "REBECCA", "KHADIJAH"],
@@ -17,8 +68,6 @@ reference_data = DataFrame(
     Grade = Union{Missing, String15}["A", "B", missing],
     Price = Union{Int64, Missing}[79700, missing, 38904]
 )
-
-
 reference_names_list = collect(Union{Missing, String15}["SAMMIE", missing, "STACEY"])
 
 @testset "" begin
@@ -28,8 +77,8 @@ reference_names_list = collect(Union{Missing, String15}["SAMMIE", missing, "STAC
     @test data[1, 3] == "A"
     @test data[1, :Grade] == "A"
     @test data.Grade[1] == "A"
-    #@test data[[1, 2, 4], :] == reference_data
-    @test collect(data[13:15, :Name]) == reference_names_list
-    @test collect(data.Name[13:15]) == reference_names_list
-    @test collect(data[13:15, [:Name]]) == reference_names_list
+    @test are_dataframes_equal(data[[1, 2, 4], :], reference_data)
+    @test are_lists_equal(data[13:15, :Name], reference_names_list)
+    @test are_lists_equal(data.Name[13:15],reference_names_list)
+    @test are_lists_equal(collect(data[13:15, [:Name]]), reference_names_list)
 end
