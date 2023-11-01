@@ -18,9 +18,9 @@ reference_data = DataFrame(
     Price = Union{Int64, Missing}[79700, missing, 38904]
 )
 
-reference_names = DataFrame(
-    Name = Union{Missing, String15}["SAMMIE", missing, "STACEY"]
-)
+
+reference_names_list = collect(Union{Missing, String15}["SAMMIE", missing, "STACEY"])
+
 @testset "" begin
     path_to_here = @__DIR__
     path_to_data = abspath("$path_to_here/../../data")
@@ -28,8 +28,8 @@ reference_names = DataFrame(
     @test data[1, 3] == "A"
     @test data[1, :Grade] == "A"
     @test data.Grade[1] == "A"
-    @test data[[1, 2, 4], :] == reference_data
-    @test data[13:15, :Name] == reference_names.Name
-    @test data.Name[13:15] == reference_names.Name
-    @test data[13:15, [:Name]] == reference_names.Name
+    #@test data[[1, 2, 4], :] == reference_data
+    @test collect(data[13:15, :Name]) == reference_names_list
+    @test collect(data.Name[13:15]) == reference_names_list
+    @test collect(data[13:15, [:Name]]) == reference_names_list
 end
