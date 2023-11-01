@@ -1,4 +1,6 @@
 
+format:
+	julia -e "using JuliaFormatter; format(\".\");"
 
 test:
 	julia --project="/mnt/SSD1/mrepos/github.com/wilsonify/statistics-with-julia/c04_data" runtests.jl
@@ -67,3 +69,9 @@ test_l0430_lineSearch:
 	julia --project="/mnt/SSD1/mrepos/github.com/wilsonify/statistics-with-julia/c04_data" test_l0430_lineSearch.jl
 test_l0431_directorySearch:
 	julia --project="/mnt/SSD1/mrepos/github.com/wilsonify/statistics-with-julia/c04_data" test_l0431_directorySearch.jl
+
+
+
+
+
+

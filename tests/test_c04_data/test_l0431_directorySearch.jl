@@ -1,6 +1,6 @@
 function directorySearch(directory, searchString)
-    outfile = open("fileList.txt","w")
-    fileList = filter(x->occursin(searchString, x), readdir(directory))
+    outfile = open("fileList.txt", "w")
+    fileList = filter(x -> occursin(searchString, x), readdir(directory))
 
     for file in fileList
         println(outfile, file)
@@ -8,5 +8,5 @@ function directorySearch(directory, searchString)
     close(outfile)
 end
 function main()
-directorySearch(@__DIR__,".jl")
+    directorySearch(@__DIR__, ".jl")
 end
