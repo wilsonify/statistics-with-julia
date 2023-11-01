@@ -1,4 +1,5 @@
 using Random, Distributions, KernelDensity, Plots; pyplot()
+function main()
 Random.seed!(0)
 
 mu1, sigma1 = 10, 5
@@ -30,3 +31,4 @@ p2 = plot!(xGrid, pdf(kdeS[3],xGrid), c = :purple, label = "h=$(hVals[3])",
     xlims = (-20,80), ylims = (0,0.035), legend = :topleft,
     xlabel = "X", ylabel = "Density")
 plot(p1,p2,size = (800,400))
+end

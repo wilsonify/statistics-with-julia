@@ -2,6 +2,7 @@
 f(z::Int) = begin z = 0 end
 f(z::Array{Int}) = begin z[1] = 0 end
 
+function main()
 x = 1
 @show typeof(x)
 @show isimmutable(x)
@@ -15,3 +16,4 @@ x = [1]
 println("Before call by reference: ", x)
 f(x)
 println("After call by reference: ", x)
+end

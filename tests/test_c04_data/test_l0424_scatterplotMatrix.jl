@@ -1,5 +1,6 @@
 using RDatasets, Plots, Measures; pyplot()
 
+function main()
 data = dataset("datasets", "iris")
 println("Number of rows: ", nrow(data))
 
@@ -23,3 +24,4 @@ scatters = [
     for i in 1:4, j in 1:4 ]
 
 plot(scatters..., size=(1200,800), margin = 4mm)
+end

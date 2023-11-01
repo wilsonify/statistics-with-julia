@@ -1,4 +1,5 @@
 using CSV, Statistics, StatsBase, DataFrames
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -17,3 +18,4 @@ println("0.95 quantile: ", quantile(data, 0.95))
 println("Interquartile range: ", iqr(data),"\n")
 
 summarystats(data)
+end

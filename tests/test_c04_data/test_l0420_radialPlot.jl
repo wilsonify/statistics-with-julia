@@ -1,4 +1,5 @@
 using DataFrames, CSV, Dates, StatsBase, Plots, TimeSeries; pyplot()
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -23,3 +24,4 @@ plot!(grid, d2[1:365],
     xticks = ([mod.((11pi / 6:-pi / 6:0) .+ pi / 2,2pi) ; ], monthsNames),
     c = :red, proj = :polar,
     label = "Brisbane fortnightly average temp.", legend = :outerbottom)
+end

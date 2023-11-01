@@ -1,4 +1,5 @@
 using StatsPlots, Distributions, CSV, DataFrames, Measures; pyplot()
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -20,3 +21,4 @@ p2 = marginalhist(syntheticMatrix[1, :], syntheticMatrix[2, :], bins=10:.5:45)
 
 plot(p1, p2, size=(1000, 500), margin=10mm)
 savefig("l0425_heatmap_with_marginal_histogram.png")
+end

@@ -1,4 +1,5 @@
 using Statistics, StatsBase, LinearAlgebra, DataFrames, CSV
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -43,3 +44,5 @@ corE = cov(Z)
 corF = cor(X)
 println("\nAlternative calculations of (sample) correlation matrix: ")
 @show(corA), @show(corB), @show(corC), @show(corD), @show(corE), @show(corF);
+
+end

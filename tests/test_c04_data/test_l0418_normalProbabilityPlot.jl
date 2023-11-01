@@ -1,4 +1,5 @@
 using Random, Distributions, StatsPlots, Plots; pyplot()
+function main()
 Random.seed!(0)
  
 mu = 20
@@ -12,3 +13,4 @@ qqnorm(data1, c = :blue, ms = 3, msw = 0, label = "Normal Data")
 qqnorm!(data2, c = :red, ms = 3, msw = 0, label = "Exponential Data",
         xlabel = "Normal Theoretical Quantiles",
         ylabel = "Data Quantiles", legend = true)
+end

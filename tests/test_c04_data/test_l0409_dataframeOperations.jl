@@ -1,5 +1,5 @@
 using DataFrames, CSV, Dates, Statistics, CategoricalArrays
-
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -21,4 +21,4 @@ println(first(data, 3), "\n")
 #println(   by(data, :Grade, :Price => x -> ( NumSold = length(x), AvgPrice = mean(x)) )   )
 #println( combine(groupby(data, :Grade), :Price => x -> (NumSold = length(x), AvgPrice = mean(x))) )
 println( combine(groupby(data, :Grade), :Price => x -> (length(x), mean(x))) )
-
+end

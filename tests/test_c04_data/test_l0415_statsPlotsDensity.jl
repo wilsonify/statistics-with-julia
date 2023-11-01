@@ -1,4 +1,5 @@
 using Random, Distributions, StatsPlots; pyplot()
+function main()
 Random.seed!(0)
 
 mu1, sigma1 = 10, 5
@@ -9,8 +10,6 @@ mixRv() = (rand() <= p) ? rand(dist1) : rand(dist2)
 
 n = 2000
 data = [mixRv() for _ in 1:n]
-
-density(data, c = :blue, label = "Density via StatsPlots",
-        xlims = (-20,80), ylims = (0,0.035))
-stephist!(data, bins = 50, c = :black, norm = true,
-    label = "Histogram", xlabel = "x", ylabel = "Density")
+density(data, c = :blue, label = "Density via StatsPlots", xlims = (-20,80), ylims = (0,0.035))
+stephist!(data, bins = 50, c = :black, norm = true, label = "Histogram", xlabel = "x", ylabel = "Density")
+end

@@ -1,4 +1,5 @@
 # Deep copy and shallow copy
+function main()
 println("Immutable:")
 a = 10
 b = a
@@ -28,3 +29,4 @@ a = [[10]]
 b = deepcopy(a)
 b[1][1] = 20
 @show a;
+end

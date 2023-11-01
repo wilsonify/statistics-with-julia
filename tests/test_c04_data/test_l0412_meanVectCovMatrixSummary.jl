@@ -1,4 +1,5 @@
 using DataFrames, CSV, Statistics
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -18,3 +19,4 @@ outfile = open("../data/mvParams.jl","w")
 write(outfile,"meanVect = $meanVect \ncovMat = $covMat")
 close(outfile)
 print(read("$path_to_data/mvParams.jl", String))
+end

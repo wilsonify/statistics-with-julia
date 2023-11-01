@@ -1,4 +1,5 @@
 using DataFrames, CSV, Statistics, Dates, Plots, Measures; pyplot()
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -30,3 +31,4 @@ p4 = histogram(diff, bins = -4:0.5:6,
         ylims = (0,140), legend = false,
         xlabel = "Temperature Difference", ylabel = "Frequency")
 plot(p1,p2,p3,p4, size = (800,500), margin = 5mm)
+end

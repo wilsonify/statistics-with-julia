@@ -1,4 +1,5 @@
 using DataFrames, CSV
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 data1 = CSV.read("$path_to_data/purchaseData.csv", DataFrame)
@@ -15,3 +16,4 @@ println(first(data1, 3), "\n")
 
 replace!(data2[!, :Grade], ["E" => "F", "D" => "E"]...)
 println(first(data2, 3),"\n")
+end

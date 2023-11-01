@@ -1,4 +1,5 @@
 using Random, Distributions, StatsBase, Plots; pyplot()
+function main()
 Random.seed!(0)
 
 mu1, sigma1 = 10, 5
@@ -14,10 +15,8 @@ data2 = [mixRv() for _ in 1:n[2]]
 
 empiricalCDF1 = ecdf(data1)
 empiricalCDF2 = ecdf(data2)
-
 xGrid = -10:0.1:80
 plot(xGrid,empiricalCDF1.(xGrid), c = :blue, label = "ECDF with n = $(n[1])")
 plot!(xGrid,empiricalCDF2.(xGrid), c = :red, label = "ECDF with n = $(n[2])")
-plot!(xGrid, mixCDF.(xGrid), c = :black, label = "Underlying CDF",
-    xlims = (-10,80), ylims = (0,1),
-    xlabel = "x", ylabel = "Probability", legend = :topleft)
+plot!(xGrid, mixCDF.(xGrid), c = :black, label = "Underlying CDF", xlims = (-10,80), ylims = (0,1), xlabel = "x", ylabel = "Probability", legend = :topleft)
+end

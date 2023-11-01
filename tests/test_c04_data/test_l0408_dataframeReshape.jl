@@ -1,4 +1,5 @@
 using DataFrames, CSV
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -26,3 +27,4 @@ println(data, "\n")
 
 unique!(data,:Job)
 println(data)
+end

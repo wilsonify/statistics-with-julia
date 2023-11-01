@@ -1,4 +1,5 @@
 using Random, Distributions, StatsPlots, Plots, Measures; pyplot()
+function main()
 Random.seed!(0)
  
 b1, b2 = 0.5 , 2
@@ -18,3 +19,4 @@ p2 = qqplot(data1, data2, c = :black, ms = 1, msw = 0,
         legend = false)
 
 plot(p1, p2, size = (800,400), margin = 5mm)
+end

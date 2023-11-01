@@ -1,4 +1,5 @@
 using DataFrames, CSV, Statistics
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -28,3 +29,4 @@ end
 
 println(first(data, 5), "\n")
 println(describe(data))
+end

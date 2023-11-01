@@ -1,4 +1,5 @@
 using DataFrames, CSV, CategoricalArrays, Plots; pyplot()
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -10,3 +11,4 @@ areaplot(years, mktCap,
     c = [:blue :red :green], labels = ["A" "B" "C"],
     xlims = (minimum(years),maximum(years)), ylims = (0,6.5),
     legend = :topleft, xlabel = "Years", ylabel = "MarketCap")
+end

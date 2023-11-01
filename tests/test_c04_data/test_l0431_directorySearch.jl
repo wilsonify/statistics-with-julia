@@ -7,5 +7,6 @@ function directorySearch(directory, searchString)
     end
     close(outfile)
 end
-
+function main()
 directorySearch(@__DIR__,".jl")
+end

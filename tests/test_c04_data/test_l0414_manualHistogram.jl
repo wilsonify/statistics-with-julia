@@ -1,4 +1,5 @@
 using Plots, Distributions, Random; pyplot()
+function main()
 Random.seed!(0)
 
 n = 2000
@@ -25,3 +26,5 @@ plot!(xGrid,h.(xGrid), lw=3, c=:red, label="Manual histogram",
     xlabel="x",ylabel="Frequency")
 plot!(xGrid,pdf.(Normal(),xGrid),label="True PDF", 
     lw=3, c=:green, xlims=(-4,4), ylims=(0,0.5))
+
+end

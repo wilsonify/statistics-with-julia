@@ -1,4 +1,6 @@
 using DataFrames, CSV
+
+function main()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../data")
 
@@ -25,3 +27,4 @@ data1 = DataFrame(X = [[0, 1], [100, 101]])
 data2 = deepcopy(data1)
 data2.X[1][1] = -1
 @show data1.X[1][1];
+end
