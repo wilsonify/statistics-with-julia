@@ -13,6 +13,11 @@ using Test
 using DataFrames
 
 function are_lists_equal(list1, list2)
+    # Check if the Lists have the same number elements
+    if length(list1) != length(list2)
+        return false
+    end
+
     # Check if the element types of the two lists are the same
     if eltype(list1) != eltype(list2)
         return false
@@ -68,7 +73,13 @@ reference_data = DataFrame(
     Grade = Union{Missing, String15}["A", "B", missing],
     Price = Union{Int64, Missing}[79700, missing, 38904]
 )
-reference_names_list = collect(Union{Missing, String15}["SAMMIE", missing, "STACEY"])
+
+reference_names_list = Union{Missing, String15}["SAMMIE", missing, "STACEY"]
+
+reference_names = DataFrame(
+    Name=reference_names_list
+)
+
 
 @testset "" begin
     path_to_here = @__DIR__
@@ -80,5 +91,5 @@ reference_names_list = collect(Union{Missing, String15}["SAMMIE", missing, "STAC
     @test are_dataframes_equal(data[[1, 2, 4], :], reference_data)
     @test are_lists_equal(data[13:15, :Name], reference_names_list)
     @test are_lists_equal(data.Name[13:15],reference_names_list)
-    @test are_lists_equal(collect(data[13:15, [:Name]]), reference_names_list)
+    @test are_dataframes_equal(data[13:15, [:Name]],reference_names)
 end
