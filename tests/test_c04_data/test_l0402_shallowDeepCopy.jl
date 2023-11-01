@@ -1,32 +1,34 @@
 # Deep copy and shallow copy
-function main()
-    println("Immutable:")
+using Test
+@testset "Immutable" begin
     a = 10
     b = a
     b = 20
-    @show a
+    @test a == 10
+end
 
-    println("\nNo copy:")
+@testset "No copy" begin
     a = [10]
     b = a
     b[1] = 20
-    @show a
-
-    println("\nCopy:")
+    @test a==[20]
+end    
+@testset "Copy" begin
     a = [10]
     b = copy(a)
     b[1] = 20
-    @show a
+    @test a==[10]
+end
 
-    println("\nShallow copy:")
+@testset "Shallow copy" begin
     a = [[10]]
     b = copy(a)
     b[1][1] = 20
-    @show a
-
-    println("\nDeep copy:")
+    @test a==[[20]]
+end
+@testset "Deep copy" begin
     a = [[10]]
     b = deepcopy(a)
     b[1][1] = 20
-    @show a
+    @test a==[[10]]
 end
