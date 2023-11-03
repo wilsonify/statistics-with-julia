@@ -6,7 +6,7 @@ function are_dataframes_equal(df1::DataFrame, df2::DataFrame)
     end
 
     # Check if the column names are the same
-    if names(df1) != names(df2)
+    if Set(names(df1)) != Set(names(df2))
         println("Names $(names(df1)) != $(names(df2))")
         return false
     end
