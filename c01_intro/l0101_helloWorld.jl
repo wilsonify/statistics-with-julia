@@ -21,8 +21,8 @@ function hello()
 end
 
 function hello_squares()
-    squares = squares(0:10)
-    SquaresString = tab_separated_string(squares)
+    squares_arr = squares(0:10)
+    SquaresString = tab_separated_string(squares_arr)
 
     println("\nThese squares are just perfect:")
     println("\n$SquaresString")
