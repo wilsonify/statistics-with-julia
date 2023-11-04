@@ -18,7 +18,7 @@ function are_dataframes_equal(df1::DataFrame, df2::DataFrame)
     end
 
     # Check if the values of the DataFrames are the same
-    for col in 1:size(df1, 2)
+    for col in Set(names(df1))
         for row in 1:size(df1, 1)
             if ismissing(df1[row, col]) && ismissing(df2[row, col])
                 continue  # Both are missing, move on to the next element
