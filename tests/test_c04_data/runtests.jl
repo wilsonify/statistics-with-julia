@@ -1,7 +1,7 @@
 using Test
 using SafeTestsets
 
-@time @safetestset "c03_distribution" begin
+@time @safetestset "c04_data" begin
     @time @safetestset "smoke Test" begin
         @test true
     end
