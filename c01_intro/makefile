@@ -1,10 +1,8 @@
 
-all: l0101_helloWorld l0102_comprehension l0103_slow l0104_fast l0105_scope l0106_bubbleSort l0107_polyRoots l0108_multiWayMarkovChainStationary l0110_plotSimple l0111_hailstoneHistogram l0112_graph l0113_imageProcessing l0114_seedExample l0115_piEstimate l0116_lcg l0117_randomWalks l0118_usingR l0120_sentiment l0120_setupPyCall l0120_usingPython l0121_usingC
+all: l0101_helloWorld l0102_comprehension l0103_slow l0104_fast l0105_scope l0106_bubbleSort l0107_polyRoots l0108_multiWayMarkovChainStationary l0110_plotSimple l0111_hailstoneHistogram l0112_graph l0113_imageProcessing l0114_seedExample l0115_piEstimate l0116_lcg l0117_randomWalks
 
 environment:
 	julia setup.jl
-	#pip install -r requirements.txt
-	#python -m nltk.downloader punkt
 
 l0101_helloWorld:
 	julia --project=. l0101_helloWorld.jl
@@ -22,16 +20,14 @@ l0107_polyRoots:
 	julia --project=. l0107_polyRoots.jl
 l0108_multiWayMarkovChainStationary:
 	julia --project=. l0108_multiWayMarkovChainStationary.jl
-l0109_shakespeareWords:
-	julia --project=. l0109_shakespeareWords.jl
 l0110_plotSimple:
-	PYTHON=$(shell which python) julia --project=. l0110_plotSimple.jl
+	julia --project=. l0110_plotSimple.jl
 l0111_hailstoneHistogram:
-	PYTHON=$(shell which python) julia --project=. l0111_hailstoneHistogram.jl
+	julia --project=. l0111_hailstoneHistogram.jl
 l0112_graph:
-	PYTHON=$(shell which python) julia --project=. l0112_graph.jl
+	julia --project=. l0112_graph.jl
 l0113_imageProcessing:
-	PYTHON=$(shell which python) julia --project=. l0113_imageProcessing.jl
+	julia --project=. l0113_imageProcessing.jl
 l0114_seedExample:
 	julia --project=. l0114_seedExample.jl
 graph.gif:
@@ -40,10 +36,3 @@ l0116_lcg:
 	julia --project=. l0116_lcg.jl
 l0117_randomWalks:
 	julia --project=. l0117_randomWalks.jl
-l0118_usingR:
-	julia --project=. l0118_usingR.jl
-l0120_usingPython:
-	PYTHON=$(shell which python) julia --project=. l0120_usingPython.jl
-
-l0121_usingPython:
-	julia --project=. l0121_usingC.jl

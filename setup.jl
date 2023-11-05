@@ -1,6 +1,6 @@
 using Pkg
 path_to_here = @__DIR__
-ENV["PYTHON"] = "/usr/local/bin/python3.10"
+ENV["PYTHON"] = "/usr/bin/python"
 Pkg.add("BSON")
 Pkg.add("Calculus")
 Pkg.add("CategoricalArrays")
@@ -50,7 +50,6 @@ Pkg.add("SpecialFunctions")
 Pkg.add("Statistics")
 Pkg.add("StatsBase")
 Pkg.add("StatsPlots")
-Pkg.add("Sys")
 Pkg.add("TimeSeries")
 Pkg.add("Zygote")
 Pkg.build("PyCall")

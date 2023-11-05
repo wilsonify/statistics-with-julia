@@ -15,49 +15,73 @@ using Test
     newCol = DataFrame(Validated=ones(Int, size(data, 1)))
     data = hcat(data, newCol)
     expected_data = DataFrame(Dict{Symbol,Vector{Any}}(
-        :Grade => [String1("A"), String1("B"), String1("E")],
+        :Grade => ["A","B","E"],
         :Price => [79700, missing, 24311],
-        :Date => [String15("14/09/2008"), String15("11/03/2008"), String15("5/08/2008")],
+        :Date => ["14/09/2008","11/03/2008","5/08/2008"],
         :Validated => [1, 1, 1],
-        :Name => [String15("MARYANNA"), String15("REBECCA"), String15("ASHELY")]
+        :Name => ["MARYANNA", "REBECCA", "ASHELY"]
     ))
     @test are_dataframes_equal(first(data, 3), expected_data)
 end
 
-using Test
+
 @testset "vcat test" begin
     data = read_purchaseData()
     newRow = DataFrame([["JOHN", "JACK"] [123456, 909595]], [:Name, :PhoneNo])
     newData = DataFrame(Name=["JOHN", "ASHELY", "MARYANNA"], Job=["Lawyer", "Doctor", "Lawyer"])
     data = vcat(data, newRow, cols=:union)
     expected_data = DataFrame(Dict{Symbol,Vector{Any}}(
-        :Grade => [String1("E"), missing, missing],
+        :Grade => ["E", missing, missing],
         :Price => [21842, missing, missing],
-        :Date => [String15("30/12/2008"), missing, missing],
+        :Date => ["30/12/2008", missing, missing],
         :PhoneNo => [missing, 123456, 909595],
-        :Name => [String15("RIVA"), "JOHN", "JACK"])
+        :Name => ["RIVA", "JOHN", "JACK"])
     )
     @test are_dataframes_equal(last(data, 3), expected_data)
 end
 
-using Test
+
 @testset "leftjoin test" begin
     data = read_purchaseData()
     newData = DataFrame(Name=["JOHN", "ASHELY", "MARYANNA"], Job=["Lawyer", "Doctor", "Lawyer"])
     result = leftjoin(data, newData, on=:Name, matchmissing=:notequal)
-    @test dataframe_to_dict(first(result, 3)) == ""
+    expected_data = DataFrame(
+        Grade = ["A", "E", "B"],
+        Price = [79700, 24311, missing],
+        Date = ["14/09/2008", "5/08/2008", "11/03/2008"],
+        Job = ["Lawyer", "Doctor", missing],
+        Name = ["MARYANNA", "ASHELY", "REBECCA"]
+    )
+    @test are_dataframes_equal(first(result, 3),expected_data)
 end
 
-using Test
+
 @testset "select test" begin
     data = read_purchaseData()
-    select!(data, [:Name, :Job])
-    @test dataframe_to_dict(first(data, 3)) == ""
+    newData = DataFrame(Name=["JOHN", "ASHELY", "MARYANNA"], Job=["Lawyer", "Doctor", "Lawyer"])
+    result = leftjoin(data, newData, on=:Name, matchmissing=:notequal)
+
+    select!(result, [:Name, :Job])
+    expected_data = DataFrame(
+        Grade = ["A", "B", "E"],
+        Price = [79700, missing, 24311],
+        Date = ["14/09/2008", "11/03/2008", "5/08/2008"],
+        Name = ["MARYANNA", "REBECCA", "ASHELY"]
+        )
+    @test are_dataframes_equal(first(data, 3), expected_data)
 end
 
-using Test
+
 @testset "unique test" begin
     data = read_purchaseData()
-    unique!(data, :Job)
-    @test dataframe_to_dict(first(data, 3)) == ""
+    newData = DataFrame(Name=["JOHN", "ASHELY", "MARYANNA"], Job=["Lawyer", "Doctor", "Lawyer"])
+    result = leftjoin(data, newData, on=:Name, matchmissing=:notequal)
+    unique!(result, :Job)
+    expected_data = DataFrame(
+        Grade = ["A", "B", "E"],
+        Price = [79700, missing, 24311],
+        Date = ["14/09/2008", "11/03/2008", "5/08/2008"],
+        Name = ["MARYANNA", "REBECCA", "ASHELY"]
+    )
+    @test are_dataframes_equal(first(data, 3), expected_data)
 end

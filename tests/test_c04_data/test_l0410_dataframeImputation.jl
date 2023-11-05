@@ -1,10 +1,15 @@
 using DataFrames, CSV, Statistics
+path_to_here = @__DIR__
+include("$path_to_here/t01_are_dataframes_equal.jl")
+include("$path_to_here/t02_are_lists_equal.jl")
+include("$path_to_here/t04_dataframe_to_dict.jl")
+
+path_to_data = abspath("$path_to_here/../../data")
+
+read_purchaseData() = CSV.read("$path_to_data/purchaseData.csv", DataFrame)
+
 function main()
-    path_to_here = @__DIR__
-    path_to_data = abspath("$path_to_here/../data")
-
-    data = CSV.read("$path_to_data/purchaseData.csv", DataFrame)
-
+    data = read_purchaseData()
     rowsKeep = .!(ismissing.(data.Grade) .& ismissing.(data.Price))
     data = data[rowsKeep, :]
 

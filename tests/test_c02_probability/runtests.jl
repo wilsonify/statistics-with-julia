@@ -1,8 +1,8 @@
 using Test
 using SafeTestsets
 
-@time @safetestset "c02_probability" begin
-  @time @safetestset "smoke Test" begin
+
+@time @safetestset "smoke Test" begin
     @test true
   end
 
@@ -59,5 +59,3 @@ using SafeTestsets
       path_to_here = @__DIR__
       include("$path_to_here/test_l0213_montyHall.jl")
   end
-
-end

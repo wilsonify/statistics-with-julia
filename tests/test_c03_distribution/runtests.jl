@@ -1,7 +1,7 @@
 using Test
 using SafeTestsets
 
-@time @safetestset "c03_distribution" begin
+
   @time @safetestset "smoke Test" begin
     @test true
   end
@@ -142,5 +142,3 @@ using SafeTestsets
      path_to_here = @__DIR__
      include("$path_to_here/test_l0334_bivariateNormal.jl")
      end
-
-  end

@@ -1,5 +1,5 @@
 # Random walks and seeds
-using Plots, Random; pyplot()
+using Plots, Random
 
 N = 5000
 function path(rng, alpha)

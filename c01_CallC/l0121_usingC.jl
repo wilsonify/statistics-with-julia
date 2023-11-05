@@ -2,7 +2,10 @@
 # Note that the code to be called must be available as a shared library.
 
 if Sys.iswindows()
-    ccall((:cos, "msvcrt"), Float64, (Float64,), pi )
+    result = ccall((:cos, "msvcrt"), Float64, (Float64,), pi )
 else
-    result = ccall(:cos, Float64, (Float64,), π)
+    result = ccall(:cos, Float64, (Float64,), π)        
 end
+
+println(result)
+

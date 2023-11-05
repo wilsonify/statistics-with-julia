@@ -19,16 +19,16 @@ end
 
 @testset "coalesce test" begin
     data = read_purchaseData()
-    expected_data = AbstractString["A", "B", "E", "QQ"]
+    expected_data = ["A", "B", "E", "QQ"]
     @test are_lists_equal(coalesce.(data.Grade, "QQ")[1:4],expected_data)
 end
 
 @testset "dropmissing test" begin
     data = read_purchaseData()
     expected_data = DataFrame(
-       Name = Union{Missing, String15}["MARYANNA", "ASHELY", "KHADIJAH", "TANJA"],
-       Date = Union{Missing, String15}["14/09/2008","5/08/2008","2/09/2008","1/12/2008"],
-       Grade = Union{Missing, String15}["A", "E", missing,"C"],
+       Name = Union{Missing, String}["MARYANNA", "ASHELY", "KHADIJAH", "TANJA"],
+       Date = Union{Missing, String}["14/09/2008","5/08/2008","2/09/2008","1/12/2008"],
+       Grade = Union{Missing, String}["A", "E", missing,"C"],
        Price = Union{Int64, Missing}[79700, 24311, 38904, 47052],
     )
     @test are_dataframes_equal(first(dropmissing(data, :Price), 4),expected_data)
@@ -36,6 +36,6 @@ end
 
 @testset "findall test" begin
     data = read_purchaseData()
-    expected_data = Union{Missing, Int64}[79700, 24311, 38904, 47052]
+    expected_data = [1,3,5,6]
     @test are_lists_equal(findall(completecases(data))[1:4],expected_data)
 end

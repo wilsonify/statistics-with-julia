@@ -1,5 +1,5 @@
 # Working with images
-using Plots, Images, ImageMagick; pyplot()
+using Plots, Images, ImageMagick
 path_to_here = @__DIR__
 path_to_data=abspath("$path_to_here/../data")
 img = load("$path_to_data/stars.png")

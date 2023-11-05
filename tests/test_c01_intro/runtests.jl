@@ -1,8 +1,7 @@
 using Test
 using SafeTestsets
 
-@time @safetestset "c01_intro" begin
-    @time @safetestset "smoke Test" begin
+@time @safetestset "smoke Test" begin
       @test true
     end
   @time @safetestset "l0101_helloWorld.jl Tests" begin
@@ -82,4 +81,3 @@ using SafeTestsets
     include("$path_to_here/test_l0121_usingC.jl")
   end
 
-end
