@@ -22,6 +22,11 @@ function are_dataframes_equal(df1::DataFrame, df2::DataFrame)
         for row in 1:size(df1, 1)
             if ismissing(df1[row, col]) && ismissing(df2[row, col])
                 continue  # Both are missing, move on to the next element
+            elseif ismissing(df1[row, col]) || ismissing(df2[row, col])
+                println("row $row")
+                println("col $col")
+                println("one is missing")
+                return false  # One is missing while the other is not
             elseif df1[row, col] != df2[row, col]
                 println("row $row")
                 println("col $col")
