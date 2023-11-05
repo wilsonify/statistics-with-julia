@@ -52,7 +52,7 @@ for i in 1:n
     x,y = xVals[i],yVals[i]
     l=line.Line2D([x, x], [y, alpha1 .+ beta1*x], lw=1,color="black")
     r=patch.Rectangle([x,y],-d[i],-d[i],lw=1,ec="black",fc="black",alpha=0.5)
-    ax1.add_artist](l);ax2[:add_artist(r)
+    ax1.add_artist(l);ax2[:add_artist(r)]
 end
 println("L1 line: $(round(alpha1,digits = 2)) + $(round(beta1,digits = 2))x")
 println("L2 line: $(round(alpha2,digits = 2)) + $(round(beta2,digits = 2))x")
