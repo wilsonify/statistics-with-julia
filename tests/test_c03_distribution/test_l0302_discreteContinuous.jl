@@ -17,11 +17,11 @@ end
 @testset "pContinuous test" begin
     xGridC = -1:0.01:1
     result = pContinuous.(xGridC)
-    @test length(result) == 100
+    @test length(result) == 201
 end
 
 @testset "pContinuous test" begin
     xGridC = -1:0.01:1
     result = pContinuous2.(xGridC)
-    @test length(result) == 100
+    @test length(result) == 201
 end
