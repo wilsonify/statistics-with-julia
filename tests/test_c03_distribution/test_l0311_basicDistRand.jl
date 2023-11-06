@@ -1,4 +1,4 @@
-"""
+#=
 Generate Random Data and Estimate Means
 
 This code generates random data samples from two probability distributions,
@@ -9,7 +9,7 @@ and estimates their means.
 It demonstrates how to use Julia's
 Distributions and StatsBase libraries to work with
 probability distributions and estimate sample means.
-"""
+=#
 using Distributions, StatsBase, Random
 
 function main()
