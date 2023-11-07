@@ -1,16 +1,62 @@
-using DataFrames, CSV, Dates, StatsBase, Plots, TimeSeries;
-pyplot();
-function main()
-    path_to_here = @__DIR__
-    path_to_data = abspath("$path_to_here/../data")
+using DataFrames, CSV, Dates, StatsBase, Plots, TimeSeries
 
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../../data")
+
+using Test
+# Define a test for data reading
+@testset "Data Reading Test" begin
     data = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols = true)
-    brisbane = data.Brisbane
+
+    # Check if the data is not empty
+    @test !isempty(data)
+
+    # Check if specific columns exist in the DataFrame (adjust as needed)
+    @test hasproperty(data, :Brisbane)
+    @test hasproperty(data, :Year)
+    @test hasproperty(data, :Month)
+    @test hasproperty(data, :Day)
+end
+
+# Define a test for date conversion
+@testset "Date Conversion Test" begin
+    data = DataFrame(
+        Year = [2022, 2022],
+        Month = [7, 8],
+        Day = [1, 15]
+    )
+
     dates = [
-        Date(Year(data.Year[i]), Month(data.Month[i]), Day(data.Day[i])) for
-        i = 1:nrow(data)
+        Date(Year(data.Year[i]), Month(data.Month[i]), Day(data.Day[i])) for i in 1:nrow(data)
     ]
 
+    # Check if the date conversion produces the expected dates
+    @test dates == [Date(2022, 7, 1), Date(2022, 8, 15)]
+end
+
+# Define a test for data processing
+@testset "Data Processing Test" begin
+    data = DataFrame(
+        Brisbane = [25.0, 28.0, 30.0],
+        Year = [2022, 2022, 2022],
+        Month = [7, 8, 9],
+        Day = [1, 15, 30]
+    )
+
+    window1, window2 = 7, 14
+    d1 = values(moving(mean, TimeArray(data.Day, data.Brisbane), window1))
+    d2 = values(moving(mean, TimeArray(data.Day, data.Brisbane), window2))
+
+    # Check if the temperature moving averages are calculated correctly
+    @test d1 ≈ [missing, missing, missing, missing, missing, missing, 26.5, 27.5, 28.0, 29.0, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing]
+    @test d2 ≈ [missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, 27.25, 28.0, 28.666666666666668, 29.25, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing]
+end
+
+
+function main()
+    data = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols = true)
+    brisbane = data.Brisbane
+    dates = [ Date(Year(data.Year[i]), Month(data.Month[i]), Day(data.Day[i])) for i = 1:nrow(data) ]
     window1, window2 = 7, 14
     d1 = values(moving(mean, TimeArray(dates, brisbane), window1))
     d2 = values(moving(mean, TimeArray(dates, brisbane), window2))
