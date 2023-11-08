@@ -200,7 +200,7 @@ The following server methods must be implemented:
     - *invocation:* PUT /user/{username}
     - *signature:* update_user(req::HTTP.Request, username::String, body::User;) -> Nothing
 """
-module statistics-with-julia-api
+module statistics_with_julia_api
 
 using HTTP
 using URIs
