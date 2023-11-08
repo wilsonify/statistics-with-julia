@@ -5,13 +5,14 @@ path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
 include("$path_to_here/t01_are_dataframes_equal.jl")
 include("$path_to_here/t02_are_lists_equal.jl")
+include("$path_to_here/t04_dataframe_to_dict.jl")
 
 function read_purchaseData1()
     data1 = CSV.read("$path_to_data/purchaseData.csv", DataFrame)
 end
 
 function read_purchaseData2()
-    data2 = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
+    data2 = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols=true)
 end
 
 function maybe_set_first_name(df)
@@ -39,42 +40,35 @@ end
     data1 = maybe_set_first_name(data1)
 
     expected_data = DataFrame(
-        Name = Union{Missing, String15}["YARDEN", "REBECCA", "ASHELY"],
-        Date = Union{Missing, String15}["14/09/2008", "11/03/2008", "5/08/2008"],
-        Grade = Union{Missing, String15}["A", "B", "E"],
-        Price = Union{Int64, Missing}[79700, missing, 24311])
+        Name=["YARDEN", "REBECCA", "ASHELY"],
+        Date=["14/09/2008", "11/03/2008", "5/08/2008"],
+        Grade=["A", "B", "E"],
+        Price=[79700, missing, 24311])
     @test are_dataframes_equal(first(data1, 3), expected_data)
-    end
+end
 
 @testset "maybe_set_first_name Test" begin
     data2 = read_purchaseData2()
     data2 = maybe_set_first_name(data2)
     expected_data = DataFrame(
-        Name = Union{Missing, String15}["YARDEN", "REBECCA", "ASHELY"],
-        Date = Union{Missing, String15}["14/09/2008", "11/03/2008", "5/08/2008"],
-        Grade = Union{Missing, String15}["A", "B", "E"],
-        Price = Union{Int64, Missing}[79700, missing, 24311])
+        Name=["YARDEN", "REBECCA", "ASHELY"],
+        Date=["14/09/2008", "11/03/2008", "5/08/2008"],
+        Grade=["A", "B", "E"],
+        Price=[79700, missing, 24311])
     @test are_dataframes_equal(first(data2, 3), expected_data)
 end
 
 @testset "normalize_price Test" begin
     data1 = read_purchaseData1()
     data1 = normalize_price(data1)
-    expected_data = DataFrame(
-        Name = Union{Missing, String15}["YARDEN", "REBECCA", "ASHELY"],
-        Date = Union{Missing, String15}["14/09/2008", "11/03/2008", "5/08/2008"],
-        Grade = Union{Missing, String15}["A", "B", "E"],
-        Symbol("Price(000's)") = Union{Int64, Missing}[79700, missing, 24311])
-    @test are_dataframes_equal(first(data1, 3),expected_data)
+    expected_data = DataFrame(Dict{Symbol,Array{Any,1}}(:Grade => ["A", "B", "E"],Symbol("Price(000's)") => [79.7, missing, 24.311],:Date => ["14/09/2008", "11/03/2008", "5/08/2008"],:Name => ["MARYANNA", "REBECCA", "ASHELY"]))
+    @test are_dataframes_equal(first(data1, 3), expected_data)    
 end
 
 @testset "recode_grade Test" begin
     data2 = read_purchaseData2()
     data2 = recode_grade(data2)
-    expected_data = DataFrame(
-        Name = Union{Missing, String15}["YARDEN", "REBECCA", "ASHELY"],
-        Date = Union{Missing, String15}["14/09/2008", "11/03/2008", "5/08/2008"],
-        Grade = Union{Missing, String15}["A", "B", "E"],
-        Price = Union{Int64, Missing}[79700, missing, 24311])
-    @test are_dataframes_equal(first(data2, 3),expected_data)
+    expected_data = DataFrame(Dict{Symbol,Array{Any,1}}(:Grade => ["A", "B", "F"],:Price => [79700, missing, 24311],:Date => ["14/09/2008", "11/03/2008", "5/08/2008"],:Name => ["MARYANNA", "REBECCA", "ASHELY"]))
+    @test are_dataframes_equal(first(data2, 3), expected_data)
+    
 end

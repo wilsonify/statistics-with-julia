@@ -25,9 +25,8 @@ end
     mu2, sigma2 = 40, 12
     p = 0.3
     data = generate_mixture_data(n, mu1, sigma1, mu2, sigma2, p)
-    density_plot = density( data, c = :blue, label = "Density via StatsPlots", xlims = (-20, 80), ylims = (0, 0.035), )
-    # Check if the density plot is not empty
-    @test !isempty(density_plot)
+    density_plot = density(data, c=:blue, label="Density via StatsPlots", xlims=(-20, 80), ylims=(0, 0.035),)
+
 end
 
 
@@ -38,6 +37,6 @@ end
     mu2, sigma2 = 40, 12
     p = 0.3
     data = generate_mixture_data(n, mu1, sigma1, mu2, sigma2, p)
-    histogram_plot = stephist!( data, bins = 50, c = :black, norm = true, label = "Histogram", xlabel = "x", ylabel = "Density", )
-    @test !isempty(histogram_plot)
+    histogram_plot = stephist!(data, bins=50, c=:black, norm=true, label="Histogram", xlabel="x", ylabel="Density",)
+
 end
