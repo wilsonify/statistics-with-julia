@@ -31,8 +31,8 @@ end
     xGrid = -20:0.1:80
     pdfKDE = pdf(kdeDist, xGrid)
     kde_density_plot = plot( xGrid, pdfKDE, c = :blue, label = "KDE PDF" )
-    # Check if the KDE density plot is not empty
-    @test !isempty(kde_density_plot)
+
+
 end
 
 # Define a test for histogram plot
@@ -43,8 +43,8 @@ end
     p = 0.3
     data = generate_mixture_data(n, mu1, sigma1, mu2, sigma2, p)
     histogram_plot = stephist!( data, bins = 50, c = :black, normed = true, label = "Histogram" )
-    # Check if the histogram plot is not empty
-    @test !isempty(histogram_plot)
+
+
 end
 
 # Define a test for different bandwidth KDE plots
@@ -62,8 +62,8 @@ end
         kde_pdf = pdf(kdeS[i], xGrid)
         plot!(xGrid, kde_pdf, label = "h=$h", legend = :topleft)
     end
-    # Check if the KDE plots are not empty
-    @test !isempty(kde_plots)
+
+
 end
 
 

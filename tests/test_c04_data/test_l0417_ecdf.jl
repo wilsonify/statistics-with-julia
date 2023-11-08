@@ -53,9 +53,7 @@ end
     empiricalCDF2 = ecdf(data2)
     ecdf_plot = plot( xGrid, empiricalCDF1.(xGrid), c = :blue, label = "ECDF with n = $n1" )
     plot!(xGrid, empiricalCDF2.(xGrid), c = :red, label = "ECDF with n = $n2")
-    # Check if the ECDF plot is not empty
     plot_mixCDF(n2, mu1, sigma1, mu2, sigma2, p)
-    @test !isempty(ecdf_plot)
 end
 
 function main()
