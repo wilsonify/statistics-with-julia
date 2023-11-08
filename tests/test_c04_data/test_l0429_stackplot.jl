@@ -1,13 +1,13 @@
 using DataFrames, CSV, CategoricalArrays, Plots;
-pyplot();
-function main()
-    path_to_here = @__DIR__
-    path_to_data = abspath("$path_to_here/../data")
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../data")
 
-    df = CSV.read("$path_to_data/companyData.csv", DataFrame)
+read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
+
+@testset "stackplot test" begin
+    df = read_companyData()
     mktCap = reshape(df.MarketCap, 5, 3)
     years = levels(df.Year)
-
     areaplot(
         years,
         mktCap,

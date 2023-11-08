@@ -47,7 +47,7 @@ end
     d1 = values(moving(mean, TimeArray(data.Day, data.Brisbane), window1))
     d2 = values(moving(mean, TimeArray(data.Day, data.Brisbane), window2))
 
-    
+
     @test typeof(d1) == 100
     @test typeof(d2) == 100
 end

@@ -1,13 +1,14 @@
 using DataFrames, CSV, StatsPlots;
-pyplot();
-function main()
-    path_to_here = @__DIR__
-    path_to_data = abspath("$path_to_here/../data")
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../../data")
 
-    data1 = CSV.read("$path_to_data/machine1.csv", DataFrame, header = false)[:, 1]
-    data2 = CSV.read("$path_to_data/machine2.csv", DataFrame, header = false)[:, 1]
-    data3 = CSV.read("$path_to_data/machine3.csv", DataFrame, header = false)[:, 1]
+read_machine_data(path) = CSV.read(path, DataFrame, header = false)[:, 1]
 
+using Test
+@testset "read_machine_data test" begin
+    data1 = read_machine_data("$path_to_data/machine1.csv")
+    data2 = read_machine_data("$path_to_data/machine2.csv")
+    data3 = read_machine_data("$path_to_data/machine3.csv")
     boxplot(
         [data1, data2, data3],
         c = [:blue :red :green],

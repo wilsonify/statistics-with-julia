@@ -1,6 +1,7 @@
 using RDatasets, StatsPlots
-function main()
-    iris = dataset("datasets", "iris")
+read_iris_data() = dataset("datasets", "iris")
+@testset "read_iris_data test" begin
+    iris = read_iris_data()
     @df iris violin(
         :Species,
         :SepalLength,

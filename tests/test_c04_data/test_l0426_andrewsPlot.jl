@@ -1,6 +1,6 @@
 using RDatasets, StatsPlots;
-pyplot();
-function main()
+
+@testset "" begin
     iris = dataset("datasets", "iris")
     @df iris andrewsplot(
         :Species,
@@ -8,5 +8,4 @@ function main()
         line = (fill = [:blue :red :green]),
         legend = :topleft,
     )
-
 end

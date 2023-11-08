@@ -1,13 +1,14 @@
 using DataFrames, CSV, Plots;
-pyplot();
-function main()
-    path_to_here = @__DIR__
-    path_to_data = abspath("$path_to_here/../data")
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../../data")
 
-    df = CSV.read("$path_to_data/companyData.csv", DataFrame)
+read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
+
+@testset "read_companyData test" begin
+
+    df = read_companyData()
     dividends = reshape(df[!, :Dividend], (5, :))
     stkPrice = reshape(df[!, :StockPrice], (5, :))
-
     plot(
         dividends,
         stkPrice,

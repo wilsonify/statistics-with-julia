@@ -1,13 +1,11 @@
-using DataFrames, CSV, CategoricalArrays, StatsPlots;
-pyplot();
-function main()
-    path_to_here = @__DIR__
-    path_to_data = abspath("$path_to_here/../data")
-
-    df = CSV.read("$path_to_data/companyData.csv", DataFrame)
+using DataFrames, CSV, CategoricalArrays, StatsPlots
+path_to_here = @__DIR__
+path_to_data = abspath("$path_to_here/../data")
+read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
+@testset "" begin
+    df = read_companyData()
     years = levels(df.Year)
     data = reshape(df.MarketCap, 5, 3)
-
     p1 = groupedbar(years, data, bar_position = :stack)
     p2 = groupedbar(years, data, bar_position = :dodge)
     plot(

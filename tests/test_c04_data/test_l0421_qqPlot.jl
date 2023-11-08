@@ -1,5 +1,4 @@
 using Random, Distributions, StatsPlots, Plots, Measures;
-pyplot();
 
 function generate_beta_data(n,a,b)
     dist = Beta(a, b)
