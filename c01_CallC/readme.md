@@ -1,3 +1,4 @@
+
 Julia has environments built into its package manager|
 
 1. Enter the REPL
