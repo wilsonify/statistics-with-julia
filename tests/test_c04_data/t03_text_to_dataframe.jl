@@ -1,9 +1,9 @@
 using CSV, DataFrames
+using StringLiterals: @s_str
 
 function text_to_dataframe(text)
     # Split the text into lines
     lines = split(text, "\n")
-
     # Initialize an empty dictionary to store column data
     data_dict = Dict{String, Any}()
     data_dict["Row"] = Int[]
@@ -28,25 +28,11 @@ function text_to_dataframe(text)
     return df
 end
 
-# Sample text
-text = """
-1 │ MARYANNA   14/09/2008  A         79700
-2 │ ASHELY     5/08/2008   E         24311
-3 │ KHADIJAH   2/09/2008   missing   38904
-4 │ TANJA      1/12/2008   C         47052
-"""
-
-# Convert text to a DataFrame
-df = text_to_dataframe(text)
-
-# Display the DataFrame
-println(df)
 
 
-using CSV, DataFrames
-using StringLiterals: @s_str
 
-function text_to_dataframe(text)
+
+function text_to_dataframe2(text)
     # Split the text into lines
     lines = split(text, "\n")
 
@@ -89,19 +75,35 @@ function text_to_dataframe(text)
     return df
 end
 
-function main()
+@testset "text_to_dataframe test" begin
+    text = """
+1 │ MARYANNA   14/09/2008  A         79700
+2 │ ASHELY     5/08/2008   E         24311
+3 │ KHADIJAH   2/09/2008   missing   38904
+4 │ TANJA      1/12/2008   C         47052
+"""
+
+# Convert text to a DataFrame
+df = text_to_dataframe(text)
+
+# Display the DataFrame
+println(df)
+end
+
+@testset "text_to_dataframe2 test" begin
     # Sample text
     text = @s_str """
-    Row │ Name       Date        Grade     Price
-         │ MARYANNA   14/09/2008  A         79700
-         │ ASHELY     5/08/2008   E         24311
-         │ KHADIJAH   2/09/2008   missing   38904
-         │ TANJA      1/12/2008   C         47052
+Row │ Name       Date        Grade     Price
+    │ MARYANNA   14/09/2008  A         79700
+    │ ASHELY     5/08/2008   E         24311
+    │ KHADIJAH   2/09/2008   missing   38904
+    │ TANJA      1/12/2008   C         47052
 """
 
     # Convert text to a DataFrame
-    df = text_to_dataframe(text)
+    df = text_to_dataframe2(text)
 
     # Display the DataFrame
-    println(df)
+    @test df == ""
 end
+
