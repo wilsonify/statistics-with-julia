@@ -25,7 +25,6 @@ function are_lists_equal(list1, list2)
     return true
 end
 
-
 function is_all_approx_list(list1, list2, abs)
     # Check if the Lists have the same number elements
     if length(list1) != length(list2)

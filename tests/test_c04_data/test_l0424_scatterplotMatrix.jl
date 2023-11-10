@@ -4,7 +4,7 @@ read_iris_data() = dataset("datasets", "iris")
 
 function insertSpace(name)
     i = findlast(isuppercase, name)
-    name[1:i - 1] * " " * name[i:end]
+    name[1:(i - 1)] * " " * name[i:end]
     return name
 end
 @testset "read_iris_data test" begin
@@ -32,15 +32,12 @@ end
     speciesFreqs = [sn => sum(data.Species .== sn) for sn in speciesNames]
     println("Frequency per species:\n\t", speciesFreqs)
     default(msw = 0, ms = 3)
-    scatters = [ scatter(
-            data[:, i],
-            data[:, j],
-            c = [:blue :red :green],
-            group = data.Species,
-            xlabel = featureNames[i],
-            ylabel = featureNames[j],
-            legend = i == 1 && j == 1,
-        ) for i = 1:4, j = 1:4
-    ]
+    scatters = [scatter(data[:, i],
+        data[:, j],
+        c = [:blue :red :green],
+        group = data.Species,
+        xlabel = featureNames[i],
+        ylabel = featureNames[j],
+        legend = i == 1 && j == 1) for i in 1:4, j in 1:4]
     plot(scatters..., size = (1200, 800), margin = 4mm)
 end

@@ -24,7 +24,7 @@ end
 
 @testset "" begin
     x = [1]
-    @test typeof(x) == Array{Int64,1}
+    @test typeof(x) == Array{Int64, 1}
     @test isimmutable(x) == false
 end
 

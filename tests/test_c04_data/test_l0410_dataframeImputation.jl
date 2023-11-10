@@ -20,7 +20,7 @@ function summarize_purchaseData(data)
     # by function was removed from DataFrames.jl.
     # Use `combine(groupby(), )` or `combine(f, groupby())` instead.
     # grPr = by(dropmissing(data), :Grade, :Price=>x -> AvgPrice = round(mean(x), digits=-3))
-    grPr = combine( groupby(dropmissing(data), :Grade), :Price => x -> round(mean(x), digits = -3), )
+    grPr = combine(groupby(dropmissing(data), :Grade), :Price => x -> round(mean(x), digits = -3))
     return grPr
 end
 
@@ -28,7 +28,7 @@ function enrich_data_with_summary(data)
     grPr = summarize_purchaseData(data)
     d = Dict(grPr[:, 1] .=> grPr[:, 2])
     nearIndx(v, x) = findmin(abs.(v .- x))[2]
-    for i = 1:nrow(data)
+    for i in 1:nrow(data)
         if ismissing(data[i, :Price])
             data[i, :Price] = d[data[i, :Grade]]
         end
@@ -43,8 +43,11 @@ using Test, Random
 @testset "preprocess_purchaseData test" begin
     df = read_purchaseData()
     df = preprocess_purchaseData(df)
-    expected_data = DataFrame(Dict{Symbol,Array{Any,1}}(:Grade => ["A", "B", "E", missing, "C"],:Price => [79700, missing, 24311, 38904, 47052],:Date => ["14/09/2008", "11/03/2008", "5/08/2008", "2/09/2008", "1/12/2008"],:Name => ["MARYANNA", "REBECCA", "ASHELY", "KHADIJAH", "TANJA"]))
-    @test are_dataframes_equal(first(df, 5),expected_data)
+    expected_data = DataFrame(Dict{Symbol, Array{Any, 1}}(:Grade => ["A", "B", "E", missing, "C"],
+        :Price => [79700, missing, 24311, 38904, 47052],
+        :Date => ["14/09/2008", "11/03/2008", "5/08/2008", "2/09/2008", "1/12/2008"],
+        :Name => ["MARYANNA", "REBECCA", "ASHELY", "KHADIJAH", "TANJA"]))
+    @test are_dataframes_equal(first(df, 5), expected_data)
 end
 
 @testset "summarize_purchaseData test" begin
@@ -52,7 +55,8 @@ end
     df = read_purchaseData()
     df = preprocess_purchaseData(df)
     grouped_df = summarize_purchaseData(df)
-    expected_data = DataFrame(Dict{Symbol,Array{Any,1}}(:Grade => ["A", "E", "C", "D", "B"],:Price_function => [76000.0, 21000.0, 45000.0, 35000.0, 60000.0]))
+    expected_data = DataFrame(Dict{Symbol, Array{Any, 1}}(:Grade => ["A", "E", "C", "D", "B"],
+        :Price_function => [76000.0, 21000.0, 45000.0, 35000.0, 60000.0]))
     @test dataframe_to_dict(first(grouped_df, 5)) == dataframe_to_dict(expected_data)
 end
 
@@ -61,9 +65,9 @@ end
     df = read_purchaseData()
     df = preprocess_purchaseData(df)
     df = enrich_data_with_summary(df)
-    expected_data = DataFrame(Dict{Symbol,Array{Any,1}}(:Grade => ["A", "B", "E", "D", "C"],:Price => [79700, 60000, 24311, 38904, 47052],:Date => ["14/09/2008", "11/03/2008", "5/08/2008", "2/09/2008", "1/12/2008"],:Name => ["MARYANNA", "REBECCA", "ASHELY", "KHADIJAH", "TANJA"]))
+    expected_data = DataFrame(Dict{Symbol, Array{Any, 1}}(:Grade => ["A", "B", "E", "D", "C"],
+        :Price => [79700, 60000, 24311, 38904, 47052],
+        :Date => ["14/09/2008", "11/03/2008", "5/08/2008", "2/09/2008", "1/12/2008"],
+        :Name => ["MARYANNA", "REBECCA", "ASHELY", "KHADIJAH", "TANJA"]))
     @test dataframe_to_dict(first(df, 5)) == dataframe_to_dict(expected_data)
 end
-
-
-

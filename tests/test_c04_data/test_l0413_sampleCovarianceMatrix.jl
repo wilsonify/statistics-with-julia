@@ -9,7 +9,7 @@ path_to_data = abspath("$path_to_here/../../data")
 read_3featureData() = CSV.read("$path_to_data/3featureData.csv", DataFrame, header = false)
 
 function df_to_array_3featureData(data)
-    return convert(Array{Float64,2}, Matrix(data))
+    return convert(Array{Float64, 2}, Matrix(data))
 end
 
 function sample_mean_vector1(X)
@@ -18,7 +18,7 @@ function sample_mean_vector1(X)
 end
 function sample_mean_vector2(X)
     n, p = size(X)
-    return [mean(X[:, i]) for i = 1:p]
+    return [mean(X[:, i]) for i in 1:p]
 end
 
 function sample_mean_vector3(X)
@@ -29,7 +29,7 @@ end
 function de_mean(X)
     n, p = size(X)
     return (I - ones(n, n) / n) * X
-    end
+end
 
 function sample_covariance_matrix1(X)
     n, p = size(X)
@@ -50,43 +50,41 @@ end
 
 function sample_covariance_matrix3(X)
     n, p = size(X)
-    return [cov(X[:, i], X[:, j]) for i = 1:p, j = 1:p]
+    return [cov(X[:, i], X[:, j]) for i in 1:p, j in 1:p]
 end
 
 function sample_covariance_matrix4(X)
     n, p = size(X)
-    return [cor(X[:, i], X[:, j]) * std(X[:, i]) * std(X[:, j]) for i = 1:p, j = 1:p]
+    return [cor(X[:, i], X[:, j]) * std(X[:, i]) * std(X[:, j]) for i in 1:p, j in 1:p]
 end
-
 
 function sample_covariance_matrix5(X)
     return cov(X)
 end
 
-
 function Z_scores1(X)
     n, p = size(X)
-    return [(X[i, j] - mean(X[:, j])) / std(X[:, j]) for i in 1:n, j in 1:p ]
+    return [(X[i, j] - mean(X[:, j])) / std(X[:, j]) for i in 1:n, j in 1:p]
 end
 
 function Z_scores2(X)
     n, p = size(X)
-    return hcat([zscore(X[:, j]) for j = 1:p]...)
+    return hcat([zscore(X[:, j]) for j in 1:p]...)
 end
 
 function sample_correlation_matrix1(X)
     n, p = size(X)
     covA = sample_covariance_matrix1(X)
-    return covA ./[std(X[:, i]) * std(X[:, j]) for i = 1:p, j = 1:p]
+    return covA ./ [std(X[:, i]) * std(X[:, j]) for i in 1:p, j in 1:p]
 end
 
 function sample_correlation_matrix2(X)
     covA = sample_covariance_matrix1(X)
-    return covA ./(std(X, dims=1)' * std(X, dims=1))
+    return covA ./ (std(X, dims = 1)' * std(X, dims = 1))
 end
 function sample_correlation_matrix3(X)
     n, p = size(X)
-    return [cor(X[:, i], X[:, j]) for i = 1:p, j = 1:p]
+    return [cor(X[:, i], X[:, j]) for i in 1:p, j in 1:p]
 end
 
 function sample_correlation_matrix4(X)
@@ -157,7 +155,6 @@ function main()
     @show(corF)
 end
 
-
 using Test, Random
 
 @testset "read_3featureData" begin
@@ -200,7 +197,6 @@ end
     @test result == [1.06 2.09 3.5]
 end
 
-
 @testset "sample_covariance_matrix1" begin
     Random.seed!(0)
     df = read_3featureData()
@@ -209,7 +205,6 @@ end
     result = round.(result, digits = 2)
     expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.71; 0.44 -0.71 8.03]
     @test result == expected_result
-
 end
 
 @testset "sample_covariance_matrix2" begin
@@ -219,7 +214,7 @@ end
     result = sample_covariance_matrix2(x)
     result = round.(result, digits = 2)
     expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.72; 0.44 -0.72 8.03]
-    @test result==expected_result
+    @test result == expected_result
 end
 
 @testset "sample_covariance_matrix3" begin
@@ -229,7 +224,7 @@ end
     result = sample_covariance_matrix3(x)
     result = round.(result, digits = 2)
     expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.72; 0.44 -0.72 8.03]
-    @test result==expected_result
+    @test result == expected_result
 end
 
 @testset "sample_covariance_matrix4" begin
@@ -239,7 +234,7 @@ end
     result = sample_covariance_matrix4(x)
     result = round.(result, digits = 2)
     expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.72; 0.44 -0.72 8.03]
-    @test result==expected_result
+    @test result == expected_result
 end
 
 @testset "sample_covariance_matrix5" begin
@@ -260,7 +255,13 @@ end
     x = df_to_array_3featureData(df)
     result = Z_scores1(x)
     result = round.(result, digits = 2)
-    expected_result = [-0.45 0.04 -0.81; 0.12 -0.53 -0.35; 1.86 -0.53 -0.04; -0.74 0.61 -0.42; 0.7 -1.39 2.08; -1.03 1.76 -0.78; -0.45 0.04 0.32]
+    expected_result = [-0.45 0.04 -0.81;
+        0.12 -0.53 -0.35;
+        1.86 -0.53 -0.04;
+        -0.74 0.61 -0.42;
+        0.7 -1.39 2.08;
+        -1.03 1.76 -0.78;
+        -0.45 0.04 0.32]
     println("result = $result")
     @test result == expected_result
 end
@@ -270,7 +271,13 @@ end
     df = read_3featureData()
     x = df_to_array_3featureData(df)
     result = Z_scores2(x)
-    expected_result = [-0.45 0.04 -0.81; 0.12 -0.53 -0.35; 1.86 -0.53 -0.04; -0.74 0.61 -0.42; 0.7 -1.39 2.08; -1.03 1.76 -0.78; -0.45 0.04 0.32]
+    expected_result = [-0.45 0.04 -0.81;
+        0.12 -0.53 -0.35;
+        1.86 -0.53 -0.04;
+        -0.74 0.61 -0.42;
+        0.7 -1.39 2.08;
+        -1.03 1.76 -0.78;
+        -0.45 0.04 0.32]
     result == expected_result
 end
 
@@ -290,7 +297,7 @@ end
     x = df_to_array_3featureData(df)
     result = sample_correlation_matrix2(x)
     result = round.(result, digits = 2)
-    expected_result =  [1.0 -0.73 0.45; -0.73 1.0 -0.72; 0.45 -0.72 1.0]
+    expected_result = [1.0 -0.73 0.45; -0.73 1.0 -0.72; 0.45 -0.72 1.0]
     @test result == expected_result
 end
 
@@ -334,10 +341,6 @@ end
     @test result == expected_result
 end
 
-
-
 @testset "end-to-end" begin
     main()
 end
-
-

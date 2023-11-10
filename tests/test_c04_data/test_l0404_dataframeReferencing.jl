@@ -16,21 +16,17 @@ path_to_data = abspath("$path_to_here/../../data")
 include("$path_to_here/t01_are_dataframes_equal.jl")
 include("$path_to_here/t02_are_lists_equal.jl")
 
-reference_data = DataFrame(
-    Name=["MARYANNA", "REBECCA", "KHADIJAH"],
-    Date=["14/09/2008", "11/03/2008", "2/09/2008"],
-    Grade=["A", "B", missing],
-    Price=[79700, missing, 38904]
-)
+reference_data = DataFrame(Name = ["MARYANNA", "REBECCA", "KHADIJAH"],
+    Date = ["14/09/2008", "11/03/2008", "2/09/2008"],
+    Grade = ["A", "B", missing],
+    Price = [79700, missing, 38904])
 
 reference_names_list = ["SAMMIE", missing, "STACEY"]
 
-reference_names = DataFrame(
-    Name=reference_names_list
-)
+reference_names = DataFrame(Name = reference_names_list)
 
 @testset "end-to-end" begin
-    data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols=true)
+    data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
     @test data[1, 3] == "A"
     @test data[1, :Grade] == "A"
     @test data.Grade[1] == "A"

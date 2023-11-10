@@ -13,8 +13,8 @@ function main()
 
     # Create a sample DataFrame
     df = DataFrame(Name = ["Mary", "John", "Alice"],
-                   Age = [25, 30, 22],
-                   Score = [95, 85, 90])
+        Age = [25, 30, 22],
+        Score = [95, 85, 90])
 
     # Convert the DataFrame to a dictionary of lists
     dict = dataframe_to_dict(df)

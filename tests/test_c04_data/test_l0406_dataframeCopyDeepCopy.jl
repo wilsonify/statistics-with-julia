@@ -8,7 +8,6 @@ function read_purchaseData()
     return df
 end
 
-
 @testset "reference test" begin
     data1 = read_purchaseData()
     @test data1.Name[1] == "MARYANNA"

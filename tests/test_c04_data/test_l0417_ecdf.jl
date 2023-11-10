@@ -5,7 +5,7 @@ function generate_mixture_data(n, mu1, sigma1, mu2, sigma2, p)
     dist1 = Normal(mu1, sigma1)
     dist2 = Normal(mu2, sigma2)
     mixRv() = (rand() <= p) ? rand(dist1) : rand(dist2)
-    data = [mixRv() for _ = 1:n]
+    data = [mixRv() for _ in 1:n]
     return data
 end
 
@@ -14,10 +14,16 @@ function plot_mixCDF(n, mu1, sigma1, mu2, sigma2, p)
     dist1 = Normal(mu1, sigma1)
     dist2 = Normal(mu2, sigma2)
     mixCDF(x) = p * cdf(dist1, x) + (1 - p) * cdf(dist2, x)
-    plot!( xGrid, mixCDF.(xGrid), c = :black, label = "Underlying CDF", xlims = (-10, 80), ylims = (0, 1), xlabel = "x", ylabel = "Probability", legend = :topleft, )
+    plot!(xGrid,
+        mixCDF.(xGrid),
+        c = :black,
+        label = "Underlying CDF",
+        xlims = (-10, 80),
+        ylims = (0, 1),
+        xlabel = "x",
+        ylabel = "Probability",
+        legend = :topleft)
 end
-
-
 
 using Test
 @testset "generate_mixture_data Test" begin
@@ -26,7 +32,7 @@ using Test
     mu2, sigma2 = 40, 12
     p = 0.3
     n1 = 30
-    n2= 100
+    n2 = 100
 
     data1 = generate_mixture_data(n1, mu1, sigma1, mu2, sigma2, p)
     @test length(data1) == n1
@@ -44,14 +50,14 @@ end
     mu2, sigma2 = 40, 12
     p = 0.3
     n1 = 30
-    n2= 100
+    n2 = 100
     xGrid = -10:0.1:80
 
     data1 = generate_mixture_data(n1, mu1, sigma1, mu2, sigma2, p)
     data2 = generate_mixture_data(n2, mu1, sigma1, mu2, sigma2, p)
     empiricalCDF1 = ecdf(data1)
     empiricalCDF2 = ecdf(data2)
-    ecdf_plot = plot( xGrid, empiricalCDF1.(xGrid), c = :blue, label = "ECDF with n = $n1" )
+    ecdf_plot = plot(xGrid, empiricalCDF1.(xGrid), c = :blue, label = "ECDF with n = $n1")
     plot!(xGrid, empiricalCDF2.(xGrid), c = :red, label = "ECDF with n = $n2")
     plot_mixCDF(n2, mu1, sigma1, mu2, sigma2, p)
 end
@@ -65,13 +71,21 @@ function main()
     mixRv() = (rand() <= p) ? rand(dist1) : rand(dist2)
     mixCDF(x) = p * cdf(dist1, x) + (1 - p) * cdf(dist2, x)
     n = [30, 100]
-    data1 = [mixRv() for _ = 1:n[1]]
-    data2 = [mixRv() for _ = 1:n[2]]
+    data1 = [mixRv() for _ in 1:n[1]]
+    data2 = [mixRv() for _ in 1:n[2]]
 
     empiricalCDF1 = ecdf(data1)
     empiricalCDF2 = ecdf(data2)
     xGrid = -10:0.1:80
     plot(xGrid, empiricalCDF1.(xGrid), c = :blue, label = "ECDF with n = $(n[1])")
     plot!(xGrid, empiricalCDF2.(xGrid), c = :red, label = "ECDF with n = $(n[2])")
-    plot!( xGrid,mixCDF.(xGrid),c = :black,label = "Underlying CDF",xlims = (-10, 80),ylims = (0, 1),xlabel = "x",ylabel = "Probability",legend = :topleft)
+    plot!(xGrid,
+        mixCDF.(xGrid),
+        c = :black,
+        label = "Underlying CDF",
+        xlims = (-10, 80),
+        ylims = (0, 1),
+        xlabel = "x",
+        ylabel = "Probability",
+        legend = :topleft)
 end

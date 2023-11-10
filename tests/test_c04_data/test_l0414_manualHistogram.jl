@@ -7,7 +7,7 @@ end
 
 function create_bins(data::Vector{Float64}, delta::Float64)
     l, m = minimum(data), maximum(data)
-    bins = [(x, x + delta) for x = l:delta:m - delta]
+    bins = [(x, x + delta) for x in l:delta:(m - delta)]
     if last(bins)[2] < m
         push!(bins, (last(bins)[2], m))
     end
@@ -19,10 +19,9 @@ function compute_histogram(data::Vector{Float64}, bins::Vector{Tuple{Float64, Fl
     inBin(x, j) = first(bins[j]) <= x && x < last(bins[j])
     sizeBin(j) = last(bins[j]) - first(bins[j])
     f(j) = sum([inBin(x, j) for x in data]) / length(data)
-    h(x) = sum([f(j) / sizeBin(j) * inBin(x, j) for j = 1:L])
+    h(x) = sum([f(j) / sizeBin(j) * inBin(x, j) for j in 1:L])
     return h
 end
-
 
 function main()
     n = 2000
@@ -33,7 +32,6 @@ function main()
 end
 
 using Test
-
 
 @testset "generate_data test" begin
     n = 2000
@@ -65,9 +63,27 @@ function plot_histogram(data)
     bins = create_bins(data, delta)
     h = compute_histogram(data, bins)
     L = length(bins)
-    histogram( data, normed = true, bins = L, label = "Built-in histogram", c = :blue, la = 0, alpha = 0.6, )
-    plot!( xGrid, h.(xGrid), lw = 3, c = :red, label = "Manual histogram", xlabel = "x", ylabel = "Frequency", )
-    plot!( xGrid, pdf.(Normal(), xGrid), label = "True PDF", lw = 3, c = :green, xlims = (-4, 4), ylims = (0, 0.5), )
+    histogram(data,
+        normed = true,
+        bins = L,
+        label = "Built-in histogram",
+        c = :blue,
+        la = 0,
+        alpha = 0.6)
+    plot!(xGrid,
+        h.(xGrid),
+        lw = 3,
+        c = :red,
+        label = "Manual histogram",
+        xlabel = "x",
+        ylabel = "Frequency")
+    plot!(xGrid,
+        pdf.(Normal(), xGrid),
+        label = "True PDF",
+        lw = 3,
+        c = :green,
+        xlims = (-4, 4),
+        ylims = (0, 0.5))
 end
 
 @testset "plot_histogram test" begin

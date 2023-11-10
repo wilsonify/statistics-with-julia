@@ -9,11 +9,9 @@ read_temperature_Data() = CSV.read("$path_to_data/temperatures.csv", DataFrame)
     N = 10^5
     realData = read_temperature_Data()
     biNorm = MvNormal(meanVect, covMat)
-    default(
-        c = cgrad([:blue, :red]),
+    default(c = cgrad([:blue, :red]),
         xlabel = "Brisbane Temperature",
-        ylabel = "Gold Coast Temperature",
-    )
+        ylabel = "Gold Coast Temperature")
     p1 = marginalhist(realData.Brisbane, realData.GoldCoast, bins = 10:45)
     syntheticMatrix = rand(MvNormal(meanVect, covMat), N)
     p2 = marginalhist(syntheticMatrix[1, :], syntheticMatrix[2, :], bins = 10:0.5:45)

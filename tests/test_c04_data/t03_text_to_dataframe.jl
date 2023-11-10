@@ -28,10 +28,6 @@ function text_to_dataframe(text)
     return df
 end
 
-
-
-
-
 function text_to_dataframe2(text)
     # Split the text into lines
     lines = split(text, "\n")
@@ -83,11 +79,11 @@ end
 4 │ TANJA      1/12/2008   C         47052
 """
 
-# Convert text to a DataFrame
-df = text_to_dataframe(text)
+    # Convert text to a DataFrame
+    df = text_to_dataframe(text)
 
-# Display the DataFrame
-println(df)
+    # Display the DataFrame
+    println(df)
 end
 
 @testset "text_to_dataframe2 test" begin
@@ -106,4 +102,3 @@ Row │ Name       Date        Grade     Price
     # Display the DataFrame
     @test df == ""
 end
-

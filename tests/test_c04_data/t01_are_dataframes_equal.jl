@@ -39,8 +39,7 @@ function are_dataframes_equal(df1::DataFrame, df2::DataFrame)
     return true
 end
 
-
-function are_dataframes_approx(df1::DataFrame, df2::DataFrame,abs)
+function are_dataframes_approx(df1::DataFrame, df2::DataFrame, abs)
     # Check if the DataFrames have the same number of rows and columns
     if size(df1) != size(df2)
         println("Size $(size(df1)) != $(size(df2))")
@@ -70,7 +69,7 @@ function are_dataframes_approx(df1::DataFrame, df2::DataFrame,abs)
                 println("one is missing")
                 return false  # One is missing while the other is not
 
-            elseif isapprox(df1[row, col],df2[row, col],abs=abs)
+            elseif isapprox(df1[row, col], df2[row, col], abs = abs)
                 println("row $row")
                 println("col $col")
                 println("value $(df1[row, col]) != $(df2[row, col])")

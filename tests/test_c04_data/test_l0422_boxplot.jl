@@ -9,12 +9,10 @@ using Test
     data1 = read_machine_data("$path_to_data/machine1.csv")
     data2 = read_machine_data("$path_to_data/machine2.csv")
     data3 = read_machine_data("$path_to_data/machine3.csv")
-    boxplot(
-        [data1, data2, data3],
+    boxplot([data1, data2, data3],
         c = [:blue :red :green],
         label = "",
         xticks = ([1:1:3;], ["1", "2", "3"]),
         xlabel = "Machine type",
-        ylabel = "Pipe Diameter (mm)",
-    )
+        ylabel = "Pipe Diameter (mm)")
 end

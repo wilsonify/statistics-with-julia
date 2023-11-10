@@ -8,8 +8,7 @@ read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
     df = read_companyData()
     mktCap = reshape(df.MarketCap, 5, 3)
     years = levels(df.Year)
-    areaplot(
-        years,
+    areaplot(years,
         mktCap,
         c = [:blue :red :green],
         labels = ["A" "B" "C"],
@@ -17,6 +16,5 @@ read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
         ylims = (0, 6.5),
         legend = :topleft,
         xlabel = "Years",
-        ylabel = "MarketCap",
-    )
+        ylabel = "MarketCap")
 end

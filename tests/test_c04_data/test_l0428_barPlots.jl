@@ -8,8 +8,7 @@ read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
     data = reshape(df.MarketCap, 5, 3)
     p1 = groupedbar(years, data, bar_position = :stack)
     p2 = groupedbar(years, data, bar_position = :dodge)
-    plot(
-        p1,
+    plot(p1,
         p2,
         bar_width = 0.7,
         fill = [:blue :red :green],
@@ -18,7 +17,5 @@ read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
         xlabel = "Year",
         ylabel = "Market Cap (MM)",
         legend = :topleft,
-        size = (800, 400),
-    )
-
+        size = (800, 400))
 end

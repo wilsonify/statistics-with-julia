@@ -1,7 +1,6 @@
 using Test
 using SafeTestsets
 
-
 @time @safetestset "smoke Test" begin
     @test true
 end
@@ -133,5 +132,3 @@ end
     path_to_here = @__DIR__
     include("$path_to_here/test_l0431_directorySearch.jl")
 end
-
-

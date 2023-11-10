@@ -1,137 +1,87 @@
 using Test
 using SafeTestsets
 
-
 @time @safetestset "smoke Test" begin
     @test true
 end
-@time @safetestset "test_l0401_callByValueByReference.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0401_callByValueByReference.jl")
-end
-@time @safetestset "test_l0402_shallowDeepCopy.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0402_shallowDeepCopy.jl")
-end
-@time @safetestset "test_l0403_dataframeInspection.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0403_dataframeInspection.jl")
-end
-@time @safetestset "test_l0404_dataframeReferencing.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0404_dataframeReferencing.jl")
-end
-@time @safetestset "test_l0405_dataframeEditing.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0405_dataframeEditing.jl")
-end
-@time @safetestset "test_l0406_dataframeCopyDeepCopy.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0406_dataframeCopyDeepCopy.jl")
-end
-@time @safetestset "test_l0407_dataframeMissing.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0407_dataframeMissing.jl")
-end
-@time @safetestset "test_l0408_dataframeReshape.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0408_dataframeReshape.jl")
-end
-@time @safetestset "test_l0409_dataframeOperations.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0409_dataframeOperations.jl")
-end
-@time @safetestset "test_l0410_dataframeImputation.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0410_dataframeImputation.jl")
-end
-@time @safetestset "test_l0411_summarizingData.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0411_summarizingData.jl")
-end
-@time @safetestset "test_l0412_meanVectCovMatrixSummary.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0412_meanVectCovMatrixSummary.jl")
-end
-@time @safetestset "test_l0413_sampleCovarianceMatrix.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0413_sampleCovarianceMatrix.jl")
-end
-@time @safetestset "test_l0414_manualHistogram.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0414_manualHistogram.jl")
-end
-@time @safetestset "test_l0415_statsPlotsDensity.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0415_statsPlotsDensity.jl")
-end
-@time @safetestset "test_l0416_KDE.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0416_KDE.jl")
-end
-@time @safetestset "test_l0417_ecdf.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0417_ecdf.jl")
-end
-@time @safetestset "test_l0418_normalProbabilityPlot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0418_normalProbabilityPlot.jl")
-end
-@time @safetestset "test_l0419_multipleSimplePlot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0419_multipleSimplePlot.jl")
-end
-@time @safetestset "test_l0420_radialPlot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0420_radialPlot.jl")
-end
-@time @safetestset "test_l0421_qqPlot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0421_qqPlot.jl")
-end
-@time @safetestset "test_l0422_boxplot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0422_boxplot.jl")
-end
-@time @safetestset "test_l0423_violinPlot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0423_violinPlot.jl")
-end
-@time @safetestset "test_l0424_scatterplot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0424_scatterplot.jl")
-end
-@time @safetestset "test_l0424_scatterplotMatrix.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0424_scatterplotMatrix.jl")
-end
-@time @safetestset "test_l0425_marginalHists.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0425_marginalHists.jl")
-end
-@time @safetestset "test_l0426_andrewsPlot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0426_andrewsPlot.jl")
-end
-@time @safetestset "test_l0427_pieChart.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0427_pieChart.jl")
-end
-@time @safetestset "test_l0428_barPlots.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0428_barPlots.jl")
-end
-@time @safetestset "test_l0429_stackplot.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0429_stackplot.jl")
-end
-@time @safetestset "test_l0430_lineSearch.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0430_lineSearch.jl")
-end
-@time @safetestset "test_l0431_directorySearch.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0431_directorySearch.jl")
-end
 
-
+@time @safetestset "test_l0501_statisticsOfARandomSample.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0501_statisticsOfARandomSample.jl ")
+end
+@time @safetestset "test_l0502_friendOfANormalDistribution.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0502_friendOfANormalDistribution.jl ")
+end
+@time @safetestset "test_l0503_meanVarIndependence.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0503_meanVarIndependence.jl ")
+end
+@time @safetestset "test_l0504_tDistribution.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0504_tDistribution.jl ")
+end
+@time @safetestset "test_l0505_fDistribution.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0505_fDistribution.jl ")
+end
+@time @safetestset "test_l0506_centralLimitTheorem.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0506_centralLimitTheorem.jl ")
+end
+@time @safetestset "test_l0507_stdVarBiasEstimate.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0507_stdVarBiasEstimate.jl ")
+end
+@time @safetestset "test_l0508_parametersNumerical.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0508_parametersNumerical.jl ")
+end
+@time @safetestset "test_l0509_gammaLikelihood.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0509_gammaLikelihood.jl ")
+end
+@time @safetestset "test_l0510_mleGamma.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0510_mleGamma.jl ")
+end
+@time @safetestset "test_l0511_mm_vs_mle.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0511_mm_vs_mle.jl ")
+end
+@time @safetestset "test_l0512_confidenceIntervalConcept.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0512_confidenceIntervalConcept.jl ")
+end
+@time @safetestset "test_l0513_ciCoverage.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0513_ciCoverage.jl ")
+end
+@time @safetestset "test_l0514_teststatPvalRejectregion.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0514_teststatPvalRejectregion.jl ")
+end
+@time @safetestset "test_l0515_simpleHypothesisTest.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0515_simpleHypothesisTest.jl ")
+end
+@time @safetestset "test_l0516_receiverOperatingCurve.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0516_receiverOperatingCurve.jl ")
+end
+@time @safetestset "test_l0517_randomizationTest.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0517_randomizationTest.jl ")
+end
+@time @safetestset "test_l0518_bayesUnivariate.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0518_bayesUnivariate.jl ")
+end
+@time @safetestset "test_l0519_bayesUnivariateConjugate.jl  Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0519_bayesUnivariateConjugate.jl ")
+end
+@time @safetestset "test_l0520_bayesMCMC.jl Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0520_bayesMCMC.jl")
+end
