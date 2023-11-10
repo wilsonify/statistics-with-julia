@@ -1,17 +1,30 @@
 using Random, Statistics
-Random.seed!(0)
 
-trueVar, trueStd = 1 / 12, sqrt(1 / 12)
+
+trueVar = 1 / 12
+trueStd = sqrt(1 / 12)
+N = 10^7
 
 function estVar(n)
     sample = rand(n)
-    sum((sample .- 0.5).^2) / n
+    return sum((sample .- 0.5).^2) / n
 end
 
-N = 10^7
-for n in 5:5:30
-    biasVar = mean([estVar(n) for _ in 1:N]) - trueVar
-    biasStd = mean([sqrt(estVar(n)) for _ in 1:N]) - trueStd
-    println("n = ",n, " Var bias: ", round(biasVar, digits = 5),
-                "\t Std bias: ", round(biasStd, digits = 5))
+using Test
+
+@testset "end_to_end" begin
+Random.seed!(0)
+    result = estVar(10)
+    result = round(result,digits = 2)
+    @test result == 0.10
+end
+
+@testset "end_to_end" begin
+Random.seed!(0)
+n = 30
+biasVar = mean([estVar(n) for _ in 1:N]) - trueVar
+biasStd = mean([sqrt(estVar(n)) for _ in 1:N]) - trueStd
+@test round(biasVar,digits = 2) == 0.0
+@test round(biasStd,digits = 2) == -0.0
+
 end
