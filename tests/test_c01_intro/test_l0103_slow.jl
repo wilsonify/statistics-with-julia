@@ -2,7 +2,7 @@
 using Statistics, Random, Test
 
 path_to_here = @__DIR__
-path_to_module = abspath("$path_to_here/../../c01_intro")
+path_to_module = abspath("$path_to_here/../../src/c01_intro")
 include("$path_to_module/l0103_slow.jl")
 
 
