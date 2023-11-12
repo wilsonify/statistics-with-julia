@@ -25,13 +25,29 @@ function builtin_formula(data)
     return confint(OneSampleZTest(xBar,sig,n),level = 1 - alpha,tail = :both)
 end
 
-@testset "end_to_end" begin
+@testset "read_machine" begin
+data = read_machine(1)
+@test length(data) == 20
+end
 
+@testset "summarize" begin
+data = read_machine(1)
+n,xBar,z = summarize(data)
+@test n == 20
+end
+
+@testset "Calculating_formula" begin
 data = read_machine(1)
 n,xBar,z = summarize(data)
 ci = Calculating_formula(data)
-@test ci == 1.0
+ci = round.(ci,digits=2)
+@test ci == (52.51, 53.40)
+end
 
+@testset "builtin_formula" begin
+data = read_machine(1)
+n,xBar,z = summarize(data)
 ci2=builtin_formula(data)
-@test ci2 == 1.0
+ci2 = round.(ci2,digits=2)
+@test ci2 == (52.51, 53.40)
 end
