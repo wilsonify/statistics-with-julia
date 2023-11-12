@@ -1,6 +1,3 @@
-
-
-
 using SpecialFunctions, Distributions, Roots, Plots, LaTeXStrings
 
 function sample_Gamma(n, alpha, lambda)
