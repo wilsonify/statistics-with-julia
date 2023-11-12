@@ -26,9 +26,6 @@ function run_exponential_distribution_test(lambda, n, N)
 end
 
 using Test
-
-
-
 @testset "Exponential Distribution Test" begin
     lambda = 4.5  # Adjust lambda value as needed
     n = 10
