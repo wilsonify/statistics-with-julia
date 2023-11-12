@@ -1,22 +1,53 @@
-using Distributions, Plots, LaTeXStrings; pyplot()
+using Distributions, Plots, LaTeXStrings
+
+data = [2, 1, 0, 0, 1, 0, 2, 2, 5, 2, 4, 0, 3, 2, 5, 0]
+delta = 10^-2.
+lamRange = 0:delta:10
 
 prior(lam) = pdf(TriangularDist(0, 10, 3), lam)
-data = [2, 1, 0, 0, 1, 0, 2, 2, 5, 2, 4, 0, 3, 2, 5, 0]
-
 like(lam) = *([pdf(Poisson(lam),x) for x in data]...)
 posteriorUpToK(lam) = like(lam) * prior(lam)
+compute_K() = sum([posteriorUpToK(lam) * delta for lam in lamRange])
+posterior(lam) = posteriorUpToK(lam) / compute_K()
+compute_bayesEstimate() = sum([lam*posterior(lam) * delta for lam in lamRange])
 
-delta = 10^-4.
-lamRange = 0:delta:10
-K = sum([posteriorUpToK(lam) * delta for lam in lamRange])
-posterior(lam) = posteriorUpToK(lam) / K
+@testset "prior" begin
+ result = prior(2)
+ result = round(result,digits = 2)
+ @test result == 0.13
+end
+@testset "like" begin
+result = like(10)
+ result = round(result,digits = 4)
+ @test result == 0.0
+end
+@testset "posteriorUpToK" begin
+result = posteriorUpToK(3)
+ result = round(result,digits = 4)
+ @test result == 0.0
+end
+@testset "compute_K" begin
+result = compute_K()
+  result = round(result,digits = 4)
+  @test result == 0.0
+end
+@testset "posterior" begin
+result = posterior(5)
+ result = round(result,digits = 4)
+ @test result == 0.0
+end
+@testset "compute_bayesEstimate" begin
+result = compute_bayesEstimate()
+  result = round(result,digits = 2)
+  @test result == 1.94
+end
 
-bayesEstimate = sum([lam*posterior(lam) * delta for lam in lamRange])
-println("Bayes estimate: ",bayesEstimate)
 
-plot(lamRange, prior.(lamRange), 
-    c = :blue, label = "Prior distribution")
-plot!(lamRange, posterior.(lamRange), 
-    c = :red, label = "Posterior distribution", 
-    xlims = (0, 10), ylims = (0, 1.2),
-    xlabel = L"\lambda",ylabel = "Density")
+using Test
+@testset "end_to_end" begin
+    bayesEstimate = compute_bayesEstimate()
+    bayesEstimate = round(bayesEstimate,digits = 2)
+    @test bayesEstimate == 1.94
+    plot(lamRange, prior.(lamRange),     c = :blue, label = "Prior distribution")
+    plot!(lamRange, posterior.(lamRange),    c = :red, label = "Posterior distribution",    xlims = (0, 10), ylims = (0, 1.2),    xlabel = L"\lambda",ylabel = "Density")
+end
