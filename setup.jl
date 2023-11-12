@@ -1,6 +1,5 @@
 using Pkg
 path_to_here = @__DIR__
-ENV["PYTHON"] = "/usr/bin/python"
 Pkg.add("BSON")
 Pkg.add("Calculus")
 Pkg.add("CategoricalArrays")
