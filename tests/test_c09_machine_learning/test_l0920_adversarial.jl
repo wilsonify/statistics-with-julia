@@ -45,6 +45,6 @@ lossG = updateG!(gen, dscr, x, optGen)
 @info "Epoch $ep, batch $bi, D loss = $(lossD), G loss = $(lossG)"
 end
 @info "Saving generator for epcoh $ep"
-BSON.@save "../data/mnistGAN$(ep).bson" genParams=cpu.(params(gen))
+BSON.@save "../../data/mnistGAN$(ep).bson" genParams=cpu.(params(gen))
 end
 end

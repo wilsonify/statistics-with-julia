@@ -8,7 +8,7 @@ x->reshape(x,7,7,256,:),ConvTranspose((5,5),256=>128;stride=1,pad=2),
 BatchNorm(128,relu),ConvTranspose((4,4),128=>64;stride=2,pad=1),
 BatchNorm(64,relu),ConvTranspose((4,4),64=>1,tanh;stride=2,pad=1))
 cd(@__DIR__)
-BSON.@load "../data/mnistGAN40.bson" genParams
+BSON.@load "../../data/mnistGAN40.bson" genParams
 Flux.loadparams!(gen, genParams)
 fixedNoise = [randn(latentDim, 1) for _ in 1:outputX*outputY]
 fakeImages = @. gen(fixedNoise)

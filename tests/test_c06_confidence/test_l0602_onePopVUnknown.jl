@@ -1,6 +1,6 @@
 using DataFrames, CSV, Distributions, HypothesisTests
 path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../data")
+path_to_data = abspath("$path_to_here/../../data")
 
 data = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false)[:,1]
 xBar, n = mean(data), length(data)

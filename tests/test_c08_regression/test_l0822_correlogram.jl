@@ -1,5 +1,5 @@
 using CSV, TimeSeries, Dates, Statistics, StatsBase, Measures, Plots; pyplot()
-df = CSV.read("../data/oneOnEpsilonBlogs.csv",copycols = true)
+df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)
 tsA = TimeArray(Date.(df.Day,Dates.DateFormat("m/d/y")),df.Users)
 tsB = moving(mean,tsA,7,padding = true)
 tsC = TimeArray(timestamp(tsA), values(tsA) - values(tsB))

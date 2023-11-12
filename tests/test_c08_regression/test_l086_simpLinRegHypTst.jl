@@ -1,6 +1,6 @@
 using DataFrames, GLM, PyPlot, Distributions, CSV
 path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../data")
+path_to_data = abspath("$path_to_here/../../data")
 data = CSV.read("$path_to_data/weightHeight.csv")
 sData = sort(data, :Weight)[1:20,:]
 

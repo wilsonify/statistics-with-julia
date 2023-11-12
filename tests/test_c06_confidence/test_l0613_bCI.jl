@@ -1,6 +1,6 @@
 using DataFrames, Random, CSV, Distributions, Plots; pyplot()
 path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../data")
+path_to_data = abspath("$path_to_here/../../data")
 
 Random.seed!(0)
 

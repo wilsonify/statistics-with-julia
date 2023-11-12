@@ -42,6 +42,6 @@ end
 println("\nModel1 (Dense) accuracy = ", accuracy(validateSet..., model1))
 println("Model2 (Convolutional) accuracy = ", accuracy(validateSet..., model2))
 cd(@__DIR__)
-BSON.@save "../data/mnistConv.bson" modelParams = cpu.(params(model2))
+BSON.@save "../../data/mnistConv.bson" modelParams = cpu.(params(model2))
 plot(accuracyPaths,label = ["Dense" "Convolutional"],
 ylim = (0.7,1.0), xlabel = "Batch number", ylabel = "Validation Accuracy")

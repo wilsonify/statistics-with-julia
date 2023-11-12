@@ -1,5 +1,5 @@
 using CSV,DataFrames,Dates,GLM,Statistics,LinearAlgebra,Measures,Plots; pyplot()
-df = CSV.read("../data/oneOnEpsilonBlogs.csv",copycols = true)
+df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)
 len = size(df)[1]
 dow = dayofweek.(Date.(df.Day,Dates.DateFormat("m/d/y")))
 dayGroups = [[7], [1, 6], [2, 3, 4, 5]]
