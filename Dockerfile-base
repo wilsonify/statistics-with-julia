@@ -1,2 +1,4 @@
 FROM julia:1.7.1-bullseye
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update -y && apt upgrade -y
+RUN apt install -y r-base
