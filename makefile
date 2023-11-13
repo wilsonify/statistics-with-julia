@@ -8,3 +8,6 @@ builder:
 
 image:
 	docker build --progress=plain -t "stats-with-julia:latest" -f Dockerfile .
+
+docker-test:
+	docker run --rm --name stats-with-julia stats-with-julia:latest julia --project=/usr/src/app /usr/src/app/test/runtests.jl
