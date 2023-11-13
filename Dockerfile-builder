@@ -1,0 +1,5 @@
+FROM statswithjulia:latest
+RUN mkdir -p /usr/src/app
+COPY setup.jl /usr/src/app/setup.jl
+WORKDIR /usr/src/app
+RUN julia --project=. setup.jl
