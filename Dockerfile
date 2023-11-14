@@ -1,8 +1,8 @@
-FROM statswithjulia-builder:latest as builder
+FROM stats-with-julia-builder:latest as builder
 COPY . /usr/src/app
 WORKDIR /usr/src/app/src/c11_api/generated
-ENTRYPOINT ["julia", "--project=/usr/src/app"]
-CMD = ["server.jl"]
+#ENTRYPOINT ["julia", "--project=/usr/src/app"]
+#CMD = ["server.jl"]
 
 # TODO copy executable into statswithjulia-base
 # FROM statswithjulia-base

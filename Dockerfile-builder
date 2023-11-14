@@ -1,5 +1,6 @@
 FROM stats-with-julia-base:latest
 RUN mkdir -p /usr/src/app
 COPY setup.jl /usr/src/app/setup.jl
+RUN pip3 install textblob matplotlib nltk
 WORKDIR /usr/src/app
 RUN julia --project=. setup.jl
