@@ -1,4 +1,4 @@
-name: Docker Build Builder
+name: DockerBuildBuilder
 
 on:
   workflow_dispatch:
@@ -15,7 +15,7 @@ jobs:
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: Build Builder image
-      run: docker build --progress=plain -t ghcr.io/${{ github.repository_owner }}/stats-with-julia-builder:latest -f Dockerfile-builder .
+      run: docker build --progress=plain -t ghcr.io/${{ github.repository_owner }}/stats-with-julia-builder:latest -f Dockerfile-builder . --label "org.opencontainers.image.source=https://github.com/${{ github.repository_owner }}/statistics-with-julia"  --label "org.opencontainers.image.description=Builder container image for StatsWithJulia" --label "org.opencontainers.image.licenses=MIT"
 
     - name: Push
       run: docker push ghcr.io/${{ github.repository_owner }}/stats-with-julia-builder:latest

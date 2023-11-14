@@ -1,4 +1,5 @@
 name: ContinuousIntegration
+
 on:
   - push
   - pull_request
