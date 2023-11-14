@@ -10,7 +10,7 @@ end
 
 @time @safetestset "test_c01_CallC" begin
     path_to_here = @__DIR__
-    include("$path_to_here/test_c01_CallC/test_l0121_usingC.jl")
+    include("$path_to_here/test_c01_CallC/runtests.jl")
     @test true
 end
 
