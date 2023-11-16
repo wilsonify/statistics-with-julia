@@ -1,6 +1,6 @@
 # The inverse CDF
 using Plots, LaTeXStrings; pyplot()
-function main()
+@testset "end_to_end" begin
 xGrid = 0:0.01:10
 uGrid = 0:0.01:1
 busy = 0.8

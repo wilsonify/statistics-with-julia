@@ -11,7 +11,7 @@ function rouletteSpins(p)
     end
 end
 
-function main()
+@testset "end_to_end" begin
 p, xGrid, N = 18 / 37, 1:7, 10^6
 
 mcEstimate = counts([rouletteSpins(p) for _ in 1:N],xGrid) / N

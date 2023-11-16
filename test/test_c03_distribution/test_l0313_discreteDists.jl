@@ -10,7 +10,7 @@ dists = [
     Poisson(5.5)
 ]
 
-function main()
+@testset "end_to_end" begin
 println("Distribution \t\t\t\t\t\t Parameters \t Support")
 reshape([dists ;  params.(dists) ;
 		((d)->(minimum(d),maximum(d))).(dists) ],

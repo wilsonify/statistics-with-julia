@@ -1,6 +1,6 @@
 # Descriptors of Distribution objects
 using Distributions
-function main()
+@testset "end_to_end" begin
 dist = TriangularDist(0,2,1)
 
 println("Parameters: \t\t\t",params(dist))

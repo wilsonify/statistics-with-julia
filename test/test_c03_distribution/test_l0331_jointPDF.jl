@@ -1,7 +1,7 @@
 # Visualizing a bivariate density
 using Plots, LaTeXStrings, Measures; pyplot()
 
-function main()
+@testset "end_to_end" begin
 delta = 0.01
 grid = 0:delta:1
 f(x, y) = 9 / 8 * (4x + y) * sqrt((1 - x) * (1 - y))

@@ -1,7 +1,8 @@
 # Numerical derivatives of the normal density
 using Distributions, Calculus, SpecialFunctions, Plots; pyplot()
+using LaTeXStrings
 
-function main()
+@testset "end_to_end" begin
 xGrid = -5:0.01:5
 
 PhiA(x) = 0.5 * (1 + erf(x / sqrt(2)))

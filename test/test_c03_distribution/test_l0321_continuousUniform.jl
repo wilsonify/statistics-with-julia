@@ -1,7 +1,7 @@
 # Uniformly distributed angles
 using Distributions, Plots, LaTeXStrings; pyplot()
 
-function main()
+@testset "end_to_end" begin
 cUnif = Uniform(0,2π)
 xGrid, N = 0:0.1:2π, 10^6
 

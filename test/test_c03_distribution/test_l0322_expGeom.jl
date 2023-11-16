@@ -1,7 +1,7 @@
 # Flooring an exponential random variable
 using StatsBase, Distributions, Plots; pyplot()
 
-function main()
+@testset "end_to_end" begin
 lambda, N = 1, 10^6
 xGrid = 0:6
 

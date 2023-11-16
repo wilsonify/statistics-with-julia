@@ -1,6 +1,6 @@
 # CDF from the Riemann sum of a PDF
 using Plots, LaTeXStrings; pyplot()
-function main()
+@testset "end_to_end" begin
 f2(x) = (x < 0 ? x + 1 : 1 - x) * (abs(x) < 1 ? 1 : 0)
 a, b = -1.5, 1.5
 delta = 0.01

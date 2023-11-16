@@ -10,7 +10,7 @@ function prn(lambda)
     return k - 1
 end
 
-function main()
+@testset "end_to_end" begin
 xGrid, lambda, N = 0:16, 5.5, 10^6
 
 pDist = Poisson(lambda)

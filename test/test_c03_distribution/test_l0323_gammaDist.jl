@@ -1,7 +1,7 @@
 # Gamma random variable as a sum of exponentials
 using Distributions, Plots; pyplot()
 
-function main()
+@testset "end_to_end" begin
 lambda, N = 1 / 3, 10^5
 bulbs = [1, 10, 50]
 xGrid = 0:0.1:10

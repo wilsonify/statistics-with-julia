@@ -1,6 +1,6 @@
 # A sum of two triangular random variables
 using Distributions, Statistics, Plots; pyplot()
-function main()
+@testset "end_to_end" begin
 dist1 = TriangularDist(0,1,1)
 dist2 = TriangularDist(0,1,0)
 N = 10^6

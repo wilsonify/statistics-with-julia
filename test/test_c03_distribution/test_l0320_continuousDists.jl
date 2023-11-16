@@ -9,7 +9,7 @@ dists = [
     Normal(20,3.5),
     Rayleigh(2.4),
     Cauchy(20,3.5)]
-function main()
+@testset "end_to_end" begin
 
 println("Distribution \t\t\t Parameters \t Support")
 reshape([dists ; params.(dists) ;

@@ -1,7 +1,7 @@
 # The gamma and beta special functions
 using SpecialFunctions, Distributions
 
-function main()
+@testset "end_to_end" begin
 a, b = 0.2, 0.7
 x = 0.75
 

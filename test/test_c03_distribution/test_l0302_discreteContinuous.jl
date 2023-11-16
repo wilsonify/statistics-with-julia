@@ -4,7 +4,7 @@ using Plots, Measures; pyplot()
 pContinuous(x) = 3 / 4 * (1 - x^2)
 pContinuous2(x) = x < 0 ? x + 1 : 1 - x
 
-function main()
+@testset "end_to_end" begin
     pDiscrete = [0.25, 0.25, 0.5]
     xGridD = 0:2
     xGridC = -1:0.01:1

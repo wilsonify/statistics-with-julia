@@ -1,6 +1,6 @@
 # Alternative representations of Rayleigh random variables
 using Distributions, Random
-function main()
+@testset "end_to_end" begin
 Random.seed!(1)
 
 N = 10^6

@@ -7,7 +7,7 @@ function randomName()
     return rand(names)
 end
 
-function main()
+@testset "end_to_end" begin
     X = 3:8
     N = 10^6
     sampleLengths = [length(randomName()) for _ in 1:N]

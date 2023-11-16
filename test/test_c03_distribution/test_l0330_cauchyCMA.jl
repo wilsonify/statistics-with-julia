@@ -1,7 +1,7 @@
 # The law of large numbers breaks down with very heavy tails
 using Random, Plots; pyplot()
 
-function main()
+@testset "end_to_end" begin
 Random.seed!(808)
 
 n = 10^6

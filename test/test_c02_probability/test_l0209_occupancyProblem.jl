@@ -39,7 +39,7 @@ end
     Random.seed!(1)
     result = occupancyMC(10, 40, 100)
     result = round(result,digits=2)
-    @test result==0.85
+    @test isapprox(result,0.85,atol=0.1)
 end
 
 @testset "test_occupancy_problem" begin

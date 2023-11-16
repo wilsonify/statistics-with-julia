@@ -1,7 +1,7 @@
 # Hazard rates and the Weibull distribution
 using Distributions, Plots, LaTeXStrings; pyplot()
 
-function main()
+@testset "end_to_end" begin
 alphas = [0.5, 1.5, 1]
 lam = 2
 

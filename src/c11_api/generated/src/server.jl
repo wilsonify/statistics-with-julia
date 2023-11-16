@@ -1,10 +1,7 @@
-module statistics
-
 using HTTP
 
-include("src/statistics-with-julia-api.jl")
-
-using .statistics-with-julia-api
+include("statisticsWithJuliaAPI.jl")
+using .statisticsWithJuliaAPI
 
 const server = Ref{Any}(nothing)
 const pets = Vector{Pet}()
@@ -154,7 +151,7 @@ end
 function run_server(port=8081)
     try
         router = HTTP.Router()
-        router = PetStoreServer.register(router, @__MODULE__; path_prefix = "/v3")
+        router = statisticsWithJuliaAPI.register(router, @__MODULE__; path_prefix = "/v3")
         HTTP.register!(router, "GET", "/stop", stop)
         HTTP.register!(router, "GET", "/ping", ping)
         server[] = HTTP.serve!(router, port)
@@ -164,11 +161,10 @@ function run_server(port=8081)
     end
 end
 
-end # module PetStoreV3Server
 
 function julia_main()::Cint
     try
-        PetStoreV3Server.run_server()
+        run_server()
     catch
         Base.invokelatest(Base.display_error, Base.catch_stack())
         return 1

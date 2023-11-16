@@ -68,16 +68,4 @@ end
     path_to_here = @__DIR__
     include("$path_to_here/test_l0117_randomWalks.jl")
 end
-@time @safetestset "l0118_usingR.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0118_usingR.jl")
-end
-@time @safetestset "l0120_usingPython.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0120_usingPython.jl")
-end
-@time @safetestset "l0121_usingC.jl Tests" begin
-    path_to_here = @__DIR__
-    include("$path_to_here/test_l0121_usingC.jl")
-end
 

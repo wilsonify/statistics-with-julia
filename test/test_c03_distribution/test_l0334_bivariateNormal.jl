@@ -4,7 +4,7 @@ path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
 include("$path_to_data/mvParams.jl")
 
-function main()
+@testset "end_to_end" begin
 biNorm = MvNormal(meanVect,covMat)
 
 N = 10^3

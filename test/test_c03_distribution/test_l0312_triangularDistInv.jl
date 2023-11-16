@@ -1,7 +1,7 @@
 # Inverse transform sampling
 using Distributions, Plots; pyplot()
 
-function main()
+@testset "end_to_end" begin
 triangDist = TriangularDist(0,2,1)
 xGrid = 0:0.1:2
 N = 10^6

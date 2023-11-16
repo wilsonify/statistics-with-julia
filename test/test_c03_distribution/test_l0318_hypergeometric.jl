@@ -1,7 +1,7 @@
 # Comparison of several hypergeometric distributions
 using Distributions, Plots; pyplot()
 
-function main()
+@testset "end_to_end" begin
 L, K, n  = 500, [450, 400, 250, 100, 50], 30
 hyperDists = [Hypergeometric(k,L - k,n) for k in K]
 xGrid = 0:1:n

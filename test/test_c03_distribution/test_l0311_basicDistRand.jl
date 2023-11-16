@@ -12,7 +12,7 @@ probability distributions and estimate sample means.
 =#
 using Distributions, StatsBase, Random
 
-function main()
+@testset "end_to_end" begin
 Random.seed!(1)
 
 dist1 = TriangularDist(0,10,5)
