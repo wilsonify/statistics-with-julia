@@ -1,6 +1,10 @@
 using Flux, Flux.Data.MNIST, Random, Statistics, PyPlot
 using Flux: onehotbatch, onecold, crossentropy, throttle, @epochs
 using Base.Iterators: repeated, partition
+
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(1)
 
 imgs = MNIST.images()
@@ -33,3 +37,4 @@ end
 
 plot( 1:length(L) , L, label = "loss function","bo-")
 plot( 1:length(A) , A, label = "accuracy","ro-")
+end

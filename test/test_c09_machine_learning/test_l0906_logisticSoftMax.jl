@@ -1,6 +1,11 @@
 using Flux, Flux.Data.MNIST, Statistics, BSON, Random, StatsBase, Plots; pyplot()
 using Flux: params, onehotbatch, crossentropy, update!
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
+
+
 nTrain = 20000
 miniBatchSize = 1000
 imgs = Flux.Data.MNIST.images()[1:nTrain]
@@ -41,3 +46,4 @@ acccuracy = mean([logisticMclassifier(testData[:,k]) for k in 1:nTest]
 .== testLabels)
 println("Accuracy: ", acccuracy)
 plot(lossArray, xlabel = "Epoch", ylabel = "Cross Entropy Loss", legend = false)
+end

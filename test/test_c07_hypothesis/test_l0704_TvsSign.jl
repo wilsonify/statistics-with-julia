@@ -1,5 +1,7 @@
 using Random, Distributions, HypothesisTests, PyPlot
 
+using Test
+@testset "end_to_end" begin
 muRange = 51:0.02:55
 n = 20
 N = 10^4
@@ -40,3 +42,4 @@ ylim(0,1)
 legend(loc="lower right")
 xlabel("Different values of muActual")
 ylabel("Proportion of times H0 rejected")
+end

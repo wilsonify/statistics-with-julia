@@ -1,4 +1,7 @@
 using CSV, GLM, Plots, Random; pyplot()
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 
 df = CSV.read("../../data/weightHeight.csv", copycols = true)
@@ -22,3 +25,4 @@ plot!(xlim, pred.(xlim,"M"), c=:blue, label="Male model")
 scatter!(females.Weight, females.Height, c=:red, msw=0, label="Females")
 plot!(xlim, pred.(xlim,"F"), c=:red, label="Female model", xlims=(xlim), xlabel="Weight (kg)", ylabel="Height (cm)", legend=:topleft)
 scatter!(other.Weight, other.Height, c=:green, msw=0, label="Other")
+end

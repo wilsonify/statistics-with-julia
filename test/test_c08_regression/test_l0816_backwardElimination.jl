@@ -1,4 +1,7 @@
 using StatsModels, RDatasets, DataFrames, GLM, Random
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 
 n = 30
@@ -31,3 +34,4 @@ end
 
 model = stepReg(df, :Perf, 0.05)
 println(model)
+end

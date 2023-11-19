@@ -1,4 +1,8 @@
 using Random, Distributions, StatsBase, HypothesisTests, PyPlot
+
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 
 function ksStat(dist)
@@ -30,3 +34,4 @@ plt.hist(kStats2, 50, color = "b", label = "KS stat (Normal)", histtype = "step"
 plot(kGrid, [pdf(Kolmogorov(), k) for k in kGrid], "r", label = "Kolmogorov PDF")
 legend(loc = "upper right")
 xlim(0, 2.5)
+end

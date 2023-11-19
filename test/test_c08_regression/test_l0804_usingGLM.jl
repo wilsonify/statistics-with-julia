@@ -1,5 +1,7 @@
 using DataFrames, GLM, PyPlot, Statistics, CSV
 
+using Test
+@testset "end_to_end" begin
 data = CSV.read("weightHeight.csv")
 
 lm1 = lm(@formula(Height ~ Weight), data)
@@ -37,3 +39,4 @@ plot(xlims, pred.(xlims),"r")
 xlim(xlims)
 xlabel("Weight (kg)")
 ylabel("Height (cm)")
+end

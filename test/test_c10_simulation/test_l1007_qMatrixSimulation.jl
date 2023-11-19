@@ -1,5 +1,5 @@
 using StatsBase, Distributions, Random, LinearAlgebra
-Random.seed!(1)
+
 
 function crudeSimulation(deltaT,T,Q,initProb)
     n = size(Q)[1]
@@ -28,6 +28,10 @@ function doobGillespie(T,Q,initProb)
     return state
 end
 
+using Test
+@testset "end_to_end" begin
+
+Random.seed!(1)
 T, N = 0.25, 10^5
 
 Q = [-3 1 2
@@ -43,3 +47,4 @@ explicitEst = p0*exp(Q*T)
 println("CrudeSim: \t\t", crudeSimEst)
 println("Doob Gillespie Sim: \t", doobGillespieEst)
 println("Explicit: \t\t", explicitEst)
+end

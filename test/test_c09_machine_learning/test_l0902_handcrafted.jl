@@ -1,5 +1,7 @@
 using MLDatasets, StatsBase, Measures, Plots; pyplot()
 
+using Test
+@testset "end_to_end" begin
 xTrain, yTrain = MLDatasets.MNIST.traindata(Float32)
 xTest, yTest = MLDatasets.MNIST.testdata(Float32)
 nTrain, nTest = size(xTrain)[3], size(xTest)[3]
@@ -57,3 +59,4 @@ p2 = plot(thetaRange,f1Values, legend = false,
 xlabel = "Threshold", ylabel = "F1 Value")
 plot!([bestTheta],[bestF1], c=:black)
 plot(p1,p2,size=(800,400))
+end

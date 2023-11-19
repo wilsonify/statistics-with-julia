@@ -1,5 +1,8 @@
 using Flux, Flux.Data.MNIST, Statistics, BSON, StatsBase, Plots; pyplot()
 using Flux: onecold
+
+using Test
+@testset "end_to_end" begin
 model= Chain(Conv((5, 5), 1=>8, relu), MaxPool((2,2)),
              Conv((3, 3), 8=>16, relu), MaxPool((2,2)),
              flatten, Dense(400, 10), softmax)
@@ -49,3 +52,4 @@ for i in 1:10
 end
 
 plot(p1,p2,layout=(2,1))
+end

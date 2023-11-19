@@ -1,5 +1,7 @@
 using CSV, RDatasets, DataFrames, GLM, PyPlot
 
+using Test
+@testset "end_to_end" begin
 df = CSV.read("weightHeight.csv")
 mW = df[df.Sex .== "M", :Weight]
 mH = df[df.Sex .== "M", :Height]
@@ -21,3 +23,5 @@ plot(xlims, predFemale.(xlims),"r", label="Female model")
 xlim(xlims)
 legend(loc="upper left")
 println(model)
+
+end

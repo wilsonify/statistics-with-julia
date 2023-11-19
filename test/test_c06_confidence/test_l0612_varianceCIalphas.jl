@@ -1,4 +1,5 @@
 using Distributions, Plots, LaTeXStrings; pyplot()
+
 function alphaSimulator(dist, n, alpha)
     popVar        = var(dist)
     coverageCount = 0

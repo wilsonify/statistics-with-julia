@@ -13,6 +13,9 @@ function powerEstimate(mu0,mu1,sig,n,alpha,N)
     sum(sampleH1 .> critVal)/N
 end
 
+
+using Test
+@testset "end_to_end" begin
 mu0 = 20
 sig = 5
 alpha = 0.05
@@ -33,3 +36,4 @@ ylim(0,1)
 legend()
 xlabel("mu")
 ylabel("Power")
+end

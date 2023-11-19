@@ -1,4 +1,7 @@
 using RDatasets, PyPlot, Clustering, Random, LinearAlgebra
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(1)
 
 xclara = dataset("cluster", "xclara")
@@ -23,4 +26,5 @@ plot( first.(dataPoints[C3]),last.(dataPoints[C3]),"g.")
 for ell in 4:30
     clst = cluster(ell,30)
     plot( first.(dataPoints[clst]),last.(dataPoints[clst]),"mx")
+end
 end

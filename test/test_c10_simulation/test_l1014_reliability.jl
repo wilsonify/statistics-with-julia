@@ -15,6 +15,10 @@ function pathExists(adjMatrix, source, destination)
     sign.(adjMatrix^L)[source,destination]
 end
 
+
+using Test
+@testset "end_to_end" begin
+
 edges = [[1,2],[1,3],[2,4],[1,4],[3,4]]
 source, dest = 1, 4
 
@@ -35,3 +39,4 @@ ylim(0,1)
 xlabel("p")
 ylabel("Reliability")
 legend(loc="upper right")
+end

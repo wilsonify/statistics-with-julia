@@ -1,4 +1,7 @@
 using Flux.Data.MNIST, DecisionTree, PyPlot, Random
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(1)
 
 imgs   = MNIST.images()
@@ -23,3 +26,4 @@ while predicted_labels[k] == testLabels[k]
 end
 println("Example error (MNIST image $(50000+k)):",
         " Predicted $(predicted_labels[k]) but it is actually $(testLabels[k]).")
+end

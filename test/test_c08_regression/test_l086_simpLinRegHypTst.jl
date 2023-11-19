@@ -1,6 +1,9 @@
 using DataFrames, GLM, PyPlot, Distributions, CSV
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
+
+using Test
+@testset "end_to_end" begin
 data = CSV.read("$path_to_data/weightHeight.csv")
 sData = sort(data, :Weight)[1:20,:]
 
@@ -17,3 +20,4 @@ n = size(sData)[1]
 pVal = 2*ccdf(TDist(n-2),tStat)
 println("Manual Pval: ", pVal)
 println(model)
+end

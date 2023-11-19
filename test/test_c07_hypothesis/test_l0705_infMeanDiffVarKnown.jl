@@ -1,6 +1,9 @@
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here=@__DIR__
 path_to_data = abspath("$path_to_here/../../data")
+
+using Test
+@testset "end_to_end" begin
 data1 = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false)[:,1]
 data2 = CSV.read("$path_to_data/machine2.csv", DataFrame, header=false)[:,1]
 xBar1, n1 = mean(data1), length(data1)
@@ -15,3 +18,4 @@ println("Sample mean machine 1: ",xBar1)
 println("Sample mean machine 2: ",xBar2)
 println("Manually calculated test statistc: ", testStatistic)
 println("Manually calculated p-value: ", pVal)
+end

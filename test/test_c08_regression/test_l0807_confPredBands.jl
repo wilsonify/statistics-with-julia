@@ -1,5 +1,7 @@
 using DataFrames, GLM, PyPlot, Distributions, CSV
 
+using Test
+@testset "end_to_end" begin
 data = CSV.read("weightHeight.csv")
 n = size(data)[1]
 model = fit(LinearModel, @formula(Height ~ Weight), data)
@@ -26,3 +28,4 @@ plot(xGrid,interval.(xGrid,-,1),"b")
 xlim(40, 120)
 ylim(145, 200)
 legend(loc="upper left")
+end

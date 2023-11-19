@@ -1,4 +1,7 @@
 using CSV,DataFrames,Dates,GLM,Statistics,LinearAlgebra,Measures,Plots; pyplot()
+
+using Test
+@testset "end_to_end" begin
 df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)
 len = size(df)[1]
 dow = dayofweek.(Date.(df.Day,Dates.DateFormat("m/d/y")))
@@ -34,3 +37,4 @@ p3 = forecastPlot((trainRange3, train3), (futureRange3, fcst3))
 _, train4, fcst4 = forecast(trainRange4, futureRange4)
 p4 = forecastPlot((trainRange4, train4), (futureRange4, fcst4))
 plot(p1, p2, p3, p4, size = (900,600), margin = 5mm)
+end

@@ -1,4 +1,7 @@
 using DifferentialEquations, Plots; pyplot()
+
+using Test
+@testset "end_to_end" begin
 beta, delta, gamma = 0.25, 0.2, 0.1
 initialInfect = 0.025
 println("R0 = ", beta/gamma)
@@ -17,3 +20,4 @@ plot!(sol.t,((x)->x[2]).(sol.u),label = "Exposed", c=:blue)
 plot!(sol.t,((x)->x[3]).(sol.u),label = "Infected", c=:red)
 plot!(sol.t,((x)->x[4]).(sol.u),label = "Removed", c=:yellow,
 xlabel = "Time", ylabel = "Proportion",legend = :top)
+end

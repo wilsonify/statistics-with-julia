@@ -1,4 +1,8 @@
 using Distributions, PyPlot, Random
+
+using Test
+@testset "end_to_end" begin
+
 Random.seed!(1)
 
 X0, T, a = 70.0, 120, 0.8
@@ -36,3 +40,4 @@ plot(xHatTraj,"r.",label="Kalman filter tracking")
 xlim(50, 100);ylim(-6,6)
 xlabel("Time");ylabel("X")
 legend(loc="upper right")
+end

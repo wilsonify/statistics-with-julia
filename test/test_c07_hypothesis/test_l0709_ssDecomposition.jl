@@ -1,4 +1,8 @@
 using Random, Statistics
+
+using Test
+@testset "end_to_end" begin
+
 Random.seed!(1)
 x1Dat = rand(24)
 x2Dat = rand(15)
@@ -20,3 +24,4 @@ ssTotal =
 println("Sum of squares between groups: ", ssBetween)
 println("Sum of squares within groups: ", ssWithin)
 println("Sum of squares total: ", ssTotal)
+end

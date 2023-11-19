@@ -1,5 +1,7 @@
 using DataFrames, GLM, PyPlot, Distributions, LinearAlgebra
 
+using Test
+@testset "end_to_end" begin
 beta0, beta1 = 2.0, 1.5
 sigma = 2.5
 n, N = 10, 10^4
@@ -34,3 +36,4 @@ pts = [r*A*[cos(t),sin(t)] + mu  for t in 0:0.01:2pi]
 plot(first.(pts),last.(pts),"r")
 xlabel("beta0")
 ylabel("beta1")
+end

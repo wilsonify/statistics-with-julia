@@ -1,6 +1,8 @@
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here=@__DIR__
 path_to_data = abspath("$path_to_here/../../data")
+
+@testset "end_to_end" begin
 data = CSV.read("$path_to_data/machine1.csv", DataFrame, header=false)[:,1]
 xBar, n = mean(data), length(data)
 sigma = 1.2
@@ -18,3 +20,4 @@ println("Manually calculated p-value: ", pVal,"\n")
 println(testA)
 
 println("\n In case of  mu0 = ", mu0B, " then p-value = ", pvalue(testB))
+end

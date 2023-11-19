@@ -1,5 +1,8 @@
 using Statistics, MultivariateStats, RDatasets, PyPlot, LinearAlgebra
 
+
+using Test
+@testset "end_to_end" begin
 data = dataset("datasets", "iris")
 data = data[[:SepalLength,:SepalWidth,:PetalLength,:PetalWidth]]
 n = size(data)[1]
@@ -32,3 +35,4 @@ ylim(-0.1,1.1)
 subplot(122)
 plot(pcDat[1,:],pcDat[2,:],".")
 xlabel("PC 1");ylabel("PC 2")
+end

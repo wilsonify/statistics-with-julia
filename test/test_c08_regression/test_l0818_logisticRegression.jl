@@ -1,5 +1,7 @@
 using GLM, DataFrames, Distributions, PyPlot, CSV
 
+using Test
+@testset "end_to_end" begin
 data = CSV.read("examData.csv")
 
 model = glm(@formula(Pass ~ Hours), data, Binomial(), LogitLink())
@@ -13,3 +15,4 @@ plot(xGrid, pred.(xGrid), "r")
 xlabel("Hours studied")
 xlim(0, maximum(data.Hours))
 yticks([0,1], ["0 (Fail)", "1 (Pass)"])
+end

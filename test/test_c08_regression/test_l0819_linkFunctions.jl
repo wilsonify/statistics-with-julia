@@ -1,4 +1,7 @@
 using GLM, RDatasets, DataFrames, Distributions, PyPlot, Random, LinearAlgebra
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 
 df = dataset("MASS", "cpus")
@@ -35,3 +38,4 @@ println("Model 1: ", coef(model1))
 println("Model 2: ", coef(model2))
 println("Model 3: ", coef(model3))
 println("\nLoss of models 1,2,3: ",(lossModel1 ,lossModel2, lossModel3))
+end

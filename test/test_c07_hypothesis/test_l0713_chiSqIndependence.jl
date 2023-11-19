@@ -1,5 +1,7 @@
 using Distributions
 
+using Test
+@testset "end_to_end" begin
 xObs = [18 132; 45 178]
 rowSums = [sum(xObs[i, :]) for i in 1:2]
 colSums = [sum(xObs[:, i]) for i in 1:2]
@@ -16,3 +18,4 @@ pVal = ccdf(Chisq(1),testStat)
 
 println("Chi-squared value: ", testStat)
 println("P-value: ", pVal)
+end

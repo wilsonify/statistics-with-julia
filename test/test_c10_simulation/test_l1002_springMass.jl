@@ -1,5 +1,7 @@
 using DifferentialEquations, PyPlot, LinearAlgebra
 
+using Test
+@testset "end_to_end" begin
 k, b, M = 1.2, 0.3, 2.0
 A = [0 1; -k / M - b / M]
 
@@ -26,3 +28,4 @@ plot(tRange,first.(manualSol),"b", label = "Manual trajectory")
 plot(sol.t,first.(sol.u),"r.", label = "DiffEq package")
 plot(0,initX[1],"k.",ms = "15",label = "Initial state")
 xlabel("Time"); ylabel("Displacement"); legend(loc = "upper right")
+end

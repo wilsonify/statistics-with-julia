@@ -1,6 +1,8 @@
 using Flux.Data.MNIST, PyPlot, LinearAlgebra
 using Flux: onehotbatch
 
+using Test
+@testset "end_to_end" begin
 imgs   = MNIST.images()
 labels = MNIST.labels()
 nTrain = length(imgs)
@@ -30,3 +32,4 @@ accuracy = sum(diag(confusionMatrix))/nTest
 println("Accuracy: ", accuracy)
 println("Confusion Matrix:")
 confusionMatrix
+end

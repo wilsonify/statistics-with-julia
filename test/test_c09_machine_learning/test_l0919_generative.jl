@@ -1,4 +1,8 @@
 using Flux, BSON, Random, Plots; pyplot()
+
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 latentDim = 100
 outputX, outputY = 6, 3
@@ -17,3 +21,4 @@ reduce.(hcat, Iterators.partition(fakeImages, outputY)));
 dims=(3, 4)), (2, 1))
 heatmap(imageArray, yflip = true, color = :Greys,
 size = (300,150), legend=false, ticks=false)
+end

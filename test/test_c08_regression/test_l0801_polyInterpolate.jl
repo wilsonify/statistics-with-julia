@@ -1,5 +1,7 @@
 using PyPlot
 
+using Test
+@testset "end_to_end" begin
 xVals = [-2,3,5,6,12,14]
 yVals = [7,2,9,3,12,3]
 n = length(xVals)
@@ -18,3 +20,4 @@ plot(xVals,yVals,"kx",ms="10",label="Data points")
 xlim(-5,20)
 ylim(-50,50)
 legend(loc="upper right")
+end

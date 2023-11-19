@@ -1,7 +1,12 @@
 using Distributions, PyPlot, Random
 
+using Test
+@testset "end_to_end" begin
+
+Random.seed!(0)
 N, K, M = 10^2, 50, 10^3
 lamRange = 0.01:0.01:0.99
+
 
 prn(lambda,rng) = quantile(Poisson(lambda),rand(rng))
 zDist(lam) = Uniform(0,2*(1-lam))
@@ -33,3 +38,4 @@ std2 = std([argMaxLam(mGraph2(seed,seed+M)) for seed in 1:M])
 println("Standard deviation with no CRN: ", std0)
 println("Standard deviation with CRN and single RNG: ", std1)
 println("Standard deviation with CRN and two RNGs: ", std2)
+end

@@ -1,5 +1,7 @@
 using CSV, GLM, StatsBase, Random, Distributions, Plots, Measures; pyplot()
 
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 
 n, N = 10^3, 10^6
@@ -32,3 +34,4 @@ pGrid = 0:0.001:1
 p2 = plot(pGrid,Fhat.(pGrid), legend = false, xlabel = "p-value", ylabel = "ECDF")
 
 plot(p1, p2, size = (1000,400), margin = 5mm)
+end

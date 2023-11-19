@@ -1,4 +1,7 @@
 using Random, Distributions, StatsBase, PyPlot, HypothesisTests
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(2)
 
 dist = Gamma(2, 2.5)
@@ -35,3 +38,4 @@ println("p-value calculated via Kolmogorov distribution: ",
 	1-cdf(Kolmogorov(),sqrt(n)*ksStat),"\n")
 
 println(ApproximateOneSampleKSTest(data,distH0))
+end

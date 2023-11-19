@@ -1,6 +1,9 @@
 using RDatasets, PyPlot, Distributions, Random
-Random.seed!(1)
 
+
+using Test
+@testset "end_to_end" begin
+Random.seed!(1)
 k = 3
 
 xclara = dataset("cluster", "xclara")
@@ -24,3 +27,4 @@ end
 cnts = [sum(labels .== i) for i in 1:k]
 
 println("Counts of clusters (manual implementation): ", cnts)
+end

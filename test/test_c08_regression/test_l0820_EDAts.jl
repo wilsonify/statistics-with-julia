@@ -1,4 +1,7 @@
 using CSV, TimeSeries, Dates, Statistics, Measures, Plots, StatsPlots; pyplot()
+
+using Test
+@testset "end_to_end" begin
 df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)
 tsA = TimeArray(Date.(df.Day,Dates.DateFormat("m/d/y")),df.Users)
 tsB = moving(mean,tsA,7,padding = true)
@@ -32,3 +35,4 @@ dayGroupNames = ["Sun", "Mon+Sat", "Tue+Wed+Thu+Fri"]
 p6 = density(groupDivs,label = hcat(dayGroupNames...), legend = :topright,
 xlabel = "Variation", ylabel = "Frequency",c = [:blue :red :green])
 plot(p1, p2, p3, p4, p5, p6, layout = (3,2), size = (900,600), margin = 5mm)
+end

@@ -37,5 +37,3 @@ test_l0615_predictionInterval:
 	julia --project="../../c06_confidence" test_l0615_predictionInterval.jl
 test_l0616_credible:
 	julia --project="../../c06_confidence" test_l0616_credible.jl
-test_testcases_z:
-	julia --project="../../c06_confidence" test_testcases_z.jl
