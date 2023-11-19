@@ -27,6 +27,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install Python Dependencies
+        run: python -m pip install matplotlib
+
       - name: Install Dependencies
         run: julia --project=. setup.jl
         env:
