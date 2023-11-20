@@ -1,5 +1,5 @@
 using LightGraphs, Distributions, PyPlot, StatsBase, Random
-Random.seed!(0)
+
 
 function createNetwork(edges)
     network = Graph(maximum(vcat(edges...)))
@@ -27,6 +27,11 @@ function networkLife(network,source,dest,lambda)
     t
 end
 
+using Test
+@testset "end_to_end" begin
+
+Random.seed!(0)
+
 lambda1, lambda2 = 0.5, 1.0
 roads = [[1,2],[1,3],[2,4],[2,5],[2,3],[3,4],[3,5],[4,5],[4,6],[5,6]]
 source, dest = 1, 6
@@ -44,7 +49,6 @@ xlim(0,5)
 xlabel("t")
 legend(loc="upper right")
 
-println("Edge Failure Rate = $(lambda1): Mean failure time = ",
-	mean(failTimes1), " days.")
-println("Edge Failure Rate = $(lambda2): Mean failure time = ",
-	mean(failTimes2), " days.")
+println("Edge Failure Rate = $(lambda1): Mean failure time = ",	mean(failTimes1), " days.")
+println("Edge Failure Rate = $(lambda2): Mean failure time = ",	mean(failTimes2), " days.")
+end

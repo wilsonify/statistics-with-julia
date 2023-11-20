@@ -1,5 +1,7 @@
 using LinearAlgebra, Statistics, StatsBase, PyPlot
 
+using Test
+@testset "end_to_end" begin
 n, N = 5, 10^6
 P = diagm(-1 => fill(1/3,n-1),
            0 => fill(1/3,n),
@@ -44,4 +46,4 @@ legend(loc="upper right")
 println("Estimated mean value of tau using f1: ",est1)
 println("Estimated mean value of tau using f2: ",est2)
 println("\nThe matrix P:")
-P
+end

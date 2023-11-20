@@ -1,5 +1,7 @@
 using RDatasets, GLM, PyPlot
 
+using Test
+@testset "end_to_end" begin
 df = dataset("MASS", "cpus")
 df.Freq = map( x->10^9/x , df.CycT)
 df = df[:, [:Perf, :MMax, :Cach, :ChMax, :Freq]]
@@ -21,5 +23,5 @@ end
 
 model = stepReg(df,:Perf, 0.05)
 println(model)
-println("Estimated performance for a specific computer (after model reduction):",
-		coef(model)'*[1, 32000, 32, 32])
+println("Estimated performance for a specific computer (after model reduction):", 		coef(model)'*[1, 32000, 32, 32])
+end

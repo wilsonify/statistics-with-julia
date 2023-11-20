@@ -1,5 +1,7 @@
 using DataFrames, GLM, Statistics, LinearAlgebra, CSV
 
+using Test
+@testset "end_to_end" begin
 data = CSV.read("L1L2data.csv")
 xVals, yVals = Array{Float64}(data.X), Array{Float64}(data.Y)
 n = length(xVals)
@@ -57,3 +59,4 @@ b0K,b1K = coef(modelK)
 
 println(round.([b0A,b0B,b0C,b0D,b0E,b0F,b0G,b0H,b0I,b0J,b0K],digits=3))
 println(round.([b1A,b1B,b1C,b1D,b1E,b1F,b1G,b1H,b1I,b1J,b1K],digits=3))
+end

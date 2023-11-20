@@ -1,12 +1,5 @@
 using Distributions, Plots, LaTeXStrings; pyplot()
 
-mu, sig = 2, 3
-eta = sqrt(3)*sig/pi
-n, N = 15, 10^4
-dNormal   = Normal(mu, sig)
-dLogistic = Logistic(mu, eta)
-alphaUsed = 0.001:0.001:0.1
-
 function alphaSimulator(dist, n, alpha)
     popVar        = var(dist)
     coverageCount = 0
@@ -19,10 +12,26 @@ function alphaSimulator(dist, n, alpha)
     1 - coverageCount/N
 end
 
-scatter(alphaUsed, alphaSimulator.(dNormal,n,alphaUsed), 
-	c=:blue, msw=0, label="Normal")
-scatter!(alphaUsed, alphaSimulator.(dLogistic, n, alphaUsed), 
-	c=:red, msw=0, label="Logistic")
-plot!([0,0.1],[0,0.1],c=:black, label="1:1 slope", 
-	xlabel=L"\alpha"*" used", ylabel=L"\alpha"*" actual", 
-	legend=:topleft, xlim=(0,0.1), ylims=(0,0.2))
+@testset "end_to_end" begin
+	mu, sig = 2, 3
+	eta = sqrt(3)*sig/pi
+	n, N = 15, 10^4
+	dNormal   = Normal(mu, sig)
+	dLogistic = Logistic(mu, eta)
+	alphaUsed = 0.001:0.001:0.1
+	result = alphaSimulator.(dNormal,n,alphaUsed)
+	@test length(result)==100
+end
+
+@testset "end_to_end" begin
+	mu, sig = 2, 3
+	eta = sqrt(3)*sig/pi
+	n, N = 15, 10^4
+	dNormal   = Normal(mu, sig)
+	dLogistic = Logistic(mu, eta)
+	alphaUsed = 0.001:0.001:0.1
+
+	scatter(alphaUsed, alphaSimulator.(dNormal,n,alphaUsed), 	c=:blue, msw=0, label="Normal")
+	scatter!(alphaUsed, alphaSimulator.(dLogistic, n, alphaUsed),	c=:red, msw=0, label="Logistic")
+	plot!([0,0.1],[0,0.1],c=:black, label="1:1 slope",	xlabel=L"\alpha"*" used", ylabel=L"\alpha"*" actual",	legend=:topleft, xlim=(0,0.1), ylims=(0,0.2))
+end

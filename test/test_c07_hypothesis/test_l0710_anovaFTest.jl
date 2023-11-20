@@ -1,6 +1,9 @@
 using GLM, Distributions, DataFrames, CategoricalArrays
 path_to_here=@__DIR__
 path_to_data=abspath("$path_to_here/../../data")
+
+using Test
+@testset "end_to_end" begin
 data1 = parse.(Float64, readlines("$path_to_data/machine1.csv"))
 data2 = parse.(Float64, readlines("$path_to_data/machine2.csv"))
 data3 = parse.(Float64, readlines("$path_to_data/machine3.csv"))
@@ -40,3 +43,5 @@ end
 
 println("Manual ANOVA: ", manualANOVA([data1, data2, data3]))
 println("GLM ANOVA: ", glmANOVA([data1, data2, data3]))
+
+end

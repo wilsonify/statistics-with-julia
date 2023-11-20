@@ -36,6 +36,9 @@ function simMM1Wait(lambda, mu, T)
     return waitTimes
 end
 
+using Test
+@testset "end_to_end" begin
+
 Random.seed!(1)
 lambda, mu = 0.8, 1.0
 T = 10^3
@@ -52,3 +55,4 @@ xlabel("x")
 xlim(0, 20)
 ylim(0, 1)
 legend(loc = "lower right")
+end

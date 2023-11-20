@@ -1,4 +1,8 @@
 using Distributions, LinearAlgebra, Random, Measures, Plots; pyplot()
+
+using Test
+@testset "end_to_end" begin
+
 Random.seed!(1)
 a, varXi, varZeta, = 0.8, 0.36, 1.0
 X0, spikeTime, spikeSize = 10.0, 50, -20.0
@@ -43,3 +47,4 @@ analyticErr(k) = (varXi + k^2 * varZeta) / (1 - (a - k)^2)
 p2 = scatter(kRange,errs, c = :black, ms = 3, msw = 0, xlabel = "k", ylabel = "MSE", label = "Monte Carlo")
 p2 = plot!(kRange,analyticErr.(kRange), c = :red, xlabel = "k", ylabel = "MSE", label = "Analytic", ylim = (0.58,0.64))
 plot(p1, p2, size = (1000,400), margin = 5mm)
+end

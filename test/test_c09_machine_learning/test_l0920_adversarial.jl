@@ -1,6 +1,9 @@
 using Flux, MLDatasets, Statistics, Random, BSON
 using Flux.Optimise: update!
 using Flux: logitbinarycrossentropy
+
+using Test
+@testset "end_to_end" begin
 batchSize, latentDim = 500, 100
 epochs = 40
 etaD, etaG = 0.0002, 0.0002
@@ -46,5 +49,6 @@ lossG = updateG!(gen, dscr, x, optGen)
 end
 @info "Saving generator for epcoh $ep"
 BSON.@save "../../data/mnistGAN$(ep).bson" genParams=cpu.(params(gen))
+end
 end
 end

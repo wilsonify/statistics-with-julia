@@ -1,5 +1,5 @@
 using PyPlot, Distributions, Random
-Random.seed!(1)
+
 
 function simulateMM1DoobGillespie(lambda,mu,Q0,T)
     t, Q = 0.0 , Q0
@@ -31,6 +31,9 @@ function stichSteps(epochs,q)
     return [newEpochs,newQ]
 end
 
+using Test
+@testset "end_to_end" begin
+
 lambda, mu = 0.7, 1.0
 Tplot, Testimation = 200, 10^7
 Q0 = 40
@@ -45,3 +48,4 @@ meanQueueLength = (eL[2:end]-eL[1:end-1])'*qL[1:end-1]/last(eL)
 rho = lambda/mu
 println("Estimated mean queue length: ", meanQueueLength )
 println("Theoretical mean queue length: ", rho/(1-rho) )
+end

@@ -1,4 +1,8 @@
 using Distributions, Random, Plots; pyplot()
+
+using Test
+@testset "end_to_end" begin
+
 Random.seed!(0)
 beta, delta, gamma = 0.25, 0.4, 0.1
 initialInfect = 0.025
@@ -43,3 +47,4 @@ plot!(tV,rV / M,label = "Removed", c = :yellow,
 xlabel = "Time", ylabel = "Proportion",
 legend = :topleft, xlim = (0,lastT * 1.05))
 scatter!(lastT * 1.025 * ones(N),finals, c = :yellow,label = "Final Infected")
+end

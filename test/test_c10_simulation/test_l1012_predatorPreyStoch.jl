@@ -1,4 +1,8 @@
 using PyPlot, Distributions, Random
+
+using Test
+@testset "end_to_end" begin
+
 Random.seed!(1)
 
 a, c, d = 2, 1, 5
@@ -27,3 +31,4 @@ plot(first.(trajStoch),last.(trajStoch),"g.--", label="Stochastic trajectory")
 plot(equibPoint[1],equibPoint[2],"r+",mew="4",ms="10",label="Equlibrium point")
 xlabel("X1"); ylabel("X2"); legend(loc="upper right")
 xlim(0,1); ylim(0,0.3)
+end

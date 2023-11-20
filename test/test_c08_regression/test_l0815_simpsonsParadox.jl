@@ -1,5 +1,7 @@
 using DataFrames, GLM, PyPlot, CSV
 
+using Test
+@testset "end_to_end" begin
 df = CSV.read("IQalc.csv")
 groupA = df[df.Group .== "A", :]
 groupB = df[df.Group .== "B", :]
@@ -37,3 +39,4 @@ xlim(xlims), ylim(0,1)
 xlabel("IQ")
 ylabel("Alcohol metric")
 legend(loc="upper right")
+end

@@ -1,4 +1,7 @@
 using CSV, TimeSeries, Dates, Statistics, StatsBase, Measures, Plots; pyplot()
+
+using Test
+@testset "end_to_end" begin
 df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)
 tsA = TimeArray(Date.(df.Day,Dates.DateFormat("m/d/y")),df.Users)
 tsB = moving(mean,tsA,7,padding = true)
@@ -17,3 +20,4 @@ xlabel = "Day",ylabel = "Difference Between Corrected Days")
 p2 = plot(lags,acc,line = :stem, c = :blue,
 xlabel = "Lag",ylabel = "Autocorrelation")
 plot(p1,p2,size = (900,400),margin = 5mm)
+end

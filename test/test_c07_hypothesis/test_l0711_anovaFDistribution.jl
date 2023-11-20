@@ -1,5 +1,6 @@
 # Monte Carlo based distributions of the ANOVA F-statistic
 using Distributions, Plots; pyplot()
+
 function anovaFStat(allData)
     xBarArray = mean.(allData)
     nArray = length.(allData)
@@ -10,6 +11,8 @@ function anovaFStat(allData)
     return (ssBetween / (L - 1)) / (ssWithin / (sum(nArray) - L))
 end
 
+using Test
+@testset "end_to_end" begin
 case1 = [13.4, 13.4, 13.4, 13.4, 13.4]
 case2 = [12.7, 11.8, 13.4, 12.7, 12.9]
 stdDevs = [2, 2, 2, 2, 2]
@@ -35,9 +38,8 @@ c = :red, normed = true, label = "Unequal group means case")
 dfBetween = L - 1
 dfError = sum(numObs) - 1
 xGrid = 0:0.01:10
-plot!(xGrid, pdf.(FDist(dfBetween, dfError),xGrid),
-c = :black, label = "F-statistic analytic")
+plot!(xGrid, pdf.(FDist(dfBetween, dfError),xGrid),c = :black, label = "F-statistic analytic")
+
 critVal = quantile(FDist(dfBetween, dfError),0.95)
-plot!([critVal, critVal],[0, 0.8],
-c = :black, ls = :dash, label = "Critical value boundary",
-xlims = (0,10), ylims = (0,0.8), xlabel = "F-value", ylabel = "Density")
+plot!([critVal, critVal],[0, 0.8],c = :black, ls = :dash, label = "Critical value boundary",xlims = (0,10), ylims = (0,0.8), xlabel = "F-value", ylabel = "Density")
+end

@@ -1,6 +1,9 @@
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here=@__DIR__
 path_to_data = abspath("$path_to_here/../../data")
+
+using Test
+@testset "end_to_end" begin
 data1 = CSV.read("$path_to_data/machine1.csv", DataFrame,header=false)[:,1]
 data2 = CSV.read("$path_to_data/machine2.csv", DataFrame, header=false)[:,1]
 xBar1, s1, n1 = mean(data1), std(data1), length(data1)
@@ -14,3 +17,4 @@ pVal = 2*ccdf(TDist(n1+n2 -2), abs(testStatistic))
 println("Manually calculated test statistc: ", testStatistic)
 println("Manually calculated p-value: ", pVal)
 println(EqualVarianceTTest(data1, data2, delta0))
+end

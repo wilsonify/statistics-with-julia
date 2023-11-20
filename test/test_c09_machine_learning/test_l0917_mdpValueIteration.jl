@@ -1,5 +1,7 @@
 using LinearAlgebra, PyPlot
 
+using Test
+@testset "end_to_end" begin
 L = 10
 p0, p1 = 1/2, 3/4
 beta = 0.75
@@ -39,3 +41,4 @@ end
 imshow(policyMap, cmap="bwr")
 xticks(0:2:20, 0:0.2:2); yticks(0:L-1, 1:L)
 xlabel("k"); ylabel("State")
+end

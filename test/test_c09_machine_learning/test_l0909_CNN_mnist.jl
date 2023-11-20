@@ -1,5 +1,8 @@
 using Flux, Flux.Data.MNIST, Statistics, BSON, Random, Plots; pyplot()
 using Flux: onehotbatch, onecold, crossentropy
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 
 epochs = 30
@@ -45,3 +48,4 @@ cd(@__DIR__)
 BSON.@save "../../data/mnistConv.bson" modelParams = cpu.(params(model2))
 plot(accuracyPaths,label = ["Dense" "Convolutional"],
 ylim = (0.7,1.0), xlabel = "Batch number", ylabel = "Validation Accuracy")
+end

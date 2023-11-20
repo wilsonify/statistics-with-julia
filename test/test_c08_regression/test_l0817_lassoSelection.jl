@@ -1,5 +1,8 @@
 using RDatasets, DataFrames, Lasso, LaTeXStrings, Plots, Measures; pyplot()
 
+using Test
+@testset "end_to_end" begin
+
 df = dataset("MASS", "cpus")
 df.Freq = map( x->10^9 / x , df.CycT)
 df = df[:, [:Perf, :Freq, :MMin, :MMax, :Cach, :ChMin, :ChMax]]
@@ -26,3 +29,4 @@ plot!([goodLambda,goodLambda],[-1,1.5],c=:black, lw=2, label = "Model cut-off")
 p2 = plot(lassoFit.λ,nV, ylabel = "Number of Variables",legend = false)
 plot!([goodLambda,goodLambda],[0,6],c=:black, lw=2, label = "Model cut-off")
 plot(p1,p2,xlabel= L"\lambda", margin = 5mm, size = (800,400))
+end

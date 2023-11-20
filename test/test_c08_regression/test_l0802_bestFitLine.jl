@@ -2,6 +2,9 @@ using DataFrames, Distributions, PyPlot, PyCall, Random, LinearAlgebra, CSV
 
 patch = pyimport("matplotlib.patches")
 line = pyimport("matplotlib.lines")
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 data = CSV.read("L1L2data.csv")
 xVals, yVals = data.X, data.Y
@@ -56,3 +59,4 @@ for i in 1:n
 end
 println("L1 line: $(round(alpha1,digits = 2)) + $(round(beta1,digits = 2))x")
 println("L2 line: $(round(alpha2,digits = 2)) + $(round(beta2,digits = 2))x")
+end

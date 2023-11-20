@@ -1,9 +1,5 @@
 using Distributions, PyPlot, Random
 
-seed = 1
-n = 10
-lamGrid = 0.01:0.01:0.99
-
 theorM(lam) = mean(Uniform(0,2*lam*(1-lam)))
 estM(lam) = mean(rand(Uniform(0,2*lam*(1-lam)),n))
 
@@ -11,6 +7,16 @@ function estM(lam,seed)
     Random.seed!(seed)
     estM(lam)
 end
+
+using Test
+@testset "end_to_end" begin
+
+Random.seed!(0)
+
+seed = 1
+n = 10
+lamGrid = 0.01:0.01:0.99
+
 
 trueM = theorM.(lamGrid)
 estM0 = estM.(lamGrid)
@@ -22,3 +28,4 @@ plot(lamGrid,estMCRN,"r", label="CRN estimate")
 xlim(0,1); ylim(0,0.4)
 xlabel("lambda")
 legend(loc="upper right")
+end

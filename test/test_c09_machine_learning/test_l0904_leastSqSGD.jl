@@ -1,5 +1,7 @@
 using PyPlot, Random
 
+using Test
+@testset "end_to_end" begin
 n = 10^3
 beta0 = 2.0
 beta1 = 1.5
@@ -39,3 +41,4 @@ plot([0,5],[beta0,beta0+5*beta1],"r",label="Actual")
 xlim(0,5)
 ylim(-5,15)
 legend(loc="upper left")
+end

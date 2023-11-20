@@ -1,5 +1,7 @@
 using Random, Distributions
 
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 
 lambda = 0.1
@@ -21,4 +23,5 @@ for n in nRange
         coverageCount += L < actualMedian && actualMedian < U
     end
     println("n = ",n,"\t coverage = ", coverageCount / M)
+end
 end

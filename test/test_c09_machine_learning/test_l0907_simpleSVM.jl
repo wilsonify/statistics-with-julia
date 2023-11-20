@@ -1,5 +1,6 @@
 using Flux.Data.MNIST, LIBSVM, PyPlot
-
+using Test
+@testset "end_to_end" begin
 imgs   = MNIST.images()
 labels = MNIST.labels()
 
@@ -24,3 +25,4 @@ for i in 1:10
     		bbox=Dict("fc"=>"0.8"))
 end
 
+end

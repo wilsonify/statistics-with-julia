@@ -1,5 +1,7 @@
 using RDatasets, DataFrames, GLM, PyPlot
 
+using Test
+@testset "end_to_end" begin
 df = dataset("datasets", "Anscombe")
 
 model1 = lm(@formula(Y1 ~ X1), df)
@@ -34,3 +36,4 @@ println("Model 1. Coefficients: ", coef(model1),"\t R squared: ",r2(model1))
 println("Model 2. Coefficients: ", coef(model2),"\t R squared: ",r2(model2))
 println("Model 3. Coefficients: ", coef(model3),"\t R squared: ",r2(model3))
 println("Model 4. Coefficients: ", coef(model4),"\t R squared: ",r2(model4))
+end

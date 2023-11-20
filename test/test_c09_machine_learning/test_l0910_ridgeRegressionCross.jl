@@ -1,4 +1,7 @@
 using RDatasets, DataFrames, Random, LinearAlgebra, MultivariateStats
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 
 df = dataset("MASS", "cpus")
@@ -36,3 +39,4 @@ betaFinal = ridge(convert(Array{Float64,2},df[:,[:MMin, :Cach, :ChMin]]),
                 convert(Array{Float64,1},df[:,:Perf]),bestLambda)
 
 println("Beta estimate: ", betaFinal)
+end

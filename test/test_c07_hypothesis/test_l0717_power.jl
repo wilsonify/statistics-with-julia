@@ -1,4 +1,7 @@
 using Random, Distributions, KernelDensity, PyPlot
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(1)
 
 function tStat(mu0,mu,sig,n)
@@ -42,3 +45,4 @@ xlim(-5,10)
 ylim(0,0.4)
 xlabel(L"$\Delta = \mu - \mu_0$")
 legend(loc="upper right")
+end

@@ -1,5 +1,8 @@
 using Flux, Random, LinearAlgebra, CSV
 using Flux.Optimise: update!
+
+using Test
+@testset "end_to_end" begin
 Random.seed!(0)
 data = CSV.read("../../data/L1L2data.csv")
 xVals, yVals = Array{Float64}(data.X), Array{Float64}(data.Y)
@@ -18,3 +21,4 @@ while gradNorm >= epsilon
 end
 println("Number of iterations: ", iter)
 println("Coefficients:", b)
+end

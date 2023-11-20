@@ -1,6 +1,7 @@
 using Distributions, Random
 Random.seed!(1)
 
+
 function queueDES(T,arrF,serF,capacity = Inf,initQ = 0,)
     t, q, qL = 0.0, initQ, 0.0
 
@@ -30,6 +31,10 @@ function queueDES(T,arrF,serF,capacity = Inf,initQ = 0,)
     return qL/t
 end
 
+
+using Test
+@testset "end_to_end" begin
+
 lam, mu, K = 0.82, 1.3, 5
 rho = lam/mu
 T = 10^6
@@ -48,3 +53,4 @@ mm1kEst = queueDES(T,()->rand(Exponential(1/lam)),
 println("The load on the system: ",rho)
 println("Queueing theory: ", (mm1Theor,md1Theor,mm1kTheor) )
 println("Via simulation: ", (mm1Est,md1Est,mm1kEst) )
+end

@@ -1,5 +1,4 @@
 using Statistics, StatsBase, PyPlot, Random, LinearAlgebra
-Random.seed!(1)
 
 function cmHitTime()
     catIndex, mouseIndex, t = 1, 5, 0
@@ -25,8 +24,12 @@ function mcTraj(P, initState, T, stopState=0)
     return traj
 end
 
-N = 10^6
 
+using Test
+@testset "end_to_end" begin
+Random.seed!(1)
+
+N = 10^6
 P = [   0   1   0   0   0;
         1 / 4 0   1 / 4 1 / 4 1 / 4;
         0   1 / 2 0   0   1 / 2;
@@ -45,3 +48,4 @@ println("Theoretical: ", theor)
 println("Estimate 1: ",est1)
 println("Estimate 2: ",est2)
 println("Estimate 3: ",est3)
+end

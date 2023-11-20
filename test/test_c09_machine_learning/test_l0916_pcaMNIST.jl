@@ -1,5 +1,8 @@
 using MultivariateStats, RDatasets, PyPlot, LinearAlgebra, Flux.Data.MNIST
 
+
+using Test
+@testset "end_to_end" begin
 imgs, labels   = MNIST.images(), MNIST.labels()
 x = hcat([vcat(float.(im)...) for im in imgs]...)
 pca = fit(PCA, x; maxoutdim=2)
@@ -21,4 +24,5 @@ for k in 1:5
     aFig = fig.add_subplot(2,3,k)
     aFig.set_aspect("equal")
     compareDigits(2k-2,2k-1)
+end
 end

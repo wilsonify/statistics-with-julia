@@ -1,5 +1,8 @@
 using Clustering, RDatasets, PyPlot
 
+
+using Test
+@testset "end_to_end" begin
 df = dataset("cluster", "xclara")
 data = copy(convert(Array{Float64}, df)')
 
@@ -20,3 +23,4 @@ subplot(122)
 plot( df[df.Group .== 1, :V1], df[df.Group .== 1, :V2], "b.")
 plot( df[df.Group .== 2, :V1], df[df.Group .== 2, :V2], "r.")
 plot( df[df.Group .== 3, :V1], df[df.Group .== 3, :V2], "g.")
+end

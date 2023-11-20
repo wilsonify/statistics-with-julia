@@ -1,5 +1,7 @@
 using Distributions, GLM, DataFrames, PyPlot, Random, LinearAlgebra
 
+using Test
+@testset "end_to_end" begin
 n = 100
 beta0, beta1, beta2, beta3 = 10, 30, 60, 90
 sig = 25
@@ -41,4 +43,5 @@ for eta in etaVals
 		"\t pInv diff: ",round(norm(psInv(lam)-pinv(A)),digits=6))
         end
     end
+end
 end

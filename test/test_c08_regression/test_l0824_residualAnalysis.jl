@@ -15,6 +15,8 @@ function normalProbabilityPlot(data)
         ylabel("Quantiles of data")
 end
 
+using Test
+@testset "end_to_end" begin
 data = CSV.read("weightHeight.csv")
 
 model = lm(@formula(Height ~ Weight), data)
@@ -28,3 +30,4 @@ plot(data.Weight, residuals,"b.")
 
 subplot(122)
 normalProbabilityPlot(data[:,3])
+end

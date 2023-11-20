@@ -1,5 +1,8 @@
 using Flux, Flux.Data.MNIST, Statistics, BSON, Random, StatsPlots; pyplot()
 using Flux: onehotbatch, onecold, crossentropy, @epochs
+
+using Test
+@testset "end_to_end" begin
 epochs = 30
 eta = 1e-3
 batchSize = 200
@@ -47,3 +50,4 @@ println("It achieves $(bestAcc) accuracy on average.")
 boxplot(results,label = "",
 xticks = ([1:1:4; ],string.(pToTest)),
 xlabel = "Dropout Probability", ylabel = "Accuracy", legend = false)
+end
