@@ -1,4 +1,4 @@
-FROM stats-with-julia-base:latest
+FROM stats-with-julia-base:develop
 RUN mkdir -p /usr/src/app
 COPY setup.jl /usr/src/app/setup.jl
 RUN pip3 install textblob matplotlib nltk
