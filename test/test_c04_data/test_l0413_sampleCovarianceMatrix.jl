@@ -3,6 +3,7 @@ path_to_here = @__DIR__
 include("$path_to_here/t01_are_dataframes_equal.jl")
 include("$path_to_here/t02_are_lists_equal.jl")
 include("$path_to_here/t04_dataframe_to_dict.jl")
+include("$path_to_here/t05_are_arrays_equal.jl")
 
 path_to_data = abspath("$path_to_here/../../data")
 
@@ -204,7 +205,7 @@ end
     result = sample_covariance_matrix1(x)
     result = round.(result, digits = 2)
     expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.71; 0.44 -0.71 8.03]
-    @test result == expected_result
+    @test is_all_approx_array(result,expected_result)
 end
 
 @testset "sample_covariance_matrix2" begin
