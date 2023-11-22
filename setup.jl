@@ -35,7 +35,7 @@ Pkg.add("MultivariatePolynomials")
 Pkg.add("MultivariateStats")
 Pkg.add("MutableArithmetics")
 Pkg.add("NLsolve")
-Pkg.add("OpenAPI")
+#Pkg.add("OpenAPI") # OpenAPI requires julia >= 1.6
 Pkg.add("PackageCompiler")
 Pkg.add("Plots")
 Pkg.add("PyCall")
