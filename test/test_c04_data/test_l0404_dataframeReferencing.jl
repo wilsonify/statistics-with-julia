@@ -10,7 +10,10 @@
 
 using DataFrames
 using CSV
+using InlineStrings # we need String15 available for testing
 using Test
+
+
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
 include("$path_to_here/t01_are_dataframes_equal.jl")
@@ -26,6 +29,7 @@ reference_names_list = ["SAMMIE", missing, "STACEY"]
 reference_names = DataFrame(Name = reference_names_list)
 
 @testset "end-to-end" begin
+    @test typeof(String15("SAMMIE")) == String15
     data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
     @test data[1, 3] == "A"
     @test data[1, :Grade] == "A"

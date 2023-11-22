@@ -15,3 +15,10 @@ docker-test:
 	-v $(shell pwd)/test:/usr/src/app/test \
 	-v $(shell pwd)/data:/usr/src/app/data \
 	ghcr.io/wilsonify/stats-with-julia-builder:latest julia --project=/usr/src/app /usr/src/app/test/runtests.jl
+
+docker-test2:
+	docker run --rm --name stats-with-julia-tester \
+	-v $(shell pwd)/src:/usr/src/app/src \
+	-v $(shell pwd)/test:/usr/src/app/test \
+	-v $(shell pwd)/data:/usr/src/app/data \
+	ghcr.io/wilsonify/stats-with-julia-builder:latest julia --project=/usr/src/app /usr/src/app/test/test_c04_data/test_l0404_dataframeReferencing.jl
