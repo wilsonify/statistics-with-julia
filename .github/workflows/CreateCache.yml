@@ -40,13 +40,12 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: |
-            ~/.julia/artifacts
-            ~/.julia/compiled
-          key: julia-${{ runner.os }}-${{ matrix.version }}-${{ hashFiles('setup.jl') }}
+            ~/.julia
+          key: ${{ runner.os }}-julia-${{ matrix.version }}-${{ hashFiles('setup.jl') }}
 
       - name: Cache Python dependencies
         uses: actions/cache/save@v3
         with:
           path: |
             ~/.cache/pip
-          key: python-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('src/c01_CallPython/requirements.txt') }}
+          key: ${{ runner.os }}-python-${{ matrix.python-version }}-${{ hashFiles('src/c01_CallPython/requirements.txt') }}
