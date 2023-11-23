@@ -42,11 +42,11 @@ jobs:
           path: |
             ~/.julia/artifacts
             ~/.julia/compiled
-          key: julia-${{ runner.os }}-${{ matrix.version }}-${{ hashFiles('**/Project.toml') }}-${{ hashFiles('**/Manifest.toml') }}
+          key: julia-${{ runner.os }}-${{ matrix.version }}-${{ hashFiles('**/Setup.jl') }}
 
       - name: Cache Python dependencies
         uses: actions/cache@v2
         with:
           path: |
             ~/.cache/pip
-          key: python-${{ runner.os }}-${{ matrix.version }}-${{ hashFiles('**/requirements.txt') }}
+          key: python-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/requirements.txt') }}

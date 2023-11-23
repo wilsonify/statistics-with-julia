@@ -24,9 +24,8 @@ jobs:
           path: |
             ~/.julia/artifacts
             ~/.julia/compiled
-          key: julia-${{ runner.os }}-${{ matrix.version }}-${{ hashFiles('**/Project.toml') }}-${{ hashFiles('**/Manifest.toml') }}
           restore-keys: |
-            julia-${{ runner.os }}-${{ matrix.version }}-
+            julia-${{ runner.os }}-${{ matrix.version }}-${{ hashFiles('**/Setup.jl') }}         
 
       - name: Cache Python dependencies
         uses: actions/cache@v2
