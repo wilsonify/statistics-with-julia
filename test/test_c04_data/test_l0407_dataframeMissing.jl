@@ -20,7 +20,8 @@ end
 @testset "coalesce test" begin
     data = read_purchaseData()
     expected_data = ["A", "B", "E", "QQ"]
-    @test are_lists_equal(coalesce.(data.Grade, "QQ")[1:4], expected_data)
+    @test coalesce.(data.Grade, "QQ")[1:4] == expected_data
+    #@test are_lists_equal(coalesce.(data.Grade, "QQ")[1:4], expected_data)
 end
 
 @testset "dropmissing test" begin

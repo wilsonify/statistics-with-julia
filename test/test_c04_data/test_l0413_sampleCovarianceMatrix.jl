@@ -205,6 +205,7 @@ end
     result = sample_covariance_matrix1(x)
     result = round.(result, digits = 2)
     expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.71; 0.44 -0.71 8.03]
+    #@test result==expected_result
     @test is_all_approx_array(result,expected_result)
 end
 
