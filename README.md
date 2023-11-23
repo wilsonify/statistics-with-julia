@@ -26,8 +26,23 @@ Appendix C. Additional Packages
 # Getting Started
 
 #### Install Julia > 1.6
+```
+julia_major_version=1
+julia_minor_version=7
+julia_patch_version=3
+major_minor=$julia_major_version.$julia_minor_version
+full_version=$julia_major_version.$julia_minor_version.$julia_patch_version
+wget https://julialang-s3.julialang.org/bin/linux/x64/$major_minor/julia-$full_version-linux-x86_64.tar.gz
+tar -xvzf julia-$full_version-linux-x86_64.tar.gz
+mkdir -p /opt/julia/v$full_version
+mv julia-$full_version/* /opt/julia/v$full_version
+update-alternatives --install /usr/bin/julia julia /opt/julia/v$full_version/bin/julia 100
+rmdir julia-$full_version
+rm -f julia-$full_version-linux-x86_64.tar.gz
+```
 
 #### Install Python > 3.9
+
 
 #### Install python libraries
 
@@ -41,3 +56,14 @@ pip install -r src/c01_CallPython/requirements.txt
 julia --project="~/.julia/environments/StatsWithJulia1.7" setup.jl
 ```
 
+#### Run Tests
+
+```
+julia --project="~/.julia/environments/StatsWithJulia1.7" test/runtests.jl
+```
+
+# Contribute
+
+1. Open an Issue
+2. Create a Fork
+3. Submit a Pull Request into the branch named develop 
