@@ -24,7 +24,7 @@ reference_data = DataFrame(Name = ["MARYANNA", "REBECCA", "KHADIJAH"],
     Grade = ["A", "B", missing],
     Price = [79700, missing, 38904])
 
-reference_names_list = ["SAMMIE", missing, "STACEY"]
+reference_names_list = Union{Missing, String15}[String15("SAMMIE"), missing, String15("STACEY")]
 
 reference_names = DataFrame(Name = reference_names_list)
 
