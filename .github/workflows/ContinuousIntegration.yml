@@ -56,9 +56,6 @@ jobs:
         env:
           PYTHON: python
 
-      - name: Cache
-        uses: julia-actions/cache@v1
-
       - name: Run tests
         run: julia --project=. test/runtests.jl
 
