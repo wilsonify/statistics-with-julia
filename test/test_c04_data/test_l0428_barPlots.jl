@@ -1,6 +1,6 @@
 using DataFrames, CSV, CategoricalArrays, StatsPlots
 path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../data")
+path_to_data = abspath("$path_to_here/../../data")
 read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
 
 using Test
