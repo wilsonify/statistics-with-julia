@@ -1,6 +1,8 @@
 
 based on 
 Statistics with Julia: Fundamentals for Data Science, Machine Learning and Artificial Intelligence
+by H.Klok , Y.Nazarathy
+
 
 This repository is a collection of code blocks contained within that book. 
 It contains the following ten chapters and three appendices:
@@ -20,7 +22,22 @@ Appendix A. How-to in Julia
 Appendix B. Additional Language Features
 Appendix C. Additional Packages
 
-We hope you find this an enjoyable and instructive resource.
 
-H.Klok
-Y.Nazarathy
+# Getting Started
+
+#### Install Julia > 1.6
+
+#### Install Python > 3.9
+
+#### Install python libraries
+
+```
+pip install -r src/c01_CallPython/requirements.txt
+```
+
+#### Install Julia Packages
+    
+```
+julia --project="~/.julia/environments/StatsWithJulia1.7" setup.jl
+```
+
