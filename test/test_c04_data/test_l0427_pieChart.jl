@@ -4,6 +4,7 @@ path_to_data = abspath("$path_to_here/../data")
 
 read_comanyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
 
+using Test
 @testset "pie plot test" begin
     df = read_comanyData()
     companies = levels(df.Type)

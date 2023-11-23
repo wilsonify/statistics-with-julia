@@ -8,6 +8,7 @@ function directorySearch(directory, searchString)
     close(outfile)
 end
 
+using Test
 @testset "directorySearch" begin
     directorySearch(@__DIR__, ".jl")
 end
