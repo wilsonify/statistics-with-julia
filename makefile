@@ -55,7 +55,10 @@ test1.8:
 	/opt/julia/v1.8.5/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.8 test/runtests.jl
 
 /home/thom/.julia/environments/StatisticsWithJulia1.9/Project.toml:
-	/opt/julia/v1.9.3/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.9 setup.jl
+	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.9 setup.jl
 
 test1.9:
-	/opt/julia/v1.9.3/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.9 test/runtests.jl
+	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.9 test/runtests.jl
+
+test_c04_data1.9:
+	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.9 test/test_c04_data/runtests.jl
