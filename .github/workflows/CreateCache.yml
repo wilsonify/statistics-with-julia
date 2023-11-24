@@ -32,7 +32,7 @@ jobs:
         run: python -m pip install matplotlib textblob nltk
 
       - name: Install Julia Dependencies
-        run: julia --project=~/.julia/environments/statistics-with-julia setup.jl
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} setup.jl
         env:
           PYTHON: python
 

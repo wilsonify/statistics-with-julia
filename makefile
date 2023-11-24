@@ -24,41 +24,41 @@ docker-test2:
 	ghcr.io/wilsonify/stats-with-julia-builder:latest julia --project=/usr/src/app /usr/src/app/test/test_c04_data/test_l0404_dataframeReferencing.jl
 
 
-/home/thom/.julia/environments/StatisticsWithJulia1.4/Project.toml:
-	/opt/julia/v1.4.2/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.4 setup.jl
+/home/thom/.julia/environments/v1.4/Project.toml:
+	/opt/julia/v1.4.2/bin/julia --project=~/.julia/environments/v1.4 setup.jl
 
 test1.4:
-	/opt/julia/v1.4.2/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.4 test/runtests.jl
+	/opt/julia/v1.4.2/bin/julia --project=~/.julia/environments/v1.4 test/runtests.jl
 
-/home/thom/.julia/environments/StatisticsWithJulia1.5/Project.toml:
-	/opt/julia/v1.5.4/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.5 setup.jl
+/home/thom/.julia/environments/v1.5/Project.toml:
+	/opt/julia/v1.5.4/bin/julia --project=~/.julia/environments/v1.5 setup.jl
 
 test1.5:
-	/opt/julia/v1.5.4/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.5 test/runtests.jl
+	/opt/julia/v1.5.4/bin/julia --project=~/.julia/environments/v1.5 test/runtests.jl
 
-/home/thom/.julia/environments/StatisticsWithJulia1.6/Project.toml:
-	/opt/julia/v1.6.7/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.6 setup.jl
+/home/thom/.julia/environments/v1.6/Project.toml:
+	/opt/julia/v1.6.7/bin/julia --project=~/.julia/environments/v1.6 setup.jl
 
 test1.6:
-	/opt/julia/v1.6.7/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.6 test/runtests.jl
+	/opt/julia/v1.6.7/bin/julia --project=~/.julia/environments/v1.6 test/runtests.jl
 
-/home/thom/.julia/environments/StatisticsWithJulia1.7/Project.toml:
-	/opt/julia/v1.7.3/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.7 setup.jl
+/home/thom/.julia/environments/v1.7/Project.toml:
+	/opt/julia/v1.7.3/bin/julia --project=~/.julia/environments/v1.7 setup.jl
 
 test1.7:
-	/opt/julia/v1.7.3/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.7 test/runtests.jl
+	/opt/julia/v1.7.3/bin/julia --project=~/.julia/environments/v1.7 test/runtests.jl
 
-/home/thom/.julia/environments/StatisticsWithJulia1.8/Project.toml:
-	/opt/julia/v1.8.5/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.8 setup.jl
+/home/thom/.julia/environments/v1.8/Project.toml:
+	/opt/julia/v1.8.5/bin/julia --project=~/.julia/environments/v1.8 setup.jl
 
 test1.8:
-	/opt/julia/v1.8.5/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.8 test/runtests.jl
+	/opt/julia/v1.8.5/bin/julia --project=~/.julia/environments/v1.8 test/runtests.jl
 
-/home/thom/.julia/environments/StatisticsWithJulia1.9/Project.toml:
-	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.9 setup.jl
+/home/thom/.julia/environments/v1.9/Project.toml:
+	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/v1.9 setup.jl
 
 test1.9:
-	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.9 test/runtests.jl
+	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/v1.9 test/runtests.jl
 
 test_c04_data1.9:
-	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/StatisticsWithJulia1.9 test/test_c04_data/runtests.jl
+	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/v1.9 test/test_c04_data/runtests.jl

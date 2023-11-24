@@ -1,0 +1,7 @@
+source("install-julia.sh")
+install_julia(1,4,2)
+install_julia(1,5,4)
+install_julia(1,6,7)
+install_julia(1,7,2)
+install_julia(1,8,3)
+install_julia(1,9,3)

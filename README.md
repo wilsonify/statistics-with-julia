@@ -27,39 +27,30 @@ Appendix C. Additional Packages
 
 #### Install Julia > 1.6
 ```
-julia_major_version=1
-julia_minor_version=7
-julia_patch_version=3
-major_minor=$julia_major_version.$julia_minor_version
-full_version=$julia_major_version.$julia_minor_version.$julia_patch_version
-wget https://julialang-s3.julialang.org/bin/linux/x64/$major_minor/julia-$full_version-linux-x86_64.tar.gz
-tar -xvzf julia-$full_version-linux-x86_64.tar.gz
-mkdir -p /opt/julia/v$full_version
-mv julia-$full_version/* /opt/julia/v$full_version
-update-alternatives --install /usr/bin/julia julia /opt/julia/v$full_version/bin/julia 100
-rmdir julia-$full_version
-rm -f julia-$full_version-linux-x86_64.tar.gz
+source scripts/install_julia 1 7 2
 ```
 
 #### Install Python > 3.9
-
+```
+apt install -y python3-dev python3-pip
+```
 
 #### Install python libraries
 
 ```
-pip install -r src/c01_CallPython/requirements.txt
+python -m pip install -r src/c01_CallPython/requirements.txt
 ```
 
 #### Install Julia Packages
     
 ```
-julia --project="~/.julia/environments/StatsWithJulia1.7" setup.jl
+julia --project="~/.julia/environments/v1.7" setup.jl
 ```
 
 #### Run Tests
 
 ```
-julia --project="~/.julia/environments/StatsWithJulia1.7" test/runtests.jl
+julia --project="~/.julia/environments/v1.7" test/runtests.jl
 ```
 
 # Contribute
