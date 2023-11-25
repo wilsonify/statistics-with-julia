@@ -64,17 +64,45 @@ module StatisticsWithJulia
     export bdEvent
     export calculate_max_error
     export run_simulation_birthday_problem
-#     include("c02_probability/l0204_fishing.jl")
-#     include("c02_probability/l0205_catalan.jl")
-#     include("c02_probability/l0206_sets.jl")
-#     include("c02_probability/l0207_mcFalacy.jl")
-#     include("c02_probability/l0208_secretaryEnvelopes.jl")
-#     include("c02_probability/l0209_occupancyProblem.jl")
-#     include("c02_probability/l0210_independence.jl")
-#     include("c02_probability/l0211_conditionalProbability.jl")
-#     include("c02_probability/l0212_txRxBayes.jl")
-#     include("c02_probability/l0213_montyHall.jl")
-#
+    include("c02_probability/l0204_fishing.jl")
+    export fishing_simulation
+    export estimate_proportion_fish_caught
+    export plot_fishing_proportions
+    include("c02_probability/l0205_catalan.jl")
+    export isUpperLattice
+    export estimate_pA_modelI
+    export randomWalkPath
+    export estimate_pA_modelIIest
+    export plotLatticePaths
+    export lattice_paths_simulation
+    include("c02_probability/l0206_sets.jl")
+    include("c02_probability/l0207_mcFalacy.jl")
+    export mc_estimate1
+    export mc_estimate2
+    export run_simulations_falacy
+    include("c02_probability/l0208_secretaryEnvelopes.jl")
+    export bruteSetsProbabilityAllMiss
+    export mcAllMiss
+    export envelopeStuffer
+    export main_secretary_envelopes
+    include("c02_probability/l0209_occupancyProblem.jl")
+    export occupancyMC
+    export main_occupancy_problem
+    include("c02_probability/l0210_independence.jl")
+    export simulation
+    export main_independence
+    include("c02_probability/l0211_conditionalProbability.jl")
+    export main_conditional_probability()
+    include("c02_probability/l0212_txRxBayes.jl")
+    export flip_with_prob
+    export bayes_rule
+    export simulate
+    export calculate
+    include("c02_probability/l0213_montyHall.jl")
+    export monty_hall_game
+    export monty_hall_simulation
+    export main_monty_hall
+
 #     include("c03_distribution/l0301_randomVariable.jl")
 #     include("c03_distribution/l0302_discreteContinuous.jl")
 #     include("c03_distribution/l0303_meanIntegration.jl")

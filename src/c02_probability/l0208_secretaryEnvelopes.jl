@@ -1,6 +1,7 @@
 # Secretary with envelopes
-using Random, StatsBase, Combinatorics
-Random.seed!(1)
+
+using StatsBase
+using Combinatorics
 
 function bruteSetsProbabilityAllMiss(n)
     omega = collect(permutations(1:n))
@@ -29,13 +30,14 @@ function mcAllMiss(n, N)
     return sum(data) / N
 end
 
-N = 10^6
+function main_secretary_envelopes()
+    N = 10^6
 
-println("n\tBrute Force\tFormula\t\tMonte Carlo\tAsymptotic",)
-for n in 1:6
-    bruteForce = bruteSetsProbabilityAllMiss(n)
-    fromFormula = formulaCalcAllMiss(n)
-    fromMC = mcAllMiss(n,N)
-    println(n,"\t",round(bruteForce,digits = 4),"\t\t",round(fromFormula,digits = 4),
-    "\t\t",round(fromMC,digits = 4),"\t\t",round(1 / MathConstants.e,digits = 4))
+    println("n\tBrute Force\tFormula\t\tMonte Carlo\tAsymptotic",)
+    for n in 1:6
+        bruteForce = bruteSetsProbabilityAllMiss(n)
+        fromFormula = formulaCalcAllMiss(n)
+        fromMC = mcAllMiss(n,N)
+        println(n,"\t",round(bruteForce,digits = 4),"\t\t",round(fromFormula,digits = 4),    "\t\t",round(fromMC,digits = 4),"\t\t",round(1 / MathConstants.e,digits = 4))
+    end
 end

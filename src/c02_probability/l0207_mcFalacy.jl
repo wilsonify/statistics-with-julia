@@ -1,16 +1,22 @@
 # An innocent mistake with Monte Carlo
 using Random, StatsBase
-Random.seed!(1)
 
-A = Set(['a', 'e', 'i', 'o', 'u'])
-B = Set(['x', 'y', 'z'])
-omega = 'a':'z'
+function mc_estimate1(N, omega, A, B)
+     return sum([in(sample(omega),A) || in(sample(omega),B) for _ in 1:N]) / N
+end
 
-N = 10^6
+function mc_estimate2(N, omega, A, B)
+     return sum([in(sample(omega),union(A,B)) for _ in 1:N]) / N
+end
 
-println("mcEst1 \t \tmcEst2")
-for _ in 1:5
-    mcEst1 = sum([in(sample(omega),A) || in(sample(omega),B) for _ in 1:N]) / N
-    mcEst2 = sum([in(sample(omega),union(A,B)) for _ in 1:N]) / N
-    println(mcEst1,"\t",mcEst2)
+function run_simulations_falacy(nsims)
+    N = 1000
+    A = Set(['a', 'e', 'i', 'o', 'u'])
+    B = Set(['x', 'y', 'z'])
+    omega = 'a':'z'
+    for _ in 1:nsims
+        mcEst1 = mc_estimate1(N,omega,A,B)
+        mcEst2 = mc_estimate2(N,omega,A,B)
+        println(mcEst1,"\t",mcEst2)
+    end
 end

@@ -1,8 +1,8 @@
 # Basic set operations
+function main_set_examples()
 A = Set([2, 7, 2, 3])
 B = Set(1:6)
 omega = Set(1:10)
-
 AunionB = union(A, B)
 AintersectionB = intersect(A, B)
 BdifferenceA = setdiff(B,A)
@@ -15,5 +15,5 @@ println("B diff A = $BdifferenceA")
 println("B complement = $Bcomplement")
 println("A symDifference B = $AsymDifferenceB")
 println("The element '6' is an element of A: $(in(6,A))")
-println("Symmetric difference and intersection are subsets of the union: ",
-        issubset(AsymDifferenceB,AunionB),", ", issubset(AintersectionB,AunionB))
+println("Symmetric difference and intersection are subsets of the union: ", issubset(AsymDifferenceB,AunionB),", ", issubset(AintersectionB,AunionB))
+end
