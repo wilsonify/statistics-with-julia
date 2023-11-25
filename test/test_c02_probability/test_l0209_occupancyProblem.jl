@@ -1,4 +1,5 @@
-
+using StatisticsWithJulia: occupancyAnalytic
+using StatisticsWithJulia: occupancyMC
 using Test, Random
 
 @testset "occupancyAnalytic Tests" begin

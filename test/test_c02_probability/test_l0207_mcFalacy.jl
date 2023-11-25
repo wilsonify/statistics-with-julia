@@ -1,6 +1,10 @@
 
+using StatisticsWithJulia: mc_estimate1
+using StatisticsWithJulia: mc_estimate2
+using StatisticsWithJulia: run_simulations_falacy
 
 using Test
+using Random
 @testset "mc_estimate1 test" begin
     Random.seed!(1)
     A = Set(['a', 'e', 'i', 'o', 'u'])
@@ -23,10 +27,10 @@ end
     @test result == 0.3
 end
 
-@testset "run_simulations test" begin
+@testset "run_simulations_falacy test" begin
     Random.seed!(1)
     A = Set(['a', 'e', 'i', 'o', 'u'])
     B = Set(['x', 'y', 'z'])
     omega = 'a':'z'
-    run_simulations(100)
+    run_simulations_falacy(100)
 end

@@ -1,4 +1,5 @@
 
+using StatisticsWithJulia: bayes_rule
 using Test
 
 @testset "Bayes Rule Tests" begin

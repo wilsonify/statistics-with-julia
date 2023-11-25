@@ -19,4 +19,5 @@ function run_simulations_falacy(nsims)
         mcEst2 = mc_estimate2(N,omega,A,B)
         println(mcEst1,"\t",mcEst2)
     end
+
 end

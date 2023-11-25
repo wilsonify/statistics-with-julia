@@ -5,7 +5,7 @@ firstDigit(x) = Int(floor(x / 10))
 secondDigit(x) = x % 10
 isThirteen(x) = x == 13
 
-function simulation(N)
+function simulation_independent_events(N)
     numThirteen, numFirstIsOne, numSecondIsThree = 0, 0, 0
     for _ in 1:N
         X = numberchoice(10:25)

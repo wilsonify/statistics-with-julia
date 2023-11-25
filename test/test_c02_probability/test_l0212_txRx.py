@@ -1,3 +1,4 @@
+from src.c02_probability.l0212_txRx import bayes_rule
 
 
 def test_bayes_rule(self):

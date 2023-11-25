@@ -1,4 +1,7 @@
 
+using StatisticsWithJulia: estimate_pA_modelI
+using StatisticsWithJulia: estimate_pA_modelIIest
+using StatisticsWithJulia: plotLatticePaths
 using Test
 using Random
 Random.seed!(12)

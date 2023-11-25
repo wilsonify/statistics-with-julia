@@ -89,10 +89,11 @@ module StatisticsWithJulia
     export occupancyMC
     export main_occupancy_problem
     include("c02_probability/l0210_independence.jl")
-    export simulation
+    export simulation_independent_events
     export main_independence
     include("c02_probability/l0211_conditionalProbability.jl")
-    export main_conditional_probability
+    export probDefectiveGivenParticles
+    export probParticles
     include("c02_probability/l0212_txRxBayes.jl")
     export flip_with_prob
     export bayes_rule

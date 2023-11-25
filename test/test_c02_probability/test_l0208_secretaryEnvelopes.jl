@@ -1,4 +1,7 @@
 
+using StatisticsWithJulia: bruteSetsProbabilityAllMiss
+using StatisticsWithJulia: formulaCalcAllMiss
+using StatisticsWithJulia: mcAllMiss
 using Test
 using Random
 Random.seed!(1)
