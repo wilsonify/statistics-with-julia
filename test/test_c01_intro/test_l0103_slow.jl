@@ -1,13 +1,10 @@
 # Slow code example
+using StatisticsWithJulia: generate_random_data_slowly
+using StatisticsWithJulia: calculate_quantiles
 using Statistics, Random, Test
 
-path_to_here = @__DIR__
-path_to_module = abspath("$path_to_here/../../src/c01_intro")
-include("$path_to_module/l0103_slow.jl")
-
-
-@testset "Test generate_random_data function" begin
-    result = generate_random_data(100, 10)
+@testset "Test generate_random_data_slowly function" begin
+    result = generate_random_data_slowly(100, 10)
     @test length(result) == 100
 end
 using Test

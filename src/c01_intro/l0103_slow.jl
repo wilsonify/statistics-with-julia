@@ -1,6 +1,6 @@
 using Statistics
 
-function generate_random_data(num_groups, group_size)
+function generate_random_data_slowly(num_groups, group_size)
     data = Float64[]
     for _ in 1:num_groups
         group = Float64[]
@@ -23,7 +23,7 @@ function main()
     group_size = 5 * 10^2
 
     println("Generating random data...")
-    data = generate_random_data(num_groups, group_size)
+    data = generate_random_data_slowly(num_groups, group_size)
 
     println("Calculating quantiles...")
     quantile_01, quantile_99 = calculate_quantiles(data)

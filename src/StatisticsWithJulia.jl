@@ -8,4 +8,7 @@ module StatisticsWithJulia
     export comprehension_sqrt
     export comprehension_polynomial
     export broadcast_round
+    include("c01_intro/l0103_slow.jl")
+    export generate_random_data_slowly
+    export calculate_quantiles
 end
