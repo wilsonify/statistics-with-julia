@@ -1,4 +1,5 @@
 using StatisticsWithJulia: estimate_pi
+using LinearAlgebra: norm
 using Test
 
 # Define a test for the estimate_pi function

@@ -24,5 +24,5 @@ end
     hailstone_lengths = generate_hailstone_lengths(limit)
     num_bins = 10
     p = plot_hailstone_lengths(hailstone_lengths, num_bins)
-    @test typeof(p) == Plots.Plot{Plots.PyPlotBackend}
+    @test typeof(p) == Plots.Plot{Plots.GRBackend}
 end

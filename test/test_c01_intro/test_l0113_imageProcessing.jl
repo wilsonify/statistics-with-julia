@@ -3,7 +3,7 @@ using StatisticsWithJulia: grayscale_conversion
 using StatisticsWithJulia: apply_box_blur
 using StatisticsWithJulia: find_max_coordinates
 using Test
-using Images: load
+using Images: load, Normed
 
 
 # Define a test for the load function

@@ -1,5 +1,6 @@
 # Tests for polynomial Generator
 using StatisticsWithJulia: polynomialGenerator
+using StatisticsWithJulia: find_zeros
 using Test
 
 @testset "Test polynomialGenerator function" begin

@@ -21,6 +21,7 @@ module StatisticsWithJulia
     export bubbleSort!
     include("c01_intro/l0107_polyRoots.jl")
     export polynomialGenerator
+    export find_zeros
     include("c01_intro/l0108_multiWayMarkovChainStationary.jl")
     export calculate_steady_state_matrix_exponentiation
     export calculate_steady_state_linear_system
