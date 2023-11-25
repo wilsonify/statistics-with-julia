@@ -69,7 +69,7 @@ end
     @test typeof(d2) == Vector{Float64}
 end
 
-function main()
+function main_radial_plots()
     data = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols = true)
     brisbane = data.Brisbane
     dates = [Date(Year(data.Year[i]), Month(data.Month[i]), Day(data.Day[i])) for i in 1:nrow(data)]

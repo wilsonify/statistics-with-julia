@@ -19,7 +19,7 @@ function occupancyMC(n, r, N)
     return fullCount / N
 end
 
-function main()
+function main_occupancy_problem()
     max_n, N, Kvals = 100, 10^3, [2, 3, 4]
     analytic = [[occupancyAnalytic(big(n),big(k*n)) for n in 1:max_n] for k in Kvals]
     monteCarlo = [[occupancyMC(n,k*n,N) for n in 1:max_n] for k in Kvals]

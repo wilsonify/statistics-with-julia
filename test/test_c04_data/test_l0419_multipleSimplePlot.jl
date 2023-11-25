@@ -38,7 +38,7 @@ end
     @test diff == [1.0, 2.0, 1.0]
 end
 
-function main()
+function main_multiple_simple_plots()
     data = CSV.read("$path_to_data/temperatures.csv", DataFrame)
     brisbane = data.Brisbane
     goldcoast = data.GoldCoast

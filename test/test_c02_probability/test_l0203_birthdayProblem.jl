@@ -41,7 +41,7 @@ function run_simulation(N, xGrid)
     return xGrid, mcEstimates, max_error
 end
 
-function main()
+function main_birthday_probability()
     xGrid = 1:50
     analyticSolution1 = [matchExists1(n) for n in xGrid]
     analyticSolution2 = [matchExists2(n) for n in xGrid]

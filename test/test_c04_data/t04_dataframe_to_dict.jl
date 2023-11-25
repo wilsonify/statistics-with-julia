@@ -8,7 +8,7 @@ function dataframe_to_dict(df::DataFrame)
     return dict
 end
 
-function main()
+function main_dataframe_to_dictionary()
     # Example usage:
 
     # Create a sample DataFrame

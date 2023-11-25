@@ -1,6 +1,4 @@
 # Password matching
-using Random
-Random.seed!()
 
 function numMatch(loginPassword)
     correctPassword = "3xyZu4vN"
@@ -22,7 +20,7 @@ function gen_many_pw(N)
     return passwords
     end
 
-function main()
+function main_password_matching()
     numMatchesForLog = 1
     passwords = gen_many_pw(10^7)
     numLogs = sum([numMatch(p) >= numMatchesForLog for p in passwords])
@@ -31,16 +29,18 @@ function main()
     end
 
 using Test
+using Random
 
 @testset "Test gen_pw function" begin
-   result = gen_pw()
-   @test length(result) == 8
-
+    Random.seed!(0)
+    result = gen_pw()
+    @test length(result) == 8
 end
 
 
 
 @testset "Test numMatch function" begin
+    Random.seed!(0)
     @test numMatch("3xyZu4vN") == 8
     @test numMatch("") == 0
     @test numMatch("abcdefg") == 0

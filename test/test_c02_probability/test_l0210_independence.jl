@@ -22,7 +22,7 @@ function simulation(N)
    return probThirteen, probFirstIsOne, probSecondIsThree
 end
 
-function main()
+function main_independence()
     probThirteen, probFirstIsOne, probSecondIsThree = simulation(10^7)
     probJoint = probFirstIsOne*probSecondIsThree
     println("P(13) = $probThirteen")

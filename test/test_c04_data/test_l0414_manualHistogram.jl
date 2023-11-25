@@ -23,7 +23,7 @@ function compute_histogram(data::Vector{Float64}, bins::Vector{Tuple{Float64, Fl
     return h
 end
 
-function main()
+function main_manual_histogram()
     n = 2000
     data = generate_data(n, 0)
     delta = 0.3

@@ -25,7 +25,7 @@ function summarize_purchaseData(data)
     return result
 end
 
-function main()
+function main_dataframe_ops()
     df = read_purchaseData()
     df = preprocess_purchaseData(df)
     summary = summarize_purchaseData(df)

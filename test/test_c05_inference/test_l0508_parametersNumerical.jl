@@ -21,7 +21,7 @@ function equations(F, x, mHats)
     F[3] = 1 / 10 * ( x[1]^3 + x[2]^3 + x[3]^3 + x[1]^2 * x[2] + x[1]^2 * x[3] + x[2]^2 * x[1] + x[2]^2 * x[3] + x[3]^2 * x[1] + x[3]^2 * x[2] + x[1] * x[2] * x[3] ) - mHats[3]
 end
 
-function main()
+function main_parameters_numerical()
     a, b, c = 3, 5, 4
     n = 2000
     samples = generate_data(a, b, c, n)

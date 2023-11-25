@@ -1,7 +1,8 @@
-# Even sum of two dice
-N, faces = 10^6, 1:6
 
-numSol = sum([iseven(i + j) for i in faces, j in faces]) / length(faces)^2
-mcEst = sum([iseven(rand(faces) + rand(faces)) for i in 1:N]) / N
+function even_sum_probability()
+    N, faces = 10^6, 1:6
+    numSol = sum([iseven(i + j) for i in faces, j in faces]) / length(faces)^2
+    mcEst = sum([iseven(rand(faces) + rand(faces)) for i in 1:N]) / N
+    return numSol, mcEst
+end
 
-println("Numerical solution = $numSol \nMonte Carlo estimate = $mcEst")

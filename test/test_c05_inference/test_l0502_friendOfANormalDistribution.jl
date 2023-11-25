@@ -57,7 +57,7 @@ function plot_t_stats(tStats, n)
     return p3
 end
 
-function main()
+function main_friends_of_the_normal_distribution()
     mu, sigma = 10, 4
     n, N = 10, 10^6
     sMeans, sVars, tStats = simulate_normal_samples(mu, sigma, n, N)

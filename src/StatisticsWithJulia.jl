@@ -52,8 +52,8 @@ module StatisticsWithJulia
     include("c01_intro/l0117_randomWalks.jl")
     export random_walk
 
-
-#     include("c02_probability/l0201_diceSumEven.jl")
+    include("c02_probability/l0201_diceSumEven.jl")
+    export even_sum_probability
 #     include("c02_probability/l0202_passwords.jl")
 #     include("c02_probability/l0203_birthdayProblem.jl")
 #     include("c02_probability/l0204_fishing.jl")

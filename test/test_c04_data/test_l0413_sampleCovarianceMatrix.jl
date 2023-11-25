@@ -103,7 +103,7 @@ function sample_correlation_matrix6(X)
     return cor(X)
 end
 
-function main()
+function main_sample_covariance_matrix()
     df_3feature = read_3featureData()
     n, p = size(df_3feature)
     println("Number of features: ", p)

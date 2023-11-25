@@ -29,7 +29,7 @@ function mcAllMiss(n, N)
     return sum(data) / N
 end
 
-function main()
+function main_secretary_envelopes()
     N = 10^6
 
     println("n\tBrute Force\tFormula\t\tMonte Carlo\tAsymptotic",)

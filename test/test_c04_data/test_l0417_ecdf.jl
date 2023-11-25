@@ -62,7 +62,7 @@ end
     plot_mixCDF(n2, mu1, sigma1, mu2, sigma2, p)
 end
 
-function main()
+function main_ecdf()
     Random.seed!(0)
     mu1, sigma1 = 10, 5
     mu2, sigma2 = 40, 12
