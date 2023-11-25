@@ -18,16 +18,38 @@ module StatisticsWithJulia
     export update_data_and_sum
     export sum_data_in_function
     include("c01_intro/l0106_bubbleSort.jl")
+    export bubbleSort
     include("c01_intro/l0107_polyRoots.jl")
+    export polynomialGenerator
     include("c01_intro/l0108_multiWayMarkovChainStationary.jl")
+    export calculate_steady_state_matrix_exponentiation
+    export calculate_steady_state_linear_system
+    export calculate_steady_state_eigenvalues
+    export calculate_steady_state_monte_carlo
     include("c01_intro/l0110_plotSimple.jl")
+    export plot_p1
+    export plot_p2
+    export plot_p3
+    export plot_function
     include("c01_intro/l0111_hailstoneHistogram.jl")
+    export hailLength
+    export generate_hailstone_lengths
+    export plot_hailstone_lengths
     include("c01_intro/l0112_graph.jl")
+    export initialize_graph_data
+    export create_graph_animation
     include("c01_intro/l0113_imageProcessing.jl")
+    export grayscale_conversion
+    export apply_box_blur
+    export find_max_coordinates
     include("c01_intro/l0114_seedExample.jl")
+    export really_rand
     include("c01_intro/l0115_piEstimate.jl")
+    export estimate_pi
     include("c01_intro/l0116_lcg.jl")
+    export linear_congruential_generator
     include("c01_intro/l0117_randomWalks.jl")
+    export random_walk
 
 
 #     include("c02_probability/l0201_diceSumEven.jl")
