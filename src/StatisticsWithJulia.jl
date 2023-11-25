@@ -92,7 +92,7 @@ module StatisticsWithJulia
     export simulation
     export main_independence
     include("c02_probability/l0211_conditionalProbability.jl")
-    export main_conditional_probability()
+    export main_conditional_probability
     include("c02_probability/l0212_txRxBayes.jl")
     export flip_with_prob
     export bayes_rule
