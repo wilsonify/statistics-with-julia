@@ -11,7 +11,7 @@ using Test
 
 @testset "Test calculate_quantiles function" begin
     Random.seed!(0)
-    data = generate_random_data(100, 10)
+    data = generate_random_data_slowly(100, 10)
     result = calculate_quantiles(data)
     expected_result = (0.26, 0.69)
     @test isapprox(result[1], expected_result[1], atol=0.05)

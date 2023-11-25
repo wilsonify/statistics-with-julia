@@ -12,14 +12,14 @@ function calculate_quantiles(data)
     return quantile_01, quantile_99
 end
 
-function main()
-@time begin
-    data = comprehension_generate_data(10^6, 5 * 10^2)
-    summary = calculate_quantiles(data)
-    println("98% of the means lie in the estimated range: ", summary)
-end
+function main_comprehension()
+    @time begin
+        data = comprehension_generate_data(10^6, 5 * 10^2)
+        summary = calculate_quantiles(data)
+        println("98% of the means lie in the estimated range: ", summary)
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    main()
+    main_comprehension()
 end

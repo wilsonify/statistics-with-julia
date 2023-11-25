@@ -28,11 +28,11 @@ function hello_squares()
     println("\n$SquaresString")
 end
 
-function main()
+function main_hello()
     hello()
     hello_squares()
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    main()
+    main_hello()
 end

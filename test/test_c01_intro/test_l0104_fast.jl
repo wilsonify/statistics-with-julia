@@ -1,11 +1,10 @@
 # Tests for Fast code example
-using Statistics, Random
 
-path_to_here = @__DIR__
-path_to_module = abspath("$path_to_here/../../src/c01_intro")
-include("$path_to_module/l0103_slow.jl")
-include("$path_to_module/l0104_fast.jl")
-
+using StatisticsWithJulia: comprehension_generate_data
+using StatisticsWithJulia: calculate_quantiles
+using Statistics
+using Random
+using Test
 @testset "Test comprehension_generate_data function" begin
     result = comprehension_generate_data(100, 10)
     @test length(result) == 100
