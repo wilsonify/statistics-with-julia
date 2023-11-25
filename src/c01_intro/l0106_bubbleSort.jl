@@ -1,5 +1,3 @@
-using Test
-
 # Bubble sort
 function bubbleSort!(a)
     n = length(a)
@@ -13,5 +11,7 @@ function bubbleSort!(a)
     return a
 end
 
-data = [65, 51, 32, 12, 23, 84, 68, 1]
-bubbleSort!(data)
+function main_bubbleSort()
+    data = [65, 51, 32, 12, 23, 84, 68, 1]
+    bubbleSort!(data)
+end

@@ -38,7 +38,7 @@ function create_graph_animation(data)
     return anim
 end
 
-function main()
+function main_graph()
     data = initialize_graph_data(16)
     animation = create_graph_animation(data)
     gif(animation, "graph.gif", fps = 60)

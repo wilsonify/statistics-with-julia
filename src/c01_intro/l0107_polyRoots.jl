@@ -9,6 +9,8 @@ function polynomialGenerator(a...)
     return poly
 end
 
-polynomial = polynomialGenerator(1,3,-10)
-zeroVals = find_zeros(polynomial,-10,10)
-println("Zeros of the function f(x): ", zeroVals)
+function main_polyroot()
+    polynomial = polynomialGenerator(1,3,-10)
+    zeroVals = find_zeros(polynomial,-10,10)
+    println("Zeros of the function f(x): ", zeroVals)
+end

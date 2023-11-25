@@ -1,26 +1,36 @@
-# Variable scope and the global keyword
-data = [1, 2, 3]
-s = 0
-beta, gamma = 2, 1
-for i in 1:length(data)
-    print(i," ")
-    global s #This usage of the ‘global‘ keyword is not needed in Jupyter
-    #But elsewhere without it:
-    #ERROR: LoadError: UndefVarError: s not defined
-    s += beta*data[i]
-    data[i] *= -1
+function update_data_and_sum(data, s, beta, gamma)
+    for i in 1:length(data)
+        s += beta * data[i]
+        data[i] *= -1
+    end
+    return s, data
 end
 
-# print(i) #Would cause ERROR: LoadError: UndefVarError: i not defined
-println("\nSum of data in external scope: ", s)
-
-function sumData(beta)
-    s = 0 #try adding the prefix global
+function sum_data_in_function(data, gamma)
+    s = 0
     for i in 1:length(data)
-    s += data[i] + gamma
+        s += data[i] + gamma
     end
     return s
 end
-println("Sum of data in a function: ", sumData(beta / 2))
-@show s
 
+function main_scope()
+    data = [1, 2, 3]
+    s = 0
+    beta, gamma = 2, 1
+
+    println("Updating data and sum in a loop:")
+    s, data = update_data_and_sum(data, s, beta, gamma)
+
+    println("Sum of data in external scope: ", s)
+
+    println("Summing data in a function:")
+    s_in_function = sum_data_in_function(data, gamma)
+    println("Sum of data in a function: ", s_in_function)
+
+    @show s
+end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_scope()
+end

@@ -18,7 +18,7 @@ function calculate_quantiles(data)
     return quantile_01, quantile_99
 end
 
-function main()
+function main_slow()
     num_groups = 10^6
     group_size = 5 * 10^2
 
