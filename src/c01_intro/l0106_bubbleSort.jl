@@ -1,5 +1,6 @@
 # Bubble sort
 function bubbleSort!(a)
+    # by convention, ! indicates that the function may modify its arguments
     n = length(a)
     for i in 1:n - 1
         for j in 1:n - i

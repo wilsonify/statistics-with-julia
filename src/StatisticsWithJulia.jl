@@ -18,7 +18,7 @@ module StatisticsWithJulia
     export update_data_and_sum
     export sum_data_in_function
     include("c01_intro/l0106_bubbleSort.jl")
-    export bubbleSort
+    export bubbleSort!
     include("c01_intro/l0107_polyRoots.jl")
     export polynomialGenerator
     include("c01_intro/l0108_multiWayMarkovChainStationary.jl")

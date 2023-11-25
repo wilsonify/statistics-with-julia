@@ -4,10 +4,6 @@ using Test
     @test true
 end
 
-@time @testset "l0112_graph.jl Tests" begin
-    include("$(@__DIR__)/test_l0112_graph.jl")
-end
-
 @time @testset "l0101_helloWorld.jl Tests" begin
     include("$(@__DIR__)/test_l0101_helloWorld.jl")
 end
@@ -44,6 +40,11 @@ end
 @time @testset "l0113_imageProcessing.jl Tests" begin
     include("$(@__DIR__)/test_l0113_imageProcessing.jl")
 end
+
+@time @testset "l0112_graph.jl Tests" begin
+    include("$(@__DIR__)/test_l0112_graph.jl")
+end
+
 @time @testset "l0114_seedExample.jl Tests" begin
     include("$(@__DIR__)/test_l0114_seedExample.jl")
 end

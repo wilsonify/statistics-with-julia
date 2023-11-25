@@ -1,13 +1,10 @@
 # Fast code example
 using Statistics
-using StatisticsWithJulia: calculate_quantiles
 
 function comprehension_generate_data(num_groups, group_size)
     data = [mean(rand(group_size)) for _ in 1:num_groups]
     return data
 end
-
-
 
 function main_comprehension_fast()
     @time begin
