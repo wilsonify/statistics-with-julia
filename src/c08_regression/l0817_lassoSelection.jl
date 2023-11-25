@@ -1,4 +1,4 @@
-using RDatasets, DataFrames, Lasso, LaTeXStrings, Plots, Measures; pyplot()
+using RDatasets, DataFrames, Lasso, LaTeXStrings, Plots, Measures
 
 df = dataset("MASS", "cpus")
 df.Freq = map( x->10^9 / x , df.CycT)

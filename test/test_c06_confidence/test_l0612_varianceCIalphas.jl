@@ -1,4 +1,4 @@
-using Distributions, Plots, LaTeXStrings; pyplot()
+using Distributions, Plots, LaTeXStrings
 
 function alphaSimulator(dist, n, alpha)
     popVar        = var(dist)

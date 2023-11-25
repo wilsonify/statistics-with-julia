@@ -1,5 +1,5 @@
 # Visualizing a bivariate density
-using Plots, LaTeXStrings, Measures; pyplot()
+using Plots, LaTeXStrings, Measures
 
 delta = 0.01
 grid = 0:delta:1

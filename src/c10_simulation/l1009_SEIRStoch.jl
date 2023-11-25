@@ -1,4 +1,4 @@
-using Distributions, Random, Plots; pyplot()
+using Distributions, Random, Plots
 Random.seed!(0)
 beta, delta, gamma = 0.25, 0.4, 0.1
 initialInfect = 0.025

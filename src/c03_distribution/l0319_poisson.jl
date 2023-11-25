@@ -1,5 +1,5 @@
 # The Poisson distribution
-using StatsBase, Distributions, Plots; pyplot()
+using StatsBase, Distributions, Plots
 
 function prn(lambda)
     k, p = 0, 1

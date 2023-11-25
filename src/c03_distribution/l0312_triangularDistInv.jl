@@ -1,5 +1,5 @@
 # Inverse transform sampling
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 triangDist = TriangularDist(0,2,1)
 xGrid = 0:0.1:2

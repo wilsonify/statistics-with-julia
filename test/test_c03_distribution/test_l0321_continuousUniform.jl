@@ -1,5 +1,5 @@
 # Uniformly distributed angles
-using Distributions, Plots, LaTeXStrings; pyplot()
+using Distributions, Plots, LaTeXStrings
 
 @testset "end_to_end" begin
 cUnif = Uniform(0,2π)

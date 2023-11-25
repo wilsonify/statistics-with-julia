@@ -1,5 +1,5 @@
 # Lattice paths
-using Random, Combinatorics, Plots, LaTeXStrings ; pyplot()
+using Random, Combinatorics, Plots, LaTeXStrings
 Random.seed!(12)
 
 n, N = 5, 10^5

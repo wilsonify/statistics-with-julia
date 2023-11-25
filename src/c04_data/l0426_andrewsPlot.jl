@@ -1,4 +1,4 @@
-using RDatasets, StatsPlots; pyplot()
+using RDatasets, StatsPlots
 
 iris = dataset("datasets", "iris")
 @df iris andrewsplot(:Species, cols(1:4), 

@@ -1,4 +1,4 @@
-using RDatasets, Plots, Measures; pyplot()
+using RDatasets, Plots, Measures
 
 data = dataset("datasets", "iris")
 println("Number of rows: ", nrow(data))

@@ -1,5 +1,5 @@
 # Bivariate normal data
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 include("../../data/mvParams.jl")
 biNorm = MvNormal(meanVect,covMat)

@@ -1,4 +1,4 @@
-using Plots, Distributions, Random; pyplot()
+using Plots, Distributions, Random
 Random.seed!(0)
 
 n = 2000

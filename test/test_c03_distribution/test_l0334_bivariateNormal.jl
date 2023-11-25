@@ -1,5 +1,5 @@
 # Bivariate normal data
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
 include("$path_to_data/mvParams.jl")

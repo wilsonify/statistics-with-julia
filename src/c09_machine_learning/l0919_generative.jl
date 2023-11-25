@@ -1,4 +1,4 @@
-using Flux, BSON, Random, Plots; pyplot()
+using Flux, BSON, Random, Plots
 Random.seed!(0)
 latentDim = 100
 outputX, outputY = 6, 3

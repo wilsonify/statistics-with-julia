@@ -1,5 +1,5 @@
 # A sum of two triangular random variables
-using Distributions, Statistics, Plots; pyplot()
+using Distributions, Statistics, Plots
 @testset "end_to_end" begin
 dist1 = TriangularDist(0,1,1)
 dist2 = TriangularDist(0,1,0)

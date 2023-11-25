@@ -1,4 +1,4 @@
-using Random, Distributions, Plots; pyplot()
+using Random, Distributions, Plots
 Random.seed!(0)
 
 lambda = 1 / 4.5

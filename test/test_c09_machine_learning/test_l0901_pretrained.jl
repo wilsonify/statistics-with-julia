@@ -1,4 +1,4 @@
-using Flux, Flux.Data.MNIST, Statistics, BSON, StatsBase, Plots; pyplot()
+using Flux, Flux.Data.MNIST, Statistics, BSON, StatsBase, Plots
 using Flux: onecold
 
 using Test

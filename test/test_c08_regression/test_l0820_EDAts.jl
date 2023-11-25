@@ -1,4 +1,4 @@
-using CSV, TimeSeries, Dates, Statistics, Measures, Plots, StatsPlots; pyplot()
+using CSV, TimeSeries, Dates, Statistics, Measures, Plots, StatsPlots
 
 using Test
 @testset "end_to_end" begin

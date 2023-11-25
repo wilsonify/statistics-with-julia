@@ -1,5 +1,5 @@
 # The Box-Muller transform
-using Random, Distributions, Plots; pyplot()
+using Random, Distributions, Plots
 @testset "end_to_end" begin
 Random.seed!(1)
 Z() = sqrt(-2 * log(rand())) * cos(2 * pi*rand())

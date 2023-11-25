@@ -1,4 +1,4 @@
-using Distributions, Plots, LaTeXStrings; pyplot()
+using Distributions, Plots, LaTeXStrings
 
 mu, sig = 2, 3
 eta = sqrt(3)*sig/pi

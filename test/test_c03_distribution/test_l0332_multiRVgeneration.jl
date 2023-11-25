@@ -1,5 +1,5 @@
 # Generating random vectors with desired mean and covariance
-using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots; pyplot()
+using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots
 
 @testset "end_to_end" begin
 Random.seed!(1)

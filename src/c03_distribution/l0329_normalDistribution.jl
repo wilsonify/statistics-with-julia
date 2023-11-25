@@ -1,5 +1,5 @@
 # The Box-Muller transform
-using Random, Distributions, Plots; pyplot()
+using Random, Distributions, Plots
 Random.seed!(1)
 Z() = sqrt(-2 * log(rand())) * cos(2 * pi*rand())
 xGrid = -4:0.01:4

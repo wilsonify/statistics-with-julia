@@ -1,4 +1,4 @@
-using DifferentialEquations, Plots; pyplot()
+using DifferentialEquations, Plots
 
 using Test
 @testset "end_to_end" begin

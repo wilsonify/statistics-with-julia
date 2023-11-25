@@ -1,5 +1,5 @@
 # Gamma random variable as a sum of exponentials
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 @testset "end_to_end" begin
 lambda, N = 1 / 3, 10^5

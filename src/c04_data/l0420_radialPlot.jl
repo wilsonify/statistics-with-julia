@@ -1,4 +1,4 @@
-using DataFrames, CSV, Dates, StatsBase, Plots, TimeSeries; pyplot()
+using DataFrames, CSV, Dates, StatsBase, Plots, TimeSeries
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
 

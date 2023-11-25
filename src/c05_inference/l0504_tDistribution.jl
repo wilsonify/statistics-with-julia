@@ -1,4 +1,4 @@
-using Distributions, Random, Plots; pyplot()
+using Distributions, Random, Plots
 Random.seed!(0)
 
 n, N, alpha = 3, 10^7, 0.1

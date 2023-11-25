@@ -1,5 +1,5 @@
 # Discrete uniform die toss
-using StatsBase, Plots; pyplot()
+using StatsBase, Plots
 
 faces, N = 1:6, 10^6
 mcEstimate = counts(rand(faces,N), faces) / N

@@ -1,4 +1,4 @@
-using Random, Distributions, StatsBase, Plots; pyplot()
+using Random, Distributions, StatsBase, Plots
 Random.seed!(0)
 
 mu1, sigma1 = 10, 5

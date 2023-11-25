@@ -1,4 +1,4 @@
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 function generate_fValues(N, mu, sigma)
     n1, n2 = 10, 15

@@ -1,4 +1,4 @@
-using Random, Distributions, StatsPlots, Plots, Measures; pyplot()
+using Random, Distributions, StatsPlots, Plots, Measures
 Random.seed!(0)
  
 b1, b2 = 0.5 , 2

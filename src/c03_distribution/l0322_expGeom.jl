@@ -1,5 +1,5 @@
 # Flooring an exponential random variable
-using StatsBase, Distributions, Plots; pyplot()
+using StatsBase, Distributions, Plots
 
 lambda, N = 1, 10^6
 xGrid = 0:6

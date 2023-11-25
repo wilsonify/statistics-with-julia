@@ -1,4 +1,4 @@
-using Flux, Flux.Data.MNIST, Statistics, BSON, Random, Plots; pyplot()
+using Flux, Flux.Data.MNIST, Statistics, BSON, Random, Plots
 using Flux: onehotbatch, onecold, crossentropy
 
 using Test

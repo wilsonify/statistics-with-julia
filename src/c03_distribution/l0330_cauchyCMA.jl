@@ -1,5 +1,5 @@
 # The law of large numbers breaks down with very heavy tails
-using Random, Plots; pyplot()
+using Random, Plots
 Random.seed!(808)
 
 n = 10^6

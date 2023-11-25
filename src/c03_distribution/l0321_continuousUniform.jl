@@ -1,5 +1,5 @@
 # Uniformly distributed angles
-using Distributions, Plots, LaTeXStrings; pyplot()
+using Distributions, Plots, LaTeXStrings
 
 cUnif = Uniform(0,2π)
 xGrid, N = 0:0.1:2π, 10^6

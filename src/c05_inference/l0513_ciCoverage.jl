@@ -1,4 +1,4 @@
-using Random, Distributions, StatsPlots; pyplot()
+using Random, Distributions, StatsPlots
 Random.seed!(2)
 
 alpha = 0.05

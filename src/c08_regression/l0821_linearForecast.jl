@@ -1,4 +1,4 @@
-using CSV,DataFrames,Dates,GLM,Statistics,LinearAlgebra,Measures,Plots; pyplot()
+using CSV,DataFrames,Dates,GLM,Statistics,LinearAlgebra,Measures,Plots
 df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)
 len = size(df)[1]
 dow = dayofweek.(Date.(df.Day,Dates.DateFormat("m/d/y")))

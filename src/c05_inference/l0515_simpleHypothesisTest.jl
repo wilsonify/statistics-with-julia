@@ -1,4 +1,4 @@
-using Distributions, StatsBase, Plots, LaTeXStrings; pyplot()
+using Distributions, StatsBase, Plots, LaTeXStrings
 
 mu0, mu1, sd, tau  = 15, 18, 2, 17.5
 dist0, dist1 = Normal(mu0,sd), Normal(mu1,sd)

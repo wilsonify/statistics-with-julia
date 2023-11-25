@@ -1,4 +1,4 @@
-using Flux, BSON, Random, Plots; pyplot()
+using Flux, BSON, Random, Plots
 
 
 using Test

@@ -1,5 +1,5 @@
 # Using the pdf(), cdf(), and quantile() functions with Distributions
-using Distributions, Plots, LaTeXStrings; pyplot()
+using Distributions, Plots, LaTeXStrings
 @testset "end_to_end" begin
 dist = TriangularDist(0,2,1)
 xGrid = 0:0.01:2

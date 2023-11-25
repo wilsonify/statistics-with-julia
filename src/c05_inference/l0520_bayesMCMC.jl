@@ -1,4 +1,4 @@
-using LaTeXStrings, Distributions, Plots; pyplot()
+using LaTeXStrings, Distributions, Plots
 
 alpha, beta = 8, 2
 

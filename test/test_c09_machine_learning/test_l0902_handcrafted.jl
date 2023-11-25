@@ -1,4 +1,4 @@
-using MLDatasets, StatsBase, Measures, Plots; pyplot()
+using MLDatasets, StatsBase, Measures, Plots
 
 using Test
 @testset "end_to_end" begin

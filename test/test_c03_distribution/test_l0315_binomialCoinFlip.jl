@@ -1,5 +1,5 @@
 # Coin ﬂipping and the binomial distribution
-using StatsBase, Distributions, Plots; pyplot()
+using StatsBase, Distributions, Plots
 
 binomialRV(n, p) = sum(rand(n) .< p)
 @testset "end_to_end" begin

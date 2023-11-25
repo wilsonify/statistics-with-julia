@@ -1,4 +1,4 @@
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 N = 10^5
 nMin, nStep, nMax = 10, 10, 200

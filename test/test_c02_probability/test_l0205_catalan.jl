@@ -1,4 +1,4 @@
-using Random, Combinatorics, Plots, LaTeXStrings; pyplot()
+using Random, Combinatorics, Plots, LaTeXStrings
 Random.seed!(12)
 
 # Function to check if a vector is an upper lattice path

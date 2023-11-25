@@ -1,4 +1,4 @@
-using Flux, Flux.Data.MNIST, Statistics, BSON, Random, StatsPlots; pyplot()
+using Flux, Flux.Data.MNIST, Statistics, BSON, Random, StatsPlots
 using Flux: onehotbatch, onecold, crossentropy, @epochs
 epochs = 30
 eta = 1e-3

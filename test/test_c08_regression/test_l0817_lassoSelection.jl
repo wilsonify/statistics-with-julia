@@ -1,4 +1,4 @@
-using RDatasets, DataFrames, Lasso, LaTeXStrings, Plots, Measures; pyplot()
+using RDatasets, DataFrames, Lasso, LaTeXStrings, Plots, Measures
 
 using Test
 @testset "end_to_end" begin

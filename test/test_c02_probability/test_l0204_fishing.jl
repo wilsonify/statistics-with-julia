@@ -1,4 +1,4 @@
-using StatsBase, Plots; pyplot()
+using StatsBase, Plots
 
 
 # Function to perform fishing simulation

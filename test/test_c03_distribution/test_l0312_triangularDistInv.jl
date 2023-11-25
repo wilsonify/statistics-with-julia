@@ -1,5 +1,5 @@
 # Inverse transform sampling
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 @testset "end_to_end" begin
 triangDist = TriangularDist(0,2,1)

@@ -1,4 +1,4 @@
-using Random, Distributions, StatsPlots, Plots; pyplot()
+using Random, Distributions, StatsPlots, Plots
 Random.seed!(0)
  
 mu = 20

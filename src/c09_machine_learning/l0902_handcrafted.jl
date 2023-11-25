@@ -1,4 +1,4 @@
-using MLDatasets, StatsBase, Measures, Plots; pyplot()
+using MLDatasets, StatsBase, Measures, Plots
 
 xTrain, yTrain = MLDatasets.MNIST.traindata(Float32)
 xTest, yTest = MLDatasets.MNIST.testdata(Float32)

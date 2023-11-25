@@ -1,4 +1,4 @@
-using Flux, Flux.Data.MNIST, Statistics, BSON, StatsBase, Plots; pyplot()
+using Flux, Flux.Data.MNIST, Statistics, BSON, StatsBase, Plots
 using Flux: onecold
 model= Chain(Conv((5, 5), 1=>8, relu), MaxPool((2,2)),
              Conv((3, 3), 8=>16, relu), MaxPool((2,2)),

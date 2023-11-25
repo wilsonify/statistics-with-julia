@@ -1,4 +1,4 @@
-using Distributions, Random, Plots; pyplot()
+using Distributions, Random, Plots
 
 using Test
 @testset "end_to_end" begin

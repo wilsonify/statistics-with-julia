@@ -1,5 +1,5 @@
 # Monte Carlo based distributions of the ANOVA F-statistic
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 function anovaFStat(allData)
     xBarArray = mean.(allData)

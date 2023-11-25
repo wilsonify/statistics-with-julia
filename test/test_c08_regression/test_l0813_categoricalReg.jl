@@ -1,4 +1,4 @@
-using CSV, GLM, Plots, Random; pyplot()
+using CSV, GLM, Plots, Random
 
 using Test
 @testset "end_to_end" begin

@@ -1,4 +1,4 @@
-using Distributions, LinearAlgebra, Random, Measures, Plots; pyplot()
+using Distributions, LinearAlgebra, Random, Measures, Plots
 
 using Test
 @testset "end_to_end" begin

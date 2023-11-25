@@ -1,5 +1,5 @@
 # Visualizing a bivariate density
-using Plots, LaTeXStrings, Measures; pyplot()
+using Plots, LaTeXStrings, Measures
 
 @testset "end_to_end" begin
 delta = 0.01

@@ -1,5 +1,5 @@
 # Hazard rates and the Weibull distribution
-using Distributions, Plots, LaTeXStrings; pyplot()
+using Distributions, Plots, LaTeXStrings
 
 alphas = [0.5, 1.5, 1]
 lam = 2

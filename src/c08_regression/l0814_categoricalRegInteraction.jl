@@ -1,4 +1,4 @@
-using CSV, GLM, Plots, Random; pyplot()
+using CSV, GLM, Plots, Random
 Random.seed!(0)
 
 df = CSV.read("../../data/weightHeight.csv", copycols = true)

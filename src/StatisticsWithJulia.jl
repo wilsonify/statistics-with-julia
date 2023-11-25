@@ -57,7 +57,13 @@ module StatisticsWithJulia
     include("c02_probability/l0202_passwords.jl")
     export gen_pw
     export numMatch
-#     include("c02_probability/l0203_birthdayProblem.jl")
+    include("c02_probability/l0203_birthdayProblem.jl")
+    export matchExists1
+    export matchExists2
+    export probEst
+    export bdEvent
+    export calculate_max_error
+    export run_simulation_birthday_problem
 #     include("c02_probability/l0204_fishing.jl")
 #     include("c02_probability/l0205_catalan.jl")
 #     include("c02_probability/l0206_sets.jl")

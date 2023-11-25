@@ -1,4 +1,4 @@
-using Random, Distributions, Plots, LaTeXStrings; pyplot()
+using Random, Distributions, Plots, LaTeXStrings
 Random.seed!(0)
 
 actualAlpha, actualLambda = 2,3

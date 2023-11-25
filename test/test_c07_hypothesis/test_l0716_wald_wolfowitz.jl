@@ -1,4 +1,4 @@
-using CSV, GLM, StatsBase, Random, Distributions, Plots, Measures; pyplot()
+using CSV, GLM, StatsBase, Random, Distributions, Plots, Measures
 
 using Test
 @testset "end_to_end" begin

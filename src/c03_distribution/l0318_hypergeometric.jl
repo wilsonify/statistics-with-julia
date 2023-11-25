@@ -1,5 +1,5 @@
 # Comparison of several hypergeometric distributions
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 L, K, n  = 500, [450, 400, 250, 100, 50], 30
 hyperDists = [Hypergeometric(k,L - k,n) for k in K]

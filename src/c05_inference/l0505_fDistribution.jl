@@ -1,4 +1,4 @@
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 n1, n2 = 10, 15
 N = 10^6

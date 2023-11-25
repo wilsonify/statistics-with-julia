@@ -1,5 +1,5 @@
 # Variance of X as the mean of Y
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 @testset "end_to_end" begin
 dist = TriangularDist(4,6,5)

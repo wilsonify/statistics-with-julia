@@ -1,4 +1,4 @@
-using Distributions, StatsBase, Plots, LaTeXStrings; pyplot()
+using Distributions, StatsBase, Plots, LaTeXStrings
 
 using Test, Random
 @testset "" begin

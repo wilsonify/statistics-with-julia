@@ -1,4 +1,4 @@
-using CSV, GLM, StatsBase, Random, Distributions, Plots, Measures; pyplot()
+using CSV, GLM, StatsBase, Random, Distributions, Plots, Measures
 
 Random.seed!(0)
 

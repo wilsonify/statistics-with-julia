@@ -1,4 +1,4 @@
-using Flux, Flux.Data.MNIST, Statistics, BSON, Random, StatsBase, Plots; pyplot()
+using Flux, Flux.Data.MNIST, Statistics, BSON, Random, StatsBase, Plots
 using Flux: params, onehotbatch, crossentropy, update!
 Random.seed!(0)
 nTrain = 20000

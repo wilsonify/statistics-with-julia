@@ -1,5 +1,5 @@
 # Flooring an exponential random variable
-using StatsBase, Distributions, Plots; pyplot()
+using StatsBase, Distributions, Plots
 
 @testset "end_to_end" begin
 lambda, N = 1, 10^6

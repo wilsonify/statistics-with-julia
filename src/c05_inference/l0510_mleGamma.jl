@@ -1,4 +1,4 @@
-using SpecialFunctions, Distributions, Roots, Plots, LaTeXStrings; pyplot()
+using SpecialFunctions, Distributions, Roots, Plots, LaTeXStrings
 
 eq(alpha, xb, xbl) = log(alpha) - digamma(alpha) - log(xb) + xbl
 

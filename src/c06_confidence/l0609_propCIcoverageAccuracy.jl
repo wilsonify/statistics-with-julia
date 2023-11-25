@@ -1,4 +1,4 @@
-using Random, Plots, Distributions, Measures; pyplot()
+using Random, Plots, Distributions, Measures
 
 N = 5 * 10^3
 alpha = 0.05

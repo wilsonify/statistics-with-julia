@@ -1,4 +1,4 @@
-using Distributions, Plots, LaTeXStrings; pyplot()
+using Distributions, Plots, LaTeXStrings
 
 function statPair(dist, n)
     sample = rand(dist,n)

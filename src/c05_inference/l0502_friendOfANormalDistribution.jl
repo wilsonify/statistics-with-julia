@@ -1,4 +1,4 @@
-using Distributions, Plots; pyplot()
+using Distributions, Plots
 
 mu, sigma = 10, 4
 n, N = 10, 10^6

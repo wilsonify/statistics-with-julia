@@ -1,4 +1,4 @@
-using CSV,DataFrames,Dates,GLM,Statistics,LinearAlgebra,Measures,Plots; pyplot()
+using CSV,DataFrames,Dates,GLM,Statistics,LinearAlgebra,Measures,Plots
 
 using Test
 @testset "end_to_end" begin

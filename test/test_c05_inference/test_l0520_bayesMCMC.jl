@@ -1,4 +1,4 @@
-using LaTeXStrings, Distributions, Plots; pyplot()
+using LaTeXStrings, Distributions, Plots
 
 data = [2, 1, 0, 0, 1, 0, 2, 2, 5, 2, 4, 0, 3, 2, 5, 0]
 alpha, beta = 8, 2
