@@ -1,15 +1,12 @@
 using Test
-
-path_to_here = @__DIR__
-path_to_module = abspath("$path_to_here/../../src/c01_intro")
-include("$path_to_module/l0101_helloWorld.jl")
+using StatisticsWithJulia: squares
+using StatisticsWithJulia: tab_separated_string
 
 @testset "Test squares function" begin
     result = squares(0:10)
     # Test if the result contains the expected square roots of perfect squares
     @test result == [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 end
-
 
 @testset "Test tab_separated_string function" begin
     result = tab_separated_string(squares(0:10))
