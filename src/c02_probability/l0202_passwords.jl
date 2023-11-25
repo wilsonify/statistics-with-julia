@@ -1,18 +1,29 @@
 # Password matching
-using Random
-Random.seed!()
 
-passLength, numMatchesForLog = 8, 1
-possibleChars = ['a':'z' ; 'A':'Z' ; '0':'9']
+function numMatch(loginPassword)
+    correctPassword = "3xyZu4vN"
+    passLength_c = length(correctPassword)
+    passLength_l = length(loginPassword)
+    passLength = min(passLength_c,passLength_l)
+    return sum([loginPassword[i] == correctPassword[i] for i in 1:passLength])
+    end
 
-correctPassword = "3xyZu4vN"
+function gen_pw()
+    passLength = 8
+    possibleChars = ['a':'z' ; 'A':'Z' ; '0':'9']
+    pw = rand(possibleChars,passLength)
+    return String(pw)
+end
 
-numMatch(loginPassword) =
-    sum([loginPassword[i] == correctPassword[i] for i in 1:passLength])
+function gen_many_pw(N)
+    passwords = [gen_pw() for _ in 1:N]
+    return passwords
+    end
 
-N = 10^7
-
-passwords = [String(rand(possibleChars,passLength)) for _ in 1:N]
-numLogs = sum([numMatch(p) >= numMatchesForLog for p in passwords])
-println("Number of login attempts logged: ", numLogs)
-println("Proportion of login attempts logged: ", numLogs / N)
+function main_password_matching()
+    numMatchesForLog = 1
+    passwords = gen_many_pw(10^7)
+    numLogs = sum([numMatch(p) >= numMatchesForLog for p in passwords])
+    println("Number of login attempts logged: ", numLogs)
+    println("Proportion of login attempts logged: ", numLogs / N)
+    end
