@@ -1,7 +1,10 @@
+
 using StatisticsWithJulia: grayscale_conversion
 using StatisticsWithJulia: apply_box_blur
 using StatisticsWithJulia: find_max_coordinates
 using Test
+using Images: load
+
 
 # Define a test for the load function
 @testset "Test load function" begin
