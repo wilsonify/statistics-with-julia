@@ -15,11 +15,10 @@ end
     @test true
 end
 
-# @time @testset "test_c02_probability" begin
-#
-#     include("$(@__DIR__)/test_c02_probability/runtests.jl")
-#     @test true
-# end
+@time @testset "test_c02_probability" begin
+    include("$(@__DIR__)/test_c02_probability/runtests.jl")
+    @test true
+end
 #
 # @time @testset "test_c03_distribution" begin
 #
