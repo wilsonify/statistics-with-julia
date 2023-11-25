@@ -50,3 +50,7 @@ function main_image_processing()
     plot(p1, p2, size = (800, 400), ratio = :equal, xlims = (0, size(img, 2)), ylims = (0, size(img, 1)),
         colorbar_entry = false, border = :none, legend = :none)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_image_processing()
+end
