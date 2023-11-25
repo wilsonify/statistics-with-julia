@@ -3,4 +3,4 @@ RUN mkdir -p /usr/src/app
 COPY setup.jl /usr/src/app/setup.jl
 RUN pip3 install textblob matplotlib nltk
 WORKDIR /usr/src/app
-RUN julia --project=. setup.jl
+RUN julia --project=~/.julia/environments/v1.9 setup.jl

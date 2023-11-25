@@ -10,8 +10,12 @@ end
     @test true
 end
 
+@time @testset "test_c01_CallPython" begin
+    include("$(@__DIR__)/test_c01_CallPython/runtests.jl")
+    @test true
+end
+
 @time @testset "test_c01_intro" begin
-    
     include("$(@__DIR__)/test_c01_intro/runtests.jl")
     @test true
 end
