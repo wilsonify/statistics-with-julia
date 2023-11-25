@@ -1,5 +1,7 @@
 # Families of discrete distributions
 using Distributions
+
+function main_l0313_discreteDists()
 dists = [
     DiscreteUniform(10,20),
     Binomial(10,0.5),
@@ -12,3 +14,4 @@ println("Distribution \t\t\t\t\t\t Parameters \t Support")
 reshape([dists ;  params.(dists) ;
 		((d)->(minimum(d),maximum(d))).(dists) ],
 		length(dists),3)
+end

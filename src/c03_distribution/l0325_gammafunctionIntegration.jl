@@ -2,4 +2,10 @@
 using QuadGK, SpecialFunctions
 
 g(x) = x^(0.5 - 1) * MathConstants.e^-x
-quadgk(g,0,Inf)[1], sqrt(pi), gamma(1 / 2),  gamma(1 / 2)
+
+function main_l0325_gammafunctionIntegration()
+    println(quadgk(g,0,Inf)[1])
+    println(sqrt(pi))
+    println(gamma(1 / 2))
+    println(gamma(1 / 2))
+end

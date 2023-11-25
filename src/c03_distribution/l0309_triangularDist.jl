@@ -1,6 +1,7 @@
 # Using the pdf(), cdf(), and quantile() functions with Distributions
 using Distributions, Plots, LaTeXStrings
 
+function main_l0309_triangularDist()
 dist = TriangularDist(0,2,1)
 xGrid = 0:0.01:2
 uGrid = 0:0.01:1
@@ -16,3 +17,4 @@ p3 = plot( uGrid,quantile.(dist,uGrid), c = :blue,
         xlabel = "u", ylabel = (L"F^{-1}(u)"))
 
 plot(p1, p2, p3, legend = false, layout = (1,3), size = (1200, 400))
+end

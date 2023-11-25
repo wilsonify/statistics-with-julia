@@ -11,6 +11,8 @@ Distributions and StatsBase libraries to work with
 probability distributions and estimate sample means.
 """
 using Distributions, StatsBase, Random
+
+function main_l0311_basicDistRand()
 Random.seed!(1)
 
 dist1 = TriangularDist(0,10,5)
@@ -24,3 +26,4 @@ estMean1, estMean2 = mean(data1), mean(data2)
 
 println("Symmetric Triangular Distiribution on [0,10] has mean $theorMean1 	(estimated: $estMean1)")
 println("Discrete Uniform Distiribution on {1,2,3,4,5} has mean $theorMean2 	(estimated: $estMean2)")
+end

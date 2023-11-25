@@ -1,6 +1,7 @@
 # Visualizing a bivariate density
 using Plots, LaTeXStrings, Measures
 
+function main_l0331_jointPDF()
 delta = 0.01
 grid = 0:delta:1
 f(x, y) = 9 / 8 * (4x + y) * sqrt((1 - x) * (1 - y))
@@ -21,3 +22,4 @@ p2 = contour!(grid, grid, z,
     c = :black, xlims = (0,1), ylims = (0,1), ylabel = "y", ratio = :equal)
 
 plot(p1, p2, size = (800, 400), xlabel = "x", margin = 5mm)
+end

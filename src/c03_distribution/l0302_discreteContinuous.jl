@@ -1,6 +1,7 @@
 # Plotting discrete and continuous distributions
 using Plots, Measures
 
+function main_l0302_discreteContinuous()
 pDiscrete = [0.25, 0.25, 0.5]
 xGridD = 0:2
 
@@ -15,3 +16,5 @@ p3 = plot(xGridC, pContinuous2.(xGridC), c = :blue)
 
 plot(p1, p2, p3, layout = (1,3), legend = false, ylims = (0,1.1), xlabel = "x",
     ylabel = ["Probability" "Density" "Density"], size = (1200, 400), margin = 5mm)
+
+end

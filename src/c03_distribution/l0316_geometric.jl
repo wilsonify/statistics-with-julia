@@ -11,6 +11,7 @@ function rouletteSpins(p)
     end
 end
 
+function main_l0316_geometric()
 p, xGrid, N = 18 / 37, 1:7, 10^6
 
 mcEstimate = counts([rouletteSpins(p) for _ in 1:N],xGrid) / N
@@ -23,3 +24,5 @@ plot(xGrid, mcEstimate, line = :stem, marker = :circle,
 plot!( xGrid, gPmf, line = :stem, marker = :xcross,
     c = :red, ms = 6, msw = 0, lw = 2, label = "PMF",
     ylims = (0,0.5), xlabel = "x", ylabel = "Probability")
+
+end

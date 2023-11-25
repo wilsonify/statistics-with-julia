@@ -1,19 +1,22 @@
 # Numerical derivatives of the normal density
 using Distributions, Calculus, SpecialFunctions, Plots
 
-xGrid = -5:0.01:5
 
-PhiA(x) = 0.5 * (1 + erf(x / sqrt(2)))
-PhiB(x) = cdf(Normal(),x)
+function main_l0327_normalCalculus()
+    xGrid = -5:0.01:5
 
-println("Maximum difference between two CDF implementations: ",
-            maximum(PhiA.(xGrid) - PhiB.(xGrid)))
+    PhiA(x) = 0.5 * (1 + erf(x / sqrt(2)))
+    PhiB(x) = cdf(Normal(),x)
 
-normalDensity(z) = pdf(Normal(),z)
+    println("Maximum difference between two CDF implementations: ",
+                maximum(PhiA.(xGrid) - PhiB.(xGrid)))
 
-d0 = normalDensity.(xGrid)
-d1 = derivative.(normalDensity,xGrid)
-d2 = second_derivative.(normalDensity, xGrid)
+    normalDensity(z) = pdf(Normal(),z)
 
-plot(xGrid, [d0 d1 d2], c = [:blue :red :green],label = [L"f(x)" L"f'(x)" L"f''(x)"])
-plot!([-5, 5],[0, 0],  color = :black, lw = 0.5, xlabel = "x", xlims = (-5,5), label = "")
+    d0 = normalDensity.(xGrid)
+    d1 = derivative.(normalDensity,xGrid)
+    d2 = second_derivative.(normalDensity, xGrid)
+
+    plot(xGrid, [d0 d1 d2], c = [:blue :red :green],label = [L"f(x)" L"f'(x)" L"f''(x)"])
+    plot!([-5, 5],[0, 0],  color = :black, lw = 0.5, xlabel = "x", xlims = (-5,5), label = "")
+end
