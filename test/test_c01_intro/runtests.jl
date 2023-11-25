@@ -14,10 +14,10 @@ end
     include("$path_to_here/test_l0101_helloWorld.jl")
 end
 
-# @time @testset "l0102_comprehension.jl Tests" begin
-#     path_to_here = @__DIR__
-#     include("$path_to_here/test_l0102_comprehension.jl")
-# end
+@time @testset "l0102_comprehension.jl Tests" begin
+    path_to_here = @__DIR__
+    include("$path_to_here/test_l0102_comprehension.jl")
+end
 #
 # @time @testset "l0103_slow.jl Tests" begin
 #     path_to_here = @__DIR__
