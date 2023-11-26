@@ -1,6 +1,4 @@
 # Descriptors of Distribution objects
-import Pkg;
-Pkg.add("Distributions")
 using Distributions
 
 function getDescriptors(dist)
