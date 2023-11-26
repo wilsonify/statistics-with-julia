@@ -12,7 +12,7 @@ using Test
     xGrid = a:0.01:b
     uGrid = 0:0.01:1
     result = TriangularPDF(a,b,c)
-    @test length(result) == 200
+    @test length(result) == 201
 end
 
 @testset "TriangularCDF" begin
@@ -22,7 +22,7 @@ end
     xGrid = a:0.01:b
     uGrid = 0:0.01:1
     result = TriangularCDF(a,b,c)
-    @test length(result) == 200
+    @test length(result) == 201
 end
 
 @testset "TriangularInvCDF" begin
@@ -32,7 +32,7 @@ end
     xGrid = a:0.01:b
     uGrid = 0:0.01:1
     result = TriangularInvCDF(a,b,c)
-    @test length(result) == 200
+    @test length(result) == 101
 end
 
 @testset "end_to_end" begin
