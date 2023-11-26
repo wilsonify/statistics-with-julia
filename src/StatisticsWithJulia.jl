@@ -126,8 +126,8 @@ module StatisticsWithJulia
     export TriangularPDF
     export TriangularCDF
     export TriangularInvCDF
-#     include("c03_distribution/l0310_distributionDescriptors.jl")
-#     export main_l0310_distributionDescriptors
+    include("c03_distribution/l0310_distributionDescriptors.jl")
+    export getDescriptors
 #     include("c03_distribution/l0311_basicDistRand.jl")
 #     export main_l0311_basicDistRand
 #     include("c03_distribution/l0312_triangularDistInv.jl")

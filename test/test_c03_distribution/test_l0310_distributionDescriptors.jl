@@ -1,12 +1,18 @@
 # Descriptors of Distribution objects
+using StatisticsWithJulia: getDescriptors
 using Distributions
 using Test
-@testset "end_to_end" begin
-dist = TriangularDist(0,2,1)
-println("Parameters: \t\t\t",params(dist))
-println("Central descriptors: \t\t",mean(dist),"\t",median(dist))
-println("Dispersion descriptors: \t", var(dist),"\t",std(dist))
-println("Higher moment shape descriptors: ",skewness(dist),"\t",kurtosis(dist))
-println("Range: \t\t\t\t", minimum(dist),"\t",maximum(dist))
-println("Mode: \t\t\t\t", mode(dist), "\tModes: ",modes(dist))
+
+@testset "getDescriptors" begin
+    dist = TriangularDist(0,2,1)
+    result = getDescriptors(dist)
+    expected_result = Dict(
+        :Parameters => (0.0, 2.0, 1.0),
+        :CentralTendency => (1.0,1.0),
+        :Dispersion => (0.17,0.41),
+        :HigherMomentShape => (0.0,-0.6),
+        :ValueRange => (0.0,2.0),
+        :Mode => (1.0,[1.0])
+    )
+    @test result == expected_result
 end

@@ -1,5 +1,4 @@
 using Pkg
-path_to_here = @__DIR__
 Pkg.add("BSON")
 Pkg.add("CSV")
 Pkg.add("Calculus")
