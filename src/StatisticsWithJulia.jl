@@ -137,7 +137,8 @@ module StatisticsWithJulia
     include("c03_distribution/l0314_uniformDiscreteDice.jl")
     export simulate_die_tosses
     export count_dice_roll_outcomes
-#     include("c03_distribution/l0315_binomialCoinFlip.jl")
+    include("c03_distribution/l0315_binomialCoinFlip.jl")
+    export binomialRV
 #     export main_l0315_binomialCoinFlip
 #     include("c03_distribution/l0316_geometric.jl")
 #     export rouletteSpins
