@@ -1,9 +1,10 @@
-FROM stats-with-julia-builder:latest as builder
+FROM ghcr.io/wilsonify/stats-with-julia-builder:latest as builder
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-RUN julia --project=/usr/src/app build.jl
+RUN julia --project=~/.julia/environments/v1.9 dev.jl
 
-FROM stats-with-julia-base:latest
-COPY --from=builder /usr/src/app/dist/sysimage /usr/local/julia/sysimage
-WORKDIR /usr/src/app/dist
-ENTRYPOINT ["julia", "--project=/usr/src/app", "--sysimage=/usr/local/julia/sysimage/sys.so", "server.jl"]
+#RUN julia --project=/usr/src/app build.jl
+#FROM stats-with-julia-base:latest
+#COPY --from=builder /usr/src/app/dist/sysimage /usr/local/julia/sysimage
+#WORKDIR /usr/src/app/dist
+#ENTRYPOINT ["julia", "--project=/usr/src/app", "--sysimage=/usr/local/julia/sysimage/sys.so", "server.jl"]
