@@ -1,5 +1,7 @@
 using StatisticsWithJulia: infimum
 using StatisticsWithJulia: invCDF
+using Plots
+using LaTeXStrings
 using Test
 @testset "infimum" begin
     xGrid = 0:0.01:10

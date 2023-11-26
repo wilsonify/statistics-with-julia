@@ -11,6 +11,7 @@ f2(x) = (x < 0 ? x + 1 : 1 - x) * (abs(x) < 1 ? 1 : 0)
 function approximate_CDF(pdf,x)
     delta = 0.01
     return sum([pdf(u) * delta for u in a:delta:x])
+end
 
 function main_l0305_cdfFromPdf()
     # In lines 4 and 5, we set the limits of our integral, and the stepwise delta used.
