@@ -128,8 +128,8 @@ module StatisticsWithJulia
     export TriangularInvCDF
     include("c03_distribution/l0310_distributionDescriptors.jl")
     export getDescriptors
-#     include("c03_distribution/l0311_basicDistRand.jl")
-#     export main_l0311_basicDistRand
+    include("c03_distribution/l0311_basicDistRand.jl")
+    export main_l0311_basicDistRand
 #     include("c03_distribution/l0312_triangularDistInv.jl")
 #     export main_l0312_triangularDistInv
 #     include("c03_distribution/l0313_discreteDists.jl")
