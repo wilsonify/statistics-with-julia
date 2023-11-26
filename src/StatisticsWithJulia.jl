@@ -121,8 +121,8 @@ module StatisticsWithJulia
     include("c03_distribution/l0307_mgf.jl")
     export mgf
     export mgfPointEst
-#     include("c03_distribution/l0308_weightVector.jl")
-#     export main_l0308_weightVector
+    include("c03_distribution/l0308_weightVector.jl")
+    export count_occurance
 #     include("c03_distribution/l0309_triangularDist.jl")
 #     export main_l0309_triangularDist
 #     include("c03_distribution/l0310_distributionDescriptors.jl")

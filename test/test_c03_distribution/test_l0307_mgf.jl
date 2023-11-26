@@ -3,6 +3,7 @@ using StatisticsWithJulia: mgf
 using StatisticsWithJulia: mgfPointEst
 using Distributions, Statistics, Plots
 
+using Test
 @testset "end_to_end" begin
     sGrid = -1:0.01:1
     dist1 = TriangularDist(0,1,1)
