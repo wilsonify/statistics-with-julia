@@ -113,8 +113,8 @@ module StatisticsWithJulia
     export expect
     include("c03_distribution/l0304_varianceTransformation.jl")
     export variance_transform
-#     include("c03_distribution/l0305_cdfFromPdf.jl")
-#     export main_l0305_cdfFromPdf
+    include("c03_distribution/l0305_cdfFromPdf.jl")
+    export approximate_CDF
 #     include("c03_distribution/l0306_inverseCDF.jl")
 #     export main_l0306_inverseCDF
 #     include("c03_distribution/l0307_mgf.jl")

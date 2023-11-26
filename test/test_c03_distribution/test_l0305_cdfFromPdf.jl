@@ -1,14 +1,12 @@
 # CDF from the Riemann sum of a PDF
+using StatisticsWithJulia: approximate_CDF
 using Plots, LaTeXStrings
+
 @testset "end_to_end" begin
-f2(x) = (x < 0 ? x + 1 : 1 - x) * (abs(x) < 1 ? 1 : 0)
-a, b = -1.5, 1.5
-delta = 0.01
-
-F(x) = sum([f2(u) * delta for u in a:delta:x])
-
-xGrid = a:delta:b
-y = [F(u) for u in xGrid]
-plot(xGrid, y, c = :blue, xlims = (a,b), ylims = (0,1),
-    xlabel = L"x", ylabel = L"F(x)", legend = :none)
+    a, b = -1.5, 1.5
+    delta = 0.01
+    xGrid = a:delta:b
+    f2(x) = (x < 0 ? x + 1 : 1 - x) * (abs(x) < 1 ? 1 : 0)
+    y = [approximate_CDF(f2,u) for u in xGrid]
+    @test max(y) == 1.0
 end
