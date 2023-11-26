@@ -1,6 +1,23 @@
 # Using the pdf(), cdf(), and quantile() functions with Distributions
 using Distributions, Plots, LaTeXStrings
 
+function TriangularPDF(a, b, c)
+    dist = TriangularDist(a,b,c)
+    xGrid = a:0.01:b
+    return pdf.(dist,xGrid)
+end
+
+function TriangularCDF(a, b, c)
+    dist = TriangularDist(a,b,c)
+    xGrid = a:0.01:b
+    return cdf.(dist,xGrid)
+end
+
+function TriangularInvCDF(a, b, c)
+    dist = TriangularDist(a,b,c)
+    uGrid = 0:0.01:1
+    return quantile.(dist,uGrid)
+end
 
 function main_l0309_triangularDist()
     # use the TriangularDist() function to create a distribution-type object.

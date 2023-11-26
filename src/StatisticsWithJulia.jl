@@ -51,7 +51,6 @@ module StatisticsWithJulia
     export linear_congruential_generator
     include("c01_intro/l0117_randomWalks.jl")
     export random_walk
-
     include("c02_probability/l0201_diceSumEven.jl")
     export even_sum_probability
     include("c02_probability/l0202_passwords.jl")
@@ -123,8 +122,10 @@ module StatisticsWithJulia
     export mgfPointEst
     include("c03_distribution/l0308_weightVector.jl")
     export count_occurance
-#     include("c03_distribution/l0309_triangularDist.jl")
-#     export main_l0309_triangularDist
+    include("c03_distribution/l0309_triangularDist.jl")
+    export TriangularPDF
+    export TriangularCDF
+    export TriangularInvCDF
 #     include("c03_distribution/l0310_distributionDescriptors.jl")
 #     export main_l0310_distributionDescriptors
 #     include("c03_distribution/l0311_basicDistRand.jl")
