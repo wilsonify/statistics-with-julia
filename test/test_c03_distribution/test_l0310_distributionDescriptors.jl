@@ -1,8 +1,8 @@
 # Descriptors of Distribution objects
 using Distributions
+using Test
 @testset "end_to_end" begin
 dist = TriangularDist(0,2,1)
-
 println("Parameters: \t\t\t",params(dist))
 println("Central descriptors: \t\t",mean(dist),"\t",median(dist))
 println("Dispersion descriptors: \t", var(dist),"\t",std(dist))

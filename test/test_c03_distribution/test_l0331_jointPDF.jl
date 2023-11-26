@@ -1,6 +1,6 @@
 # Visualizing a bivariate density
 using Plots, LaTeXStrings, Measures
-
+using Test
 @testset "end_to_end" begin
 delta = 0.01
 grid = 0:delta:1

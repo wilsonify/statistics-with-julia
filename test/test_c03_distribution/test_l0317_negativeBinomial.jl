@@ -14,7 +14,7 @@ function rouletteSpins(r, p)
         end
     end
 end
-
+using Test
 @testset "end_to_end" begin
 r, p, N = 5, 18 / 37,10^6
 xGrid = r:r + 15

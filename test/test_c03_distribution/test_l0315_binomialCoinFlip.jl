@@ -2,6 +2,8 @@
 using StatsBase, Distributions, Plots
 
 binomialRV(n, p) = sum(rand(n) .< p)
+
+using Test
 @testset "end_to_end" begin
 p, n, N = 0.5, 10, 10^6
 

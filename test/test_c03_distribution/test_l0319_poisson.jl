@@ -9,7 +9,7 @@ function prn(lambda)
     end
     return k - 1
 end
-
+using Test
 @testset "end_to_end" begin
 xGrid, lambda, N = 0:16, 5.5, 10^6
 

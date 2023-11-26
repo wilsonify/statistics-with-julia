@@ -1,7 +1,7 @@
 # Numerical derivatives of the normal density
 using Distributions, Calculus, SpecialFunctions, Plots
 using LaTeXStrings
-
+using Test
 @testset "end_to_end" begin
 xGrid = -5:0.01:5
 

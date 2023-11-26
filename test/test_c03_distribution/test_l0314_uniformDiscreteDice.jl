@@ -1,5 +1,6 @@
 # Discrete uniform die toss
 using StatsBase, Plots
+using Test
 @testset "end_to_end" begin
 faces, N = 1:6, 10^6
 mcEstimate = counts(rand(faces,N), faces) / N

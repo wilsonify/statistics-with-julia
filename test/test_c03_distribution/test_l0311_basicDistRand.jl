@@ -11,7 +11,7 @@ Distributions and StatsBase libraries to work with
 probability distributions and estimate sample means.
 =#
 using Distributions, StatsBase, Random
-
+using Test
 @testset "end_to_end" begin
 Random.seed!(1)
 

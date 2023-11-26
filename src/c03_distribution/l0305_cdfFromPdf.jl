@@ -9,6 +9,7 @@ f2(x) = (x < 0 ? x + 1 : 1 - x) * (abs(x) < 1 ? 1 : 0)
 # In line 7, we create a function that approximates the value of the CDF through a crude Riemann sum by evaluating the PDF at each point u, multiplying this by delta, and repeating this process
 # for each progressively larger interval up to the speciﬁed value x. The total area is then approximated via the sum() function.
 function approximate_CDF(pdf,x)
+    a, b = -1.5, 1.5
     delta = 0.01
     return sum([pdf(u) * delta for u in a:delta:x])
 end

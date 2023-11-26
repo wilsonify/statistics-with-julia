@@ -1,6 +1,6 @@
 # Generating random vectors with desired mean and covariance
 using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots
-
+using Test
 @testset "end_to_end" begin
 Random.seed!(1)
 N = 10^3

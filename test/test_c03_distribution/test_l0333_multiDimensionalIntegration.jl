@@ -1,6 +1,6 @@
 # Multidimensional integration
 using HCubature
-
+using Test
 @testset "end_to_end" begin
 M = 4.5
 maxD = 10

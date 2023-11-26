@@ -9,7 +9,7 @@ dists = [
     Hypergeometric(30, 40, 10),
     Poisson(5.5)
 ]
-
+using Test
 @testset "end_to_end" begin
 println("Distribution \t\t\t\t\t\t Parameters \t Support")
 reshape([dists ;  params.(dists) ;

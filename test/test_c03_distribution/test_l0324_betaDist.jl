@@ -1,6 +1,6 @@
 # The gamma and beta special functions
 using SpecialFunctions, Distributions
-
+using Test
 @testset "end_to_end" begin
 a, b = 0.2, 0.7
 x = 0.75
