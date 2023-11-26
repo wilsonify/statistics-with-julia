@@ -118,8 +118,9 @@ module StatisticsWithJulia
     include("c03_distribution/l0306_inverseCDF.jl")
     export infimum
     export invCDF
-#     include("c03_distribution/l0307_mgf.jl")
-#     export main_l0307_mgf
+    include("c03_distribution/l0307_mgf.jl")
+    export mgf
+    export mgfPointEst
 #     include("c03_distribution/l0308_weightVector.jl")
 #     export main_l0308_weightVector
 #     include("c03_distribution/l0309_triangularDist.jl")
