@@ -1,15 +1,11 @@
 # Variance of X as the mean of Y
+using StatisticsWithJulia: variance_transform
 using Distributions, Plots
-
+using Test
 @testset "end_to_end" begin
-dist = TriangularDist(4,6,5)
-N = 10^6
-data = rand(dist,N)
-yData = (data .- 5).^2
-
-println("Mean: ", mean(yData), " Variance: ", var(data))
-
-p1 = histogram(data, xlabel = "x", bins = 80, normed = true, ylims = (0,1.1))
-p2 = histogram(yData, xlabel = "y", bins = 80, normed = true, ylims = (0,15))
-plot(p1, p2, ylabel = "Proportion", size = (800, 400), legend = :none)
+    dist = TriangularDist(4,6,5)
+    N = 10^6
+    data = rand(dist,N)
+    yData = variance_transform(data)
+    @test isapprox(mean(yData),var(data),atol=0.001)
 end
