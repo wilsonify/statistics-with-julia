@@ -1,15 +1,10 @@
 # Expectation via numerical integration
-using QuadGK
+using StatisticsWithJulia: expect
 
 f1(x) = 3 / 4 * (1 - x^2)
-f2(x) = x < 0 ? x + 1 : 1 - x
-expect(f, support) = quadgk((x) -> x*f(x),support...)[1]
 
-@testset "end_to_end" begin
-    sup = (-1,1)
-    println("Mean 1: ", expect(f1,sup))
-    println("Mean 2: ", expect(f2,sup))
-end
+f2(x) = x < 0 ? x + 1 : 1 - x
+
 using Test
 @testset "f1 test" begin
     xGridC = -1:0.01:1
@@ -30,4 +25,10 @@ end
     sup = (-1,1)
     result = expect(f2,sup)
     @test round(result,digits=2) == -0.00
+end
+
+@testset "end_to_end" begin
+    sup = (-1,1)
+    println("Mean 1: ", expect(f1,sup))
+    println("Mean 2: ", expect(f2,sup))
 end

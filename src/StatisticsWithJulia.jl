@@ -110,73 +110,73 @@ module StatisticsWithJulia
     export pContinuous
     export pContinuous2
     include("c03_distribution/l0303_meanIntegration.jl")
-    export main_l0303_meanIntegration
+    export expect
     include("c03_distribution/l0304_varianceTransformation.jl")
     export main_l0304_varianceTransformation
-    include("c03_distribution/l0305_cdfFromPdf.jl")
-    export main_l0305_cdfFromPdf
-    include("c03_distribution/l0306_inverseCDF.jl")
-    export main_l0306_inverseCDF
-    include("c03_distribution/l0307_mgf.jl")
-    export main_l0307_mgf
-    include("c03_distribution/l0308_weightVector.jl")
-    export main_l0308_weightVector
-    include("c03_distribution/l0309_triangularDist.jl")
-    export main_l0309_triangularDist
-    include("c03_distribution/l0310_distributionDescriptors.jl")
-    export main_l0310_distributionDescriptors
-    include("c03_distribution/l0311_basicDistRand.jl")
-    export main_l0311_basicDistRand
-    include("c03_distribution/l0312_triangularDistInv.jl")
-    export main_l0312_triangularDistInv
-    include("c03_distribution/l0313_discreteDists.jl")
-    export main_l0313_discreteDists
-    include("c03_distribution/l0314_uniformDiscreteDice.jl")
-    export main_l0314_uniformDiscreteDice
-    include("c03_distribution/l0315_binomialCoinFlip.jl")
-    export main_l0315_binomialCoinFlip
-    include("c03_distribution/l0316_geometric.jl")
-    export rouletteSpins
-    export main_l0316_geometric
-    include("c03_distribution/l0317_negativeBinomial.jl")
-    export rouletteSpins
-    export main_l0317_negativeBinomial
-    include("c03_distribution/l0318_hypergeometric.jl")
-    export main_l0318_hypergeometric
-    include("c03_distribution/l0319_poisson.jl")
-    export prn
-    export main_l0319_poisson
-    include("c03_distribution/l0320_continuousDists.jl")
-    export main_l0320_continuousDists()
-    include("c03_distribution/l0321_continuousUniform.jl")
-    export main_l0321_continuousUniform()
-    include("c03_distribution/l0322_expGeom.jl")
-    export main_l0322_expGeom()
-    include("c03_distribution/l0323_gammaDist.jl")
-    export normalizedData(d::Gamma)
-    export main_l0323_gammaDist()
-    include("c03_distribution/l0324_betaDist.jl")
-    export main_l0324_betaDist()
-    include("c03_distribution/l0325_gammafunctionIntegration.jl")
-    export main_l0325_gammafunctionIntegration()
-    include("c03_distribution/l0326_weibullHazard.jl")
-    export main_l0326_weibullHazard()
-    include("c03_distribution/l0327_normalCalculus.jl")
-    export main_l0327_normalCalculus()
-    include("c03_distribution/l0328_rayleigh.jl")
-    export main_l0328_rayleigh()
-    include("c03_distribution/l0329_normalDistribution.jl")
-    export main_l0329_normalDistribution()
-    include("c03_distribution/l0330_cauchyCMA.jl")
-    export main_l0330_cauchyCMA()
-    include("c03_distribution/l0331_jointPDF.jl")
-    export main_l0331_jointPDF()
-    include("c03_distribution/l0332_multiRVgeneration.jl")
-    export main_l0332_multiRVgeneration()
-    include("c03_distribution/l0333_multiDimensionalIntegration.jl")
-    export main_l0333_multiDimensionalIntegration()
-    include("c03_distribution/l0334_bivariateNormal.jl")
-    export main_l0334_bivariateNormal()
+#     include("c03_distribution/l0305_cdfFromPdf.jl")
+#     export main_l0305_cdfFromPdf
+#     include("c03_distribution/l0306_inverseCDF.jl")
+#     export main_l0306_inverseCDF
+#     include("c03_distribution/l0307_mgf.jl")
+#     export main_l0307_mgf
+#     include("c03_distribution/l0308_weightVector.jl")
+#     export main_l0308_weightVector
+#     include("c03_distribution/l0309_triangularDist.jl")
+#     export main_l0309_triangularDist
+#     include("c03_distribution/l0310_distributionDescriptors.jl")
+#     export main_l0310_distributionDescriptors
+#     include("c03_distribution/l0311_basicDistRand.jl")
+#     export main_l0311_basicDistRand
+#     include("c03_distribution/l0312_triangularDistInv.jl")
+#     export main_l0312_triangularDistInv
+#     include("c03_distribution/l0313_discreteDists.jl")
+#     export main_l0313_discreteDists
+#     include("c03_distribution/l0314_uniformDiscreteDice.jl")
+#     export main_l0314_uniformDiscreteDice
+#     include("c03_distribution/l0315_binomialCoinFlip.jl")
+#     export main_l0315_binomialCoinFlip
+#     include("c03_distribution/l0316_geometric.jl")
+#     export rouletteSpins
+#     export main_l0316_geometric
+#     include("c03_distribution/l0317_negativeBinomial.jl")
+#     export rouletteSpins
+#     export main_l0317_negativeBinomial
+#     include("c03_distribution/l0318_hypergeometric.jl")
+#     export main_l0318_hypergeometric
+#     include("c03_distribution/l0319_poisson.jl")
+#     export prn
+#     export main_l0319_poisson
+#     include("c03_distribution/l0320_continuousDists.jl")
+#     export main_l0320_continuousDists
+#     include("c03_distribution/l0321_continuousUniform.jl")
+#     export main_l0321_continuousUniform
+#     include("c03_distribution/l0322_expGeom.jl")
+#     export main_l0322_expGeom
+#     include("c03_distribution/l0323_gammaDist.jl")
+#     export normalizedData
+#     export main_l0323_gammaDist
+#     include("c03_distribution/l0324_betaDist.jl")
+#     export main_l0324_betaDist
+#     include("c03_distribution/l0325_gammafunctionIntegration.jl")
+#     export main_l0325_gammafunctionIntegration
+#     include("c03_distribution/l0326_weibullHazard.jl")
+#     export main_l0326_weibullHazard
+#     include("c03_distribution/l0327_normalCalculus.jl")
+#     export main_l0327_normalCalculus
+#     include("c03_distribution/l0328_rayleigh.jl")
+#     export main_l0328_rayleigh
+#     include("c03_distribution/l0329_normalDistribution.jl")
+#     export main_l0329_normalDistribution
+#     include("c03_distribution/l0330_cauchyCMA.jl")
+#     export main_l0330_cauchyCMA
+#     include("c03_distribution/l0331_jointPDF.jl")
+#     export main_l0331_jointPDF
+#     include("c03_distribution/l0332_multiRVgeneration.jl")
+#     export main_l0332_multiRVgeneration
+#     include("c03_distribution/l0333_multiDimensionalIntegration.jl")
+#     export main_l0333_multiDimensionalIntegration
+#     include("c03_distribution/l0334_bivariateNormal.jl")
+#     export main_l0334_bivariateNormal
 #     include("c04_data/l0401_callByValueByReference.jl")
 #     include("c04_data/l0402_shallowDeepCopy.jl")
 #     include("c04_data/l0403_dataframeInspection.jl")
