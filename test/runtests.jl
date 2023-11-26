@@ -19,12 +19,12 @@ end
     include("$(@__DIR__)/test_c02_probability/runtests.jl")
     @test true
 end
-#
-# @time @testset "test_c03_distribution" begin
-#
-#     include("$(@__DIR__)/test_c03_distribution/runtests.jl")
-#     @test true
-# end
+
+@time @testset "test_c03_distribution" begin
+    include("$(@__DIR__)/test_c03_distribution/runtests.jl")
+    @test true
+end
+
 # @time @testset "test_c04_data" begin
 #
 #     include("$(@__DIR__)/test_c04_data/runtests.jl")
