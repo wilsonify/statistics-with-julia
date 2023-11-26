@@ -115,8 +115,9 @@ module StatisticsWithJulia
     export variance_transform
     include("c03_distribution/l0305_cdfFromPdf.jl")
     export approximate_CDF
-#     include("c03_distribution/l0306_inverseCDF.jl")
-#     export main_l0306_inverseCDF
+    include("c03_distribution/l0306_inverseCDF.jl")
+    export infimum
+    export invCDF
 #     include("c03_distribution/l0307_mgf.jl")
 #     export main_l0307_mgf
 #     include("c03_distribution/l0308_weightVector.jl")
