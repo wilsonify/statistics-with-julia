@@ -1,4 +1,4 @@
-using Random, Distributions, StatsPlots, Plots, Measures;
+using Random, Distributions, StatsPlots, Measures, Plots; gr()
 
 function generate_beta_data(n, a, b)
     dist = Beta(a, b)

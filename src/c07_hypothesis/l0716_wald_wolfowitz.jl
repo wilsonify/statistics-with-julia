@@ -1,4 +1,4 @@
-using CSV, GLM, StatsBase, Random, Distributions, Plots, Measures
+using CSV, GLM, StatsBase, Random, Distributions, Measures, Plots; gr()
 
 Random.seed!(0)
 

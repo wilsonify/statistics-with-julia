@@ -1,4 +1,4 @@
-using Distributions, Plots, LaTeXStrings
+using Distributions, LaTeXStrings, Plots; gr()
 
 prior(lam) = pdf(TriangularDist(0, 10, 3), lam)
 data = [2, 1, 0, 0, 1, 0, 2, 2, 5, 2, 4, 0, 3, 2, 5, 0]

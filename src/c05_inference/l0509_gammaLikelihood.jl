@@ -1,4 +1,4 @@
-using Random, Distributions, Plots, LaTeXStrings
+using Random, Distributions, LaTeXStrings, Plots; gr()
 Random.seed!(0)
 
 actualAlpha, actualLambda = 2,3

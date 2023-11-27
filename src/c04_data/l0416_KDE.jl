@@ -1,4 +1,4 @@
-using Random, Distributions, KernelDensity, Plots
+using Random, Distributions, KernelDensity, Plots; gr()
 Random.seed!(0)
 
 mu1, sigma1 = 10, 5

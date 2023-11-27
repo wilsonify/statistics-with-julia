@@ -1,5 +1,5 @@
 # Coin ﬂipping and the binomial distribution
-using StatsBase, Distributions, Plots
+using StatsBase, Distributions, Plots; gr()
 
 # define the binomial Randome Variable function.
 # generate a binomial random variable from ﬁrst principles

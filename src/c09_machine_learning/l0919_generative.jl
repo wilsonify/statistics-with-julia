@@ -1,4 +1,4 @@
-using Flux, BSON, Random, Plots
+using Flux, BSON, Random, Plots; gr()
 Random.seed!(0)
 latentDim = 100
 outputX, outputY = 6, 3

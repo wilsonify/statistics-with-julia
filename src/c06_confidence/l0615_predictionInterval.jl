@@ -1,4 +1,4 @@
-using Random, Statistics, Distributions, Plots
+using Random, Statistics, Distributions, Plots; gr()
 Random.seed!(0)
 
 mu, sig = 50, 5

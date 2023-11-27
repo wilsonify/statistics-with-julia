@@ -1,6 +1,6 @@
 # Inverse transform sampling
 # For large N, the histogram is a close approximation of the PDF of the underlying distribution.
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 function main_l0312_triangularDistInv()
     # create triangular distribution

@@ -1,4 +1,4 @@
-using Random, Distributions, StatsBase, Plots
+using Random, Distributions, StatsBase, Plots; gr()
 
 # Define a custom function to generate the test data
 function generate_mixture_data(n, mu1, sigma1, mu2, sigma2, p)

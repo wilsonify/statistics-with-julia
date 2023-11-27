@@ -1,6 +1,6 @@
 # moment generating function
 # A sum of two triangular random variables
-using Distributions, Statistics, Plots
+using Distributions, Statistics, Plots; gr()
 
 # create two separate triangular distribution-type objects dist1 and dist2 and their matching densities f1(x) and f2(x).
 # Note that the third argument of the TriangularDist() function

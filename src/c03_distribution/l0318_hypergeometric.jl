@@ -1,5 +1,5 @@
 # Comparison of several hypergeometric distributions
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 function main_l0318_hypergeometric()
 L, K, n  = 500, [450, 400, 250, 100, 50], 30

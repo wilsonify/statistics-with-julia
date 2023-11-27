@@ -1,5 +1,5 @@
 # The negative binomial distribution
-using StatsBase, Distributions, Plots
+using StatsBase, Distributions, Plots; gr()
 
 function main_l0317_negativeBinomial()
     r, p, N = 5, 18 / 37,10^6

@@ -1,4 +1,4 @@
-using Random, Distributions, Plots, LaTeXStrings;
+using Random, Distributions, LaTeXStrings, Plots; gr()
 
 actualAlpha, actualLambda = 2, 3
 n = 10^2

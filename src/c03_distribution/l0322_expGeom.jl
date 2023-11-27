@@ -1,5 +1,5 @@
 # Flooring an exponential random variable
-using StatsBase, Distributions, Plots
+using StatsBase, Distributions, Plots; gr()
 
 function main_l0322_expGeom()
     lambda, N = 1, 10^6

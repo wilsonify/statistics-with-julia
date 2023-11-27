@@ -1,4 +1,4 @@
-using Random, Distributions, StatsPlots, Plots
+using Random, Distributions, StatsPlots, Plots; gr()
 Random.seed!(0)
  
 mu = 20

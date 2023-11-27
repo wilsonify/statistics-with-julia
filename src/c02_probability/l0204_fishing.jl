@@ -1,5 +1,5 @@
 # Fishing with and without replacement
-using StatsBase, Plots
+using StatsBase, Plots; gr()
 
 
 # Function to perform fishing simulation

@@ -1,4 +1,4 @@
-using RDatasets, Plots, Measures
+using RDatasets, Measures, Plots; gr()
 
 read_iris_data() = dataset("datasets", "iris")
 

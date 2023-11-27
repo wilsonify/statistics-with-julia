@@ -1,5 +1,5 @@
 # Uniformly distributed angles
-using Distributions, Plots, LaTeXStrings
+using Distributions, LaTeXStrings, Plots; gr()
 
 function main_l0321_continuousUniform()
     cUnif = Uniform(0,2π)

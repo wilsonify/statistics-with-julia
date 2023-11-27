@@ -1,5 +1,5 @@
 # Monte Carlo based distributions of the ANOVA F-statistic
-using Distributions, Plots
+using Distributions, Plots; gr()
 function anovaFStat(allData)
     xBarArray = mean.(allData)
     nArray = length.(allData)

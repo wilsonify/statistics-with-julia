@@ -1,5 +1,5 @@
 # The geometric distribution
-using StatsBase, Distributions, Plots
+using StatsBase, Distributions, Plots; gr()
 
 function rouletteSpins(p)
     x = 0

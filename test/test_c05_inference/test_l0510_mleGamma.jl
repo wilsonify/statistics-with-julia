@@ -1,4 +1,4 @@
-using SpecialFunctions, Distributions, Roots, Plots, LaTeXStrings
+using SpecialFunctions, Distributions, Roots, LaTeXStrings, Plots; gr()
 
 function sample_Gamma(n, alpha, lambda)
     shape = alpha

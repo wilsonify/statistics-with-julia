@@ -1,5 +1,5 @@
 # Using the pdf(), cdf(), and quantile() functions with Distributions
-using Distributions, Plots, LaTeXStrings
+using Distributions, LaTeXStrings, Plots; gr()
 
 function TriangularPDF(a, b, c)
     dist = TriangularDist(a,b,c)

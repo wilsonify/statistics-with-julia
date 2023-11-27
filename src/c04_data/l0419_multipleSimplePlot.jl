@@ -1,4 +1,4 @@
-using DataFrames, CSV, Statistics, Dates, Plots, Measures
+using DataFrames, CSV, Statistics, Dates, Measures, Plots; gr()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
 

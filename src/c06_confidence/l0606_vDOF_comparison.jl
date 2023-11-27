@@ -1,4 +1,4 @@
-using Distributions, Statistics, Plots, Random
+using Distributions, Statistics, Random, Plots; gr()
 Random.seed!(0)
 
 mu1, sig1, n1 = 0, 2, 8

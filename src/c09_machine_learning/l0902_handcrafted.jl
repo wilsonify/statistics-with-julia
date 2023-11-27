@@ -1,4 +1,4 @@
-using MLDatasets, StatsBase, Measures, Plots
+using MLDatasets, StatsBase, Measures, Plots; gr()
 
 xTrain, yTrain = MLDatasets.MNIST.traindata(Float32)
 xTest, yTest = MLDatasets.MNIST.testdata(Float32)

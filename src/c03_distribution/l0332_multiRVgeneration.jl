@@ -1,5 +1,5 @@
 # Generating random vectors with desired mean and covariance
-using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots
+using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots; gr()
 
 function main_l0332_multiRVgeneration()
     Random.seed!(1)

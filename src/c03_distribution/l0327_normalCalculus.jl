@@ -1,5 +1,5 @@
 # Numerical derivatives of the normal density
-using Distributions, Calculus, SpecialFunctions, Plots
+using Distributions, Calculus, SpecialFunctions, Plots; gr()
 
 
 function main_l0327_normalCalculus()

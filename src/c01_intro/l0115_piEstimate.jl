@@ -1,5 +1,5 @@
 # Estimating π
-using Random, LinearAlgebra, Plots
+using Random, LinearAlgebra, Plots; gr()
 Random.seed!()
 
 function estimate_pi(N)

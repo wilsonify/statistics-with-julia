@@ -1,4 +1,4 @@
-using Distributions, Random, Statistics, Plots
+using Distributions, Random, Statistics, Plots; gr()
 
 ts(sample) = maximum(sample) - minimum(sample)
 

@@ -1,4 +1,4 @@
-using Random, Distributions, StatsPlots, Plots
+using Random, Distributions, StatsPlots, Plots; gr()
 
 function generate_normal_data(n, mu, sigma)
     dist = Normal(mu, sigma)

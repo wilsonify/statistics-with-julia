@@ -1,4 +1,4 @@
-using Random, Distributions, Plots
+using Random, Distributions, Plots; gr()
 Random.seed!(0)
 
 lambda = 1 / 4.5

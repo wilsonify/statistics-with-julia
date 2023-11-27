@@ -1,4 +1,4 @@
-using Distributions, StatsBase, Plots, LaTeXStrings
+using Distributions, StatsBase, LaTeXStrings, Plots; gr()
 
 using Test, Random
 @testset "" begin

@@ -1,4 +1,4 @@
-using StatsBase, Combinatorics, Random, Plots
+using StatsBase, Combinatorics, Random, Plots; gr()
 
 
 function probEst(n, N)

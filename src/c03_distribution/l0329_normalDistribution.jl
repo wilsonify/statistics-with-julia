@@ -1,5 +1,5 @@
 # The Box-Muller transform
-using Random, Distributions, Plots
+using Random, Distributions, Plots; gr()
 
 function main_l0329_normalDistribution()
     Random.seed!(1)

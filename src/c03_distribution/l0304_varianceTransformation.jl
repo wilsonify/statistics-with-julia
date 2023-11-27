@@ -1,7 +1,7 @@
 # Variance of X as the mean of Y
 
 # Line 1 calls the Distributions package. This package supports a variety of distribution types
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 function variance_transform(data)
     return (data .- mean(data)).^2

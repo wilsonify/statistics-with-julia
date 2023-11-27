@@ -1,5 +1,5 @@
 # Method of Moments vs
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 trueA = -2
 trueB = 5

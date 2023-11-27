@@ -1,4 +1,4 @@
-using CSV, GLM, Plots, Random
+using CSV, GLM, Random, Plots; gr()
 Random.seed!(0)
 
 df = CSV.read("../../data/weightHeight.csv", copycols = true)

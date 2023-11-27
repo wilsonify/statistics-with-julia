@@ -1,4 +1,4 @@
-using Distributions, LinearAlgebra, Random, Measures, Plots
+using Distributions, LinearAlgebra, Random, Measures, Plots; gr()
 Random.seed!(1)
 a, varXi, varZeta, = 0.8, 0.36, 1.0
 X0, spikeTime, spikeSize = 10.0, 50, -20.0

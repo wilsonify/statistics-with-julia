@@ -1,4 +1,4 @@
-using RDatasets, Plots, Measures
+using RDatasets, Measures, Plots; gr()
 
 data = dataset("datasets", "iris")
 println("Number of rows: ", nrow(data))

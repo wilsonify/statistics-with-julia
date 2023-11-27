@@ -1,4 +1,4 @@
-using Distributions, Random, Plots
+using Distributions, Random, Plots; gr()
 Random.seed!(0)
 
 n, N, alpha = 3, 10^7, 0.1

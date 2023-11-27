@@ -1,4 +1,4 @@
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 n1, n2 = 10, 15
 N = 10^6

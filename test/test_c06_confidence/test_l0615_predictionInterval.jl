@@ -1,8 +1,8 @@
-using Random, Statistics, Distributions, Plots
+using Random, Statistics, Distributions, Plots; gr()
 Random.seed!(0)
 
 
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 function create_normal_distribution(mu, sigma)
     return Normal(mu, sigma)

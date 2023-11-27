@@ -1,5 +1,5 @@
 # A simple random variable
-using StatsBase, Plots
+using StatsBase, Plots; gr()
 
 function randomName()
     names = ["Mary", "Mel", "David", "John", "Kayley", "Anderson"]

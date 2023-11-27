@@ -1,4 +1,4 @@
-using SpecialFunctions, Distributions, Roots, Plots, LaTeXStrings
+using SpecialFunctions, Distributions, Roots, LaTeXStrings, Plots; gr()
 
 eq(alpha, xb, xbl) = log(alpha) - digamma(alpha) - log(xb) + xbl
 

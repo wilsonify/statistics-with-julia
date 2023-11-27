@@ -1,6 +1,6 @@
 # Gamma random variable as a sum of exponentials
 
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 
 function normalizedData(d::Gamma)

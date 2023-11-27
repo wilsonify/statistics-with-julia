@@ -1,5 +1,5 @@
 # The law of large numbers breaks down with very heavy tails
-using Random, Plots
+using Random, Plots; gr()
 
 
 function main_l0330_cauchyCMA()

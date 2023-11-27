@@ -1,4 +1,4 @@
-using DifferentialEquations, Plots
+using DifferentialEquations, Plots; gr()
 beta, delta, gamma = 0.25, 0.2, 0.1
 initialInfect = 0.025
 println("R0 = ", beta/gamma)

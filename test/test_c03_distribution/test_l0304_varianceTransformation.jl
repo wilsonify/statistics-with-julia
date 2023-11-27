@@ -1,6 +1,6 @@
 # Variance of X as the mean of Y
 using StatisticsWithJulia: variance_transform
-using Distributions, Plots
+using Distributions, Plots; gr()
 using Test
 @testset "end_to_end" begin
     dist = TriangularDist(4,6,5)

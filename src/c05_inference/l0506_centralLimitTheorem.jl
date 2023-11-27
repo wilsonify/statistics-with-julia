@@ -1,4 +1,4 @@
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 n, N = 30, 10^6
 

@@ -1,4 +1,4 @@
-using Random, Distributions, StatsBase, Plots
+using Random, Distributions, StatsBase, Plots; gr()
 Random.seed!(0)
 
 mu1, sigma1 = 10, 5

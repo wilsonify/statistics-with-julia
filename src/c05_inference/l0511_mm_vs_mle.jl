@@ -1,4 +1,4 @@
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 N = 10^5
 nMin, nStep, nMax = 10, 10, 200

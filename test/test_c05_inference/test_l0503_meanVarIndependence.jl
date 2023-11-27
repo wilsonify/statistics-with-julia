@@ -1,5 +1,5 @@
 
-using Distributions, Plots, LaTeXStrings, Random
+using Distributions, LaTeXStrings, Random, Plots; gr()
 
 function statPair(dist, n)
     sample = rand(dist,n)

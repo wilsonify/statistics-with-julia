@@ -1,5 +1,5 @@
 # Hazard rates and the Weibull distribution
-using Distributions, Plots, LaTeXStrings
+using Distributions, LaTeXStrings, Plots; gr()
 
 function main_l0326_weibullHazard()
     alphas = [0.5, 1.5, 1]

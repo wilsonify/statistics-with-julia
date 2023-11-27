@@ -1,4 +1,4 @@
-using RDatasets, DataFrames, Lasso, LaTeXStrings, Plots, Measures
+using RDatasets, DataFrames, Lasso, LaTeXStrings, Measures, Plots; gr()
 
 df = dataset("MASS", "cpus")
 df.Freq = map( x->10^9 / x , df.CycT)

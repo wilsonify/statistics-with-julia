@@ -1,4 +1,4 @@
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 mu, sigma = 10, 4
 n, N = 10, 10^6

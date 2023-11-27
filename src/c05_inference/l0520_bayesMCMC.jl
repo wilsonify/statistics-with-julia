@@ -1,4 +1,4 @@
-using LaTeXStrings, Distributions, Plots
+using LaTeXStrings, Distributions, Plots; gr()
 
 alpha, beta = 8, 2
 

@@ -1,4 +1,4 @@
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 function simulate_normal_samples(mu, sigma, n, N)
     sMeans = Array{Float64}(undef, N)

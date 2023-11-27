@@ -1,5 +1,5 @@
 # Bivariate normal data
-using Distributions, Plots
+using Distributions, Plots; gr()
 
 function main_l0334_bivariateNormal()
     include("../../data/mvParams.jl")
