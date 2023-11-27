@@ -139,10 +139,8 @@ module StatisticsWithJulia
     export count_dice_roll_outcomes
     include("c03_distribution/l0315_binomialCoinFlip.jl")
     export binomialRV
-#     export main_l0315_binomialCoinFlip
-#     include("c03_distribution/l0316_geometric.jl")
-#     export rouletteSpins
-#     export main_l0316_geometric
+    include("c03_distribution/l0316_geometric.jl")
+    export rouletteSpins
 #     include("c03_distribution/l0317_negativeBinomial.jl")
 #     export rouletteSpins
 #     export main_l0317_negativeBinomial

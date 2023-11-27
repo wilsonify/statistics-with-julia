@@ -26,3 +26,4 @@ plot!( xGrid, gPmf, line = :stem, marker = :xcross,
     ylims = (0,0.5), xlabel = "x", ylabel = "Probability")
 
 end
+
