@@ -20,22 +20,8 @@ jobs:
         env:
           JULIA_DEPOT_PATH: ~/.julia
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-
       - name: Checkout Code
         uses: actions/checkout@v3
-
-      - name: Install Python Dependencies
-        run: python -m pip install -r src/c01_CallPython/requirements.txt
-
-      - name: Cache Python dependencies
-        uses: actions/cache/save@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-python-${{ matrix.python-version }}-${{ hashFiles('src/c01_CallPython/requirements.txt') }}
 
       - name: Install Julia Dependencies
         run: julia --project=~/.julia/environments/v${{ matrix.version }} setup.jl
