@@ -1,5 +1,6 @@
 # Random walks and seeds
-using Plots, Random
+using Random
+using Plots; gr()
 
 function random_walk(N, alpha, rng)
     x, y = 0.0, 0.0

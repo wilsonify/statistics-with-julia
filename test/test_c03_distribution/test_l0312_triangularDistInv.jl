@@ -1,5 +1,5 @@
 using Distributions
-using Plots
+using Plots; gr()
 using Test
 @testset "end_to_end" begin
     # create triangular distribution

@@ -1,5 +1,7 @@
 # Basic plotting
-using Plots, LaTeXStrings, Measures
+using LaTeXStrings, Measures
+using Plots
+gr()
 
 function plot_p1(xVals)
     f0(x) = x^2

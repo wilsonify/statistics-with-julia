@@ -1,5 +1,6 @@
 # Visualizing a bivariate density
-using Plots, LaTeXStrings, Measures
+using LaTeXStrings, Measures
+using Plots; gr()
 using Test
 @testset "end_to_end" begin
 delta = 0.01

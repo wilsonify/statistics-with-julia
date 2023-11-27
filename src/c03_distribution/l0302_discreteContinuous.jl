@@ -1,6 +1,6 @@
 # Plotting discrete and continuous distributions
-using Plots, Measures
-
+using Measures
+using Plots; gr()
 pContinuous(x) = 3 / 4 * (1 - x^2)
 pContinuous2(x) = x < 0 ? x + 1 : 1 - x
 

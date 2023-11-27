@@ -1,7 +1,7 @@
 using StatisticsWithJulia: simulate_die_tosses
 using StatisticsWithJulia: count_dice_roll_outcomes
 using StatsBase
-using Plots
+using Plots; gr()
 using Random
 using Test
 @testset "simulate_die_tosses" begin

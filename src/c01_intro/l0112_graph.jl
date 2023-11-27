@@ -1,4 +1,4 @@
-using Plots
+using Plots; gr()
 
 function initialize_graph_data(n)
     vertices = 1:n

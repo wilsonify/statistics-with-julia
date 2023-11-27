@@ -54,7 +54,7 @@ default(xlabel = "p", ylabel = "n",
     xticks = ([1:5:length(pGrid); ], minimum(pGrid):0.05:maximum(pGrid)),
     yticks = ([1:5:length(nGrid); ], minimum(nGrid):5:maximum(nGrid)))
 
-#using Plots
+#using Plots; gr()
 #p1 = heatmap(errs, c=cgrad([:white, :black]))
 #p2 = heatmap(abs.(errs) .<= 0.04, legend = false, c=cgrad([:white, :black]))
 #plot(p1,p2, size = (1000,400), margin = 5mm)

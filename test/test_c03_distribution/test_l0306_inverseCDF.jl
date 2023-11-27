@@ -1,6 +1,6 @@
 using StatisticsWithJulia: infimum
 using StatisticsWithJulia: invCDF
-using Plots
+using Plots; gr()
 using LaTeXStrings
 using Test
 @testset "infimum" begin

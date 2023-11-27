@@ -1,6 +1,6 @@
 # Discrete uniform die toss
 using StatsBase: counts
-using Plots
+using Plots; gr()
 
 function simulate_die_tosses(sided, N)
     faces = 1:sided

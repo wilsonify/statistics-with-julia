@@ -1,4 +1,5 @@
-using Plots, Distributions, Random
+using Distributions, Random
+using Plots; gr()
 Random.seed!(0)
 
 n = 2000

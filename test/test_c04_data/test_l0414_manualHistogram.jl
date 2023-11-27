@@ -1,5 +1,5 @@
-using Plots, Distributions, Random
-
+using Distributions, Random
+using Plots; gr()
 function generate_data(n::Int, seed::Int = 0)
     Random.seed!(seed)
     return rand(Normal(), n)

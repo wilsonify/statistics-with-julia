@@ -1,8 +1,8 @@
 # Plotting discrete and continuous distributions
 using StatisticsWithJulia: pContinuous
 using StatisticsWithJulia: pContinuous2
-using Plots, Measures
-
+using Measures
+using Plots; gr()
 using Test
 @testset "pContinuous test" begin
     xGridC = -1:0.01:1

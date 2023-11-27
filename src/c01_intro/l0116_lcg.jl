@@ -1,5 +1,5 @@
 
-using Plots
+using Plots; gr()
 
 function linear_congruential_generator(a, c, m, N)
     next(z) = (a * z + c) % m

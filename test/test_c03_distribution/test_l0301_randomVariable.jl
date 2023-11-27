@@ -2,7 +2,7 @@
 using StatisticsWithJulia: randomName
 using StatsBase
 using Test
-using Plots
+using Plots; gr()
 
 @testset "randomName test" begin
     rn = randomName()

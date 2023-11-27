@@ -1,5 +1,7 @@
 # The inverse CDF
-using Plots, LaTeXStrings
+using LaTeXStrings
+using Plots
+gr()
 # we deﬁne the function infimum(),
 # which implements similar logic to the mathematical operation inf().
 # if input is empty it returns Inf, otherwise, the minimum value of the input.

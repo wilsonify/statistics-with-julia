@@ -2,7 +2,7 @@ using StatisticsWithJulia: plot_p1
 using StatisticsWithJulia: plot_p2
 using StatisticsWithJulia: plot_p3
 using StatisticsWithJulia: plot_function
-using Plots
+using Plots; gr()
 using Test
 
 @testset "Test plot_p1 functions" begin

@@ -1,6 +1,6 @@
 # Visualizing a bivariate density
-using Plots, LaTeXStrings, Measures
-
+using LaTeXStrings, Measures
+using Plots; gr()
 f_poly(x, y) = 9 / 8 * (4x + y) * sqrt((1 - x) * (1 - y))
 
 function main_l0331_jointPDF()

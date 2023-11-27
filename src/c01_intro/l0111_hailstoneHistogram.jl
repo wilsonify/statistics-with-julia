@@ -1,5 +1,6 @@
 # Histogram of hailstone sequence lengths
-using Plots
+using Plots; gr()
+
 
 function hailLength(x::Int)
     n = 0

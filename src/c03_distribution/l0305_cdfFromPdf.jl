@@ -1,6 +1,6 @@
 # CDF from the Riemann sum of a PDF
-using Plots, LaTeXStrings
-
+using LaTeXStrings
+using Plots; gr()
 # In line 3, we deﬁne the function f2().
 # The second set of parenthesis in the equation are used to ensure that the PDF is zero outside of the region [−1, 1]
 # it evaluates to 0 everywhere else.

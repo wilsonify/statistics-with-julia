@@ -1,6 +1,6 @@
 # Lattice paths
 using Combinatorics
-using Plots
+using Plots; gr()
 using LaTeXStrings
 using Random
 

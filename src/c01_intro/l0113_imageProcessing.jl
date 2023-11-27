@@ -1,6 +1,6 @@
 # Working with images
-using Plots, Images, ImageMagick
-
+using Images, ImageMagick
+using Plots; gr()
 function grayscale_conversion(image)
     gImg = red.(image) * 0.299 + green.(image) * 0.587 + blue.(image) * 0.114
     return gImg

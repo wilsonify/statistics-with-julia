@@ -1,6 +1,7 @@
 # CDF from the Riemann sum of a PDF
 using StatisticsWithJulia: approximate_CDF
-using Plots, LaTeXStrings
+using LaTeXStrings
+using Plots; gr()
 using Test
 
 @testset "end_to_end" begin
