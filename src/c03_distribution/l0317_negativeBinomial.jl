@@ -1,5 +1,19 @@
 # The negative binomial distribution
+import .StatisticsWithJulia: rouletteSpins
 using StatsBase, Distributions, Plots; gr()
+function rouletteSpins(r, p)
+    x = 0
+    wins = 0
+    while true
+        x += 1
+        if rand() < p
+            wins += 1
+            if wins == r
+                return x
+            end
+        end
+    end
+end
 
 function main_l0317_negativeBinomial()
     r, p, N = 5, 18 / 37,10^6

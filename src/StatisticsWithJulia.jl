@@ -142,7 +142,7 @@ module StatisticsWithJulia
     include("c03_distribution/l0316_geometric.jl")
     export rouletteSpins
     include("c03_distribution/l0317_negativeBinomial.jl")
-    export main_l0317_negativeBinomial
+    export rouletteSpins
 #     include("c03_distribution/l0318_hypergeometric.jl")
 #     export main_l0318_hypergeometric
 #     include("c03_distribution/l0319_poisson.jl")
