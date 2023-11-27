@@ -141,9 +141,8 @@ module StatisticsWithJulia
     export binomialRV
     include("c03_distribution/l0316_geometric.jl")
     export rouletteSpins
-#     include("c03_distribution/l0317_negativeBinomial.jl")
-#     export rouletteSpins
-#     export main_l0317_negativeBinomial
+    include("c03_distribution/l0317_negativeBinomial.jl")
+    export main_l0317_negativeBinomial
 #     include("c03_distribution/l0318_hypergeometric.jl")
 #     export main_l0318_hypergeometric
 #     include("c03_distribution/l0319_poisson.jl")
