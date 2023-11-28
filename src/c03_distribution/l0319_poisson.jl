@@ -2,6 +2,7 @@
 using StatsBase, Distributions, Plots; gr()
 
 function prn(lambda)
+    # Poisson random number
     k, p = 0, 1
     while p > MathConstants.e^(-lambda)
         k += 1
