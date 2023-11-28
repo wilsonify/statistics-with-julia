@@ -147,9 +147,9 @@ module StatisticsWithJulia
     export main_l0318_hypergeometric
     include("c03_distribution/l0319_poisson.jl")
     export prn
-#     export main_l0319_poisson
-#     include("c03_distribution/l0320_continuousDists.jl")
-#     export main_l0320_continuousDists
+    include("c03_distribution/l0320_continuousDists.jl")
+    export summarize_dist
+    export range_of_dist
 #     include("c03_distribution/l0321_continuousUniform.jl")
 #     export main_l0321_continuousUniform
 #     include("c03_distribution/l0322_expGeom.jl")
