@@ -150,8 +150,8 @@ module StatisticsWithJulia
     include("c03_distribution/l0320_continuousDists.jl")
     export summarize_dist
     export range_of_dist
-#     include("c03_distribution/l0321_continuousUniform.jl")
-#     export main_l0321_continuousUniform
+    include("c03_distribution/l0321_continuousUniform.jl")
+    export main_l0321_continuousUniform
 #     include("c03_distribution/l0322_expGeom.jl")
 #     export main_l0322_expGeom
 #     include("c03_distribution/l0323_gammaDist.jl")
