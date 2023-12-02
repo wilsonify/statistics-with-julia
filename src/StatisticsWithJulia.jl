@@ -162,8 +162,9 @@ module StatisticsWithJulia
     export main_l0323_gammaDist
     include("c03_distribution/l0324_betaDist.jl")
     export main_l0324_betaDist
-#     include("c03_distribution/l0325_gammafunctionIntegration.jl")
-#     export main_l0325_gammafunctionIntegration
+    include("c03_distribution/l0325_gammafunctionIntegration.jl")
+    export g
+    export main_l0325_gammafunctionIntegration
 #     include("c03_distribution/l0326_weibullHazard.jl")
 #     export main_l0326_weibullHazard
 #     include("c03_distribution/l0327_normalCalculus.jl")
