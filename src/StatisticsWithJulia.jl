@@ -157,9 +157,9 @@ module StatisticsWithJulia
     export process_exp_data
     export get_proportions
     export generate_matching_geom_data
-#     include("c03_distribution/l0323_gammaDist.jl")
-#     export normalizedData
-#     export main_l0323_gammaDist
+    include("c03_distribution/l0323_gammaDist.jl")
+    export normalizedData
+    export main_l0323_gammaDist
 #     include("c03_distribution/l0324_betaDist.jl")
 #     export main_l0324_betaDist
 #     include("c03_distribution/l0325_gammafunctionIntegration.jl")
