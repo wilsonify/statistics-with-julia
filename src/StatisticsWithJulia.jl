@@ -165,8 +165,12 @@ module StatisticsWithJulia
     include("c03_distribution/l0325_gammafunctionIntegration.jl")
     export g
     export main_l0325_gammafunctionIntegration
-#     include("c03_distribution/l0326_weibullHazard.jl")
-#     export main_l0326_weibullHazard
+    include("c03_distribution/l0326_weibullHazard.jl")
+    export lambda
+    export theta
+    export hA
+    export hB
+    export main_l0326_weibullHazard
 #     include("c03_distribution/l0327_normalCalculus.jl")
 #     export main_l0327_normalCalculus
 #     include("c03_distribution/l0328_rayleigh.jl")
