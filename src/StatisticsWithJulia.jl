@@ -171,8 +171,11 @@ module StatisticsWithJulia
     export hA
     export hB
     export main_l0326_weibullHazard
-#     include("c03_distribution/l0327_normalCalculus.jl")
-#     export main_l0327_normalCalculus
+    include("c03_distribution/l0327_normalCalculus.jl")
+    export PhiA
+    export PhiB
+    export normalDensity
+    export main_l0327_normalCalculus
 #     include("c03_distribution/l0328_rayleigh.jl")
 #     export main_l0328_rayleigh
 #     include("c03_distribution/l0329_normalDistribution.jl")
