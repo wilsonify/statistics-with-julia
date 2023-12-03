@@ -176,12 +176,18 @@ module StatisticsWithJulia
     export PhiB
     export normalDensity
     export main_l0327_normalCalculus
-#     include("c03_distribution/l0328_rayleigh.jl")
-#     export main_l0328_rayleigh
-#     include("c03_distribution/l0329_normalDistribution.jl")
-#     export main_l0329_normalDistribution
-#     include("c03_distribution/l0330_cauchyCMA.jl")
-#     export main_l0330_cauchyCMA
+    include("c03_distribution/l0328_rayleigh.jl")
+    export generate_rayleigh_data1
+    export generate_rayleigh_data2
+    export generate_rayleigh_data3
+    export main_l0328_rayleigh
+    include("c03_distribution/l0329_normalDistribution.jl")
+    export Z
+    export main_l0329_normalDistribution
+    include("c03_distribution/l0330_cauchyCMA.jl")
+    export generate_cauchy_data
+    export running_proportion
+    export main_l0330_cauchyCMA
 #     include("c03_distribution/l0331_jointPDF.jl")
 #     export main_l0331_jointPDF
 #     include("c03_distribution/l0332_multiRVgeneration.jl")

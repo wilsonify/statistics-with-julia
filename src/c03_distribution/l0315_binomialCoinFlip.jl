@@ -2,7 +2,7 @@
 using StatsBase, Distributions, Plots; gr()
 
 # define the binomial Randome Variable function.
-# generate a binomial random variable from ﬁrst principles
+# generate a binomial random variable from first principles
 # create an array of uniform [0, 1] values of length n.
 # compare each value (element-wise) to p.
 # The result is a vector of Booleans, with each one set to true with probability p.

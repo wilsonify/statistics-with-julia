@@ -21,7 +21,7 @@ end
 
 function main_l0309_triangularDist()
     # use the TriangularDist() function to create a distribution-type object.
-    # The ﬁrst two arguments are the start and end points of the support,
+    # The first two arguments are the start and end points of the support,
     # the third argument is the location of the “peak” (or mode).
     dist = TriangularDist(0,2,1)
     xGrid = 0:0.01:2

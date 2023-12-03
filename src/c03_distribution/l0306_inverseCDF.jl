@@ -10,9 +10,9 @@ infimum(B) = isempty(B) ? Inf : minimum(B)
 # deﬁne the inverse cumulative density function.
 function invCDF(cdf, u)
     xGrid = 0:0.01:10
-    # It ﬁrst creates an array (representing a set) {x : F (x) ≥ u}
+    # It first creates an array (representing a set) {x : F (x) ≥ u}
     # directly via the Julia filter() function.
-    # Note that as a ﬁrst argument, we use an anonymous Julia function, (x) − > (F(x) >= u).
+    # Note that as a first argument, we use an anonymous Julia function, (x) − > (F(x) >= u).
     infinite_set = (x) -> (cdf(x) >= u)
     # We then use this function as a ﬁlter over xGrid.
     # Finally, we apply the inﬁmum over this mathematical set
