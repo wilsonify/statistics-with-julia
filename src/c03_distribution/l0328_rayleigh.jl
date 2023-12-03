@@ -17,3 +17,23 @@ function main_l0328_rayleigh()
 
     mean.([data1, data2, data3])
 end
+
+# Alternative representations of Rayleigh random variables
+using Distributions, Random
+using Test
+@testset "end_to_end" begin
+Random.seed!(1)
+
+N = 10^6
+sig = 1.7
+
+data1 = sqrt.(-(2 * sig^2) * log.(rand(N)))
+
+distG = Normal(0,sig)
+data2 = sqrt.(rand(distG,N).^2 + rand(distG,N).^2)
+
+distR = Rayleigh(sig)
+data3 = rand(distR,N)
+
+mean.([data1, data2, data3])
+end
