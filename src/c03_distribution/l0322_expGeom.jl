@@ -20,7 +20,7 @@ function process_exp_data(exp_sample)
     return exp_sample_floored_int
 end
 
-function get_proportions(exp_sample_floored_int)
+function get_proportions(exp_sample_floored_int, xGrid)
     N = length(exp_sample_floored_int)
     floorDataCounts = counts(exp_sample_floored_int, xGrid)
     floorData = floorDataCounts / N
