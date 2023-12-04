@@ -188,8 +188,10 @@ module StatisticsWithJulia
     export generate_cauchy_data
     export running_proportion
     export main_l0330_cauchyCMA
-#     include("c03_distribution/l0331_jointPDF.jl")
-#     export main_l0331_jointPDF
+    include("c03_distribution/l0331_jointPDF.jl")
+    export twoD_Riemann_sum_over_density
+    export twoD_Riemann_sum_to_evaluate_probability
+    export main_l0331_jointPDF
 #     include("c03_distribution/l0332_multiRVgeneration.jl")
 #     export main_l0332_multiRVgeneration
 #     include("c03_distribution/l0333_multiDimensionalIntegration.jl")
