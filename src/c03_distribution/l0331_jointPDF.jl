@@ -6,6 +6,7 @@ using Plots; gr()
 f_poly(x, y) = 9 / 8 * (4x + y) * sqrt((1 - x) * (1 - y))
 
 function twoD_Riemann_sum_over_density(xgrid, ygrid)
+    delta = 0.01
     # evaluate the density over a grid of x-values and y-values.
     z = [f_poly(x,y) for y in ygrid, x in xgrid]
     # approximate the integral
@@ -15,6 +16,7 @@ end
 
 function twoD_Riemann_sum_to_evaluate_probability(xgrid)
     # approximate nested integral as two Riemann sums
+    delta = 0.01
     probB = sum([sum([f_poly(x,y) * delta for y in x:delta:1]) * delta for x in xgrid])
     return probB
 end
