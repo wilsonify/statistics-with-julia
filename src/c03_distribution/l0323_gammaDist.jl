@@ -8,6 +8,7 @@ function normalizedData(d::Gamma)
     # Then -log.(rand(sh)) is a raw way of generating a unit mean collection of
     # exponential random variables using the inverse probability transform.
     # These are then scaled by the scalar, (1/(sh*lambda)).
+    N = 10^5
     sh = Int64(shape(d))
     data = [sum(-(1 / (sh*lambda)) * log.(rand(sh))) for _ in 1:N]
 end
@@ -19,7 +20,6 @@ function main_l0323_gammaDist()
     xGrid = 0:0.1:10
     # create a gamma distribution for each of our cases.
     dists = [Gamma(n,1 / (n*lambda)) for n in bulbs]
-
     y1 = normalizedData.(dists)
     y2 = [pdf.(i,xGrid) for i in dists]
 
