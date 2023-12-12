@@ -23,6 +23,7 @@ end
     delta = 0.01
     grid = 0:delta:1
     f_poly(x, y) = 9 / 8 * (4x + y) * sqrt((1 - x) * (1 - y))
+    z = [f_poly(x,y) for y in grid, x in grid]
     densityIntegral = twoD_Riemann_sum_over_density(grid,grid)
     println("2-dimensional Riemann sum over density: ", densityIntegral)
     probB = twoD_Riemann_sum_to_evaluate_probability(grid)
