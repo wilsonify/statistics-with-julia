@@ -1,6 +1,16 @@
 # Bivariate normal data
 using Distributions, Plots; gr()
 
+#=
+
+In line 3, we include another Julia ﬁle deﬁning meanVect and covMat. This ﬁle is generated in List-
+ing 4.12 of Chapter 4. In line 4, we create an MvNormal distribution object representing the bivariate
+distribution. In line 7, we use rand() with a method provided via the Distributions package
+to generate random points. The rest of the code plots are shown in Figure 3.26. Notice the call to
+contour() in lines 13–16, with speciﬁed levels. In lines 17–18, the parameters supplied via camera
+are horizontal rotation and vertical rotation in degrees.
+
+=#
 function main_l0334_bivariateNormal()
     include("../../data/mvParams.jl")
     biNorm = MvNormal(meanVect,covMat)

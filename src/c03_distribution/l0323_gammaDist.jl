@@ -8,7 +8,7 @@ function normalizedData(d::Gamma)
     # Then -log.(rand(sh)) is a raw way of generating a unit mean collection of
     # exponential random variables using the inverse probability transform.
     # These are then scaled by the scalar, (1/(sh*lambda)).
-    N = 10^5
+    lambda, N = 1 / 3, 10^5
     sh = Int64(shape(d))
     data = [sum(-(1 / (sh*lambda)) * log.(rand(sh))) for _ in 1:N]
 end

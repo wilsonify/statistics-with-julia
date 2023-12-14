@@ -192,8 +192,10 @@ module StatisticsWithJulia
     export twoD_Riemann_sum_over_density
     export twoD_Riemann_sum_to_evaluate_probability
     export main_l0331_jointPDF
-#     include("c03_distribution/l0332_multiRVgeneration.jl")
-#     export main_l0332_multiRVgeneration
+    include("c03_distribution/l0332_multiRVgeneration.jl")
+    export generate_random_vectors_with_desired_mean_and_covariance
+    export stats
+    export main_l0332_multiRVgeneration
 #     include("c03_distribution/l0333_multiDimensionalIntegration.jl")
 #     export main_l0333_multiDimensionalIntegration
 #     include("c03_distribution/l0334_bivariateNormal.jl")
