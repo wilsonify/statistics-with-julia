@@ -1,4 +1,18 @@
 module StatisticsWithJulia
+    include("t01_testing/t01_are_dataframes_equal.jl")
+    export are_dataframes_equal
+    export are_dataframes_approx
+    include("t01_testing/t02_are_lists_equal.jl")
+    export are_lists_equal
+    export is_all_approx_list
+    include("t01_testing/t03_text_to_dataframe.jl")
+    export text_to_dataframe
+    export text_to_dataframe2
+    include("t01_testing/t04_dataframe_to_dict.jl")
+    export dataframe_to_dict
+    include("t01_testing/t05_are_arrays_equal.jl")
+    export is_all_approx_array
+    export is_array_equal
     include("c01_CallC/l0121_usingC.jl")
     export cos_c
     include("c01_intro/l0101_helloWorld.jl")
