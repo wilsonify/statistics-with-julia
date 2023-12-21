@@ -1,3 +1,43 @@
+# Manipulating DataFrame objects
+
+#=
+In line 2
+dropm1issing() is used so that all rows with missing entries are excluded.
+This is done as some of the functions here require all values to be non-missing.
+In line 4 the Date() function from the Dates package is applied to every row from the :Date column,
+converting each entry from a string to a Date type,
+according to the string formatting given as the second argument.
+In line 5
+sort() is used to sort by the :Date column.
+In line 7
+filter() is used to return only rows which have a :Price greater than 50000.
+In line 9
+the type of the :Grade column is changed to categorical via categorical!().
+In lines 13–14
+the powerful by() function is demonstrated.
+Here data is split according to :Grade.
+The third argument is where calculations are defined.
+The columns to be referenced in the calculations are put to the left of “=>”,
+in our case only :Price is used.
+The calculations are specified by the anonymous function in line 14.
+Note that => is used to define a Pair and -> is used to define an anonymous function.
+The anonymous function creates a NamedTuple defining two new columns, :NumSold and :AvgPrice.
+For the first,
+the total number of each :Grade is calculated based on the length,
+i.e. number of entries in the price column.
+For the second, the average price is calculated via mean().
+Note that the by() function can be used in many ways,
+and calculations can be done over data in more than one column.
+There are also several other related functions not touched on here,
+including mapcols(),
+which can be used to transform all values in a data frame,
+and aggregate(),
+which has functionality similar to by().
+Further functionality is also available via the DataFramesMeta package which provides a macro-based framework to interface with data frames,
+such as via the @linq macro and the |> operator.
+Consult the documentation for further information.
+=#
+
 using DataFrames, CSV, Dates, Statistics, CategoricalArrays
 
 path_to_here = @__DIR__

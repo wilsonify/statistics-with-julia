@@ -1,3 +1,14 @@
+# Quantile-Quantile Plots
+#=
+Lines 4–5
+define the distributions of the synthetic data and their parameters.
+Lines 7–9
+create the sample data.
+Lines 11–13
+create the histograms.
+Lines 15–18
+call the qqplot() function from StatsPlots and create the Q-Q plot.
+=#
 using Random, Distributions, StatsPlots, Measures, Plots; gr()
 Random.seed!(0)
  

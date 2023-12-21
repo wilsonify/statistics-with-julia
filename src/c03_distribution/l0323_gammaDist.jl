@@ -3,7 +3,7 @@
 using Distributions, Plots; gr()
 
 function normalizedData(d::Gamma)
-    # operates on a gamma distribution as speciﬁed via ::Gamma.
+    # operates on a gamma distribution as specified via ::Gamma.
     # The function obtains the shape parameter of the input distribution via shape() and converts this to an integer.
     # Then -log.(rand(sh)) is a raw way of generating a unit mean collection of
     # exponential random variables using the inverse probability transform.

@@ -1,3 +1,17 @@
+# Heatmap and marginal histograms
+#=
+In line 3,
+we create realData based on the Brisbane and Gold Coast temperature file.
+Lines 5–9
+create the syntheticData data frame with N observations based on the bivariate normal distribution
+biNorm using the parameters in mvParams.jl similarly to Listing 3.34.
+The actual creation of the DataFrame object in line 8 creates default column names, x1 and x2.
+We then rename these in line 9.
+The remainder of the code creates the two heat maps with marginals plots using marginalhist() in lines 15–16.
+Observe that, for the synthetic data, we are able to use a much larger number of bins.
+Note the use of the cgrad() function in line 11,
+setting the color gradient as part of the default parameters.
+=#
 using StatsPlots, Distributions, CSV, DataFrames, Measures
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

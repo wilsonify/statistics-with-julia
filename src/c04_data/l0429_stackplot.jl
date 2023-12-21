@@ -1,3 +1,15 @@
+# Stacked Line Plot
+#=
+In line 4,
+the data in the MarketCap column is reshaped into a 5×3 array via the reshape() function.
+In line 5,
+levels() is used to store the unique years of the dataset in the array years in ascending order.
+In lines 7–10,
+areaplot() is used to create the plot,
+with the horizontal values given as the first argument,
+and the data to be plotted as the second argument,
+with rows treated as individual years.
+=#
 using DataFrames, CSV, CategoricalArrays, Plots; gr()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

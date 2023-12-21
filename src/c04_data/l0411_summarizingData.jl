@@ -1,3 +1,23 @@
+# Summary statistics
+
+#=
+In line 2,
+we load the data and select the fourth column.
+This sets data to be an array of Float64.
+In line 4,
+we compute and print the sample mean using mean().
+We then compare it to the harmonic mean and geometric mean,
+computed via harmmean() and geomean(), respectively.
+In line 7,
+we compute the sample variance using var() and,
+then in line 8,
+the sample standard deviation via std().
+In lines 9–14,
+we compute different statistics associated with order statistics including the min,
+max, median, and quartiles.
+Finally,  in line 16,
+we use the summarystats() function which yields similar output.
+=#
 using CSV, Statistics, StatsBase, DataFrames
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

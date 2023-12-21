@@ -1,3 +1,38 @@
+# Cleaning and imputing data
+#=
+In lines 4–5,
+we check if there are any rows with missing values in both the :Grade and :Price columns,
+and we remove them if present.
+First ismissing() is applied element-wise over all values in each column,
+.& is then used to evaluate to true if both columns contain missing,
+and finally the preceding .! is used to ﬂip the result,
+evaluating to true if the row should be kept.
+In our example, there are no rows with missing values in both columns, so all rows are kept.
+In lines 7–8, we replace all missing names with the strings "QQ" and "31/06/2008",
+respectively, via replace!().
+In lines 10–11, dropmissing() and by() are used to calculate the mean price of each group,
+excluding rows with missing values.
+The results are rounded to the nearest thousand (digits = -3) and stored as the data frame grPr.
+In line 14, the dictionary d is created based on the values from grPr,
+with grade the key,
+and average price the value.
+In line 14,
+the nearIndx() function is created.
+It takes a value as input, x,
+and then finds the index of the nearest value from a given vector of values, v.
+In lines 15–22,
+we loop over each row in the data frame and impute missing values in the price and grade columns.
+In lines 16–18,
+if the price entry is missing,
+then the grade is used to return the corresponding value stored in the dictionary d.
+Similarly, in lines 19–21,
+if the grade entry is missing,
+then the nearIndx() function is used to find the index of the closest value
+in grPr based on the price in data, and then missing is replaced by the corresponding grade.
+In lines 24–25, the first several rows of the data frame are printed,
+along with a summary of the cleaned data frame.
+At this point, no missing values are present.
+=#
 using DataFrames, CSV, Statistics
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

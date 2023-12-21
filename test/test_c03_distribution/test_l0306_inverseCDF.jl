@@ -10,13 +10,13 @@ using Test
 end
 
 @testset "end_to_end" begin
-    # deﬁne the grid over which we will evaluate the CDF.
+    # define the grid over which we will evaluate the CDF.
     xGrid = 0:0.01:10
-    # deﬁne the grid over which we will evaluate the inverse CDF.
+    # define the grid over which we will evaluate the inverse CDF.
     uGrid = 0:0.01:1
-    # deﬁne the time proportion during which the server is busy.
+    # define the time proportion during which the server is busy.
     busy = 0.8
-    # deﬁne the cumulative density function F(t)
+    # define the cumulative density function F(t)
     # Note that for values less than zero, the CDF evaluates to 0.
     F_example(t) = t <= 0 ? 0 : 1 - busy*exp(-(1 - busy)t)
     # CDF, via the F() function,

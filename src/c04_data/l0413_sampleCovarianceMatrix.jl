@@ -1,3 +1,30 @@
+# Sample covariance
+#=
+In line 2,
+we read the data with header = false since there isn’t a line in the csv for the variable
+(or feature) names.
+In line 3,
+we use the size() function to set the number of observations, n, and number of features p.
+The convert() function is used in line 6 to extract a data matrix out of the
+data frame df.
+Lines 9–13 show alternative ways of computing the sample mean vector.
+Note the use of dims=1 in the sum() function
+in line 11,
+indicating to sum over columns.
+In line 15, we create the de-meaned data Y and show
+in line 16
+that the mean is 0 (effectively 0 in the output).
+Lines 18–24
+illustrate a variety of ways to calculate the sample covariance matrix using several forms of (4.5).
+Lines 26–30 deal with standardized data as in (4.3).
+The printout of the maximum of the norm in line 29 is
+a way for seeing that the two matrices ZmatA and ZmatB are identical.
+Finally, lines 32–39
+compute the correlation matrix in a variety of ways.
+Observe line 35 implementing (4.4).
+Also observe that the covariance of Z is the correlation of X as shown in lines 36–37.
+
+=#
 using Statistics, StatsBase, LinearAlgebra, DataFrames, CSV
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

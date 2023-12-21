@@ -11,10 +11,10 @@ function main_l0308_weightVector()
 Random.seed!(1)
 N = 10^6
 
-# deﬁne an array of possible outcomes.
+# define an array of possible outcomes.
 grade = ["A", "B", "C", "D", "E"]
 
-# deﬁne their weights.
+# define their weights.
 # Note the fact that Weights() is capitalized,
 # signifying a Constructor which creates a new object.
 weightVect = Weights([0.1, 0.2, 0.1, 0.2, 0.4])
@@ -26,7 +26,7 @@ data = sample(grade,weightVect,N)
 # then evaluates the proportion of times total each grade occurs.
 result = count_occurance(data)
 print("occurances=$result")
-# the grades have been sampled according to the probabilities speciﬁed in weightVect.
+# the grades have been sampled according to the probabilities specified in weightVect.
 # Note that you can also use the Categorical() object in the Distributions package
 
 end

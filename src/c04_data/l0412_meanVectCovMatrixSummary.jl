@@ -1,3 +1,27 @@
+# Estimating elements of a covariance matrix
+#=
+In lines 3–5,
+we import the data and store the temperatures
+for Brisbane and Gold Coast as the arrays brisT and gcT respectively.
+In lines 7–8,
+the standard deviations of our temperature observations are calculated,
+and in line 9
+the cov() function is used to estimate the covariance.
+In line 11,
+the means of our temperatures are calculated and stored as the array meanVect.
+In lines 12–13,
+the covariance matrix is calculated and assigned to the variable covMat.
+In lines 15–17,
+we save meanVect and covMat to the new Julia file, mvParams.jl.
+Note that this file is used as input for our calculations in Listing 3.34.
+First, in line 15, the open() function is used (with the argument w) to create the file
+mvParams.jl in write mode.
+Note that open() creates an input-output stream, outfile, which can then be written to.
+Then in line 16 write() is used to write to the input-output stream outfile.
+In line 17, the input-output stream outfile is closed.
+In line 18, the content of the file mvParams.jl
+is printed via the read() and print() functions.
+=#
 using DataFrames, CSV, Statistics
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

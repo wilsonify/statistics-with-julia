@@ -1,3 +1,15 @@
+# Classic vs. smooth histograms
+#=
+Lines 4–8 deal with the mixture random variable.
+It is a mixture of two normal distributions,
+each with parameters as specified in lines 4–5.
+The mixture places a probability of p = 0.3
+of being from the first distribution and hence a probability of 0.7 of being from the second.
+Line 8 defines the function that generates the mixture random variable.
+It evaluates to rand(dist1) with probability 0.3 and rand(dist2) with probability 0.7.
+Lines 10–11 generate data samples from this mixture distribution.
+Lines 13–14 create the density plot. Lines 15–16 plot a histogram for comparison.
+=#
 using Random, Distributions, StatsPlots
 Random.seed!(0)
 

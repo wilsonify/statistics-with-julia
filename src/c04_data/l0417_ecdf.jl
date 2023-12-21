@@ -1,3 +1,21 @@
+# Empirical cumulative distribution function
+#=
+The first few lines of the code block are
+similar to the previous examples using a mixture distribution.
+A difference is that,
+in line 9,
+we define the function mixCDF() which is the CDF of the mixture distribution.
+We then generate two samples
+in lines 12–13,
+of varying sample sizes.
+In lines 15–16,
+we invoke the ecdf() function from StatsBase.
+The returned object can then be used as a function,
+evaluating F̂ (·) at any point.
+This is done in lines 19–20
+where we plot the ECDFs evaluated on xGrid.
+Then lines 21–23 plot the actual CDF.
+=#
 using Random, Distributions, StatsBase, Plots; gr()
 Random.seed!(0)
 

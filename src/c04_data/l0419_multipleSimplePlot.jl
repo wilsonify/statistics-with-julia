@@ -1,3 +1,24 @@
+# Multiple simple plots for a time-series
+#=
+In lines 3-5,
+we read the data and create the arrays brisbane and goldcoast
+describing the temperatures in these respective locations.
+In line 7,
+we create the array diff made up of temperature differences.
+In lines 8-12,
+we create the array dates which contains Date objects mapped to the days of temperature measurement.
+It is constructed based on the Year, Month, and Day
+columns of the data frame by using the respective functions from the Dates package.
+In line 14,
+we define a range of days spanning a fortnight, fortnightRange.
+This is then used to splice that fortnight
+from the temperature data into brisFortnight and goldFortnight.
+In this plotting example,
+we use the default() function from Plots to set some default argument for each subplot.
+This is in lines 18–19.
+We then create the plots in lines 21–30,
+overriding the defaults in certain cases.
+=#
 using DataFrames, CSV, Statistics, Dates, Measures, Plots; gr()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

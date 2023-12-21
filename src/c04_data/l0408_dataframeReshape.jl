@@ -1,3 +1,27 @@
+# Reshaping, joining and merging data frames
+#=
+In line 2,
+we create data in the same manner as the previous listings.
+In lines 4–6, we create three separate data frames.
+The first, newCol, consists of a single column :Validated with the same number of rows as data.
+The second, newRow, consists of two rows with :Name and :PhoneNumber columns.
+The third, newData, has two rows and two columns, :Name and :Job.
+In line 9,
+hcat() is used to horizontally concatenate newCol to data.
+In line 12, vcat() is used to vertically concatenate data and newRow,
+with the new row appended to the bottom of the data frame.
+Note cols=:union is used so that all columns from both data frames are kept,
+and missing entries recorded where applicable.
+Alternatively, :equal or :intersect could have been used, or an array of columns to be kept instead.
+In line 15,
+join() is used to join data and newData together, based on the :Name column.
+Note that join() can be used in several different ways.
+The functions select!() and unique!() are demonstrated in lines 18–22.
+Another function not shown here is stack(),
+which can be used to stack a data frame from a wide format to a long format.
+We recommend the reader consult the DataFrames manual
+for further information on each of the functions listed here.
+=#
 using DataFrames, CSV
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

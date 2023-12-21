@@ -1,3 +1,26 @@
+# Creating a manual histogram
+#=
+In lines 4–6,
+we deal with the data.
+It is artificially sampled from a standard normal distribution.
+Lines 8–13
+detail our choice of bins.
+In this case, L is implicitly defined based on the bin width delta.
+in line 11
+The statement is executed when l-m is not a multiple of delta
+and adds an additional final bin (potentially smaller than the rest of the bins).
+The function inBin() implements 1{x ∈ B j }.
+The function sizeBin() implements |B j |.
+The function f() implements f j as in (4.6).
+We then use these in line 18 to implement h(x) as in the first representation of (4.7).
+Lines 21–23
+plot the histogram using histogram() where we specify L bins.
+Lines 24–25
+plot our manual implementation of the histogram via h().
+For comparison,
+we also plot the PDF of the data
+in lines 26–27.
+=#
 using Distributions, Random
 using Plots; gr()
 Random.seed!(0)

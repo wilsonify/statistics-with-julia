@@ -37,7 +37,7 @@ function generate_random_vectors_with_desired_mean_and_covariance(muY, SigY)
     end
 
 function stats(data)
-    # calculates and prints ﬁrst and second-order statistics.
+    # calculates and prints first and second-order statistics.
     # Note the use of begin and end to define the function.
     data1, data2 = first.(data), last.(data)
     println("Mean1\tMean2\tVar1\tVar2\tCov")

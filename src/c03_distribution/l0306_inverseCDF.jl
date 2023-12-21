@@ -2,33 +2,33 @@
 using LaTeXStrings
 using Plots
 gr()
-# we deﬁne the function infimum(),
+# we define the function infimum(),
 # which implements similar logic to the mathematical operation inf().
 # if input is empty it returns Inf, otherwise, the minimum value of the input.
-# This agrees with the typical mathematical notation where the inﬁmum of the empty set is ∞.
+# This agrees with the typical mathematical notation where the infimum of the empty set is ∞.
 infimum(B) = isempty(B) ? Inf : minimum(B)
-# deﬁne the inverse cumulative density function.
+# define the inverse cumulative density function.
 function invCDF(cdf, u)
     xGrid = 0:0.01:10
     # It first creates an array (representing a set) {x : F (x) ≥ u}
     # directly via the Julia filter() function.
     # Note that as a first argument, we use an anonymous Julia function, (x) − > (F(x) >= u).
     infinite_set = (x) -> (cdf(x) >= u)
-    # We then use this function as a ﬁlter over xGrid.
-    # Finally, we apply the inﬁmum over this mathematical set
+    # We then use this function as a filter over xGrid.
+    # Finally, we apply the infimum over this mathematical set
     # (represented by a vector of coordinates on the x-axis).
     finite_set = filter(infinite_set,xGrid)
     return infimum(finite_set)
 end
 
 function main_l0306_inverseCDF()
-    # deﬁne the grid over which we will evaluate the CDF.
+    # define the grid over which we will evaluate the CDF.
     xGrid = 0:0.01:10
-    # deﬁne the grid over which we will evaluate the inverse CDF.
+    # define the grid over which we will evaluate the inverse CDF.
     uGrid = 0:0.01:1
-    # deﬁne the time proportion during which the server is busy.
+    # define the time proportion during which the server is busy.
     busy = 0.8
-    # deﬁne the cumulative density function F(t)
+    # define the cumulative density function F(t)
     # Note that for values less than zero, the CDF evaluates to 0.
     F_example(t) = t <= 0 ? 0 : 1 - busy*exp(-(1 - busy)t)
     # CDF, via the F() function,

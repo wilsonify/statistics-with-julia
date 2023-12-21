@@ -3,7 +3,7 @@ using SpecialFunctions, Distributions
 # SpecialFunctions package for gamma(), beta(), and factorial() for noninteger z.
 
 function main_l0324_betaDist()
-    # beta() at a and b is evaluated in three diﬀerent ways.
+    # beta() at a and b is evaluated in three different ways.
     a, b = 0.2, 0.7
     x = 0.75
     betaAB1 = beta(a,b)

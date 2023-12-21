@@ -1,3 +1,10 @@
+# Box plots of data
+#=
+In lines 3-5,
+the data files for each of the machines are loaded and the data stored as separate arrays.
+In lines 7-9,
+the boxplot is created via the boxplot() function from the StatsPlots package.
+=#
 using DataFrames, CSV, StatsPlots
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

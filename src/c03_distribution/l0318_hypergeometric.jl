@@ -2,12 +2,12 @@
 using Distributions, Plots; gr()
 
 function main_l0318_hypergeometric()
-    # deﬁne the population size, L,
+    # define the population size, L,
     L = 500
     # the sample size n,
     n = 30
     # the array K, which contains the number of successes in the population
-    # for each of our ﬁve scenarios
+    # for each of our five scenarios
     K = [450, 400, 250, 100, 50]
     # create several hypergeometric distributions.
     # The constructor takes three arguments,

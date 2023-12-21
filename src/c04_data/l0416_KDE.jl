@@ -1,3 +1,18 @@
+# Kernel density estimation
+#=
+The first 12 lines are similar to the previous code example
+with an exception of line 9 that defines the function mixPDF()
+which is the PDF of the mixture distribution.
+In line 14, we invoke the function kde() to generate a KDE-type object kdeDist,
+based on data.
+The KernelDensity package supplies methods for the pdf()
+function that can be applied to UnivariateKDE objects such as kdeDist.
+This is used in line 17 to create the array pdfKDE over xGrid.
+Lines 19–23
+plot the KDE, a histogram of the data, and the actual PDF.
+These plots make up p1 which is the left hand of the figure.
+The right hand side p2 is created in lines 25–32.
+=#
 using Random, Distributions, KernelDensity, Plots; gr()
 Random.seed!(0)
 

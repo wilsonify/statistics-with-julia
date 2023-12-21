@@ -1,3 +1,24 @@
+# Radial plot
+#=
+Lines 3–9 are similar to the previous listing setting up brisbane as an array of temperature readings
+and dates as an array of dates.
+In line 11,
+we define window1 and window2
+which specify the width of the moving average smoothing to be performed.
+Then lines 12–13
+use several functions from the TimeSeries package to perform moving average smoothing.
+We first create TimeArray objects, we then use the moving() function with first argument mean,
+we then extract the values using the values() function.
+The results are in the arrays d1 and d2.
+In line 15, we specify the polar plotting grid.
+Note the use of .+ pi/2 shifting the range by 90 degrees.
+In line 16, we use the monthname() function from
+package Dates to get an array of month names for labels.
+The radial plots are generated in lines 18–23 using the argument proj=:polar.
+Notice the specification of xticks in line 21 where we broadcast the mod()
+function with second argument 2pi.
+This ensures all angles are standardized to lie in the interval [0, 2π].
+=#
 using DataFrames, CSV, Dates, StatsBase, TimeSeries, Plots; gr()
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

@@ -8,10 +8,10 @@ using Distributions, Statistics, Plots; gr()
 dist1 = TriangularDist(0,1,1)
 dist2 = TriangularDist(0,1,0)
 
-# implement the MGF function. estimating the sample mean of e^sZ for a speciﬁed s.
+# implement the MGF function. estimating the sample mean of e^sZ for a specified s.
 mgf(s) = 4(1 + (s - 1) * MathConstants.e^s) * (MathConstants.e^s - 1 - s) / s^4
 
-# we deﬁne Point Estimate function which estimates the MGF at the point s.
+# we define Point Estimate function which estimates the MGF at the point s.
 mgfPointEst(s) = mean([MathConstants.e^(s*z) for z in  rand(dist1,20) + rand(dist2,20)])
 
 function main_l0307_mgf()

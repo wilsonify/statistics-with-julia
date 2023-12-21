@@ -1,3 +1,14 @@
+# Normal probability plot
+#=
+The distributions for the two synthetic datasets are defined in lines 4–5.
+You can check that they have the same theoretical mean and variance
+by using mean() and var() on d1 and d2.
+The samples are then generated in lines 7–9.
+Lines 11–14 then plot the normal probability plots
+via the qqnorm() and qqnorm!() functions from StatsPlots.
+The second function has a ! in the name
+similar to other plotting functions that add onto an existing plot.
+=#
 using Random, Distributions, StatsPlots, Plots; gr()
 Random.seed!(0)
  
