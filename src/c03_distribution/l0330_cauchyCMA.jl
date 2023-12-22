@@ -42,3 +42,7 @@ function main_l0330_cauchyCMA()
     plot( 1:n, averages,  c = :blue, legend = :none, xscale = :log10, xlims = (1,n), xlabel = "n", ylabel = "Running average")
 end
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    generate_cauchy_data()
+end

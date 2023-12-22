@@ -30,3 +30,7 @@ function main_l0327_normalCalculus()
 end
 
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0327_normalCalculus()
+end

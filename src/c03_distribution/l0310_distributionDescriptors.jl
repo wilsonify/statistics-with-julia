@@ -22,3 +22,7 @@ function main_l0310_distributionDescriptors()
     println("Range: \t\t\t\t", minimum(dist),"\t",maximum(dist))
     println("Mode: \t\t\t\t", mode(dist), "\tModes: ",modes(dist))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0310_distributionDescriptors()
+end

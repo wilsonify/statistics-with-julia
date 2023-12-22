@@ -36,3 +36,7 @@ function main_l0331_jointPDF()
     plot(p1, p2, size = (800, 400), xlabel = "x", margin = 5mm)
 end
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0331_jointPDF()
+end

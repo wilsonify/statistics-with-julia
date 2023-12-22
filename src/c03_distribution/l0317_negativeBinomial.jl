@@ -25,3 +25,6 @@ function main_l0317_negativeBinomial()
     plot!( xGrid, nbPmf, line = :stem,         marker = :xcross, c = :red, ms = 6, msw = 0, lw = 2, label = "PMF",         xlims = (0,maximum(xGrid)), ylims = (0,0.2),         xlabel = "x", ylabel = "Probability")
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0317_negativeBinomial()
+end

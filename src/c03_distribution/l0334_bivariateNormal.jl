@@ -21,3 +21,7 @@ function main_l0334_bivariateNormal()
     plot(p1, p2, size = (800, 400))
 end
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0334_bivariateNormal()
+end

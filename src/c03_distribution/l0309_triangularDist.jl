@@ -37,3 +37,7 @@ function main_l0309_triangularDist()
     p3 = plot( uGrid, y3, c = :blue, xlims = (0,1), ylims = (0,2), xlabel = "u", ylabel = (L"F^{-1}(u)"))
     plot(p1, p2, p3, legend = false, layout = (1,3), size = (1200, 400))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0309_triangularDist()
+end

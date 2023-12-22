@@ -26,3 +26,6 @@ function main_l0315_binomialCoinFlip()
     plot!( xGrid, bPmf,  line = :stem, marker = :xcross, c = :red, ms = 6, msw = 0, lw = 2, label = "PMF", xticks = (0:1:10), ylims = (0,0.3), xlabel = "x", ylabel = "Probability")
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0315_binomialCoinFlip()
+end

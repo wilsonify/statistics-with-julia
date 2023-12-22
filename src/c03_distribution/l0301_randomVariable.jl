@@ -14,4 +14,9 @@ bar(X,counts(sampleLengths) / N, ylims = (0,0.35), xlabel = "Name length", ylabe
 savefig("l0301_random_variable_bar.png")
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0301_randomVariable()
+end
+
 export randomName
+

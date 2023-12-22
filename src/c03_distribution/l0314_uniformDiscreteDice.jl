@@ -35,3 +35,6 @@ function main_l0314_uniformDiscreteDice()
 end
 
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0314_uniformDiscreteDice()
+end

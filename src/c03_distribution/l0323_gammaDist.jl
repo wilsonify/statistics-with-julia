@@ -34,3 +34,6 @@ function main_l0323_gammaDist()
     plot!(xGrid, y1, c = C, label = reshape(L, 1,:))
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0323_gammaDist()
+end

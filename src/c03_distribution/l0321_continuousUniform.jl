@@ -23,4 +23,6 @@ function main_l0321_continuousUniform()
     plot!( xGrid, y2, c = :red,ylims = (0,0.2),label = "PDF", ylabel = "Density",xticks = ([0:π / 2:2π; ], ["0", L"\dfrac{\pi}{2}", L"\pi", L"\dfrac{3\pi}{2}", L"2\pi"]))
 end
 
-
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0321_continuousUniform()
+end

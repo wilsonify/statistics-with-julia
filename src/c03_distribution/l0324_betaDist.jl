@@ -20,3 +20,6 @@ function main_l0324_betaDist()
     println("betaPDF($a,$b) at $x = $betaPDFAB1,\t$betaPDFAB2")
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0324_betaDist()
+end

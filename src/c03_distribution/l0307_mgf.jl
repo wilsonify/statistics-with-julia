@@ -33,3 +33,8 @@ function main_l0307_mgf()
     p2 = plot!( [minimum(sGrid), maximum(sGrid)], [minimum(sGrid), maximum(sGrid)].+1, c = :black, xlabel = "s", ylabel = "MGF")
     plot(p1, p2, legend = :none, size = (800, 400))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0307_mgf()
+end
+

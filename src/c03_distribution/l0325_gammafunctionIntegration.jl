@@ -13,3 +13,7 @@ function main_l0325_gammafunctionIntegration()
 end
 
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0325_gammafunctionIntegration()
+end

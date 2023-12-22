@@ -23,3 +23,6 @@ function main_l0320_continuousDists()
     reshape(summarize_dist.(dists), length(dists),3)
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0320_continuousDists()
+end

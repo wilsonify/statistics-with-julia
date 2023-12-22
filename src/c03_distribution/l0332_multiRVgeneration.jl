@@ -67,3 +67,6 @@ function main_l0332_multiRVgeneration()
     scatter!(first.(data[3]), last.(data[3]), c = :green, ms = 1, msw = 0, label = "Exponential", xlims = (0,40), ylims = (0,40), legend = :bottomright, ratio = :equal, xlabel = L"X_1", ylabel = L"X_2")
     end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0332_multiRVgeneration()
+end

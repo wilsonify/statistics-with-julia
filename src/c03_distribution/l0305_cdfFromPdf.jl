@@ -25,3 +25,7 @@ function main_l0305_cdfFromPdf()
     # Lines 11–12 are plotted in Figure 3.4.
     plot(xGrid, y, c = :blue, xlims = (a,b), ylims = (0,1), xlabel = L"x", ylabel = L"F(x)", legend = :none)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0305_cdfFromPdf()
+end

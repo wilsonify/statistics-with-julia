@@ -29,3 +29,6 @@ end
 
 
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0311_basicDistRand()
+end

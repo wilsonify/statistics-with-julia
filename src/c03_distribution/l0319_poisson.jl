@@ -20,3 +20,6 @@ function main_l0319_poisson()
     plot!( xGrid, bPmf, line = :stem,    marker = :xcross, c = :red, ms = 6, msw = 0, lw = 2, label = "PMF",    ylims = (0,0.2), xlabel = "x", ylabel = "Probability of x events")
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0319_poisson()
+end

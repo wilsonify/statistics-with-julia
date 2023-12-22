@@ -27,3 +27,7 @@ function main_l0304_varianceTransformation()
     p2 = histogram(yData, xlabel = "y", bins = 80, normed = true, ylims = (0,15))
     plot(p1, p2, ylabel = "Proportion", size = (800, 400), legend = :none)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0304_varianceTransformation()
+end

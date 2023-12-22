@@ -10,3 +10,7 @@ function main_l0303_meanIntegration()
     println("Mean 1: ", expect(f1,sup))
     println("Mean 2: ", expect(f2,sup))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0303_meanIntegration()
+end

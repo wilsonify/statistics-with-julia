@@ -40,3 +40,7 @@ function main_l0306_inverseCDF()
     p2 = plot(uGrid,y2, c = :blue, xlims = (0,0.95), ylims = (0,maximum(xGrid)), xlabel = L"u", ylabel = L"F^{-1}(u)")
     plot(p1, p2, legend = :none, size = (800, 400))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0306_inverseCDF()
+end

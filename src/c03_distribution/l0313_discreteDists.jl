@@ -34,3 +34,7 @@ function main_l0313_discreteDists()
     println("Distribution \t\t\t\t\t\t Parameters \t Support")
     println("$result")
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0313_discreteDists()
+end

@@ -33,3 +33,6 @@ function main_l0326_weibullHazard()
     plot(xGrid, hazardsA, c=Cl, label=reshape(Lb, 1,:), xlabel="x", ylabel="Instantaneous failure rate", xlims=(0,10), ylims=(0,10))
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0326_weibullHazard()
+end

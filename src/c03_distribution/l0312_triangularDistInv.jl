@@ -20,3 +20,6 @@ function main_l0312_triangularDistInv()
     plot!( xGrid, y1, c = :red, lw = 4, xlabel = "x", label = "PDF", ylabel = "Density", legend = :topright)
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0312_triangularDistInv()
+end

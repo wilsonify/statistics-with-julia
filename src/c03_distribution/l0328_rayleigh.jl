@@ -42,3 +42,7 @@ function main_l0328_rayleigh()
     mean.([data1, data2, data3])
 end
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0328_rayleigh()
+end

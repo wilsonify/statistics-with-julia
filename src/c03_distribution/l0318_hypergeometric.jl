@@ -26,3 +26,6 @@ function main_l0318_hypergeometric()
 end
 
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0318_hypergeometric()
+end
