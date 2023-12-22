@@ -2,6 +2,10 @@
 using DataFrames # use the DataFrames package to use DataFrame type objects.
 using CSV # We also use the CSV package for reading csv files.
 
+function read_purchaseData(path_to_purchaseData)
+    return CSV.read(path_to_purchaseData, DataFrame, copycols = true)
+end
+
 function get_size(data)
     # the size() function returns the number of rows and columns of the data frame as a tuple.
     println(nrow(data))
@@ -30,6 +34,8 @@ function get_description(data)
     return describe(data)
     end
 
+
+
 function main_l0403_dataframeInspection()
     path_to_here = @__DIR__
     path_to_data = abspath("$path_to_here/../../data")
@@ -38,7 +44,7 @@ function main_l0403_dataframeInspection()
     # Note that our file has a header row,
     # We use copycols = true to create a data frame with mutable columns (the default is false).
     # if copycols = false, each column would be a read-only CSV.Column.
-    data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
+    data = read_purchaseData("$path_to_data/purchaseData.csv")
     println(get_size(data))
     println(get_column_names(data))
     println(get_head(data))
@@ -51,6 +57,7 @@ if abspath(PROGRAM_FILE) == @__FILE__
     main_l0403_dataframeInspection()
 end
 
+export read_purchaseData
 export get_size
 export get_column_names
 export get_head
