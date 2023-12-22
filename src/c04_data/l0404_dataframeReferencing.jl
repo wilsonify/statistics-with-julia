@@ -1,42 +1,41 @@
 # Referencing data in a DataFrame
-
-#=
-In lines 4–6,
-we see different ways of accessing the element from the first row and third column labeled :Date.
-In line 7,
-the rows and columns to be extracted are designated by the first and second arguments, [1,2,4],
-and “:”, respectively.
-Note that “:” can be used to select either all rows or all columns.
-Line 8
-is somewhat similar,
-but here a unit range is used to select rows 13–15,
-while the symbol :Name is used so that only the Name column is extracted.
-Alternatively, the column could have been referenced by its index,
-i.e. data[13:15, 1],
-or the syntax data.Name[13:15]
-could have been used instead.
-Note that although lines 9 and 10 look similar,
-there is an important difference.
-The code in line 9 creates an array,
-while that of line 10 creates a data frame object,
-due to the extra set of [].
-If one wanted,
-additional columns could also be selected by including them in [],
-separated by “,”.
-=#
 using DataFrames, CSV
-path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../../data")
-data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
 
-println("Grade of person 1: ", data[1, 3], 
-        ", ", data[1,:Grade], 
-        ", ", data.Grade[1], "\n")
-println(data[[1,2,4], :], "\n")
-println(data[13:15, :Name], "\n")
-println(data.Name[13:15], "\n")
-println(data[13:15, [:Name]])
+function main_l0404_dataframeReferencing()
+    path_to_here = @__DIR__
+    path_to_data = abspath("$path_to_here/../../data")
+    data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
+    # different ways of accessing the element from the first row and third column labeled :Date.
 
+    println("Grade of person 1: ", data[1, 3],  ", ", data[1,:Grade],  ", ", data.Grade[1], "\n")
+
+    # the rows and columns to be extracted are designated by the first and second arguments, [1,2,4], and “:”, respectively.
+    # Note that “:” can be used to select either all rows or all columns.
+
+    println(data[[1,2,4], :], "\n")
+    # is somewhat similar,
+    # but here a unit range is used to select rows 13–15,
+    # while the symbol :Name is used so that only the Name column is extracted.
+    # Alternatively, the column could have been referenced by its index,
+    # i.e. data[13:15, 1],
+    # or the syntax data.Name[13:15]
+    # could have been used instead.
+    # Note that although lines 9 and 10 look similar,
+    # there is an important difference.
+    # The code in line 9 creates an array,
+    # while that of line 10 creates a data frame object,
+    # due to the extra set of [].
+    # If one wanted,
+    # additional columns could also be selected by including them in [],
+    # separated by “,”.
+    println(data[13:15, :Name], "\n")
+    println(data.Name[13:15], "\n")
+    println(data[13:15, [:Name]])
+end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0404_dataframeReferencing()
+end
 # Let us mention here the difference between
 # the standard String type in Julia and the String7 or String15 types.
 #
