@@ -57,3 +57,6 @@ function is_all_approx_list(list1, list2, abs)
 
     return true
 end
+
+export are_lists_equal
+export is_all_approx_list

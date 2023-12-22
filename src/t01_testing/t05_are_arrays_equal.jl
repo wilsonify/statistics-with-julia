@@ -1,6 +1,6 @@
 using Statistics, StatsBase, LinearAlgebra, DataFrames, CSV
 
-function is_all_approx_array(arr1,arr2)
+function is_all_approx_array(arr1, arr2)
     number_of_rows = size(arr1, 1)
     number_of_cols = size(arr2, 2)
     for i in 1:number_of_rows, j in 1:number_of_cols
@@ -12,7 +12,7 @@ function is_all_approx_array(arr1,arr2)
     return true
 end
 
-function is_array_equal(arr1,arr2)
+function is_array_equal(arr1, arr2)
     for i in 1:size(arr1, 1), j in 1:size(arr1, 2)
         if arr1[i, j] != arr2[i, j]
             return false
@@ -20,3 +20,6 @@ function is_array_equal(arr1,arr2)
     end
     return true
 end
+
+export is_all_approx_array
+export is_array_equal

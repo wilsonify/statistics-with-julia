@@ -37,3 +37,9 @@ function main_random_walks()
 
     plot(p1, p2, size = (800, 400), legend = :none, xlims = (-150, 50), ylims = (-250, 50))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_random_walks()
+end
+
+export random_walk

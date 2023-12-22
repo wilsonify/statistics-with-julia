@@ -22,3 +22,7 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_comprehension()
 end
+
+export comprehension_sqrt
+export comprehension_polynomial
+export broadcast_round

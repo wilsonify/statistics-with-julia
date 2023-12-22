@@ -40,3 +40,12 @@ function main_plotSimple()
     plot_p3(xVals, yVals)
     plot_function(xVals, yVals)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_plotSimple()
+end
+
+export plot_p1
+export plot_p2
+export plot_p3
+export plot_function

@@ -36,3 +36,6 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_hello()
 end
+
+export tab_separated_string
+export squares

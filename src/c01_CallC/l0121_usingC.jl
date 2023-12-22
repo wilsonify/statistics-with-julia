@@ -17,4 +17,4 @@ if abspath(PROGRAM_FILE) == @__FILE__
 end
 
 
-
+export cos_c

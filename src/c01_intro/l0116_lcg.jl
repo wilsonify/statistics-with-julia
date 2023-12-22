@@ -1,4 +1,4 @@
-
+# Linear Congruential Generator
 using Plots; gr()
 
 function linear_congruential_generator(a, c, m, N)
@@ -23,3 +23,9 @@ function main_lcg()
     p2 = histogram(data, bins = 50, normed = :true, ylims = (0, 1.1))
     plot(p1, p2, size = (800, 400), legend = :none)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_lcg()
+end
+
+export linear_congruential_generator

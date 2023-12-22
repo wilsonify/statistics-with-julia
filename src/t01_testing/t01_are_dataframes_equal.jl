@@ -80,3 +80,6 @@ function are_dataframes_approx(df1::DataFrame, df2::DataFrame, abs)
 
     return true
 end
+
+export are_dataframes_equal
+export are_dataframes_approx

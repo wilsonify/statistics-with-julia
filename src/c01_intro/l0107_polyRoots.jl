@@ -14,3 +14,10 @@ function main_polyroot()
     zeroVals = find_zeros(polynomial,-10,10)
     println("Zeros of the function f(x): ", zeroVals)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_polyroot
+end
+
+export polynomialGenerator
+export find_zeros

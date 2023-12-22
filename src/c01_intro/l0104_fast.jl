@@ -17,3 +17,6 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_comprehension_fast()
 end
+
+export comprehension_generate_data
+export calculate_quantiles

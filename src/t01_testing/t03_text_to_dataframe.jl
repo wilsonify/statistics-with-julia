@@ -102,3 +102,6 @@ Row │ Name       Date        Grade     Price
     # Display the DataFrame
     @test df == ""
 end
+
+export text_to_dataframe
+export text_to_dataframe2

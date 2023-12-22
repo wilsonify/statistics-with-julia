@@ -41,3 +41,12 @@ function main_mulitway_markovchain()
     # Display the results for each method
     @show [piProb1 piProb2 piProb3 piProb4]
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_hello()
+end
+
+export calculate_steady_state_matrix_exponentiation
+export calculate_steady_state_linear_system
+export calculate_steady_state_eigenvalues
+export calculate_steady_state_monte_carlo

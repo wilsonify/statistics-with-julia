@@ -34,3 +34,6 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_scope()
 end
+
+export update_data_and_sum
+export sum_data_in_function

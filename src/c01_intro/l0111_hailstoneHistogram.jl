@@ -33,3 +33,11 @@ function main_hailstone_histogram()
     num_bins = 1000
     plot_hailstone_lengths(hailstone_lengths, num_bins)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_hailstone_histogram()
+end
+
+export hailLength
+export generate_hailstone_lengths
+export plot_hailstone_lengths

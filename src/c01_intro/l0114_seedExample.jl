@@ -13,4 +13,5 @@ function main_seed()
     println("Seed 1974: ", really_rand())
 end
 
+export really_rand
 

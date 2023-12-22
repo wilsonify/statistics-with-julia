@@ -22,3 +22,5 @@ function main_dataframe_to_dictionary()
     # Display the dictionary
     println(dict)
 end
+
+export dataframe_to_dict

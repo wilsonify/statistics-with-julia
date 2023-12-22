@@ -34,3 +34,6 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     @time main()
 end
+
+export generate_random_data_slowly
+export calculate_quantiles

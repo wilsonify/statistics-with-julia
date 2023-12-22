@@ -43,3 +43,10 @@ function main_graph_animation()
     animation = create_graph_animation(data)
     gif(animation, "graph.gif", fps = 60)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_graph_animation()
+end
+
+export initialize_graph_data
+export create_graph_animation

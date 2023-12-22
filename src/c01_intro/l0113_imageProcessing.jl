@@ -54,3 +54,7 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_image_processing()
 end
+
+export grayscale_conversion
+export apply_box_blur
+export find_max_coordinates
