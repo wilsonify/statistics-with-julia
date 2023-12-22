@@ -27,3 +27,10 @@ function main_password_matching()
     println("Number of login attempts logged: ", numLogs)
     println("Proportion of login attempts logged: ", numLogs / N)
     end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_password_matching()
+end
+
+export gen_pw
+export numMatch

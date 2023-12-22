@@ -22,56 +22,18 @@ module StatisticsWithJulia
     include("c01_intro/l0116_lcg.jl")
     include("c01_intro/l0117_randomWalks.jl")
     include("c02_probability/l0201_diceSumEven.jl")
-    export even_sum_probability
     include("c02_probability/l0202_passwords.jl")
-    export gen_pw
-    export numMatch
     include("c02_probability/l0203_birthdayProblem.jl")
-    export matchExists1
-    export matchExists2
-    export probEst
-    export bdEvent
-    export calculate_max_error
-    export run_simulation_birthday_problem
     include("c02_probability/l0204_fishing.jl")
-    export fishing_simulation
-    export estimate_proportion_fish_caught
-    export plot_fishing_proportions
     include("c02_probability/l0205_catalan.jl")
-    export isUpperLattice
-    export estimate_pA_modelI
-    export randomWalkPath
-    export estimate_pA_modelIIest
-    export plotLatticePaths
-    export lattice_paths_simulation
     include("c02_probability/l0206_sets.jl")
     include("c02_probability/l0207_mcFalacy.jl")
-    export mc_estimate1
-    export mc_estimate2
-    export run_simulations_falacy
     include("c02_probability/l0208_secretaryEnvelopes.jl")
-    export bruteSetsProbabilityAllMiss
-    export mcAllMiss
-    export envelopeStuffer
-    export main_secretary_envelopes
     include("c02_probability/l0209_occupancyProblem.jl")
-    export occupancyMC
-    export main_occupancy_problem
     include("c02_probability/l0210_independence.jl")
-    export simulation_independent_events
-    export main_independence
     include("c02_probability/l0211_conditionalProbability.jl")
-    export probDefectiveGivenParticles
-    export probParticles
     include("c02_probability/l0212_txRxBayes.jl")
-    export flip_with_prob
-    export bayes_rule
-    export simulate
-    export calculate
     include("c02_probability/l0213_montyHall.jl")
-    export monty_hall_game
-    export monty_hall_simulation
-    export main_monty_hall
     include("c03_distribution/l0301_randomVariable.jl")
     export randomName
     export main_l0301_randomVariable

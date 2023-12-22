@@ -28,3 +28,10 @@ function main_independence()
     println("P(_3) = $probSecondIsThree")
     println("P(1_)*P(_3) = $probJoint")
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_independence()
+end
+
+export simulation_independent_events
+export main_independence

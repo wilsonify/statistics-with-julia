@@ -93,3 +93,14 @@ function lattice_paths_simulation(n, N)
     plot()
     plotLatticePaths(n)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    lattice_paths_simulation()
+end
+
+export isUpperLattice
+export estimate_pA_modelI
+export randomWalkPath
+export estimate_pA_modelIIest
+export plotLatticePaths
+export lattice_paths_simulation

@@ -21,3 +21,13 @@ function run_simulations_falacy(nsims)
     end
 
 end
+
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    run_simulations_falacy()
+end
+
+
+export mc_estimate1
+export mc_estimate2
+export run_simulations_falacy

@@ -18,3 +18,10 @@ function main_conditional_probability()
     analytic = 1 - 6 * zeta(3) / pi^2
     println("Analytic: ", analytic, "\tNumerical: ", numerical)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_conditional_probability()
+end
+
+export probDefectiveGivenParticles
+export probParticles

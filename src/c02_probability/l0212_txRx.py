@@ -60,3 +60,7 @@ def main():
     print(f"Analytic: {analytic:.6f}")
     monte_carlo = simulation(prob1, eps0, eps1)
     print(f"Monte Carlo: {monte_carlo:.6f}")
+
+
+if __name__ == "__main__":
+    main()

@@ -26,3 +26,10 @@ function main_occupancy_problem()
     plot(1:max_n, analytic, c = [:blue :red :green], label = ["K=2" "K=3" "K=4"])
     scatter!(1:max_n, monteCarlo, mc = :black, shape = :+, label = "", xlims = (0,max_n),ylims = (0,1), xlabel = "n Envelopes", ylabel = "Probability", legend = :topright)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_occupancy_problem()
+end
+
+export occupancyMC
+export main_occupancy_problem

@@ -25,3 +25,11 @@ function main_monty_hall()
     println("Success probability with policy I (stay): ",  monty_hall_simulation(N, false))
     println("Success probability with policy II (switch): ", monty_hall_simulation(N, true))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_monty_hall()
+end
+
+export monty_hall_game
+export monty_hall_simulation
+export main_monty_hall

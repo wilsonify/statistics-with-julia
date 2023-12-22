@@ -55,3 +55,15 @@ function main_birthday_probability()
     ylabel = "Probability of birthday match",
     legend = :topleft)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_birthday_probability()
+end
+
+export matchExists1
+export matchExists2
+export probEst
+export bdEvent
+export calculate_max_error
+export run_simulation_birthday_problem
+

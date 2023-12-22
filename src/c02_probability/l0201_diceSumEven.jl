@@ -5,4 +5,8 @@ function even_sum_probability()
     mcEst = sum([iseven(rand(faces) + rand(faces)) for i in 1:N]) / N
     return numSol, mcEst
 end
+if abspath(PROGRAM_FILE) == @__FILE__
+    even_sum_probability()
+end
 
+export even_sum_probability

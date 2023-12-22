@@ -37,3 +37,11 @@ function plot_fishing_proportions(gF, sF, n, N, withReplacement)
     end
 end
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    plot_fishing_proportions()
+end
+
+export fishing_simulation
+export estimate_proportion_fish_caught
+export plot_fishing_proportions
