@@ -214,8 +214,16 @@ module StatisticsWithJulia
 #     export main_l0333_multiDimensionalIntegration
 #     include("c03_distribution/l0334_bivariateNormal.jl")
 #     export main_l0334_bivariateNormal
-#     include("c04_data/l0401_callByValueByReference.jl")
-#     include("c04_data/l0402_shallowDeepCopy.jl")
+    include("c04_data/l0401_callByValueByReference.jl")
+    export f_mutable
+    export f_immutable
+    include("c04_data/l0402_shallowDeepCopy.jl")
+    export immutable_behavior
+    export no_copy_behavior
+    export shallow_copy_outer_behavior
+    export shallow_copy_inner_behavior
+    export deep_copy_behavior
+
 #     include("c04_data/l0403_dataframeInspection.jl")
 #     include("c04_data/l0404_dataframeReferencing.jl")
 #     include("c04_data/l0405_dataframeEditing.jl")

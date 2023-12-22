@@ -1,85 +1,59 @@
 # Deep copy and shallow copy
-#=
-Lines 1–5
-exhibit no surprise due to immutability.
-The Int64 a is assigned to b and b is modified in line 4.
-At this point, Julia creates a copy because the variable is immutable.
-Lines 7–11
-demonstrate different behavior.
-The array a is mutable and hence after b is assigned to a in line 9,
-the modification of b in line 10 also modifies a.
-Lines 13–17
-show a case where a copy() of a is created.
-In this case, modification of b in line 16 does not alter a.
-Lines 19–23
-are similar, however in this case, the fact that copy() is only a shallow copy matters.
-The variable b has a new outer array, however the inner array is still shared with a.
-Hence, the modification in line 22 modifies the inner array of a as well.
-Finally, in lines 25–29,
-this is resolved by creating a deepcopy().
-=#
-println("Immutable:")
-a = 10
-b = a
-b = 20
-@show a
 
-println("\nNo copy:")
-a = [10]
-b = a
-b[1] = 20
-@show a
-
-println("\nCopy:")
-a = [10]
-b = copy(a)
-b[1] = 20
-@show a
-
-println("\nShallow copy:")
-a = [[10]]
-b = copy(a)
-b[1][1] = 20
-@show a
-
-println("\nDeep copy:")
-a = [[10]]
-b = deepcopy(a)
-b[1][1] = 20
-@show a;
-
-
-# Deep copy and shallow copy
-using Test
-@testset "Immutable" begin
-    a = 10
-    b = a
-    b = 20
-    @test a == 10
+function immutable_behavior(a)
+    b = a # Julia creates a copy because the variable is immutable
+    b = 20 # modify b
+    return a # does not modify a
 end
 
-@testset "No copy" begin
-    a = [10]
-    b = a
-    b[1] = 20
-    @test a == [20]
-end
-@testset "Copy" begin
-    a = [10]
-    b = copy(a)
-    b[1] = 20
-    @test a == [10]
+function no_copy_behavior(a)
+    b = a # b is assigned to a
+    b[1] = 20 # b is modified
+    return a # a is also modified
 end
 
-@testset "Shallow copy" begin
-    a = [[10]]
-    b = copy(a)
-    b[1][1] = 20
-    @test a == [[20]]
+function shallow_copy_outer_behavior(a)
+    b = copy(a) # copy() of a
+    b[1] = 20 # b is modified
+    return a # a is not modified
 end
-@testset "Deep copy" begin
-    a = [[10]]
-    b = deepcopy(a)
-    b[1][1] = 20
-    @test a == [[10]]
+
+function shallow_copy_inner_behavior(a)
+    b = copy(a) # a shallow copy
+    b[1][1] = 20 # the inner array is is modified
+    return a # the inner array of a is modified
 end
+
+function deep_copy_behavior(a)
+    b = deepcopy(a) # a deep copy.
+    b[1][1] = 20 # b is modified
+    return a # a is not modified
+end
+
+function main_l0402_shallowDeepCopy()
+    println("Immutable: no surprise")
+    a = 10 # Int64 is Immutable
+    a = immutable_behavior(a)
+    @show a # does not modify a
+
+    println("demonstrate No copy behavior")
+    a = [10] # array is mutable
+    a = no_copy_behavior(a)
+    @show a # a is also modified
+
+    println("Shallow Copy Outer")
+    a = [10] # array is mutable
+    a = shallow_copy_outer_behavior(a)
+    @show a # a is not modified
+
+    println("Shallow copy Inner")
+    a = [[10]] # array is mutable
+    a = shallow_copy_inner_behavior(a)
+    @show a # the inner array of a is modified
+
+    println("Deep copy")
+    a = [[10]] # array is mutable
+    a = deep_copy_behavior(a)
+    @show a # a is not modified
+end
+
