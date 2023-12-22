@@ -3,7 +3,6 @@ using StatisticsWithJulia: f_mutable
 using StatisticsWithJulia: f_immutable
 using Test
 
-
 @testset "f_immutable" begin
     x = 1
     @test typeof(x) == Int
@@ -19,6 +18,6 @@ end
     @test typeof(x) == Array{Int64, 1}
     @test isimmutable(x) == false
     @test x == [1]
-    f_immutable(x)
+    f_mutable(x)
     @test x == [0]
 end
