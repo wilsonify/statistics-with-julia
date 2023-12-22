@@ -42,7 +42,11 @@ function main_l0328_rayleigh()
     mean.([data1, data2, data3])
 end
 
-
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0328_rayleigh()
 end
+
+export generate_rayleigh_data1
+export generate_rayleigh_data2
+export generate_rayleigh_data3
+export main_l0328_rayleigh

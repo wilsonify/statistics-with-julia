@@ -35,103 +35,39 @@ module StatisticsWithJulia
     include("c02_probability/l0212_txRxBayes.jl")
     include("c02_probability/l0213_montyHall.jl")
     include("c03_distribution/l0301_randomVariable.jl")
-    export randomName
-    export main_l0301_randomVariable
     include("c03_distribution/l0302_discreteContinuous.jl")
-    export pContinuous
-    export pContinuous2
     include("c03_distribution/l0303_meanIntegration.jl")
-    export expect
     include("c03_distribution/l0304_varianceTransformation.jl")
-    export variance_transform
     include("c03_distribution/l0305_cdfFromPdf.jl")
-    export approximate_CDF
     include("c03_distribution/l0306_inverseCDF.jl")
-    export infimum
-    export invCDF
     include("c03_distribution/l0307_mgf.jl")
-    export mgf
-    export mgfPointEst
     include("c03_distribution/l0308_weightVector.jl")
-    export count_occurance
     include("c03_distribution/l0309_triangularDist.jl")
-    export TriangularPDF
-    export TriangularCDF
-    export TriangularInvCDF
     include("c03_distribution/l0310_distributionDescriptors.jl")
-    export getDescriptors
     include("c03_distribution/l0311_basicDistRand.jl")
-    export main_l0311_basicDistRand
     include("c03_distribution/l0312_triangularDistInv.jl")
-    export main_l0312_triangularDistInv
     include("c03_distribution/l0313_discreteDists.jl")
-    export summarizeDistributions
     include("c03_distribution/l0314_uniformDiscreteDice.jl")
-    export simulate_die_tosses
-    export count_dice_roll_outcomes
     include("c03_distribution/l0315_binomialCoinFlip.jl")
-    export binomialRV
     include("c03_distribution/l0316_geometric.jl")
-    export rouletteSpins
     include("c03_distribution/l0317_negativeBinomial.jl")
-    export rouletteSpins
     include("c03_distribution/l0318_hypergeometric.jl")
-    export main_l0318_hypergeometric
     include("c03_distribution/l0319_poisson.jl")
-    export prn
     include("c03_distribution/l0320_continuousDists.jl")
-    export summarize_dist
-    export range_of_dist
     include("c03_distribution/l0321_continuousUniform.jl")
-    export main_l0321_continuousUniform
     include("c03_distribution/l0322_expGeom.jl")
-    export generate_exp_data
-    export process_exp_data
-    export get_proportions
-    export generate_matching_geom_data
     include("c03_distribution/l0323_gammaDist.jl")
-    export normalizedData
-    export main_l0323_gammaDist
     include("c03_distribution/l0324_betaDist.jl")
-    export main_l0324_betaDist
     include("c03_distribution/l0325_gammafunctionIntegration.jl")
-    export g
-    export main_l0325_gammafunctionIntegration
     include("c03_distribution/l0326_weibullHazard.jl")
-    export lambda
-    export theta
-    export hA
-    export hB
-    export main_l0326_weibullHazard
     include("c03_distribution/l0327_normalCalculus.jl")
-    export PhiA
-    export PhiB
-    export normalDensity
-    export main_l0327_normalCalculus
     include("c03_distribution/l0328_rayleigh.jl")
-    export generate_rayleigh_data1
-    export generate_rayleigh_data2
-    export generate_rayleigh_data3
-    export main_l0328_rayleigh
     include("c03_distribution/l0329_normalDistribution.jl")
-    export Z
-    export main_l0329_normalDistribution
     include("c03_distribution/l0330_cauchyCMA.jl")
-    export generate_cauchy_data
-    export running_proportion
-    export main_l0330_cauchyCMA
     include("c03_distribution/l0331_jointPDF.jl")
-    export twoD_Riemann_sum_over_density
-    export twoD_Riemann_sum_to_evaluate_probability
-    export main_l0331_jointPDF
     include("c03_distribution/l0332_multiRVgeneration.jl")
-    export generate_random_vectors_with_desired_mean_and_covariance
-    export stats
-    export main_l0332_multiRVgeneration
-#     include("c03_distribution/l0333_multiDimensionalIntegration.jl")
-#     export main_l0333_multiDimensionalIntegration
-#     include("c03_distribution/l0334_bivariateNormal.jl")
-#     export main_l0334_bivariateNormal
+    include("c03_distribution/l0333_multiDimensionalIntegration.jl")
+    include("c03_distribution/l0334_bivariateNormal.jl")
     include("c04_data/l0401_callByValueByReference.jl")
     export f_mutable
     export f_immutable

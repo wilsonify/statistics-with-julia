@@ -38,3 +38,7 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0314_uniformDiscreteDice()
 end
+
+
+export simulate_die_tosses
+export count_dice_roll_outcomes

@@ -36,7 +36,10 @@ function main_l0331_jointPDF()
     plot(p1, p2, size = (800, 400), xlabel = "x", margin = 5mm)
 end
 
-
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0331_jointPDF()
 end
+
+export twoD_Riemann_sum_over_density
+export twoD_Riemann_sum_to_evaluate_probability
+export main_l0331_jointPDF

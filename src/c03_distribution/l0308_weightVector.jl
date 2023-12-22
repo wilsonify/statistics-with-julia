@@ -30,6 +30,9 @@ function main_l0308_weightVector()
     # Note that you can also use the Categorical() object in the Distributions package
 
 end
+
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0308_weightVector()
 end
+
+export count_occurance

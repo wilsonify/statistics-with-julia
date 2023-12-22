@@ -30,3 +30,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0316_geometric()
 end
+
+export rouletteSpins

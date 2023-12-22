@@ -44,3 +44,6 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0306_inverseCDF()
 end
+
+export infimum
+export invCDF

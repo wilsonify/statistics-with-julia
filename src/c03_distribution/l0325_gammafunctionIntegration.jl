@@ -12,8 +12,9 @@ function main_l0325_gammafunctionIntegration()
     println(gamma(1 / 2))
 end
 
-
-
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0325_gammafunctionIntegration()
 end
+
+export g
+export main_l0325_gammafunctionIntegration

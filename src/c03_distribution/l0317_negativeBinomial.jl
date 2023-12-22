@@ -28,3 +28,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0317_negativeBinomial()
 end
+
+export rouletteSpins

@@ -37,3 +37,6 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0323_gammaDist()
 end
+
+export normalizedData
+export main_l0323_gammaDist

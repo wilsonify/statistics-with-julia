@@ -26,3 +26,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0321_continuousUniform()
 end
+
+export main_l0321_continuousUniform

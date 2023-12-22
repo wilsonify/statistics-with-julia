@@ -41,3 +41,7 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0309_triangularDist()
 end
+
+export TriangularPDF
+export TriangularCDF
+export TriangularInvCDF

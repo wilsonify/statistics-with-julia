@@ -38,3 +38,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0313_discreteDists()
 end
+
+export summarizeDistributions

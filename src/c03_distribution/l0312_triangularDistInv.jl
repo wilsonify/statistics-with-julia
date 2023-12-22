@@ -23,3 +23,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0312_triangularDistInv()
 end
+
+export main_l0312_triangularDistInv

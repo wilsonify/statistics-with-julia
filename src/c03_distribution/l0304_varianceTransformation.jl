@@ -31,3 +31,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0304_varianceTransformation()
 end
+
+export variance_transform

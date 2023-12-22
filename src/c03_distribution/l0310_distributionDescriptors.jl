@@ -26,3 +26,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0310_distributionDescriptors()
 end
+
+export getDescriptors

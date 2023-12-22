@@ -26,3 +26,6 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0320_continuousDists()
 end
+
+export summarize_dist
+export range_of_dist

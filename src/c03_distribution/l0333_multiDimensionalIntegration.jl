@@ -24,3 +24,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0333_multiDimensionalIntegration()
 end
+
+export main_l0333_multiDimensionalIntegration

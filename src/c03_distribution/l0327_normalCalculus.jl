@@ -29,8 +29,11 @@ function main_l0327_normalCalculus()
     plot!([-5, 5],[0, 0],  color = :black, lw = 0.5, xlabel = "x", xlims = (-5,5), label = "")
 end
 
-
-
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0327_normalCalculus()
 end
+
+export PhiA
+export PhiB
+export normalDensity
+export main_l0327_normalCalculus

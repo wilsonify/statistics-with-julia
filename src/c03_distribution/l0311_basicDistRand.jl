@@ -26,9 +26,8 @@ function main_l0311_basicDistRand()
     println("Discrete Uniform Distiribution on {1,2,3,4,5} has mean $theorMean2 	(estimated: $estMean2)")
 end
 
-
-
-
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0311_basicDistRand()
 end
+
+export main_l0311_basicDistRand

@@ -14,3 +14,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0303_meanIntegration()
 end
+
+export expect

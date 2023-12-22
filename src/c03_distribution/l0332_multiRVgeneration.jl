@@ -70,3 +70,7 @@ function main_l0332_multiRVgeneration()
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0332_multiRVgeneration()
 end
+
+export generate_random_vectors_with_desired_mean_and_covariance
+export stats
+export main_l0332_multiRVgeneration

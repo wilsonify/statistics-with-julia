@@ -38,3 +38,7 @@ if abspath(PROGRAM_FILE) == @__FILE__
     main_l0307_mgf()
 end
 
+export mgf
+export mgfPointEst
+
+

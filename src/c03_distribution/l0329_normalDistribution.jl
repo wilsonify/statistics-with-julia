@@ -14,7 +14,9 @@ function main_l0329_normalDistribution()
     plot!(xGrid, y2, c = :red, lw = 4, label = "PDF", xlims = (-4,4), ylims = (0,0.5), xlabel = "x", ylabel = "f(x)" )
 end
 
-
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0329_normalDistribution()
 end
+
+export Z
+export main_l0329_normalDistribution

@@ -36,3 +36,10 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0326_weibullHazard()
 end
+
+
+export lambda
+export theta
+export hA
+export hB
+export main_l0326_weibullHazard

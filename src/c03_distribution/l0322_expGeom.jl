@@ -55,3 +55,8 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0322_expGeom()
 end
+
+export generate_exp_data
+export process_exp_data
+export get_proportions
+export generate_matching_geom_data

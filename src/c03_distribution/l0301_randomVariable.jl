@@ -19,4 +19,4 @@ if abspath(PROGRAM_FILE) == @__FILE__
 end
 
 export randomName
-
+export main_l0301_randomVariable

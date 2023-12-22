@@ -29,3 +29,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0318_hypergeometric()
 end
+
+export main_l0318_hypergeometric

@@ -23,3 +23,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0324_betaDist()
 end
+
+export main_l0324_betaDist

@@ -29,3 +29,5 @@ end
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0305_cdfFromPdf()
 end
+
+export approximate_CDF
