@@ -57,3 +57,12 @@ function main_l0402_shallowDeepCopy()
     @show a # a is not modified
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0402_shallowDeepCopy()
+end
+
+export immutable_behavior
+export no_copy_behavior
+export shallow_copy_outer_behavior
+export shallow_copy_inner_behavior
+export deep_copy_behavior

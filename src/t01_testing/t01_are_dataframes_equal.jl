@@ -1,3 +1,5 @@
+using DataFrames
+
 function are_dataframes_equal(df1::DataFrame, df2::DataFrame)
     # Check if the DataFrames have the same number of rows and columns
     if size(df1) != size(df2)

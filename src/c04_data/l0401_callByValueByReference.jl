@@ -29,4 +29,10 @@ function main_l0401_callByValueByReference()
 
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    ()
+end
 
+
+export f_mutable
+export f_immutable

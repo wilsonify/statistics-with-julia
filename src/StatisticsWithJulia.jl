@@ -1,7 +1,7 @@
 module StatisticsWithJulia
     include("t01_testing/t01_are_dataframes_equal.jl")
     include("t01_testing/t02_are_lists_equal.jl")
-    include("t01_testing/t03_text_to_dataframe.jl")
+    #include("t01_testing/t03_text_to_dataframe.jl")
     include("t01_testing/t04_dataframe_to_dict.jl")
     include("t01_testing/t05_are_arrays_equal.jl")
     include("c01_CallC/l0121_usingC.jl")
@@ -69,16 +69,8 @@ module StatisticsWithJulia
     include("c03_distribution/l0333_multiDimensionalIntegration.jl")
     include("c03_distribution/l0334_bivariateNormal.jl")
     include("c04_data/l0401_callByValueByReference.jl")
-    export f_mutable
-    export f_immutable
     include("c04_data/l0402_shallowDeepCopy.jl")
-    export immutable_behavior
-    export no_copy_behavior
-    export shallow_copy_outer_behavior
-    export shallow_copy_inner_behavior
-    export deep_copy_behavior
-
-#     include("c04_data/l0403_dataframeInspection.jl")
+    include("c04_data/l0403_dataframeInspection.jl")
 #     include("c04_data/l0404_dataframeReferencing.jl")
 #     include("c04_data/l0405_dataframeEditing.jl")
 #     include("c04_data/l0406_dataframeCopyDeepCopy.jl")
