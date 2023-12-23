@@ -58,6 +58,10 @@ function main_l0406_dataframeCopyDeepCopy()
     @show data1.X[1][1]
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0406_dataframeCopyDeepCopy()
+end
+
 export create_a_reference
 export create_a_shallow_copy1
 export create_a_shallow_copy2
