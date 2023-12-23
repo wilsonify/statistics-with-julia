@@ -21,6 +21,7 @@ function maybe_set_first_name(data)
         # use the @warn macro to give a warning.
         @warn "Cannot: data1 is immutable"
     end
+    return data
 end
 
 function division_on_every_price(data)
