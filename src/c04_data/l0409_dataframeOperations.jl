@@ -1,94 +1,81 @@
 # Manipulating DataFrame objects
 
-#=
-In line 2
-dropm1issing() is used so that all rows with missing entries are excluded.
-This is done as some of the functions here require all values to be non-missing.
-In line 4 the Date() function from the Dates package is applied to every row from the :Date column,
-converting each entry from a string to a Date type,
-according to the string formatting given as the second argument.
-In line 5
-sort() is used to sort by the :Date column.
-In line 7
-filter() is used to return only rows which have a :Price greater than 50000.
-In line 9
-the type of the :Grade column is changed to categorical via categorical!().
-In lines 13–14
-the powerful by() function is demonstrated.
-Here data is split according to :Grade.
-The third argument is where calculations are defined.
-The columns to be referenced in the calculations are put to the left of “=>”,
-in our case only :Price is used.
-The calculations are specified by the anonymous function in line 14.
-Note that => is used to define a Pair and -> is used to define an anonymous function.
-The anonymous function creates a NamedTuple defining two new columns, :NumSold and :AvgPrice.
-For the first,
-the total number of each :Grade is calculated based on the length,
-i.e. number of entries in the price column.
-For the second, the average price is calculated via mean().
-Note that the by() function can be used in many ways,
-and calculations can be done over data in more than one column.
-There are also several other related functions not touched on here,
-including mapcols(),
-which can be used to transform all values in a data frame,
-and aggregate(),
-which has functionality similar to by().
-Further functionality is also available via the DataFramesMeta package which provides a macro-based framework to interface with data frames,
-such as via the @linq macro and the |> operator.
-Consult the documentation for further information.
-=#
+using DataFrames
+using CSV
+using Dates
+using Statistics
+using CategoricalArrays
 
-using DataFrames, CSV, Dates, Statistics, CategoricalArrays
+read_purchaseData(path_to_purchaseData) = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
 
-path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../../data")
+function select_non_missing(data)
+    # some function require all values to be non-missing.
+    # exclude all rows with missing entries
+    return dropmissing(data)
+end
 
-data = dropmissing(CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true))
-
-data[!, :Date] = Date.(data[!, :Date], "d/m/y")
-println(first(sort(data, :Date), 3),"\n")
-
-println(first(filter(row -> row[:Price] > 50000, data),3 ),"\n")
-
-# categorical! function is not defined in the DataFrames package.
-# Instead, you should use the CategoricalArray constructor to convert a column to a categorical data type.
-
-#categorical!(data, :Grade)
-data[!, :Grade] = CategoricalArray(data[!, :Grade])
-
-println(first(data, 3), "\n")
-
-#println(   by(data, :Grade, :Price => x -> ( NumSold = length(x), AvgPrice = mean(x)) )   )
-#println( combine(groupby(data, :Grade), :Price => x -> (NumSold = length(x), AvgPrice = mean(x))) )
-println( combine(groupby(data, :Grade), :Price => x -> (length(x), mean(x))) )
-
-
-using DataFrames, CSV, Dates, Statistics, CategoricalArrays
-path_to_here = @__DIR__
-include("$path_to_here/t01_are_dataframes_equal.jl")
-include("$path_to_here/t02_are_lists_equal.jl")
-include("$path_to_here/t04_dataframe_to_dict.jl")
-
-path_to_data = abspath("$path_to_here/../../data")
-read_purchaseData() = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
-
-function preprocess_purchaseData(data)
-    data = dropmissing(data)
+function cast_string_to_Date(data)
+    # the Date() function from the Dates package is applied to every row from the :Date column,
+    # converting each entry from a string to a Date type,
+    # according to the string formatting given as the second argument.
     data[!, :Date] = Date.(data[!, :Date], "d/m/y")
-    #categorical!(data, :Grade)
+    return data
+end
+
+function sort_on_date_ascending(data)
+    # sort() is used to sort by the :Date column.
+    return sort(data, :Date)
+end
+
+function select_Price_greater_than_50000(data)
+    # filter() is used to return only rows which have a :Price greater than 50000.
+    return filter(row -> row[:Price] > 50000, data)
+end
+
+function cast_grade_to_categorical(data)
+    # the type of the :Grade column is changed to categorical via categorical!().
     # categorical! function is not defined in the DataFrames package.
-    # Instead, you should use the CategoricalArray constructor
-    # to convert a column to a categorical data type.
+    # Instead, you should use the CategoricalArray constructor to convert a column to a categorical data type.
+    # categorical!(data, :Grade)
     data[!, :Grade] = CategoricalArray(data[!, :Grade])
     return data
 end
 
-function summarize_purchaseData(data)
-    #result = by(data, :Grade, :Price => x -> ( NumSold = length(x), AvgPrice = mean(x)) )   )
-    #result = combine(groupby(data, :Grade), :Price => x -> (NumSold = length(x), AvgPrice = mean(x))) )
-    result = combine(groupby(data, :Grade), :Price => x -> (length(x), mean(x)))
-    return result
+function preprocess_purchaseData(data)
+    data = select_non_missing(data)
+    data = cast_string_to_Date(data)
+    data = cast_grade_to_categorical(data)
+    return data
 end
+
+function summarize_purchaseData(data)
+    # the powerful groupby() function is demonstrated.
+    # Here data is split according to :Grade.
+    # The third argument is where calculations are defined.
+    # The columns to be referenced in the calculations are put to the left of “=>”,
+    # in our case only :Price is used.
+    # The calculations are specified by the anonymous function in line 14.
+    # Note that => is used to define a Pair and -> is used to define an anonymous function.
+    # The anonymous function creates a NamedTuple defining two new columns, :NumSold and :AvgPrice.
+    # For the first,
+    # the total number of each :Grade is calculated based on the length,
+    # i.e. number of entries in the price column.
+    # For the second, the average price is calculated via mean().
+    # Note that the by() function can be used in many ways,
+    # and calculations can be done over data in more than one column.
+    # There are also several other related functions not touched on here,
+    # including mapcols(),
+    # which can be used to transform all values in a data frame,
+    # and aggregate(),
+    # which has functionality similar to by().
+    # Further functionality is also available via the DataFramesMeta package which provides a macro-based framework to interface with data frames,
+    # such as via the @linq macro and the |> operator.
+    # Consult the documentation for further information.
+
+    # by(data, :Grade, :Price => x -> ( NumSold = length(x), AvgPrice = mean(x)) )
+    # combine(groupby(data, :Grade), :Price => x -> (NumSold = length(x), AvgPrice = mean(x)))
+    return combine(groupby(data, :Grade), :Price => x -> (length(x), mean(x)))
+    end
 
 function main_dataframe_ops()
     df = read_purchaseData()
@@ -101,9 +88,41 @@ function main_dataframe_ops()
     println(summary)
 end
 
+function main_l0409_dataframeOperations()
+    path_to_here = @__DIR__
+    path_to_data = abspath("$path_to_here/../../data")
+    data = read_purchaseData("$path_to_data/purchaseData.csv")
+    data = select_non_missing(data)
+    data = cast_string_to_Date(data)
+    data = sort_on_date_ascending(data)
+    println(first(data, 3))
+    data = select_Price_greater_than_50000(data)
+    println(first(data,3 ))
+    data = cast_grade_to_categorical(data)
+    println(first(data, 3))
+    data = summarize_purchaseData(data)
+    println( data )
+end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0409_dataframeOperations()
+end
+
+using DataFrames
+using CSV
+using Dates
+using Statistics
+using CategoricalArrays
+path_to_here = @__DIR__
+include("$path_to_here/../t01_testing/t01_are_dataframes_equal.jl")
+include("$path_to_here/../t01_testing/t02_are_lists_equal.jl")
+include("$path_to_here/../t01_testing/t04_dataframe_to_dict.jl")
+
+path_to_data = abspath("$path_to_here/../../data")
+
 using Test
 @testset "sort test" begin
-    df = read_purchaseData()
+    df = read_purchaseData("$path_to_data/purchaseData.csv")
     df = preprocess_purchaseData(df)
     expected_data = DataFrame(Grade = ["D", "E", "C"],
         Price = [33155, 8257, 46911],
@@ -113,7 +132,7 @@ using Test
 end
 
 @testset "filter test" begin
-    df = read_purchaseData()
+    df = read_purchaseData("$path_to_data/purchaseData.csv")
     df = preprocess_purchaseData(df)
     result = first(filter(row -> row[:Price] > 50000, df), 3)
     expected_data = DataFrame(Grade = ["A", "A", "B"],
@@ -124,7 +143,7 @@ end
 end
 
 @testset "preprocess_purchaseData test" begin
-    df = read_purchaseData()
+    df = read_purchaseData("$path_to_data/purchaseData.csv")
     df = preprocess_purchaseData(df)
     expected_data = DataFrame(Grade = ["A", "E", "C"],
         Price = [79700, 24311, 47052],
@@ -134,7 +153,7 @@ end
 end
 
 @testset "summarize_purchaseData test" begin
-    df = read_purchaseData()
+    df = read_purchaseData("$path_to_data/purchaseData.csv")
     df = preprocess_purchaseData(df)
     summary_df = summarize_purchaseData(df)
     expected_data = DataFrame(Grade = ["A", "B", "C", "D", "E"],
