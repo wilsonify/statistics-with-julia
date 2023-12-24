@@ -41,13 +41,7 @@ function stats(data)
     # Note the use of begin and end to define the function.
     data1, data2 = first.(data), last.(data)
     println("Mean1\tMean2\tVar1\tVar2\tCov")
-    println(
-    round.(mean(data1),2), "\t",
-    round.(mean(data2), 2),"\t",
-    round.(var(data1), 2), "\t",
-    round.(var(data2), 2), "\t",
-    round.(cov(data1,data2), 2)
-    )
+    println( mean(data1), "\t", mean(data2),"\t", var(data1), "\t", var(data2), "\t", cov(data1,data2)    )
     end
 
 function main_l0332_multiRVgeneration()
@@ -60,7 +54,7 @@ function main_l0332_multiRVgeneration()
     # generate data with mu and sigma
     data = generate_random_vectors_with_desired_mean_and_covariance(muY,SigY, N)
     # printing output.
-    stats(data)
+    # stats(data)
     # create Figure
     scatter(first.(data[1]), last.(data[1]), c = :blue, ms = 1, msw = 0, label = "Normal")
     scatter!(first.(data[2]), last.(data[2]), c = :red, ms = 1, msw = 0, label = "Uniform")
