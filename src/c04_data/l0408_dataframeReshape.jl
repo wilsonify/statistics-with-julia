@@ -22,20 +22,9 @@ function horizontal_concatenate(data::DataFrame, newCol::DataFrame)
     return result
 end
 
-function vertical_concatenate(data::DataFrame, newCol::DataFrame)
-    # Check if the number of columns in data and newCol matches
-    if size(data, 2) != size(newCol, 2)
-        throw(DimensionMismatch("The number of columns in data ($(size(data, 2))) and newCol $(size(newCol, 2)) must match"))
-    end
-
-    # Check if the rows in data and newCol have the same names
-    if any(isequal(rows(data), rows(newCol)))
-        println("Rows in data and newCol same names.")
-    end
-
+function vertical_concatenate(data::DataFrame, newRow::DataFrame)
     # Perform vertical concatenation
-    result = vcat(data, newCol)
-
+    result = vcat(data, newRow, cols = :union)
     return result
 end
 
@@ -74,7 +63,7 @@ function main_l0408_dataframeReshape()
     println(first(data, 3))
 
     # vertically concatenate newRow, with the new row appended to the bottom of the data frame.
-    data = vcat(data, newRow, cols = :union)
+    data = vertical_concatenate(data, newRow)
     println(last(data, 3), "\n")
 
     # join data and newData together, based on the :Name column.
@@ -125,7 +114,7 @@ end
     data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
     newRow = DataFrame([["JOHN", "JACK"] [123456, 909595]], [:Name, :PhoneNo])
     newData = DataFrame(Name = ["JOHN", "ASHELY", "MARYANNA"], Job = ["Lawyer", "Doctor", "Lawyer"])
-    data = vcat(data, newRow, cols = :union)
+    data = vertical_concatenate(data, newRow)
     expected_data = DataFrame(Dict{Symbol, Vector{Any}}(:Grade => ["E", missing, missing],
         :Price => [21842, missing, missing],
         :Date => ["30/12/2008", missing, missing],
