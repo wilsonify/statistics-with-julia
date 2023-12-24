@@ -42,11 +42,11 @@ function stats(data)
     data1, data2 = first.(data), last.(data)
     println("Mean1\tMean2\tVar1\tVar2\tCov")
     println(
-    round(mean(data1),2), "\t",
-    round(mean(data2), 2),"\t",
-    round(var(data1), 2), "\t",
-    round(var(data2), 2), "\t",
-    round(cov(data1,data2), 2)
+    round.(mean(data1),2), "\t",
+    round.(mean(data2), 2),"\t",
+    round.(var(data1), 2), "\t",
+    round.(var(data2), 2), "\t",
+    round.(cov(data1,data2), 2)
     )
     end
 
@@ -74,3 +74,4 @@ end
 export generate_random_vectors_with_desired_mean_and_covariance
 export stats
 export main_l0332_multiRVgeneration
+
