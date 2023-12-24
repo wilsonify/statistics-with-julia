@@ -8,7 +8,7 @@ using Test
   N = 10^3
   SigY = [ 6 4 ; 4 9]
   muY = [15 ; 20]
-  data = generate_random_vectors_with_desired_mean_and_covariance(muY,SigY)
+  data = generate_random_vectors_with_desired_mean_and_covariance(muY,SigY,N)
   stats(data)
   scatter(first.(data[1]), last.(data[1]), c = :blue, ms = 1, msw = 0, label = "Normal")
   scatter!(first.(data[2]), last.(data[2]), c = :red, ms = 1, msw = 0, label = "Uniform")

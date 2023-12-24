@@ -21,7 +21,7 @@ function affine_transformation(rg)
     A * [rg(), rg()] + muY
 end
 
-function generate_random_vectors_with_desired_mean_and_covariance(muY, SigY)
+function generate_random_vectors_with_desired_mean_and_covariance(muY, SigY, N)
     # compute a lower triangular matrix A where sum(Y) = A . transpose(A)
     A = cholesky(SigY).L
     # define an array of functions
@@ -58,7 +58,7 @@ function main_l0332_multiRVgeneration()
     # and the mean vector
     muY = [15 ; 20]
     # generate data with mu and sigma
-    data = generate_random_vectors_with_desired_mean_and_covariance(muY,SigY)
+    data = generate_random_vectors_with_desired_mean_and_covariance(muY,SigY, N)
     # printing output.
     stats(data)
     # create Figure
