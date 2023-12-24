@@ -85,6 +85,10 @@ if abspath(PROGRAM_FILE) == @__FILE__
     main_l0408_dataframeReshape()
 end
 
+export horizontal_concatenate
+export vertical_concatenate
+export join_on_name
+
 using DataFrames
 using CSV
 
