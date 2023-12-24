@@ -22,6 +22,23 @@ function horizontal_concatenate(data::DataFrame, newCol::DataFrame)
     return result
 end
 
+function vertical_concatenate(data::DataFrame, newCol::DataFrame)
+    # Check if the number of columns in data and newCol matches
+    if size(data, 2) != size(newCol, 2)
+        throw(DimensionMismatch("The number of columns in data ($(size(data, 2))) and newCol $(size(newCol, 2)) must match"))
+    end
+
+    # Check if the rows in data and newCol have the same names
+    if any(isequal(rows(data), rows(newCol)))
+        println("Rows in data and newCol same names.")
+    end
+
+    # Perform vertical concatenation
+    result = vcat(data, newCol)
+
+    return result
+end
+
 function join_on_name(data, newData)
     # join data and newData together, based on the :Name column.
     # Note that join() can be used in several different ways.
