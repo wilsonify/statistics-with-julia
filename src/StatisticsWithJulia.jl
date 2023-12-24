@@ -75,7 +75,7 @@ module StatisticsWithJulia
     include("c04_data/l0405_dataframeEditing.jl")
     include("c04_data/l0406_dataframeCopyDeepCopy.jl")
     include("c04_data/l0407_dataframeMissing.jl")
-#     include("c04_data/l0408_dataframeReshape.jl")
+    include("c04_data/l0408_dataframeReshape.jl")
 #     include("c04_data/l0409_dataframeOperations.jl")
 #     include("c04_data/l0410_dataframeImputation.jl")
 #     include("c04_data/l0411_summarizingData.jl")
