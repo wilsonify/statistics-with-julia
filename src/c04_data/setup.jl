@@ -1,7 +1,7 @@
 using Pkg
 Pkg.activate("~/.julia/environments/v1.5")
 # Pkg.add("PyPlot")
-Pkg.add("RDatasets")
+# Pkg.add("RDatasets")
 Pkg.add("Measures")
 Pkg.add("DataFrames")
 Pkg.add("Distributions")

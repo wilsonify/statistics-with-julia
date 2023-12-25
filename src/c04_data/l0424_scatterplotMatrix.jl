@@ -24,9 +24,11 @@ Note the use of group= in line 21 based on species.
 Also note the condition in line 22 for presenting a legend only in the top left plot.
 The plots are then presented in a figure in line 25.
 =#
-using RDatasets, Measures, Plots; gr()
+using Measures, Plots; gr()
+include("$(@__DIR__)/../io_library/read_irisData.jl")
+
 function main_l0424_scatterplotMatrix()
-    data = dataset("datasets", "iris")
+    data = read_iris_from_csv("$(@__DIR__)/../data/iris.csv")
     println("Number of rows: ", nrow(data))
 
     insertSpace(name) = begin
@@ -51,9 +53,9 @@ function main_l0424_scatterplotMatrix()
     plot(scatters..., size=(1200,800), margin = 4mm)
 end
 
-using RDatasets, Measures, Plots; gr()
+using Measures, Plots; gr()
+include("$(@__DIR__)/../io_library/read_irisData.jl")
 
-read_iris_data() = dataset("datasets", "iris")
 
 function insertSpace(name)
     i = findlast(isuppercase, name)
@@ -61,23 +63,23 @@ function insertSpace(name)
     return name
 end
 @testset "read_iris_data test" begin
-    data = read_iris_data()
+    data = read_iris_from_csv("$(@__DIR__)/../data/iris.csv")
     @test nrow(data) == 150
 end
 @testset "speciesNames test" begin
-    data = read_iris_data()
+    data = read_iris_from_csv("$(@__DIR__)/../data/iris.csv")
     speciesNames = unique(data.Species)
     @test speciesNames == ["setosa", "versicolor", "virginica"]
 end
 @testset "speciesFreqs test" begin
-    data = read_iris_data()
+    data = read_iris_from_csv("$(@__DIR__)/../data/iris.csv")
     speciesNames = unique(data.Species)
     speciesFreqs = [sn => sum(data.Species .== sn) for sn in speciesNames]
     @test speciesFreqs == ["setosa" => 50, "versicolor" => 50, "virginica" => 50]
 end
 
 @testset "scatterplot matrix test" begin
-    data = read_iris_data()
+    data = read_iris_from_csv("$(@__DIR__)/../data/iris.csv")
     @test nrow(data) == 150
     featureNames = insertSpace.(string.(names(data)))[1:4]
     println("Names of features:\n\t", featureNames)

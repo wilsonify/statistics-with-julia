@@ -13,17 +13,19 @@ The first argument, :Species, determines how the data should be grouped,
 while the second argument determines what variables should be included in the calculation,
 in this case columns 1–4.
 =#
-using RDatasets, StatsPlots
+using StatsPlots
+include("$(@__DIR__)/../io_library/read_irisData.jl")
+
 function main_l0426_andrewsPlot()
-    iris = dataset("datasets", "iris")
+    iris = read_iris_from_csv("$(@__DIR__)/../data/iris.csv")
     @df iris andrewsplot(:Species, cols(1:4),
         line = (fill = [:blue :red :green]), legend = :topleft)
 end
-using RDatasets, StatsPlots;
+using StatsPlots;
 
 using Test
 @testset "end_to_end" begin
-    iris = dataset("datasets", "iris")
+    iris = read_iris_from_csv("$(@__DIR__)/../data/iris.csv")
     @df iris andrewsplot(:Species,
         cols(1:4),
         line = (fill = [:blue :red :green]),
