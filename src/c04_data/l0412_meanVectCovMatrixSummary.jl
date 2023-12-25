@@ -75,6 +75,9 @@ function main_l0412_meanVectCovMatrixSummary()
     close(outfile)
     print(read("$path_to_data/mvParams.jl", String))
 end
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0412_meanVectCovMatrixSummary()
+end
 
 export compute_meanVect
 export compute_covMat

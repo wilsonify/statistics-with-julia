@@ -218,6 +218,10 @@ function main_l0413_sampleCovarianceMatrix()
     @show(corA), @show(corB), @show(corC), @show(corD), @show(corE), @show(corF);
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0413_sampleCovarianceMatrix()
+end
+
 export df_to_array_3featureData
 export sample_mean_vector1
 export sample_mean_vector2
