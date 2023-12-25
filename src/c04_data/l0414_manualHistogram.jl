@@ -66,12 +66,14 @@ function main_l0414_manualHistogram()
     plot_histogram(data)
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0414_manualHistogram()
+end
+
+
 export generate_data
 export create_bins
 export compute_histogram
 export plot_histogram
 
-if abspath(PROGRAM_FILE) == @__FILE__
-    main_l0414_manualHistogram()
-end
 
