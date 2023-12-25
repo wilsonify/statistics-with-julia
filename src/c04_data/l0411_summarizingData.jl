@@ -10,8 +10,8 @@ function main_l0411_summarizingData()
     path_to_here = @__DIR__
     path_to_data = abspath("$path_to_here/../../data")
     # we load the data and select the fourth column.
-    # This sets data to be an array of Float64.
-    data = read_temperatures("$path_to_data/temperatures.csv")
+
+    data = read_temperatures_subset("$path_to_data/temperatures.csv")
 
     # we compute and print the sample mean using mean().
     println("Sample Mean: ", mean(data))
