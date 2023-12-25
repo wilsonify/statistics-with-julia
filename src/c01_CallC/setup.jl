@@ -1,4 +1,2 @@
 using Pkg
-path_to_here = @__DIR__
-Pkg.activate("$path_to_here")
-Pkg.precompile()
+Pkg.activate("~/.julia/environments/v1.5")

@@ -1,6 +1,10 @@
 # Generating random vectors with desired mean and covariance
 
-using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots; gr()
+using Distributions
+using LinearAlgebra
+using LaTeXStrings
+using Random
+using Plots; gr()
 
 function standard_normal_generator()
     # standard normal

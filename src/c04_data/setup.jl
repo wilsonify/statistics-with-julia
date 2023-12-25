@@ -1,8 +1,6 @@
 using Pkg
-
-path_to_here = @__DIR__
-Pkg.activate("$path_to_here")
-Pkg.add("PyPlot")
+Pkg.activate("~/.julia/environments/v1.5")
+# Pkg.add("PyPlot")
 Pkg.add("RDatasets")
 Pkg.add("Measures")
 Pkg.add("DataFrames")
@@ -19,4 +17,3 @@ Pkg.add("Plots")
 Pkg.add("LinearAlgebra")
 Pkg.add("StatsBase")
 Pkg.add("Dates")
-Pkg.precompile()

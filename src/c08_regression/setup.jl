@@ -1,12 +1,11 @@
 using Pkg
-path_to_here = @__DIR__
-Pkg.activate("$path_to_here")
+Pkg.activate("~/.julia/environments/v1.5")
 Pkg.add("Statistics")
 Pkg.add("Random")
 Pkg.add("Distributions")
 Pkg.add("LinearAlgebra")
 Pkg.add("GLM")
-Pkg.add("PyPlot")
+# Pkg.add("PyPlot")
 Pkg.add("RDatasets")
 Pkg.add("PyCall")
 Pkg.add("DataFrames")
