@@ -25,30 +25,31 @@ Also note the condition in line 22 for presenting a legend only in the top left 
 The plots are then presented in a figure in line 25.
 =#
 using RDatasets, Measures, Plots; gr()
+function main_l0424_scatterplotMatrix()
+    data = dataset("datasets", "iris")
+    println("Number of rows: ", nrow(data))
 
-data = dataset("datasets", "iris")
-println("Number of rows: ", nrow(data))
+    insertSpace(name) = begin
+        i = findlast(isuppercase,name)
+        name[1:i - 1] * " "*name[i:end]
+    end
 
-insertSpace(name) = begin
-    i = findlast(isuppercase,name)
-    name[1:i - 1] * " "*name[i:end]
+    featureNames = insertSpace.(string.(names(data)))[1:4]
+    println("Names of features:\n\t", featureNames)
+
+    speciesNames = unique(data.Species)
+    speciesFreqs = [sn => sum(data.Species .== sn) for sn in speciesNames]
+    println("Frequency per species:\n\t", speciesFreqs)
+
+    default(msw = 0, ms = 3)
+
+    scatters = [
+        scatter(data[:,i], data[:,j], c=[:blue :red :green], group=data.Species,
+            xlabel=featureNames[i], ylabel=featureNames[j], legend = i==1 && j==1)
+        for i in 1:4, j in 1:4 ]
+
+    plot(scatters..., size=(1200,800), margin = 4mm)
 end
-
-featureNames = insertSpace.(string.(names(data)))[1:4]
-println("Names of features:\n\t", featureNames)
-
-speciesNames = unique(data.Species)
-speciesFreqs = [sn => sum(data.Species .== sn) for sn in speciesNames]
-println("Frequency per species:\n\t", speciesFreqs)
-
-default(msw = 0, ms = 3)
-
-scatters = [ 
-    scatter(data[:,i], data[:,j], c=[:blue :red :green], group=data.Species, 
-        xlabel=featureNames[i], ylabel=featureNames[j], legend = i==1 && j==1) 
-    for i in 1:4, j in 1:4 ]
-
-plot(scatters..., size=(1200,800), margin = 4mm)
 
 using RDatasets, Measures, Plots; gr()
 

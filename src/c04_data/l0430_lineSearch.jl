@@ -38,11 +38,12 @@ function lineSearch(inputFilename, outputFilename, keyword)
     close(outfile)
 end
 
-path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../../data")
+function main_l0430_lineSearch()
+    path_to_here = @__DIR__
+    path_to_data = abspath("$path_to_here/../../data")
 
-lineSearch("$path_to_data/earth.txt", "$path_to_data/waterLines.txt", "water")
-
+    lineSearch("$path_to_data/earth.txt", "$path_to_data/waterLines.txt", "water")
+end
 
 function lineSearch(inputFilename, outputFilename, keyword)
     infile = open(inputFilename, "r")

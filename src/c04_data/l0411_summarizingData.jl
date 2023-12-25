@@ -18,36 +18,46 @@ max, median, and quartiles.
 Finally,  in line 16,
 we use the summarystats() function which yields similar output.
 =#
-using CSV, Statistics, StatsBase, DataFrames
+using CSV
+using Statistics
+using StatsBase
+using DataFrames
+function main_l0411_summarizingData()
+    path_to_here = @__DIR__
+    path_to_data = abspath("$path_to_here/../../data")
+
+    data = CSV.read("$path_to_data/temperatures.csv",DataFrame)[:,4]
+
+    println("Sample Mean: ", mean(data))
+    println("Harmonic <= Geometric <= Arithmetic ",
+        (harmmean(data), geomean(data), mean(data)))
+    println("Sample Variance: ",var(data))
+    println("Sample Standard Deviation: ",std(data))
+    println("Minimum: ", minimum(data))
+    println("Maximum: ", maximum(data))
+    println("Median: ", median(data))
+    println("95th percentile: ", percentile(data, 95))
+    println("0.95 quantile: ", quantile(data, 0.95))
+    println("Interquartile range: ", iqr(data),"\n")
+
+    summarystats(data)
+end
+
+using CSV
+using Statistics
+using StatsBase
+using DataFrames
+using Test
+
 path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../../data")
-
-data = CSV.read("$path_to_data/temperatures.csv",DataFrame)[:,4]
-
-println("Sample Mean: ", mean(data))
-println("Harmonic <= Geometric <= Arithmetic ", 
-    (harmmean(data), geomean(data), mean(data)))
-println("Sample Variance: ",var(data))
-println("Sample Standard Deviation: ",std(data))
-println("Minimum: ", minimum(data))
-println("Maximum: ", maximum(data))
-println("Median: ", median(data))
-println("95th percentile: ", percentile(data, 95))
-println("0.95 quantile: ", quantile(data, 0.95))
-println("Interquartile range: ", iqr(data),"\n")
-
-summarystats(data)
-
-using CSV, Statistics, StatsBase, DataFrames
-path_to_here = @__DIR__
-include("$path_to_here/t01_are_dataframes_equal.jl")
-include("$path_to_here/t02_are_lists_equal.jl")
-include("$path_to_here/t04_dataframe_to_dict.jl")
+include("$path_to_here/../t01_testing/t01_are_dataframes_equal.jl")
+include("$path_to_here/../t01_testing/t02_are_lists_equal.jl")
+include("$path_to_here/../t01_testing/t04_dataframe_to_dict.jl")
 
 path_to_data = abspath("$path_to_here/../../data")
 read_temperatures() = CSV.read("$path_to_data/temperatures.csv", DataFrame)[:, 4]
 
-using Test
+
 @testset "mean test" begin
     data = read_temperatures()
     @test round(mean(data), digits = 2) == 27.16

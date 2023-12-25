@@ -26,8 +26,9 @@ function directorySearch(directory, searchString)
     close(outfile)
 end
 
-directorySearch(@__DIR__,".jl")
-
+function main_l0431_directorySearch()
+    directorySearch(@__DIR__,".jl")
+end
 
 function directorySearch(directory, searchString)
     outfile = open("fileList.txt", "w")

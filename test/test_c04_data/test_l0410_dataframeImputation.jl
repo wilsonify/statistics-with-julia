@@ -7,15 +7,14 @@ using StatisticsWithJulia: keep_complete_grade_and_price
 using StatisticsWithJulia: replace_all_missing_names
 using StatisticsWithJulia: replace_all_missing_dates
 using StatisticsWithJulia: enrich_data_with_summary
+using StatisticsWithJulia: enrich_data_with_summary
+using StatisticsWithJulia: are_dataframes_equal
+using StatisticsWithJulia: dataframe_to_dict
 
 path_to_here = @__DIR__
-include("$path_to_here/../../src/io_library/read_purchaseData.jl")
-include("$path_to_here/../../src/t01_testing/t01_are_dataframes_equal.jl")
-include("$path_to_here/../../src/t01_testing/t02_are_lists_equal.jl")
-include("$path_to_here/../../src/t01_testing/t04_dataframe_to_dict.jl")
-
 path_to_data = abspath("$path_to_here/../../data")
 
+include("$path_to_here/../../src/io_library/read_purchaseData.jl")
 
 @testset "preprocess_purchaseData test" begin
     df = read_purchaseData("$path_to_data/purchaseData.csv")

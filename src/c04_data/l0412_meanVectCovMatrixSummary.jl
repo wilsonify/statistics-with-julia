@@ -22,32 +22,36 @@ In line 17, the input-output stream outfile is closed.
 In line 18, the content of the file mvParams.jl
 is printed via the read() and print() functions.
 =#
+using DataFrames
+using CSV
+using Statistics
+function main_l0412_meanVectCovMatrixSummary()
+    path_to_here = @__DIR__
+    path_to_data = abspath("$path_to_here/../../data")
+
+    data = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols = true)
+    brisT = data.Brisbane
+    gcT = data.GoldCoast
+
+    sigB = std(brisT)
+    sigG = std(gcT)
+    covBG = cov(brisT, gcT)
+
+    meanVect = [mean(brisT) , mean(gcT)]
+    covMat = [sigB^2  covBG
+              covBG   sigG^2]
+
+    outfile = open("$path_to_data/mvParams.jl","w")
+    write(outfile,"meanVect = $meanVect \ncovMat = $covMat")
+    close(outfile)
+    print(read("$path_to_data/mvParams.jl", String))
+end
+
 using DataFrames, CSV, Statistics
 path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../../data")
-
-data = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols = true)
-brisT = data.Brisbane
-gcT = data.GoldCoast
-
-sigB = std(brisT)
-sigG = std(gcT)
-covBG = cov(brisT, gcT)
-
-meanVect = [mean(brisT) , mean(gcT)]
-covMat = [sigB^2  covBG
-          covBG   sigG^2]
-
-outfile = open("../../data/mvParams.jl","w")
-write(outfile,"meanVect = $meanVect \ncovMat = $covMat")
-close(outfile)
-print(read("$path_to_data/mvParams.jl", String))
-
-using DataFrames, CSV, Statistics
-path_to_here = @__DIR__
-include("$path_to_here/t01_are_dataframes_equal.jl")
-include("$path_to_here/t02_are_lists_equal.jl")
-include("$path_to_here/t04_dataframe_to_dict.jl")
+include("$path_to_here/../t01_testing/t01_are_dataframes_equal.jl")
+include("$path_to_here/../t01_testing/t02_are_lists_equal.jl")
+include("$path_to_here/../t01_testing/t04_dataframe_to_dict.jl")
 
 path_to_data = abspath("$path_to_here/../../data")
 read_temperatures() = CSV.read("$path_to_data/temperatures.csv", DataFrame, copycols = true)

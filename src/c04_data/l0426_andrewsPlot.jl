@@ -14,11 +14,11 @@ while the second argument determines what variables should be included in the ca
 in this case columns 1–4.
 =#
 using RDatasets, StatsPlots
-
-iris = dataset("datasets", "iris")
-@df iris andrewsplot(:Species, cols(1:4), 
-    line = (fill = [:blue :red :green]), legend = :topleft)
-
+function main_l0426_andrewsPlot()
+    iris = dataset("datasets", "iris")
+    @df iris andrewsplot(:Species, cols(1:4),
+        line = (fill = [:blue :red :green]), legend = :topleft)
+end
 using RDatasets, StatsPlots;
 
 using Test

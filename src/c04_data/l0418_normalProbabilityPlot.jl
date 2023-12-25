@@ -10,20 +10,21 @@ The second function has a ! in the name
 similar to other plotting functions that add onto an existing plot.
 =#
 using Random, Distributions, StatsPlots, Plots; gr()
-Random.seed!(0)
- 
-mu = 20
-d1, d2 = Normal(mu,mu), Exponential(mu)
- 
-n = 100
-data1 = rand(d1,n)
-data2 = rand(d2,n)
- 
-qqnorm(data1, c = :blue, ms = 3, msw = 0, label = "Normal Data")
-qqnorm!(data2, c = :red, ms = 3, msw = 0, label = "Exponential Data",
-        xlabel = "Normal Theoretical Quantiles",
-        ylabel = "Data Quantiles", legend = true)
+function main_l0418_normalProbabilityPlot()
+    Random.seed!(0)
 
+    mu = 20
+    d1, d2 = Normal(mu,mu), Exponential(mu)
+
+    n = 100
+    data1 = rand(d1,n)
+    data2 = rand(d2,n)
+
+    qqnorm(data1, c = :blue, ms = 3, msw = 0, label = "Normal Data")
+    qqnorm!(data2, c = :red, ms = 3, msw = 0, label = "Exponential Data",
+            xlabel = "Normal Theoretical Quantiles",
+            ylabel = "Data Quantiles", legend = true)
+end
 
 using Random, Distributions, StatsPlots, Plots; gr()
 

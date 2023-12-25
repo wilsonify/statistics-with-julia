@@ -9,12 +9,14 @@ the @df macro is used to plot the data from the dataframe directly,
 with the first argument :Species the horizontal axis, and the second argument
 :SepalLength the vertical axis.
 =#
-using RDatasets, StatsPlots
 
+using RDatasets
+using StatsPlots
+functin main_l0423_violinPlot()
 iris = dataset("datasets", "iris")
 @df iris violin(:Species, :SepalLength, 
     fill = :blue, xlabel = "Species", ylabel = "Sepal Length", legend = false)
-
+end
 
 using RDatasets, StatsPlots
 read_iris_data() = dataset("datasets", "iris")

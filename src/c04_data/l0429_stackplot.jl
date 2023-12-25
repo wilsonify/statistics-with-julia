@@ -11,19 +11,20 @@ and the data to be plotted as the second argument,
 with rows treated as individual years.
 =#
 using DataFrames, CSV, CategoricalArrays, Plots; gr()
-path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../../data")
+function main_l0429_stackplot()
+    path_to_here = @__DIR__
+    path_to_data = abspath("$path_to_here/../../data")
 
-df = CSV.read("$path_to_data/companyData.csv", DataFrame)
-mktCap = reshape(df.MarketCap, 5, 3)
-years = levels(df.Year)
+    df = CSV.read("$path_to_data/companyData.csv", DataFrame)
+    mktCap = reshape(df.MarketCap, 5, 3)
+    years = levels(df.Year)
 
-areaplot(years, mktCap, 
-    c = [:blue :red :green], labels = ["A" "B" "C"],
-    xlims = (minimum(years),maximum(years)), ylims = (0,6.5),
-    legend = :topleft, xlabel = "Years", ylabel = "MarketCap")
+    areaplot(years, mktCap,
+        c = [:blue :red :green], labels = ["A" "B" "C"],
+        xlims = (minimum(years),maximum(years)), ylims = (0,6.5),
+        legend = :topleft, xlabel = "Years", ylabel = "MarketCap")
 
-
+end
 
 using DataFrames, CSV, CategoricalArrays, Plots; gr();
 path_to_here = @__DIR__
