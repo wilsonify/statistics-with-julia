@@ -51,7 +51,6 @@ function main_l0404_dataframeReferencing()
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    using StatisticsWithJulia: read_purchaseData
     main_l0404_dataframeReferencing()
 end
 

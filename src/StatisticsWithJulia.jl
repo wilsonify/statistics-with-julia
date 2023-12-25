@@ -1,3 +1,4 @@
+
 module StatisticsWithJulia
     include("t01_testing/t01_are_dataframes_equal.jl")
     include("t01_testing/t02_are_lists_equal.jl")
@@ -76,8 +77,8 @@ module StatisticsWithJulia
     include("c04_data/l0406_dataframeCopyDeepCopy.jl")
     include("c04_data/l0407_dataframeMissing.jl")
     include("c04_data/l0408_dataframeReshape.jl")
-#     include("c04_data/l0409_dataframeOperations.jl")
-#     include("c04_data/l0410_dataframeImputation.jl")
+    include("c04_data/l0409_dataframeOperations.jl")
+    include("c04_data/l0410_dataframeImputation.jl")
 #     include("c04_data/l0411_summarizingData.jl")
 #     include("c04_data/l0412_meanVectCovMatrixSummary.jl")
 #     include("c04_data/l0413_sampleCovarianceMatrix.jl")

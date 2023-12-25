@@ -59,3 +59,5 @@ Pkg.add("WeakRefStrings")
 Pkg.add("Zygote")
 #Pkg.build("PyCall")
 Pkg.build("ImageMagick")
+
+

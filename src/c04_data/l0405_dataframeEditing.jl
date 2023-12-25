@@ -1,16 +1,8 @@
 # Editing and copying a DataFrame
 
 using DataFrames, CSV
+include("$(@__DIR__)/../io_library/read_purchaseData.jl")
 
-function read_purchaseData_immutable(path_to_purchaseData)
-    # has immutable columns
-    return CSV.read(path_to_purchaseData, DataFrame)
-end
-
-function read_purchaseData_mutable(path_to_purchaseData)
-    # has mutable columns
-    return CSV.read(path_to_purchaseData, DataFrame, copycols = true)
-end
 
 function maybe_set_first_name(data)
     # try to change the value of the first row and first column.
@@ -78,8 +70,8 @@ if abspath(PROGRAM_FILE) == @__FILE__
     main_l0405_dataframeEditing()
 end
 
-export read_purchaseData_immutable
-export read_purchaseData_mutable
+
+
 export maybe_set_first_name
 export division_on_every_price
 export rename_price

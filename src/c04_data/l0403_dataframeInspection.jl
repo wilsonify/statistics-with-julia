@@ -1,10 +1,7 @@
 # Creating and inspecting a DataFrame
 using DataFrames # use the DataFrames package to use DataFrame type objects.
 using CSV # We also use the CSV package for reading csv files.
-
-function read_purchaseData(path_to_purchaseData)
-    return CSV.read(path_to_purchaseData, DataFrame, copycols = true)
-end
+include("$(@__DIR__)/../io_library/read_purchaseData.jl")
 
 function get_size(data)
     # the size() function returns the number of rows and columns of the data frame as a tuple.

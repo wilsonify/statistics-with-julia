@@ -4,11 +4,8 @@ using DataFrames
 using CSV
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
+include("$path_to_here/../io_library/read_purchaseData.jl")
 
-function read_purchaseData(path_to_purchaseData)
-    df = CSV.read(path_to_purchaseData, DataFrame, copycols = true)
-    return df
-end
 
 function create_a_reference(data1)
     # create a reference

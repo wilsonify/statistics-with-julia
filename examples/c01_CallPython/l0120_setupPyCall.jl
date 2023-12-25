@@ -1,5 +1,4 @@
 using Pkg
-Pkg.activate(".")
+ENV["PYTHON"] = "/usr/bin/python"
 Pkg.add("PyCall")
-ENV["PYTHON"] = "/home/thom/venvs/venv310/bin/python"
 Pkg.build("PyCall")
