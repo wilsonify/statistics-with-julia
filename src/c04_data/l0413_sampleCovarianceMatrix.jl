@@ -1,43 +1,19 @@
 # Sample covariance
-#=
-In line 2,
-we read the data with header = false since there isn’t a line in the csv for the variable
-(or feature) names.
-In line 3,
-we use the size() function to set the number of observations, n, and number of features p.
-The convert() function is used in line 6 to extract a data matrix out of the
-data frame df.
-Lines 9–13 show alternative ways of computing the sample mean vector.
-Note the use of dims=1 in the sum() function
-in line 11,
-indicating to sum over columns.
-In line 15, we create the de-meaned data Y and show
-in line 16
-that the mean is 0 (effectively 0 in the output).
-Lines 18–24
-illustrate a variety of ways to calculate the sample covariance matrix using several forms of (4.5).
-Lines 26–30 deal with standardized data as in (4.3).
-The printout of the maximum of the norm in line 29 is
-a way for seeing that the two matrices ZmatA and ZmatB are identical.
-Finally, lines 32–39
-compute the correlation matrix in a variety of ways.
-Observe line 35 implementing (4.4).
-Also observe that the covariance of Z is the correlation of X as shown in lines 36–37.
 
-=#
 using Statistics
 using StatsBase
 using LinearAlgebra
 using DataFrames
 using CSV
-
-read_3featureData() = CSV.read("$path_to_data/3featureData.csv", DataFrame, header = false)
+include("$(@__DIR__)/../io_library/read_3featureData.jl")
 
 function df_to_array_3featureData(data)
     return convert(Array{Float64, 2}, Matrix(data))
 end
 
 function sample_mean_vector1(X)
+    # we use the size() function to set the number of observations, n, and number of features p.
+    # The convert() function is used in line 6 to extract a data matrix out of the data frame df.
     n, p = size(X)
     return (1 / n) * X' * ones(n)
 end
@@ -47,6 +23,7 @@ function sample_mean_vector2(X)
 end
 
 function sample_mean_vector3(X)
+    # dims=1 indicates to sum over columns.
     n, p = size(X)
     return sum(X, dims = 1) / n
 end
@@ -105,7 +82,7 @@ end
 
 function sample_correlation_matrix2(X)
     covA = sample_covariance_matrix1(X)
-    return covA ./ (std(X, dims = 1)' * std(X, dims = 1))
+    return covA./(std(X, dims = 1)' * std(X, dims = 1))
 end
 function sample_correlation_matrix3(X)
     n, p = size(X)
@@ -129,13 +106,17 @@ end
 
 function main_sample_covariance_matrix()
     df_3feature = read_3featureData()
+
+    # we use the size() function to set the number of observations, n, and number of features p.
+    # The convert() function is used in line 6 to extract a data matrix out of the data frame df.
     n, p = size(df_3feature)
     println("Number of features: ", p)
     println("Number of observations: ", n)
 
     x = df_to_array_3featureData(df_3feature)
     println("Dimensions of data matrix: ", size(x))
-
+    # show alternative ways of computing the sample mean vector.
+    # Note the use of dims=1 in the sum() function
     xbarA = sample_mean_vector1(x)
     xbarB = sample_mean_vector2(x)
     xbarC = sample_mean_vector3(x)
@@ -144,9 +125,12 @@ function main_sample_covariance_matrix()
     @show(xbarB)
     @show(xbarC)
 
+    # we create the de-meaned data Y
     y = de_mean(x)
+    # show that the mean is 0 (effectively 0 in the output).
     println("Y is the de-meaned data: ", mean(y, dims = 1))
 
+    # illustrate a variety of ways to calculate the sample covariance matrix using several forms of (4.5).
     covA = sample_covariance_matrix1(x)
     covB = sample_covariance_matrix2(x)
     covC = sample_covariance_matrix3(x)
@@ -160,11 +144,17 @@ function main_sample_covariance_matrix()
     @show(covD)
     @show(covE)
 
+    # deal with standardized data as in (4.3).
+    # The printout of the maximum of the norm in line 29 is
+    # a way for seeing that the two matrices ZmatA and ZmatB are identical.
+
     ZmatA = Z_scores1(x)
     ZmatB = Z_scores2(x)
     println("\nAlternate computation of Z-scores yields same matrix: ")
     println(maximum(norm(ZmatA - ZmatB)))
 
+    # compute the correlation matrix in a variety of ways.
+    # the covariance of Z is the correlation of X
     corA = sample_correlation_matrix1(x)
     corB = sample_correlation_matrix2(x)
     corC = sample_correlation_matrix3(x)
@@ -247,20 +237,20 @@ using Test, Random
 
 @testset "read_3featureData" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     result = size(df)
     @test result == (7, 3)
 end
 
 @testset "df_to_array_3featureData" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     @test size(x) == (7, 3)
 end
 @testset "sample_mean_vector1" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_mean_vector1(x)
     result = round.(result, digits = 2)
@@ -269,7 +259,7 @@ end
 
 @testset "sample_mean_vector2" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_mean_vector2(x)
     result = round.(result, digits = 2)
@@ -278,7 +268,7 @@ end
 
 @testset "sample_mean_vector3" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_mean_vector3(x)
     result = round.(result, digits = 2)
@@ -287,52 +277,52 @@ end
 
 @testset "sample_covariance_matrix1" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_covariance_matrix1(x)
     result = round.(result, digits = 2)
-    expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.71; 0.44 -0.71 8.03]
+    expected_result = [0.12 - 0.09 0.44; -0.09 0.12 - 0.71; 0.44 - 0.71 8.03]
     #@test result==expected_result
     @test is_all_approx_array(result,expected_result)
 end
 
 @testset "sample_covariance_matrix2" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_covariance_matrix2(x)
     result = round.(result, digits = 2)
-    expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.72; 0.44 -0.72 8.03]
+    expected_result = [0.12 - 0.09 0.44; -0.09 0.12 - 0.72; 0.44 - 0.72 8.03]
     @test result == expected_result
 end
 
 @testset "sample_covariance_matrix3" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_covariance_matrix3(x)
     result = round.(result, digits = 2)
-    expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.72; 0.44 -0.72 8.03]
+    expected_result = [0.12 - 0.09 0.44; -0.09 0.12 - 0.72; 0.44 - 0.72 8.03]
     @test result == expected_result
 end
 
 @testset "sample_covariance_matrix4" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_covariance_matrix4(x)
     result = round.(result, digits = 2)
-    expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.72; 0.44 -0.72 8.03]
+    expected_result = [0.12 - 0.09 0.44; -0.09 0.12 - 0.72; 0.44 - 0.72 8.03]
     @test result == expected_result
 end
 
 @testset "sample_covariance_matrix5" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_covariance_matrix5(x)
     result = round.(result, digits = 2)
-    expected_result = [0.12 -0.09 0.44; -0.09 0.12 -0.72; 0.44 -0.72 8.03]
+    expected_result = [0.12 - 0.09 0.44; -0.09 0.12 - 0.72; 0.44 - 0.72 8.03]
     for i in 1:size(result, 1), j in 1:size(result, 2)
         @test isapprox(result[i, j], expected_result[i, j], atol = 0.05)
     end
@@ -340,16 +330,16 @@ end
 
 @testset "Z_scores1 test" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = Z_scores1(x)
     result = round.(result, digits = 2)
-    expected_result = [-0.45 0.04 -0.81;
-        0.12 -0.53 -0.35;
-        1.86 -0.53 -0.04;
-        -0.74 0.61 -0.42;
-        0.7 -1.39 2.08;
-        -1.03 1.76 -0.78;
+    expected_result = [-0.45 0.04 - 0.81;
+        0.12 - 0.53 - 0.35;
+        1.86 - 0.53 - 0.04;
+        -0.74 0.61 - 0.42;
+        0.7 - 1.39 2.08;
+        -1.03 1.76 - 0.78;
         -0.45 0.04 0.32]
     println("result = $result")
     @test result == expected_result
@@ -357,76 +347,76 @@ end
 
 @testset "Z_scores2 test" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = Z_scores2(x)
-    expected_result = [-0.45 0.04 -0.81;
-        0.12 -0.53 -0.35;
-        1.86 -0.53 -0.04;
-        -0.74 0.61 -0.42;
-        0.7 -1.39 2.08;
-        -1.03 1.76 -0.78;
+    expected_result = [-0.45 0.04 - 0.81;
+        0.12 - 0.53 - 0.35;
+        1.86 - 0.53 - 0.04;
+        -0.74 0.61 - 0.42;
+        0.7 - 1.39 2.08;
+        -1.03 1.76 - 0.78;
         -0.45 0.04 0.32]
     result == expected_result
 end
 
 @testset "sample_correlation_matrix1" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_correlation_matrix1(x)
     result = round.(result, digits = 2)
-    expected_result = [1.0 -0.73 0.45; -0.73 1.0 -0.72; 0.45 -0.72 1.0]
+    expected_result = [1.0 - 0.73 0.45; -0.73 1.0 - 0.72; 0.45 - 0.72 1.0]
     @test result == expected_result
 end
 
 @testset "sample_correlation_matrix2" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_correlation_matrix2(x)
     result = round.(result, digits = 2)
-    expected_result = [1.0 -0.73 0.45; -0.73 1.0 -0.72; 0.45 -0.72 1.0]
+    expected_result = [1.0 - 0.73 0.45; -0.73 1.0 - 0.72; 0.45 - 0.72 1.0]
     @test result == expected_result
 end
 
 @testset "sample_correlation_matrix3" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_correlation_matrix3(x)
     result = round.(result, digits = 2)
-    expected_result = [1.0 -0.73 0.45; -0.73 1.0 -0.72; 0.45 -0.72 1.0]
+    expected_result = [1.0 - 0.73 0.45; -0.73 1.0 - 0.72; 0.45 - 0.72 1.0]
     @test result == expected_result
 end
 
 @testset "sample_correlation_matrix4" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_correlation_matrix4(x)
     result = round.(result, digits = 2)
-    expected_result = [1.0 -0.73 0.45; -0.73 1.0 -0.72; 0.45 -0.72 1.0]
+    expected_result = [1.0 - 0.73 0.45; -0.73 1.0 - 0.72; 0.45 - 0.72 1.0]
     @test result == expected_result
 end
 
 @testset "sample_correlation_matrix5" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_correlation_matrix5(x)
     result = round.(result, digits = 2)
-    expected_result = [1.0 -0.73 0.45; -0.73 1.0 -0.72; 0.45 -0.72 1.0]
+    expected_result = [1.0 - 0.73 0.45; -0.73 1.0 - 0.72; 0.45 - 0.72 1.0]
     @test result == expected_result
 end
 
 @testset "sample_correlation_matrix6" begin
     Random.seed!(0)
-    df = read_3featureData()
+    df = read_3featureData("$path_to_data/3featureData.csv")
     x = df_to_array_3featureData(df)
     result = sample_correlation_matrix6(x)
     result = round.(result, digits = 2)
-    expected_result = [1.0 -0.73 0.45; -0.73 1.0 -0.72; 0.45 -0.72 1.0]
+    expected_result = [1.0 - 0.73 0.45; -0.73 1.0 - 0.72; 0.45 - 0.72 1.0]
     @test result == expected_result
 end
 

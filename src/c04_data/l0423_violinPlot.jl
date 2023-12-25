@@ -12,10 +12,10 @@ with the first argument :Species the horizontal axis, and the second argument
 
 using RDatasets
 using StatsPlots
-functin main_l0423_violinPlot()
-iris = dataset("datasets", "iris")
-@df iris violin(:Species, :SepalLength, 
-    fill = :blue, xlabel = "Species", ylabel = "Sepal Length", legend = false)
+function main_l0423_violinPlot()
+    iris = dataset("datasets", "iris")
+    @df iris violin(:Species, :SepalLength,
+        fill = :blue, xlabel = "Species", ylabel = "Sepal Length", legend = false)
 end
 
 using RDatasets, StatsPlots
