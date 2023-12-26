@@ -13,6 +13,7 @@ using StatisticsWithJulia: get_names1,get_names2,get_names3
 using StatisticsWithJulia: are_dataframes_equal
 using StatisticsWithJulia: are_lists_equal
 using StatisticsWithJulia: read_purchaseData
+using StatisticsWithJulia: get_purchases
 using DataFrames
 using CSV
 using InlineStrings # we need String15 available for testing
