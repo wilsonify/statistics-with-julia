@@ -1,3 +1,4 @@
+using CSV
 
 read_temperatures(path_to_temperatures) = CSV.read(path_to_temperatures, DataFrame, copycols = true)
 

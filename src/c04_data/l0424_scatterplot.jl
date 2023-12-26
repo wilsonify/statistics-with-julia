@@ -1,10 +1,15 @@
 # Scatter Plot
-using DataFrames, CSV, Plots; gr()
+using DataFrames
+using CSV
+using Plots; gr()
+
+include("$(@__DIR__)/../io_library/read_companyData.jl")
+
 function main_l0424_scatterplot()
     path_to_here = @__DIR__
     path_to_data = abspath("$path_to_here/../../data")
 
-    df = CSV.read("$path_to_data/companyData.csv", DataFrame)
+    df = read_companyData("$path_to_data/companyData.csv")
     dividends = reshape(df[!, :Dividend], (5,:))
     stkPrice = reshape(df[!, :StockPrice], (5,:))
 
@@ -15,14 +20,16 @@ function main_l0424_scatterplot()
 
 end
 
-using DataFrames, CSV, Plots; gr();
+using DataFrames
+using CSV
+using Plots; gr();
+
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
 
-read_companyData() = CSV.read("$path_to_data/companyData.csv", DataFrame)
 
 @testset "read_companyData test" begin
-    df = read_companyData()
+    df = read_companyData("$path_to_data/companyData.csv")
     dividends = reshape(df[!, :Dividend], (5, :))
     stkPrice = reshape(df[!, :StockPrice], (5, :))
     plot(dividends,
