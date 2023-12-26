@@ -25,11 +25,10 @@ end
     @test true
 end
 
-# @time @testset "test_c04_data" begin
-#
-#     include("$(@__DIR__)/test_c04_data/runtests.jl")
-#     @test true
-# end
+@time @testset "test_c04_data" begin
+    include("$(@__DIR__)/test_c04_data/runtests.jl")
+    @test true
+end
 # @time @testset "test_c05_inference" begin
 #
 #     include("$(@__DIR__)/test_c05_inference/runtests.jl")
