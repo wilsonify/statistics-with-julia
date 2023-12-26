@@ -28,9 +28,3 @@ function main_l0431_directorySearch()
     # working directory, i.e. pwd().
     directorySearch(@__DIR__,".jl")
 end
-
-
-using Test
-@testset "directorySearch" begin
-    directorySearch(@__DIR__, ".jl")
-end
