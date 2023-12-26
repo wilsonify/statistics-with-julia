@@ -1,11 +1,7 @@
 
 module StatisticsWithJulia
     include("IOLibrary.jl")
-    include("t01_testing/t01_are_dataframes_equal.jl")
-    include("t01_testing/t02_are_lists_equal.jl")
-    #include("t01_testing/t03_text_to_dataframe.jl")
-    include("t01_testing/t04_dataframe_to_dict.jl")
-    include("t01_testing/t05_are_arrays_equal.jl")
+    include("TestingLibrary.jl")
     include("c01_CallC/l0121_usingC.jl")
     include("c01_intro/l0101_helloWorld.jl")
     include("c01_intro/l0102_comprehension.jl")

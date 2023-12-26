@@ -9,7 +9,7 @@ using StatisticsWithJulia: compute_mvParams
 using StatisticsWithJulia: mvParams_to_string
 using StatisticsWithJulia: write_string_to_file
 using StatisticsWithJulia: read_mvParams
-using StatisticsWithJulia: dataframe_to_dict
+using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
 include("$(@__DIR__)/../../src/io_library/read_temperatures.jl")
 
 path_to_data = abspath("$(@__DIR__)/../../data")

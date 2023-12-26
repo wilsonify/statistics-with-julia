@@ -9,8 +9,8 @@ using StatisticsWithJulia: sort_on_date_ascending
 using StatisticsWithJulia: select_Price_greater_than_50000
 using StatisticsWithJulia: cast_grade_to_categorical
 using StatisticsWithJulia: summarize_purchaseData1
-using StatisticsWithJulia: dataframe_to_dict
-using StatisticsWithJulia: are_dataframes_equal
+using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
+using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 using StatisticsWithJulia: preprocess_purchaseData1
 using StatisticsWithJulia.IOLibrary: read_purchaseData
 path_to_here = @__DIR__

@@ -4,8 +4,8 @@ using StatisticsWithJulia: get_column_names
 using StatisticsWithJulia: get_head
 using StatisticsWithJulia: get_tail
 using StatisticsWithJulia: get_description
-using StatisticsWithJulia: are_dataframes_equal
-using StatisticsWithJulia: dataframe_to_dict
+using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
+using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
 using DataFrames
 using CSV
 using Test

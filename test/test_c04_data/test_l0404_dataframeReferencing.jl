@@ -10,8 +10,8 @@
 
 using StatisticsWithJulia: get_grade1,get_grade2,get_grade3
 using StatisticsWithJulia: get_names1,get_names2,get_names3
-using StatisticsWithJulia: are_dataframes_equal
-using StatisticsWithJulia: are_lists_equal
+using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
+using StatisticsWithJulia.TestingLibrary: are_lists_equal
 using StatisticsWithJulia: read_purchaseData
 using StatisticsWithJulia: get_purchases
 using DataFrames

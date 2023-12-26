@@ -8,8 +8,8 @@ using StatisticsWithJulia: sum_is_missing_name
 using StatisticsWithJulia: replace_all_missing_grades
 using StatisticsWithJulia: dropmissing_price
 using StatisticsWithJulia: findall_complete
-using StatisticsWithJulia: are_lists_equal
-using StatisticsWithJulia: are_dataframes_equal
+using StatisticsWithJulia.TestingLibrary: are_lists_equal
+using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

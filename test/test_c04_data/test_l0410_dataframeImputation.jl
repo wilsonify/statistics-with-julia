@@ -7,9 +7,9 @@ using StatisticsWithJulia: keep_complete_grade_and_price
 using StatisticsWithJulia: replace_all_missing_names
 using StatisticsWithJulia: replace_all_missing_dates
 using StatisticsWithJulia: enrich_data_with_summary
-using StatisticsWithJulia: are_dataframes_equal
+using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 using StatisticsWithJulia: preprocess_purchaseData1
-using StatisticsWithJulia: dataframe_to_dict
+using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
 using StatisticsWithJulia.IOLibrary: read_purchaseData
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")

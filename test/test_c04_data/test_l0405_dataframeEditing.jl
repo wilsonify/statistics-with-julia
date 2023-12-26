@@ -7,7 +7,7 @@ using StatisticsWithJulia: maybe_set_first_name
 using StatisticsWithJulia: division_on_every_price
 using StatisticsWithJulia: rename_price
 using StatisticsWithJulia: recode_grade
-using StatisticsWithJulia: are_dataframes_equal
+using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
