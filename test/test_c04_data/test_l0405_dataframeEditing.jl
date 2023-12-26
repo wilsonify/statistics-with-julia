@@ -1,8 +1,8 @@
 using DataFrames
 using CSV
 using Test
-using StatisticsWithJulia: read_purchaseData_immutable
-using StatisticsWithJulia: read_purchaseData_mutable
+using StatisticsWithJulia.IOLibrary: read_purchaseData_immutable
+using StatisticsWithJulia.IOLibrary: read_purchaseData_mutable
 using StatisticsWithJulia: maybe_set_first_name
 using StatisticsWithJulia: division_on_every_price
 using StatisticsWithJulia: rename_price

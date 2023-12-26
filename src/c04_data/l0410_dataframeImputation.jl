@@ -69,7 +69,7 @@ function replace_all_missing_dates(data)
     # we replace all missing names with the strings "QQ" and "31/06/2008",
     # respectively, via replace!().
 
-    replace!(x -> ismissing(x) ? "31/06/2008" : x, data.Date)
+    replace!(x -> ismissing(x) ? "30/06/2008" : x, data.Date)
     return data
     end
 
