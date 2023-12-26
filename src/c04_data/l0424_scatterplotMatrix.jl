@@ -2,7 +2,7 @@
 
 using Measures
 using Plots; gr()
-include("$(@__DIR__)/../io_library/read_irisData.jl")
+using .IOLibrary: read_iris_from_csv
 
 function insertSpace(name)
     # we define a function that takes a string, name,

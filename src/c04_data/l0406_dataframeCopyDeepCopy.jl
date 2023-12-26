@@ -2,9 +2,10 @@
 
 using DataFrames
 using CSV
+using .IOLibrary: read_purchaseData
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
-include("$path_to_here/../io_library/read_purchaseData.jl")
+
 
 
 function create_a_reference(data1)

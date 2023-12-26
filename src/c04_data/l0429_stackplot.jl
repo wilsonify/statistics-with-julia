@@ -4,7 +4,7 @@ using DataFrames
 using CSV
 using CategoricalArrays
 using Plots; gr()
-include("$(@__DIR__)/../io_library/read_companyData.jl")
+using .IOLibrary: read_companyData
 
 function main_l0429_stackplot()
     path_to_here = @__DIR__

@@ -2,8 +2,8 @@
 
 using DataFrames
 using CSV
+using .IOLibrary: read_purchaseData
 
-read_purchaseData() = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
 
 function horizontal_concatenate(data::DataFrame, newCol::DataFrame)
     # Check if the number of rows in data and newCol matches
@@ -48,7 +48,7 @@ function main_l0408_dataframeReshape()
     path_to_here = @__DIR__
     path_to_data = abspath("$path_to_here/../../data")
     # create data
-    data = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
+    data = read_purchaseData("$path_to_data/purchaseData.csv")
 
     # create three separate data frames.
     # The first consists of a single column with the same number of rows as data.

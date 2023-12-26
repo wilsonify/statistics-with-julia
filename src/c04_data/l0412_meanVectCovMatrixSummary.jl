@@ -4,7 +4,7 @@ using DataFrames
 using CSV
 using Statistics
 
-include("$(@__DIR__)/../io_library/read_temperatures.jl")
+using .IOLibrary: read_temperatures
 
 function compute_meanVect(data)
     # for Brisbane and Gold Coast as the arrays brisT and gcT respectively.

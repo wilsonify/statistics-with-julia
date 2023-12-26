@@ -5,8 +5,7 @@ using CSV
 using Dates
 using Statistics
 using CategoricalArrays
-
-read_purchaseData(path_to_purchaseData) = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
+using .IOLibrary: read_purchaseData
 
 function select_non_missing(data)
     # some function require all values to be non-missing.
@@ -41,14 +40,14 @@ function cast_grade_to_categorical(data)
     return data
 end
 
-function preprocess_purchaseData(data)
+function preprocess_purchaseData1(data)
     data = select_non_missing(data)
     data = cast_string_to_Date(data)
     data = cast_grade_to_categorical(data)
     return data
 end
 
-function summarize_purchaseData(data)
+function summarize_purchaseData1(data)
     # the powerful groupby() function is demonstrated.
     # Here data is split according to :Grade.
     # The third argument is where calculations are defined.
@@ -79,8 +78,8 @@ function summarize_purchaseData(data)
 
 function main_dataframe_ops()
     df = read_purchaseData()
-    df = preprocess_purchaseData(df)
-    summary = summarize_purchaseData(df)
+    df = preprocess_purchaseData1(df)
+    summary = summarize_purchaseData1(df)
 
     println(first(sort(data, :Date), 3), "\n")
     println(first(filter(row -> row[:Price] > 50000, data), 3), "\n")
@@ -100,7 +99,7 @@ function main_l0409_dataframeOperations()
     println(first(data,3 ))
     data = cast_grade_to_categorical(data)
     println(first(data, 3))
-    data = summarize_purchaseData(data)
+    data = summarize_purchaseData1(data)
     println( data )
 end
 
@@ -115,5 +114,5 @@ export cast_string_to_Date
 export sort_on_date_ascending
 export select_Price_greater_than_50000
 export cast_grade_to_categorical
-export summarize_purchaseData
-
+export summarize_purchaseData1
+export preprocess_purchaseData1

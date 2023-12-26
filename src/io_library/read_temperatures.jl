@@ -7,3 +7,6 @@ function read_temperatures_subset(path_to_temperatures)
     # This happends to be an array of Float64.
     return CSV.read(path_to_temperatures, DataFrame)[:, 4]
 end
+
+export read_temperatures
+export read_temperatures_subset

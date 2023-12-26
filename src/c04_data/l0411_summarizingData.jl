@@ -4,7 +4,7 @@ using Statistics
 using StatsBase
 using DataFrames
 
-include("$(@__DIR__)/../io_library/read_temperatures.jl")
+using .IOLibrary: read_temperatures_subset
 
 function main_l0411_summarizingData()
     path_to_here = @__DIR__

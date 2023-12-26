@@ -1,4 +1,5 @@
-using DataFrames, CSV
+using DataFrames
+using CSV
 using Test
 using StatisticsWithJulia: read_purchaseData_immutable
 using StatisticsWithJulia: read_purchaseData_mutable

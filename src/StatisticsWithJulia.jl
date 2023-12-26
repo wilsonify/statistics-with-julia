@@ -1,5 +1,6 @@
 
 module StatisticsWithJulia
+    include("IOLibrary.jl")
     include("t01_testing/t01_are_dataframes_equal.jl")
     include("t01_testing/t02_are_lists_equal.jl")
     #include("t01_testing/t03_text_to_dataframe.jl")

@@ -3,7 +3,7 @@ using DataFrames
 using CSV
 using Plots; gr()
 
-include("$(@__DIR__)/../io_library/read_companyData.jl")
+using .IOLibrary: read_companyData
 
 function main_l0424_scatterplot()
     path_to_here = @__DIR__

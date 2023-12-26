@@ -1,7 +1,7 @@
 # andrewsplot to visualize high-dimensional data
 
 using StatsPlots
-include("$(@__DIR__)/../io_library/read_irisData.jl")
+using .IOLibrary: read_iris_from_csv
 
 function main_l0426_andrewsPlot()
     # We now introduce a completely different way to visualize high-dimensional data.

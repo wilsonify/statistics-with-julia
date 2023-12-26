@@ -1,7 +1,10 @@
 # Editing and copying a DataFrame
 
-using DataFrames, CSV
-include("$(@__DIR__)/../io_library/read_purchaseData.jl")
+using DataFrames
+using DataFrames: rename!
+using CSV
+
+using .IOLibrary: read_purchaseData
 
 
 function maybe_set_first_name(data)

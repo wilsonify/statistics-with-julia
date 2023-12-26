@@ -5,7 +5,7 @@ using Distributions
 using CSV
 using DataFrames
 using Measures
-include("$(@__DIR__)/../io_library/read_temperatures.jl")
+using .IOLibrary: read_temperatures
 
 function main_l0425_marginalHists()
     path_to_here = @__DIR__

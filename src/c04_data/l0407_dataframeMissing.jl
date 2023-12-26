@@ -2,11 +2,8 @@
 using Statistics
 using DataFrames
 using CSV
+using .IOLibrary: read_purchaseData
 
-function read_purchaseData(path_to_purchaseData)
-    # copycols = true will use mutable columns
-    return CSV.read(path_to_purchaseData, DataFrame, copycols = true)
-end
 
 function calculate_mean_price_no_missing(data)
     # calculate the mean of the :Price column

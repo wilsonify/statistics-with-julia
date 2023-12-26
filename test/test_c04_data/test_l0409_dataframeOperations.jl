@@ -8,17 +8,19 @@ using StatisticsWithJulia: cast_string_to_Date
 using StatisticsWithJulia: sort_on_date_ascending
 using StatisticsWithJulia: select_Price_greater_than_50000
 using StatisticsWithJulia: cast_grade_to_categorical
-using StatisticsWithJulia: summarize_purchaseData
+using StatisticsWithJulia: summarize_purchaseData1
 using StatisticsWithJulia: dataframe_to_dict
 using StatisticsWithJulia: are_dataframes_equal
+using StatisticsWithJulia: preprocess_purchaseData1
+using StatisticsWithJulia.IOLibrary: read_purchaseData
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../data")
-include("$path_to_here/../../src/io_library/read_purchaseData.jl")
+
 
 using Test
 @testset "sort test" begin
     df = read_purchaseData("$path_to_data/purchaseData.csv")
-    df = preprocess_purchaseData(df)
+    df = preprocess_purchaseData1(df)
     expected_data = DataFrame(Grade = ["D", "E", "C"],
         Price = [33155, 8257, 46911],
         Date = [Date("2008-02-11"), Date("2008-02-12"), Date("2008-03-03")],
@@ -28,7 +30,7 @@ end
 
 @testset "filter test" begin
     df = read_purchaseData("$path_to_data/purchaseData.csv")
-    df = preprocess_purchaseData(df)
+    df = preprocess_purchaseData1(df)
     result = first(filter(row -> row[:Price] > 50000, df), 3)
     expected_data = DataFrame(Grade = ["A", "A", "B"],
         Price = [79700, 79344, 61730],
@@ -39,7 +41,7 @@ end
 
 @testset "preprocess_purchaseData test" begin
     df = read_purchaseData("$path_to_data/purchaseData.csv")
-    df = preprocess_purchaseData(df)
+    df = preprocess_purchaseData1(df)
     expected_data = DataFrame(Grade = ["A", "E", "C"],
         Price = [79700, 24311, 47052],
         Date = [Date("2008-09-14"), Date("2008-08-05"), Date("2008-12-01")],
@@ -49,8 +51,8 @@ end
 
 @testset "summarize_purchaseData test" begin
     df = read_purchaseData("$path_to_data/purchaseData.csv")
-    df = preprocess_purchaseData(df)
-    summary_df = summarize_purchaseData(df)
+    df = preprocess_purchaseData1(df)
+    summary_df = summarize_purchaseData1(df)
     expected_data = DataFrame(Grade = ["A", "B", "C", "D", "E"],
         Price_function = [
             (15, 76606.73333333334),

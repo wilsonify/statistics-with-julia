@@ -3,9 +3,9 @@
 using DataFrames
 using CSV
 using Statistics
-include("$(@__DIR__)/../io_library/read_purchaseData.jl")
+using .IOLibrary: read_purchaseData
 
-function summarize_purchaseData(data)
+function summarize_purchaseData2(data)
     # dropmissing() and by() are used to calculate the mean price of each group,
     # excluding rows with missing values.
     # The results are rounded to the nearest thousand (digits = -3) and stored as the data frame grPr.
@@ -17,7 +17,7 @@ function summarize_purchaseData(data)
 end
 
 function enrich_data_with_summary(data)
-    grPr = summarize_purchaseData(data)
+    grPr = summarize_purchaseData2(data)
     # the dictionary d is created based on the values from grPr,
     # with grade the key,
     # and average price the value.
@@ -72,14 +72,6 @@ function replace_all_missing_dates(data)
     replace!(x -> ismissing(x) ? "31/06/2008" : x, data.Date)
     return data
     end
-
-function preprocess_purchaseData(data)
-    data = keep_complete_grade_and_price(data)
-    data = replace_all_missing_names(data)
-    data = replace_all_missing_dates(data)
-    return data
-end
-
 
 function main_l0410_dataframeImputation()
     path_to_here = @__DIR__
