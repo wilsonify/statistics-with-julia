@@ -14,10 +14,6 @@ function get_grade3(data)
     return data.Grade[1]
     end
 
-function get_purchases(data)
-    # : can be used to select all
-    return data[[1, 2, 4], :]
-    end
 
 function get_names1(data)
     # a unit range is used to select rows 13–15,
@@ -34,6 +30,11 @@ function get_names2(data)
 function get_names3(data)
     # the extra set of [] creates a data frame object
     return data[13:15, [:Name]]
+    end
+
+function get_purchases(data)
+    # : can be used to select all
+    return data[[1, 2, 4], :]
     end
 
 function main_l0404_dataframeReferencing()
@@ -60,4 +61,5 @@ export get_grade3
 export get_names1
 export get_names2
 export get_names3
+export get_purchases
 
