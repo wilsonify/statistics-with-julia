@@ -54,3 +54,7 @@ function main_l0424_scatterplotMatrix()
 
     plot(scatters..., size=(1200,800), margin = 4mm)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0424_scatterplotMatrix()
+end

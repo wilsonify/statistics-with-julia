@@ -38,3 +38,7 @@ function main_l0425_marginalHists()
     plot(p1, p2, size = (1000, 500), margin = 10mm)
     savefig("l0425_heatmap_with_marginal_histogram.png")
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0425_marginalHists()
+end

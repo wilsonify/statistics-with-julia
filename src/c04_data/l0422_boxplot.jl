@@ -2,7 +2,7 @@
 using DataFrames
 using CSV
 using StatsPlots
-include("$(@__DIR__)/../io_library/read_machineData.jl")
+using .IOLibrary: read_machine_data
 
 function main_l0422_boxplot()
     path_to_here = @__DIR__
@@ -18,3 +18,7 @@ function main_l0422_boxplot()
         ylabel = "Pipe Diameter (mm)")
 end
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0422_boxplot()
+end

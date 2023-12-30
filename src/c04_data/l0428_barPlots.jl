@@ -25,3 +25,7 @@ function main_l0428_barPlots()
         ylims = (0,6), xlabel = "Year", ylabel = "Market Cap (MM)",
         legend = :topleft, size = (800,400))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0428_barPlots()
+end

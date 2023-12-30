@@ -26,3 +26,7 @@ function main_l0427_pieChart()
     p2 = pie(companies, year2016, title = "2016 Market Cap \n by company")
     plot(p1, p2, size = (800, 400))
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0427_pieChart()
+end

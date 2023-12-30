@@ -28,3 +28,7 @@ function main_l0431_directorySearch()
     # working directory, i.e. pwd().
     directorySearch(@__DIR__,".jl")
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0431_directorySearch()
+end

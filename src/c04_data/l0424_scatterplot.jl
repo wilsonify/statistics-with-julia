@@ -20,3 +20,7 @@ function main_l0424_scatterplot()
 
 end
 
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0424_scatterplot()
+end

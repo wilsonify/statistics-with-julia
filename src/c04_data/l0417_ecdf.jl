@@ -65,4 +65,8 @@ function main_l0417_ecdf()
     plot!(xGrid, mixCDF.(xGrid), c = :black, label = "Underlying CDF", xlims = (-10,80), ylims = (0,1), xlabel = "x", ylabel = "Probability", legend = :topleft)
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0417_ecdf()
+end
+
 export generate_mixture_data_ecdf

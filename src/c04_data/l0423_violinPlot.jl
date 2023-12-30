@@ -12,3 +12,7 @@ function main_l0423_violinPlot()
     # :SepalLength the vertical axis.
     @df iris violin(:Species, :SepalLength, fill = :blue, xlabel = "Species", ylabel = "Sepal Length", legend = false)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0423_violinPlot()
+end

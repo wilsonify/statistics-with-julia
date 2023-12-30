@@ -45,5 +45,7 @@ function main_l0420_radialPlot()
 
 end
 
-
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0420_radialPlot()
+end
 

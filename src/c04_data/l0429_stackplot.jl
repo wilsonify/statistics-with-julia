@@ -28,3 +28,7 @@ function main_l0429_stackplot()
         legend = :topleft, xlabel = "Years", ylabel = "MarketCap")
 
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0429_stackplot()
+end

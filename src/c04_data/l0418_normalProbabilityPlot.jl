@@ -39,5 +39,10 @@ function main_l0418_normalProbabilityPlot()
     qqnorm!(data2, c = :red, ms = 3, msw = 0, label = "Exponential Data", xlabel = "Normal Theoretical Quantiles", ylabel = "Data Quantiles", legend = true)
 end
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0418_normalProbabilityPlot()
+end
+
 export generate_normal_data
 export generate_exponential_data
+

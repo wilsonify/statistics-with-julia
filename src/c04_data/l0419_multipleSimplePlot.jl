@@ -45,3 +45,6 @@ function main_l0419_multipleSimplePlot()
 end
 
 
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0419_multipleSimplePlot()
+end

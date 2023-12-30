@@ -5,7 +5,7 @@ using StatsBase
 using LinearAlgebra
 using DataFrames
 using CSV
-include("$(@__DIR__)/../io_library/read_3featureData.jl")
+using .IOLibrary: read_3featureData
 
 function df_to_array_3featureData(data)
     return convert(Array{Float64, 2}, Matrix(data))
