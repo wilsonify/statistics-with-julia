@@ -32,3 +32,7 @@ function main_l0411_summarizingData()
     # we use the summarystats() function which yields similar output.
     summarystats(data)
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main_l0411_summarizingData()
+end
