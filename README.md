@@ -1,6 +1,9 @@
 
 based on 
-Statistics with Julia: Fundamentals for Data Science, Machine Learning and Artificial Intelligence
+
+Statistics with Julia: 
+Fundamentals for Data Science, Machine Learning and Artificial Intelligence
+
 by H.Klok , Y.Nazarathy
 
 
@@ -18,8 +21,11 @@ It contains the following ten chapters and three appendices:
 9. Machine Learning Basics
 10. Simulation of Dynamic Models
 
+
 Appendix A. How-to in Julia
+
 Appendix B. Additional Language Features
+
 Appendix C. Additional Packages
 
 
@@ -28,17 +34,6 @@ Appendix C. Additional Packages
 #### Install Julia > 1.6
 ```
 source scripts/install_julia 1 7 2
-```
-
-#### Install Python > 3.9
-```
-apt install -y python3-dev python3-pip
-```
-
-#### Install python libraries
-
-```
-python -m pip install -r src/c01_CallPython/requirements.txt
 ```
 
 #### Install Julia Packages

@@ -9,7 +9,7 @@ image:
 	docker build --progress=plain -t "ghcr.io/wilsonify/stats-with-julia:latest" -f Dockerfile .
 
 docker-test1:
-	docker run --rm --name stats-with-julia-tester ghcr.io/wilsonify/stats-with-julia:latest julia --project=~/.julia/environments/v1.9 /usr/src/app/test/runtests.jl
+	docker run --rm --name stats-with-julia-tester ghcr.io/wilsonify/stats-with-julia:latest
 
 docker-test2:
 	docker run --rm --name stats-with-julia-tester \
