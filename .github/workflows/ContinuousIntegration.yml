@@ -13,7 +13,6 @@ jobs:
       fail-fast: false
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
-        python-version: ['3.10']
     steps:
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
@@ -22,36 +21,17 @@ jobs:
         env:
           JULIA_DEPOT_PATH: ~/.julia
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-
       - name: Restore Cached Julia dependencies
         uses: actions/cache/restore@v3
         with:
           path: ~/.julia
           key: ${{ runner.os }}-julia-${{ matrix.version }}-${{ hashFiles('setup.jl') }}
 
-      - name: Restore Cached Python dependencies
-        uses: actions/cache/restore@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-python-${{ matrix.python-version }}-${{ hashFiles('**/requirements.txt') }}
-
-      - name: Install Python Dependencies
-        run: python -m pip install matplotlib textblob nltk
-
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install Package
+      - name: Install StatsWithJulia
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
       - name: Run Tests
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
-
-      - uses: julia-actions/julia-processcoverage@v1
-      - uses: codecov/codecov-action@v3
-        with:
-          file: lcov.info
