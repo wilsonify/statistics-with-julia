@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Julia Dependencies
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} setup.jl
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} scripts/setup.jl
         env:
           PYTHON: python
 
@@ -32,4 +32,4 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: ~/.julia
-          key: ${{ runner.os }}-julia-${{ matrix.version }}-${{ hashFiles('setup.jl') }}
+          key: ${{ runner.os }}-julia-${{ matrix.version }}-${{ hashFiles('scripts/setup.jl') }}
