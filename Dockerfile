@@ -3,7 +3,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 RUN julia --project=~/.julia/environments/v1.9 dev.jl
 ENTRYPOINT ["julia", "--project=~/.julia/environments/v1.9"]
-CMD ["test/runtests.jl"]
+CMD ["runtests.jl"]
 #RUN julia --project=/usr/src/app build.jl
 #FROM stats-with-julia-base:latest
 #COPY --from=builder /usr/src/app/dist/sysimage /usr/local/julia/sysimage

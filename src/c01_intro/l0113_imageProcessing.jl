@@ -32,7 +32,7 @@ end
 
 function main_image_processing()
     path_to_here = @__DIR__
-    path_to_data = abspath("$path_to_here/../../data")
+    path_to_data = abspath("$path_to_here/../../../data")
     image_path = load("$path_to_data/stars.png")
     img = load(image_path)
     gImg = grayscale_conversion(img)
