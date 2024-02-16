@@ -29,6 +29,8 @@ function main_l0431_directorySearch()
     directorySearch(@__DIR__,".jl")
 end
 
+export directorySearch
+
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0431_directorySearch()
 end

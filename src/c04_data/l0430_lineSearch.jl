@@ -36,6 +36,8 @@ function main_l0430_lineSearch()
     lineSearch("$path_to_data/earth.txt", "$path_to_data/waterLines.txt", "water")
 end
 
+export lineSearch
+
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0430_lineSearch()
 end

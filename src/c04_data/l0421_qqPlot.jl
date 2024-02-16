@@ -45,6 +45,7 @@ function main_l0421_qqPlot()
     plot(p1, p2, size = (800,400), margin = 5mm)
 end
 
+export generate_beta_data
 
 if abspath(PROGRAM_FILE) == @__FILE__
     main_l0421_qqPlot()

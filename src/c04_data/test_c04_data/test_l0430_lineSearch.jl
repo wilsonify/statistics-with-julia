@@ -1,4 +1,5 @@
 using Test
+using StatisticsWithJulia: lineSearch
 
 @testset "lineSearch test" begin
     path_to_here = @__DIR__

@@ -4,9 +4,12 @@ using CSV
 using CategoricalArrays
 using StatsPlots
 using Test
+using StatisticsWithJulia.IOLibrary: read_companyData
+
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")
-include("$(@__DIR__)/../io_library/read_companyData.jl")
+
+
 
 @testset "end-to-end" begin
     df = read_companyData("$path_to_data/companyData.csv")

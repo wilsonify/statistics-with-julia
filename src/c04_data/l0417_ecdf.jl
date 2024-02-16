@@ -70,3 +70,4 @@ if abspath(PROGRAM_FILE) == @__FILE__
 end
 
 export generate_mixture_data_ecdf
+export plot_mixCDF

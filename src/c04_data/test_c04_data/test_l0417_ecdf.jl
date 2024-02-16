@@ -1,7 +1,7 @@
 using Random
 using Distributions
 using StatsBase
-using StatisticsWithJulia: generate_mixture_data_ecdf
+using StatisticsWithJulia: generate_mixture_data_ecdf, plot_mixCDF
 using Plots; gr()
 using Test
 
