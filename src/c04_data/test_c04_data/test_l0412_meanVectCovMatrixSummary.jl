@@ -10,9 +10,10 @@ using StatisticsWithJulia: mvParams_to_string
 using StatisticsWithJulia: write_string_to_file
 using StatisticsWithJulia: read_mvParams
 using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
-include("$(@__DIR__)/../../src/io_library/read_temperatures.jl")
+using StatisticsWithJulia.IOLibrary: read_temperatures
 
-path_to_data = abspath("$(@__DIR__)/../../data")
+
+path_to_data = abspath("$(@__DIR__)/../../../data")
 
 @testset "read_temperatures test" begin
     df = read_temperatures("$path_to_data/temperatures.csv")

@@ -5,11 +5,11 @@ using Test
 include("$(@__DIR__)/../io_library/read_irisData.jl")
 
 @testset "read_iris_data test" begin
-    data = read_iris_from_csv("$(@__DIR__)/../../data/iris.csv")
+    data = read_iris_from_csv("$(@__DIR__)/../../../data/iris.csv")
     @test nrow(data) == 150
 end
 @testset "speciesNames test" begin
-    data = read_iris_from_csv("$(@__DIR__)/../../data/iris.csv")
+    data = read_iris_from_csv("$(@__DIR__)/../../../data/iris.csv")
     speciesNames = unique(data.Species)
     @test speciesNames == ["setosa", "versicolor", "virginica"]
 end

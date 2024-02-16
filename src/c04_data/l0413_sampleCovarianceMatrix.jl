@@ -36,13 +36,13 @@ end
 function sample_covariance_matrix1(X)
     n, p = size(X)
     xbarA = sample_mean_vector1(X)
-    first_term = (X .- xbarA')'
-    second_term = (X .- xbarA')
-    numerator = first_term * second_term
+    first_term = (X .- xbarA')
+    numerator = first_term' * first_term
     denominator = (n - 1)
     cov = numerator / denominator
     return cov
 end
+
 function sample_covariance_matrix2(X)
     n, p = size(X)
     Y = de_mean(X)
@@ -237,4 +237,5 @@ export sample_correlation_matrix3
 export sample_correlation_matrix4
 export sample_correlation_matrix5
 export sample_correlation_matrix6
-
+export Z_scores1
+export Z_scores2

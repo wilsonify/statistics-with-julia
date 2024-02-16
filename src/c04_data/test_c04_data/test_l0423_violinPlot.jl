@@ -2,7 +2,7 @@
 using StatsPlots
 
 @testset "read_iris_data test" begin
-    iris = read_iris_from_csv("$(@__DIR__)/../../data/iris.csv")
+    iris = read_iris_from_csv("$(@__DIR__)/../../../data/iris.csv")
     @df iris violin(:Species,
         :SepalLength,
         fill = :blue,

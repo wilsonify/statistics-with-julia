@@ -1,6 +1,6 @@
 # Bivariate normal data
 using Distributions, Plots
-include("$(@__DIR__)/../../data/mvParams.jl")
+include("$(@__DIR__)/../../../data/mvParams.jl")
 using Test
 @testset "end_to_end" begin
     biNorm = MvNormal(meanVect,covMat)
