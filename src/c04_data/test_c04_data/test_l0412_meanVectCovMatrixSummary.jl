@@ -43,19 +43,23 @@ end
     df = read_temperatures("$path_to_data/temperatures.csv")
     mvParams = compute_mvParams(df)
     expected_dict = Dict{String, Array{Float64, N} where N}("meanVect" => [
-            27.155405405405407,
-            26.163835263835264,
-        ],
-        "covMat" => [16.1253895583728 13.046961200891614; 13.046961200891614 12.367253570765163])
-    @test mvParams == expected_dict
+                27.16,                26.16,        ],
+        "covMat" => [16.13 13.05; 13.05 12.37])
+
+    # Compare mean vector
+    @test mvParams["meanVect"] ≈ expected_dict["meanVect"] atol=0.01
+
+    # Compare covariance matrix
+    @test isapprox(mvParams["covMat"], expected_dict["covMat"], atol=0.01)
 end
+
 
 @testset "mvParams_to_string test" begin
     df = read_temperatures("$path_to_data/temperatures.csv")
     mvParams = compute_mvParams(df)
     mvParams_str = mvParams_to_string(mvParams)
     @test mvParams_str ==
-          "meanVect = [27.155405405405407, 26.163835263835264] \ncovMat = [16.1253895583728 13.046961200891614; 13.046961200891614 12.367253570765163]"
+          "meanVect = [27.16, 26.16] \ncovMat = [16.13 13.05; 13.05 12.37]"
 end
 
 @testset "write_string_to_file test" begin

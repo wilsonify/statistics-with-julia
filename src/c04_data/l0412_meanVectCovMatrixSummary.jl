@@ -36,8 +36,11 @@ function compute_mvParams(data)
 end
 
 function mvParams_to_string(mvParams_dict)
-    return "meanVect = $(mvParams_dict["meanVect"]) \ncovMat = $(mvParams_dict["covMat"])"
+    meanVect_str = "meanVect = $(round.(mvParams_dict["meanVect"], digits=2))"
+    covMat_str = "covMat = $(join([join(round.(row, digits=2), " ") for row in mvParams_dict["covMat"]], "; "))"
+    return "$meanVect_str \n$covMat_str"
 end
+
 
 function write_string_to_file(string_to_write, output_file_path)
     # we save meanVect and covMat to the new Julia file, mvParams.jl.
