@@ -1,6 +1,7 @@
 using Test
+using StatisticsWithJulia
 
-@time @testset "smoke Test" begin
+@testset "smoke Test" begin
     println("VERSION = $VERSION")
     @test true
 end

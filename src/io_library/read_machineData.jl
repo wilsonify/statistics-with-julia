@@ -1,5 +1,5 @@
 using CSV
-using DataFrame
+using DataFrames
 
 read_machine_data(path) = CSV.read(path, DataFrame, header=false)
 
