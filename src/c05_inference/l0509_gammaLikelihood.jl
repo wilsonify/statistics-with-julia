@@ -3,8 +3,8 @@ Likelihood function for a gamma distribution.
 =#
 using Random, Distributions, LaTeXStrings, Plots; gr()
 
-function generate_Gamma()
-    gammaDist = Gamma(actualAlpha, 1 / actualLambda)
+function generate_Gamma(a,l,n)
+    gammaDist = Gamma(a, 1 / l)
     sample = rand(gammaDist, n)
     return sample
 end
@@ -56,7 +56,8 @@ end
 using Test
 
 @testset "generate_Gamma" begin
-    result = generate_Gamma()
+    actualAlpha, actualLambda = 2, 3
+    result = generate_Gamma(actualAlpha, actualLambda,10^2)
     @test length(result) == 100
 end
 
