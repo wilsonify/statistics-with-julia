@@ -1,7 +1,7 @@
 # Editing and copying a DataFrame
 
 using DataFrames
-using DataFrames: rename!
+
 using CSV
 
 using .IOLibrary: read_purchaseData
@@ -30,7 +30,7 @@ function division_on_every_price(data)
 function rename_price(data)
     # rename!() is used to rename the :Price column as shown, with a pair of values,
     # separated via =>, given as the second argument.
-    rename!(data, :Price => Symbol("Price(000's)"))
+    DataFrames.rename!(data, :Price => Symbol("Price(000's)"))
     return data
 end
 

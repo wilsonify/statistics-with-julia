@@ -57,28 +57,5 @@ function main_l0501_statisticsOfARandomSample()
     stephist!(variances, bins = 600, c = :red, normed = true,        label = "Histogram of Sample Variances", xlims = (0,40), ylims = (0,0.4),            xlabel = "Statistic value", ylabel = "Density")
 end
 
+export simulate_exponential_samples
 
-using Test
-@testset "Exponential Distribution Test" begin
-    lambda = 4.5  # Adjust lambda value as needed
-    n = 10
-    N = 1000
-
-    means, variances = simulate_exponential_samples(lambda, n, N)
-    # for an exponential distribution with rate λ,
-    # the mean is λ−1 and the variance is λ−2.
-    expected_mean = 1 / lambda
-    expected_var = 1 / lambda^2
-
-    expDist = Exponential(1 / lambda)
-    actual_mean = mean(expDist)
-    actual_var = var(expDist)
-
-    mean_of_sampled_means = mean(means)
-    mean_of_sampled_vars = mean(variances)
-
-    @test round(actual_mean,2) == round(expected_mean,2)
-    @test round(mean_of_sampled_means,2) == round(expected_mean,2)
-    @test round(expected_var,2) == round(expected_var,2)
-    @test round(mean_of_sampled_vars,2) == round(expected_var,2)
-end

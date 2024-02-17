@@ -1,4 +1,4 @@
-# Coin ﬂipping and the binomial distribution
+# Coin flipping and the binomial distribution
 using StatsBase, Distributions, Plots; gr()
 
 # define the binomial Randome Variable function.

@@ -49,7 +49,7 @@ function keep_complete_grade_and_price(data)
     # and we remove them if present.
     # First ismissing() is applied element-wise over all values in each column,
     # .& is then used to evaluate to true if both columns contain missing,
-    # and finally the preceding .! is used to ﬂip the result,
+    # and finally the preceding .! is used to flip the result,
     # evaluating to true if the row should be kept.
     # In our example, there are no rows with missing values in both columns, so all rows are kept.
     rowsKeep = .!(ismissing.(data.Grade) .& ismissing.(data.Price))
