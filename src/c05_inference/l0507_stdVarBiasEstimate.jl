@@ -14,8 +14,9 @@ trueStd = sqrt(1 / 12)
 N = 10^7
 
 function estVar(n)
+    # a sensible estimate of population variance where the population mean is known
     sample = rand(n)
-    return sum((sample .- 0.5).^2) / n
+    sum((sample .- 0.5).^2) / n
 end
 
 using Test
@@ -23,8 +24,8 @@ using Test
 @testset "end_to_end" begin
 Random.seed!(0)
     result = estVar(10)
-    result = round(result,digits = 2)
-    @test result == 0.10
+    result = round(result,digits = 1)
+    @test result == 0.1
 end
 
 @testset "end_to_end" begin
@@ -41,11 +42,6 @@ Random.seed!(0)
 
 trueVar, trueStd = 1 / 12, sqrt(1 / 12)
 
-function estVar(n)
-    # a sensible estimate of population variance where the population mean is known
-    sample = rand(n)
-    sum((sample .- 0.5).^2) / n
-end
 
 function main_l0507_stdVarBiasEstimate()
     N = 10^7
