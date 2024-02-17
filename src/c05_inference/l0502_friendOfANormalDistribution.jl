@@ -3,8 +3,9 @@ Histograms of the simulated sample means, sample variances, and T-statistics
 against their analytic counterparts.
 =#
 
-using Distributions, Plots; gr()
-using Distributions, Plots; gr()
+using Distributions
+using Plots; gr()
+
 
 function simulate_normal_samples(mu, sigma, n, N)
     sMeans = Array{Float64}(undef, N)
@@ -72,99 +73,6 @@ function main_friends_of_the_normal_distribution()
     p3 = plot_t_stats(tStats, n)
     plot(p1, p2, p3, layout=(1, 3), size=(1200, 400))
 end
-
-using Test
-
-@testset "end-to-end" begin
-    using Distributions, Plots
-    mu, sigma = 10, 4
-    n, N = 10, 10^3
-    sMeans, sVars, tStats = simulate_normal_samples(mu, sigma, n, N)
-
-    @test length(sMeans) == N
-    @test length(sVars) == N
-    @test length(tStats) == N
-
-    xRangeMean = 5:0.1:15
-    xRangeVar = 0:0.1:60
-    xRangeTStat = -5:0.1:5
-
-    yMeanDensity = compute_yMeanDensity(mu, sigma, xRangeMean)
-    yVarDensity = compute_yVarDensity(sigma, xRangeVar)
-    yTStatDensity = compute_yTStatDensity(xRangeTStat)
-
-    @test length(yMeanDensity) == 101
-    @test length(yVarDensity) == 601
-    @test length(yTStatDensity) == 101
-
-
-    p1 = stephist(sMeans, bins=50, c=:blue, normed=true, legend=false)
-    p1 = plot!(xRangeMean, yMeanDensity, c=:red, xlims=(5, 15), ylims=(0, 0.35), xlabel="Sample mean", ylabel="Density")
-
-    p2 = stephist(sVars, bins=50, c=:blue, normed=true, label="Simulated")
-    p2 = plot!(xRangeVar, yVarDensity, c=:red, label="Analytic", xlims=(0, 60), ylims=(0, 0.06), xlabel="Sample Variance", ylabel="Density")
-
-    p3 = stephist(tStats, bins=100, c=:blue, normed=true, legend=false)
-    p3 = plot!(xRangeTStat, yTStatDensity, c=:red, xlims=(-5, 5), ylims=(0, 0.4), xlabel="t-statistic", ylabel="Density")
-
-    plot(p1, p2, p3, layout=(1, 3), size=(1200, 400))
-
-end
-
-
-# Function to test if two histograms are approximately equal
-function test_histogram_equality(data, expected, label)
-    bins = 200
-    δ = 0.1
-    hist_data, edges = histogram(data, bins=bins, density=true)
-    hist_expected, _ = histogram(expected, bins=bins, density=true)
-    test = abs(hist_data .- hist_expected) .< δ
-    @test all(test) do
-        println("Histogram test failed for $label")
-        return false
-    end
-    return true
-end
-
-@testset "Statistical Simulations" begin
-    mu, sigma = 10, 4
-    n, N = 10, 10^6
-    sMeans, sVars, tStats = simulate_normal_samples(mu, sigma, n, N)
-    @test length(sMeans) == N
-    @test length(sVars) == N
-    @test length(tStats) == N
-end
-@testset "Sample Means" begin
-    mu, sigma = 10, 4
-    n, N = 10, 10^6
-    sMeans, sVars, tStats = simulate_normal_samples(mu, sigma, n, N)
-
-    label = "Sample Means"
-    p1 = plot_sample_means(sMeans, mu, sigma, n)
-
-end
-
-@testset "Sample Variances" begin
-    mu, sigma = 10, 4
-    n, N = 10, 10^6
-    sMeans, sVars, tStats = simulate_normal_samples(mu, sigma, n, N)
-
-
-    label = "Sample Variances"
-    p2 = plot_sample_vars(sVars, n, sigma)
-
-end
-
-@testset "t-Statistics" begin
-    mu, sigma = 10, 4
-    n, N = 10, 10^6
-    sMeans, sVars, tStats = simulate_normal_samples(mu, sigma, n, N)
-
-    label = "t-Statistics"
-    p3 = plot_t_stats(tStats, n)
-end
-
-
 
 function main_l0502_friendOfANormalDistribution()
     # specify the parameters of the underlying normal distribution

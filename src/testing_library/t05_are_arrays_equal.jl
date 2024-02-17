@@ -21,5 +21,19 @@ function is_array_equal(arr1, arr2)
     return true
 end
 
+# Function to test if two histograms are approximately equal
+function is_histogram_equal(data, expected, label)
+    bins = 200
+    δ = 0.1
+    hist_data, edges = histogram(data, bins=bins, density=true)
+    hist_expected, _ = histogram(expected, bins=bins, density=true)
+    test = abs(hist_data .- hist_expected) .< δ
+    @test all(test) do
+        println("Histogram test failed for $label")
+        return false
+    end
+    return true
+end
+
 export is_all_approx_array
 export is_array_equal
