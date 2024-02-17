@@ -9,38 +9,6 @@ function simulate_exponential_samples(lambda, n, N)
     Random.seed!(0)
 
     expDist = Exponential(1 / lambda)
-    means = Array{Float64}(undef, N)
-    variances = Array{Float64}(undef, N)
-
-    for i in 1:N
-        data = rand(expDist, n)
-        means[i] = mean(data)
-        variances[i] = var(data)
-    end
-
-    return means, variances
-end
-
-function run_exponential_distribution_test(lambda, n, N)
-    means, variances = simulate_exponential_samples(lambda, n, N)
-
-    actual_mean = mean(Exponential(1 / lambda))
-    actual_variance = var(Exponential(1 / lambda))
-
-    return means, variances, actual_mean, actual_variance
-end
-
-function main_l0501_statisticsOfARandomSample()
-    Random.seed!(0)
-    lambda = 1 / 4.5
-    expDist = Exponential(1 / lambda)
-    n, N    = 10, 10^6
-
-    # for an exponential distribution with rate λ,
-    # the mean is λ−1 and the variance is λ−2.
-    expected_mean = lambda - 1.0
-    expected_var = lambda - 2.0
-
     # initialize empty array for means
     means = Array{Float64}(undef, N)
     # initialize empty array for variances
@@ -54,20 +22,40 @@ function main_l0501_statisticsOfARandomSample()
         variances[i] = var(data)
     end
 
+    return means, variances
+end
+
+
+function main_l0501_statisticsOfARandomSample()
+    Random.seed!(0)
+    lambda = 1 / 4.5
+    n, N    = 10, 10^6
+
+    # for an exponential distribution with rate λ,
+    # the mean is λ−1 and the variance is λ−2.
+    expected_mean = 1 / lambda
+    expected_var = 1 / lambda^2
+
+    expDist = Exponential(1 / lambda)
+    actual_mean = mean(expDist)
+    actual_var = var(expDist)
+
+    means, variances = simulate_exponential_samples(lambda, n, N)
+
+    mean_of_sampled_means = mean(means)
+    mean_of_sampled_vars = mean(variances)
     # the estimated expected value of our simulated data is a good approximation of the underlying exponential distribution.
     println("Expected mean:", expected_mean)
-    println("Actual mean:",mean(expDist))
-    println("Mean of sample means:",mean(means))
+    println("Actual mean:",actual_mean)
+    println("Mean of sample means:",mean_of_sampled)
 
     println("Expected variance:", expected_var)
-    println("Actual variance: ",var(expDist))
-    println("Mean of sample variances: ",mean(variances))
+    println("Actual variance: ",actual_var)
+    println("Mean of sample variances: ", mean_of_sampled_vars)
 
     stephist(means, bins = 200, c = :blue, normed = true,        label = "Histogram of Sample Means")
     stephist!(variances, bins = 600, c = :red, normed = true,        label = "Histogram of Sample Variances", xlims = (0,40), ylims = (0,0.4),            xlabel = "Statistic value", ylabel = "Density")
 end
-
-
 
 
 using Test
@@ -76,11 +64,21 @@ using Test
     n = 10
     N = 1000
 
-    means, variances, actual_mean, actual_variance = run_exponential_distribution_test(lambda, n, N)
+    means, variances = simulate_exponential_samples(lambda, n, N)
+    # for an exponential distribution with rate λ,
+    # the mean is λ−1 and the variance is λ−2.
+    expected_mean = 1 / lambda
+    expected_var = 1 / lambda^2
 
-    # Test the calculated mean
-    @test isapprox(mean(means), actual_mean, atol = 0.05)
+    expDist = Exponential(1 / lambda)
+    actual_mean = mean(expDist)
+    actual_var = var(expDist)
 
-    # Test the calculated variance
-    @test isapprox(mean(variances), actual_variance, atol = 0.05)
+    mean_of_sampled_means = mean(means)
+    mean_of_sampled_vars = mean(variances)
+
+    @test round(actual_mean,2) == round(expected_mean,2)
+    @test round(mean_of_sampled_means,2) == round(expected_mean,2)
+    @test round(expected_var,2) == round(expected_var,2)
+    @test round(mean_of_sampled_vars,2) == round(expected_var,2)
 end
