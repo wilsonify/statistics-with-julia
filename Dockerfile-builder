@@ -1,5 +1,3 @@
 FROM ghcr.io/wilsonify/stats-with-julia-base:latest
-RUN mkdir -p /usr/src/app
 COPY scripts/setup.jl /usr/src/scripts/setup.jl
-WORKDIR /usr/src/app
-RUN julia --project=~/.julia/environments/v1.9 scripts/setup.jl
+RUN julia --project=~/.julia/environments/v1.9 /usr/src/scripts/setup.jl
