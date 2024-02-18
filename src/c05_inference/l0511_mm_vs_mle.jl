@@ -1,12 +1,14 @@
 #=
-Comparing the method of moments and MLE in terms of MSE, variance, and bias.
+Comparing the method of moments and Maximum Liklihood Estimate in terms of mean squared error, variance, and bias.
 =#
 using Distributions, Plots; gr()
-# Method of Moments vs
+
 using Distributions, Plots; gr()
 
 trueA = -2
 trueB = 5
+
+# specify the two estimators MLEest() and MMest().
 MLEest(data) = maximum(data)
 MMest(data) = mean(data) + sqrt(3) * std(data)
 
@@ -60,9 +62,7 @@ end
 
 
 
-# specify the two estimators MLEest() and MMest().
-MLEest(data) = maximum(data)
-MMest(data) = mean(data) + sqrt(3) * std(data)
+
 
 function main_l0511_mm_vs_mle()
     # specify the minimum, maximum and step size for sample size observations.

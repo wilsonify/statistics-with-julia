@@ -7,11 +7,10 @@ In a speciﬁc sample, the test statistic is on the red line and we reject H0 .
 using Distributions, Random, Statistics, Plots; gr()
 using Distributions, Random, Statistics, Plots; gr()
 
-ts(sample) = maximum(sample) - minimum(sample)
-
-
 # ts() calculates the test statistic from a sample.
 ts(sample) = maximum(sample) - minimum(sample)
+
+
 
 function main_l0514_teststatPvalRejectregion()
     Random.seed!(2)

@@ -35,10 +35,6 @@ function run_simulation(N)
 end
 
 
-alpha = 0.05
-L(obs) = obs - (1 - sqrt(alpha))
-U(obs) = obs + (1 - sqrt(alpha))
-
 function main_l0513_ciCoverage()
     Random.seed!(2)
     mu = 5.57

@@ -11,6 +11,9 @@ image:
 docker-test1:
 	docker run --rm --name stats-with-julia-tester ghcr.io/wilsonify/stats-with-julia:latest
 
+docker-test-remote:
+	docker pull ghcr.io/wilsonify/stats-with-julia:latest
+
 docker-test2:
 	docker run --rm --name stats-with-julia-tester \
 	-v $(shell pwd)/src:/usr/src/app/src \
