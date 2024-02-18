@@ -3,7 +3,7 @@ Histogram of the ratio of two sample variances
 against the PDF of an F-distribution.
 =#
 using Distributions, Plots; gr()
-using Distributions, Plots; gr()
+
 
 function generate_fValues(N, mu, sigma)
     n1, n2 = 10, 15
@@ -24,22 +24,6 @@ function plot_fValues(fValues)
     plot!(fRange, pdf.(FDist(n1 - 1, n2 - 1), fRange), c = :red, label = "Analytic", xlims = (0,5), ylims = (0,0.8), xlabel = "F", ylabel = "Density")
 end
 
-@testset "generate_fValues test" begin
-N = 1000
-mu, sigma = 10, 4
-normDist = Normal(mu,sigma)
-fValues = generate_fValues(N,mu,sigma)
-@test length(fValues) == N
-end
-
-@testset "end-to-end" begin
-
-N = 10^6
-mu, sigma = 10, 4
-normDist = Normal(mu,sigma)
-fValues = generate_fValues(N,mu,sigma)
-plot_fValues(fValues)
-end
 
 
 

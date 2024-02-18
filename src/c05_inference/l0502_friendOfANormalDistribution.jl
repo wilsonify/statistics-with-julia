@@ -126,3 +126,5 @@ function main_l0502_friendOfANormalDistribution()
     p3 = plot!(xRangeTStat, sample_tstat_pfd, xRangeTStat, c = :red, xlims = (-5,5), ylims = (0,0.4), xlabel = "t-statistic",ylabel = "Density")
     plot(p1, p2, p3, layout = (1,3), size=(1200, 400))
 end
+
+export simulate_normal_samples

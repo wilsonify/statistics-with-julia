@@ -1,4 +1,5 @@
 using Test
+using StatisticsWithJulia: simulate_normal_samples
 
 @testset "end-to-end" begin
     using Distributions, Plots
