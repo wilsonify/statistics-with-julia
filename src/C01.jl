@@ -1,6 +1,5 @@
 
 module c01_intro
-    include("c01_CallC/l0121_usingC.jl")
     include("c01_intro/l0101_helloWorld.jl")
     include("c01_intro/l0102_comprehension.jl")
     include("c01_intro/l0103_slow.jl")
@@ -17,4 +16,5 @@ module c01_intro
     include("c01_intro/l0115_piEstimate.jl")
     include("c01_intro/l0116_lcg.jl")
     include("c01_intro/l0117_randomWalks.jl")
+    include("c01_intro/l0121_usingC.jl")
 end

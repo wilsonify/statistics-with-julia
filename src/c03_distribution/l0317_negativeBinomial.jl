@@ -1,5 +1,5 @@
 # The negative binomial distribution
-import .StatisticsWithJulia.c03_distribution: rouletteSpins
+
 using StatsBase, Distributions, Plots; gr()
 function rouletteSpins(r, p)
     x = 0

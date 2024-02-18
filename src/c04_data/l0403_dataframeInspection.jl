@@ -1,7 +1,7 @@
 # Creating and inspecting a DataFrame
 using DataFrames # use the DataFrames package to use DataFrame type objects.
 using CSV # We also use the CSV package for reading csv files.
-using .IOLibrary: read_purchaseData
+using .StatisticsWithJulia.IOLibrary: read_purchaseData
 
 function get_size(data)
     # the size() function returns the number of rows and columns of the data frame as a tuple.
