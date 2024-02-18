@@ -1,6 +1,6 @@
 # Families of continuous distributions
-using StatisticsWithJulia: summarize_dist
-using StatisticsWithJulia: range_of_dist
+using StatisticsWithJulia.c03_distribution: summarize_dist
+using StatisticsWithJulia.c03_distribution: range_of_dist
 using Distributions
 using Test
 dists = [

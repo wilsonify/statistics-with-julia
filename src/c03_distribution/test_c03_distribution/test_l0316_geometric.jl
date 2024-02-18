@@ -1,4 +1,4 @@
-using StatisticsWithJulia: rouletteSpins
+using StatisticsWithJulia.c03_distribution: rouletteSpins
 using StatsBase, Distributions, Plots
 using Test
 @testset "end_to_end" begin

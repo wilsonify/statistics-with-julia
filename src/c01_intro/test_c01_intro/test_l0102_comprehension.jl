@@ -1,8 +1,8 @@
 using Test
 
-using StatisticsWithJulia: comprehension_sqrt
-using StatisticsWithJulia: comprehension_polynomial
-using StatisticsWithJulia: broadcast_round
+using StatisticsWithJulia.c01_intro: comprehension_sqrt
+using StatisticsWithJulia.c01_intro: comprehension_polynomial
+using StatisticsWithJulia.c01_intro: broadcast_round
 
 @testset "Test comprehension_sqrt function" begin
     result = comprehension_sqrt(0:10)

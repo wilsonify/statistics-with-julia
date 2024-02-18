@@ -1,0 +1,21 @@
+
+module c10_simulation
+    include("c10_simulation/l1001_predatorPrey.jl")
+    include("c10_simulation/l1002_springMass.jl")
+    include("c10_simulation/l1003_seir.jl")
+    include("c10_simulation/l1004_simpleMarkov.jl")
+    include("c10_simulation/l1005_mcTransientCalculation.jl")
+    include("c10_simulation/l1006_catMouse.jl")
+    include("c10_simulation/l1007_qMatrixSimulation.jl")
+    include("c10_simulation/l1008_mm1Gillespie.jl")
+    include("c10_simulation/l1009_SEIRStoch.jl")
+    include("c10_simulation/l1010_DESqueue.jl")
+    include("c10_simulation/l1011_mm1DESwaitingTimes.jl")
+    include("c10_simulation/l1012_predatorPreyStoch.jl")
+    include("c10_simulation/l1013_kalman.jl")
+    include("c10_simulation/l1013_temperatureNoise.jl")
+    include("c10_simulation/l1014_reliability.jl")
+    include("c10_simulation/l1015_networkLifeTime.jl")
+    include("c10_simulation/l1016_basicCRN.jl")
+    include("c10_simulation/l1017_twoRNGs.jl")
+end

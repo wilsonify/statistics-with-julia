@@ -2,12 +2,12 @@ using Statistics
 using DataFrames
 using CSV
 using Test
-using StatisticsWithJulia: calculate_mean_price_no_missing
-using StatisticsWithJulia: calculate_nanmean_price
-using StatisticsWithJulia: sum_is_missing_name
-using StatisticsWithJulia: replace_all_missing_grades
-using StatisticsWithJulia: dropmissing_price
-using StatisticsWithJulia: findall_complete
+using StatisticsWithJulia.c04_data: calculate_mean_price_no_missing
+using StatisticsWithJulia.c04_data: calculate_nanmean_price
+using StatisticsWithJulia.c04_data: sum_is_missing_name
+using StatisticsWithJulia.c04_data: replace_all_missing_grades
+using StatisticsWithJulia.c04_data: dropmissing_price
+using StatisticsWithJulia.c04_data: findall_complete
 using StatisticsWithJulia.TestingLibrary: are_lists_equal
 using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 

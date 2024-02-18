@@ -1,7 +1,7 @@
-using StatisticsWithJulia: calculate_steady_state_matrix_exponentiation
-using StatisticsWithJulia: calculate_steady_state_linear_system
-using StatisticsWithJulia: calculate_steady_state_eigenvalues
-using StatisticsWithJulia: calculate_steady_state_monte_carlo
+using StatisticsWithJulia.c01_intro: calculate_steady_state_matrix_exponentiation
+using StatisticsWithJulia.c01_intro: calculate_steady_state_linear_system
+using StatisticsWithJulia.c01_intro: calculate_steady_state_eigenvalues
+using StatisticsWithJulia.c01_intro: calculate_steady_state_monte_carlo
 
 using Test
 

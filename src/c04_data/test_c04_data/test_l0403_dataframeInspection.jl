@@ -1,9 +1,9 @@
 # Creating and inspecting a DataFrame
-using StatisticsWithJulia: get_size
-using StatisticsWithJulia: get_column_names
-using StatisticsWithJulia: get_head
-using StatisticsWithJulia: get_tail
-using StatisticsWithJulia: get_description
+using StatisticsWithJulia.c04_data: get_size
+using StatisticsWithJulia.c04_data: get_column_names
+using StatisticsWithJulia.c04_data: get_head
+using StatisticsWithJulia.c04_data: get_tail
+using StatisticsWithJulia.c04_data: get_description
 using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
 using DataFrames

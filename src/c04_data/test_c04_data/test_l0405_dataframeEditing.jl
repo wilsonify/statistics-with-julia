@@ -3,10 +3,10 @@ using CSV
 using Test
 using StatisticsWithJulia.IOLibrary: read_purchaseData_immutable
 using StatisticsWithJulia.IOLibrary: read_purchaseData_mutable
-using StatisticsWithJulia: maybe_set_first_name
-using StatisticsWithJulia: division_on_every_price
-using StatisticsWithJulia: rename_price
-using StatisticsWithJulia: recode_grade
+using StatisticsWithJulia.c04_data: maybe_set_first_name
+using StatisticsWithJulia.c04_data: division_on_every_price
+using StatisticsWithJulia.c04_data: rename_price
+using StatisticsWithJulia.c04_data: recode_grade
 using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 
 path_to_here = @__DIR__

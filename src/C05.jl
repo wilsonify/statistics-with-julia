@@ -1,0 +1,23 @@
+
+module c05_inference
+    include("c05_inference/l0501_statisticsOfARandomSample.jl")
+    include("c05_inference/l0502_friendOfANormalDistribution.jl")
+    include("c05_inference/l0503_meanVarIndependence.jl")
+    include("c05_inference/l0504_tDistribution.jl")
+    include("c05_inference/l0505_fDistribution.jl")
+    include("c05_inference/l0506_centralLimitTheorem.jl")
+    include("c05_inference/l0507_stdVarBiasEstimate.jl")
+    include("c05_inference/l0508_parametersNumerical.jl")
+    include("c05_inference/l0509_gammaLikelihood.jl")
+    include("c05_inference/l0510_mleGamma.jl")
+    include("c05_inference/l0511_mm_vs_mle.jl")
+    include("c05_inference/l0512_confidenceIntervalConcept.jl")
+    include("c05_inference/l0513_ciCoverage.jl")
+    include("c05_inference/l0514_teststatPvalRejectregion.jl")
+    include("c05_inference/l0515_simpleHypothesisTest.jl")
+    include("c05_inference/l0516_receiverOperatingCurve.jl")
+    include("c05_inference/l0517_randomizationTest.jl")
+    include("c05_inference/l0518_bayesUnivariate.jl")
+    include("c05_inference/l0519_bayesUnivariateConjugate.jl")
+    include("c05_inference/l0520_bayesMCMC.jl")
+end

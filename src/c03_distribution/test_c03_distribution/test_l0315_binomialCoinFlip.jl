@@ -1,4 +1,4 @@
-using StatisticsWithJulia: binomialRV
+using StatisticsWithJulia.c03_distribution: binomialRV
 using StatsBase
 using Distributions
 using Test

@@ -1,4 +1,4 @@
-using StatisticsWithJulia: random_walk
+using StatisticsWithJulia.c01_intro: random_walk
 using Test
 
 # Define a test for the random_walk function

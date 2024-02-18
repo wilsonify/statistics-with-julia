@@ -10,16 +10,11 @@ using Distributions, LaTeXStrings, Plots; gr()
 using Distributions, LaTeXStrings, Random, Plots; gr()
 
 function statPair(dist, n)
-    sample = rand(dist,n)
+    # takes a distribution and integer n as input,
+    # returns the sample mean and sample variance as an array.
+    sample = rand(dist,n) # generate a random sample of size n
     [mean(sample), var(sample)]
 end
-
-
-function sim_dataUni(N, n)
-    stdUni = Uniform(-sqrt(3),sqrt(3))
-    result = [statPair(stdUni,n) for _ in 1:N]
-    return result
-    end
 
 function sim_dataUniInd(N, n)
     stdUni = Uniform(-sqrt(3),sqrt(3))
@@ -39,8 +34,6 @@ function sim_dataNormInd(N, n)
      return result
      end
 
-
-
 function plot_swarm_uniform(dataUni, dataUniInd)
     p1 = scatter(first.(dataUni), last.(dataUni),  c = :blue, ms = 1, msw = 0, label = "Same group")
     p1 = scatter!(first.(dataUniInd), last.(dataUniInd),  c = :red, ms = 0.8, msw = 0, label = "Separate group", xlabel = L"\overline{X}", ylabel = L"S^2")
@@ -51,15 +44,6 @@ function plot_swarm_normal(dataNorm, dataNormInd)
     p2 = scatter(first.(dataNorm), last.(dataNorm),  c = :blue, ms = 1, msw = 0, label = "Same group")
     p2 = scatter!(first.(dataNormInd), last.(dataNormInd), c=:red, ms=0.8, msw=0, label="Separate group", xlabel=L"\overline{X}", ylabel=L"$S^2$")
 return p2
-end
-
-
-
-function statPair(dist, n)
-    # takes a distribution and integer n as input,
-    # returns the sample mean and sample variance as an array.
-    sample = rand(dist,n) # generate a random sample of size n
-    [mean(sample), var(sample)]
 end
 
 function main_l0503_meanVarIndependence()

@@ -1,6 +1,6 @@
 # Call by value vs. call by reference
-using StatisticsWithJulia: f_mutable
-using StatisticsWithJulia: f_immutable
+using StatisticsWithJulia.c04_data: f_mutable
+using StatisticsWithJulia.c04_data: f_immutable
 using Test
 
 @testset "f_immutable" begin

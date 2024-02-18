@@ -1,5 +1,5 @@
-using StatisticsWithJulia: update_data_and_sum
-using StatisticsWithJulia: sum_data_in_function
+using StatisticsWithJulia.c01_intro: update_data_and_sum
+using StatisticsWithJulia.c01_intro: sum_data_in_function
 using Test
 
 # Define a test for the update_data_and_sum function

@@ -1,5 +1,5 @@
 # Variance of X as the mean of Y
-using StatisticsWithJulia: variance_transform
+using StatisticsWithJulia.c03_distribution: variance_transform
 using Distributions, Plots; gr()
 using Test
 @testset "end_to_end" begin

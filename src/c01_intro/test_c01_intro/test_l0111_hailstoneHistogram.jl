@@ -1,7 +1,7 @@
 
-using StatisticsWithJulia: hailLength
-using StatisticsWithJulia: generate_hailstone_lengths
-using StatisticsWithJulia: plot_hailstone_lengths
+using StatisticsWithJulia.c01_intro: hailLength
+using StatisticsWithJulia.c01_intro: generate_hailstone_lengths
+using StatisticsWithJulia.c01_intro: plot_hailstone_lengths
 using Test
 
 # Define a test for the hailLength function

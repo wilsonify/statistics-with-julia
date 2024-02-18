@@ -1,6 +1,6 @@
 # Slow code example
-using StatisticsWithJulia: generate_random_data_slowly
-using StatisticsWithJulia: calculate_quantiles
+using StatisticsWithJulia.c01_intro: generate_random_data_slowly
+using StatisticsWithJulia.c01_intro: calculate_quantiles
 using Statistics, Random, Test
 
 @testset "Test generate_random_data_slowly function" begin

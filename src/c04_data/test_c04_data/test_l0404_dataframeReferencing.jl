@@ -8,12 +8,12 @@
 #
 # For this reason CSV.read by default reads in narrow string columns using these fixed-width types.
 
-using StatisticsWithJulia: get_grade1,get_grade2,get_grade3
-using StatisticsWithJulia: get_names1,get_names2,get_names3
+using StatisticsWithJulia.c04_data: get_grade1,get_grade2,get_grade3
+using StatisticsWithJulia.c04_data: get_names1,get_names2,get_names3
+using StatisticsWithJulia.c04_data: read_purchaseData
+using StatisticsWithJulia.c04_data: get_purchases
 using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 using StatisticsWithJulia.TestingLibrary: are_lists_equal
-using StatisticsWithJulia: read_purchaseData
-using StatisticsWithJulia: get_purchases
 using DataFrames
 using CSV
 using InlineStrings # we need String15 available for testing

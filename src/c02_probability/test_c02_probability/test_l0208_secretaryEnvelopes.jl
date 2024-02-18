@@ -1,7 +1,7 @@
 
-using StatisticsWithJulia: bruteSetsProbabilityAllMiss
-using StatisticsWithJulia: formulaCalcAllMiss
-using StatisticsWithJulia: mcAllMiss
+using StatisticsWithJulia.c02_probability: bruteSetsProbabilityAllMiss
+using StatisticsWithJulia.c02_probability: formulaCalcAllMiss
+using StatisticsWithJulia.c02_probability: mcAllMiss
 using Test
 using Random
 Random.seed!(1)

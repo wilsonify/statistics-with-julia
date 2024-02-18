@@ -3,16 +3,20 @@ As the number of degrees of freedom (DOF) increases,
 the T-distribution approaches that of the normal distribution.
 =#
 
-using Distributions, Random, Plots; gr()
+using Distributions
+using Random
+using Plots; gr()
 
+function myT(nObs)
+    # generates a T-distributed random variable
+    # using a standard normal and a chi-squared random variable.
+    dof = (nObs - 1)
+    numer = rand(Normal())
+    denom = sqrt(rand(Chisq(dof)) / dof )
+    return numer / denom
+end
 
-
-n, N, alpha = 3, 10^7, 0.1
-xGrid = -5:0.1:5
-
-myT(nObs) = rand(Normal()) / sqrt(rand(Chisq(nObs - 1)) / (nObs - 1))
-
-function compute_mcQuantile(N, n)
+function compute_mcQuantile(N, n, alpha)
     mcQuantile = quantile([myT(n) for _ in 1:N],alpha)
     return mcQuantile
     end
@@ -30,21 +34,10 @@ function plot_quantiles()
     end
 
 
-
-
-
-
-
-function myT(nObs)
-    # generates a T-distributed random variable
-    # using a standard normal and a chi-squared random variable.
-    dof = (nObs - 1)
-    numer = rand(Normal())
-    denom = sqrt(rand(Chisq(dof)) / dof )
-    return numer / denom
-end
-
 function main_l0504_tDistribution()
+    n, N, alpha = 3, 10^7, 0.1
+    xGrid = -5:0.1:5
+
     # estimate the alpha quantile using N replications
     mcQuantile = quantile([myT(n) for _ in 1:N],alpha)
 
@@ -67,3 +60,4 @@ function main_l0504_tDistribution()
 end
 
 export myT
+export compute_mcQuantile

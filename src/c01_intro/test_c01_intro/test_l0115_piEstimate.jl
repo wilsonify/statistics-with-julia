@@ -1,4 +1,4 @@
-using StatisticsWithJulia: estimate_pi
+using StatisticsWithJulia.c01_intro: estimate_pi
 using LinearAlgebra: norm
 using Test
 

@@ -1,5 +1,5 @@
 # Tests for Bubble sort
-using StatisticsWithJulia: bubbleSort!
+using StatisticsWithJulia.c01_intro: bubbleSort!
 using Test
 
 @testset "Test bubbleSort function" begin

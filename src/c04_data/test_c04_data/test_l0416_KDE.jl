@@ -3,7 +3,7 @@ using Distributions
 using KernelDensity
 using Plots; gr()
 using Test
-using StatisticsWithJulia: generate_mixture_data
+using StatisticsWithJulia.c04_data: generate_mixture_data
 
 
 @testset "KDE Density Plot Test" begin

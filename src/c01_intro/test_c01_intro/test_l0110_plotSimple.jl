@@ -1,7 +1,7 @@
-using StatisticsWithJulia: plot_p1
-using StatisticsWithJulia: plot_p2
-using StatisticsWithJulia: plot_p3
-using StatisticsWithJulia: plot_function
+using StatisticsWithJulia.c01_intro: plot_p1
+using StatisticsWithJulia.c01_intro: plot_p2
+using StatisticsWithJulia.c01_intro: plot_p3
+using StatisticsWithJulia.c01_intro: plot_function
 using Plots; gr()
 using Test
 

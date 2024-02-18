@@ -1,5 +1,5 @@
 # The Poisson distribution
-using StatisticsWithJulia: prn
+using StatisticsWithJulia.c03_distribution: prn
 using StatsBase, Distributions, Plots
 using Test
 

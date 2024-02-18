@@ -1,7 +1,7 @@
 # Tests for Fast code example
 
-using StatisticsWithJulia: comprehension_generate_data
-using StatisticsWithJulia: calculate_quantiles
+using StatisticsWithJulia.c01_intro: comprehension_generate_data
+using StatisticsWithJulia.c01_intro: calculate_quantiles
 using Statistics
 using Random
 using Test

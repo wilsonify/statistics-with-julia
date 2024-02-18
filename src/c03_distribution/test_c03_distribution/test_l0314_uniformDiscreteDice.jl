@@ -1,5 +1,5 @@
-using StatisticsWithJulia: simulate_die_tosses
-using StatisticsWithJulia: count_dice_roll_outcomes
+using StatisticsWithJulia.c03_distribution: simulate_die_tosses
+using StatisticsWithJulia.c03_distribution: count_dice_roll_outcomes
 using StatsBase
 using Plots; gr()
 using Random

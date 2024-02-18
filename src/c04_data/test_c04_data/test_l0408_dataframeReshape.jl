@@ -1,8 +1,8 @@
 using DataFrames
 using CSV
-using StatisticsWithJulia: horizontal_concatenate
-using StatisticsWithJulia: vertical_concatenate
-using StatisticsWithJulia: join_on_name
+using StatisticsWithJulia.c04_data: horizontal_concatenate
+using StatisticsWithJulia.c04_data: vertical_concatenate
+using StatisticsWithJulia.c04_data: join_on_name
 using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
 
 path_to_here = @__DIR__

@@ -1,7 +1,7 @@
 
-using StatisticsWithJulia: grayscale_conversion
-using StatisticsWithJulia: apply_box_blur
-using StatisticsWithJulia: find_max_coordinates
+using StatisticsWithJulia.c01_intro: grayscale_conversion
+using StatisticsWithJulia.c01_intro: apply_box_blur
+using StatisticsWithJulia.c01_intro: find_max_coordinates
 using Test
 using Images: load, Normed
 

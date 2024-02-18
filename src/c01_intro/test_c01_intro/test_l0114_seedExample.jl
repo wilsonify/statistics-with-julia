@@ -1,4 +1,4 @@
-using StatisticsWithJulia: really_rand
+using StatisticsWithJulia.c01_intro: really_rand
 using Test
 
 @testset "Test set_seed_and_generate function" begin

@@ -1,5 +1,5 @@
 # Descriptors of Distribution objects
-using StatisticsWithJulia: getDescriptors
+using StatisticsWithJulia.c03_distribution: getDescriptors
 using Distributions
 using Test
 

@@ -3,15 +3,15 @@ using CSV
 using Dates
 using Statistics
 using CategoricalArrays
-using StatisticsWithJulia: select_non_missing
-using StatisticsWithJulia: cast_string_to_Date
-using StatisticsWithJulia: sort_on_date_ascending
-using StatisticsWithJulia: select_Price_greater_than_50000
-using StatisticsWithJulia: cast_grade_to_categorical
-using StatisticsWithJulia: summarize_purchaseData1
-using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
-using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
-using StatisticsWithJulia: preprocess_purchaseData1
+using StatisticsWithJuliac.c04_data: select_non_missing
+using StatisticsWithJulia.c04_data: cast_string_to_Date
+using StatisticsWithJulia.c04_data: sort_on_date_ascending
+using StatisticsWithJulia.c04_data: select_Price_greater_than_50000
+using StatisticsWithJulia.c04_data: cast_grade_to_categorical
+using StatisticsWithJulia.c04_data: summarize_purchaseData1
+using StatisticsWithJulia.c04_data.TestingLibrary: dataframe_to_dict
+using StatisticsWithJulia.c04_data.TestingLibrary: are_dataframes_equal
+using StatisticsWithJulia.c04_data: preprocess_purchaseData1
 using StatisticsWithJulia.IOLibrary: read_purchaseData
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

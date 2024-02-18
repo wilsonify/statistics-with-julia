@@ -13,6 +13,11 @@ using Plots; gr()
 
 using SpecialFunctions, Distributions, Roots, LaTeXStrings, Plots; gr()
 
+function eq(alpha, xb, xbl)
+    # eq takes three arguments, alpha, a sample mean (xb), observation (xbl)
+    return log(alpha) - digamma(alpha) - log(xb) + xbl
+end
+
 function sample_Gamma(n, alpha, lambda)
     shape = alpha
     scale = 1 / lambda
@@ -20,22 +25,6 @@ function sample_Gamma(n, alpha, lambda)
     sample = rand(gammaDist, n)
     return sample
     end
-
-function mle(sample)
-    eq(alpha, xb, xbl) = log(alpha) - digamma(alpha) - log(xb) + xbl
-    alpha = find_zero((a) -> eq(a, mean(sample), mean(log.(sample))), 1)
-    lambda = alpha / mean(sample)
-    return [alpha, lambda]
-end
-
-function compute_mles(N, sample)
-     result = [mle(sample) for _ in 1:N]
-     return result
-end
-
-
-# eq takes three arguments, alpha, a sample mean (xb), observation (xbl)
-eq(alpha, xb, xbl) = log(alpha) - digamma(alpha) - log(xb) + xbl
 
 function mle(sample)
     # takes an array of sample observations,
@@ -50,7 +39,14 @@ function mle(sample)
     return [alpha, lambda]
 end
 
-function main_l0509_gammaLikelihood()
+
+function compute_mles(N, sample)
+     result = [mle(sample) for _ in 1:N]
+     return result
+end
+
+
+function main_l0510_mleGamma()
     # specify the parameters of the underlying gamma distribution,
     actualAlpha, actualLambda = 2, 3
     gammaDist = Gamma(actualAlpha,1 / actualLambda)

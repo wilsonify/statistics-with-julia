@@ -1,6 +1,6 @@
 using Test
-using StatisticsWithJulia: squares
-using StatisticsWithJulia: tab_separated_string
+using StatisticsWithJulia.c01_intro: squares
+using StatisticsWithJulia.c01_intro: tab_separated_string
 
 @testset "Test squares function" begin
     result = squares(0:10)

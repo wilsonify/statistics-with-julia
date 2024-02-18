@@ -1,6 +1,6 @@
 # The law of large numbers breaks down with very heavy tails
-using StatisticsWithJulia: generate_cauchy_data
-using StatisticsWithJulia: running_proportion
+using StatisticsWithJulia.c03_distribution: generate_cauchy_data
+using StatisticsWithJulia.c03_distribution: running_proportion
 using Random, Plots
 using Test
 

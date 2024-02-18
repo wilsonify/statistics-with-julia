@@ -1,6 +1,6 @@
 # Julia allows C and Fortran calls to be made directly without adding any extra overhead than a standard library call
 # Note that the code to be called must be available as a shared library.
-using StatisticsWithJulia: cos_c
+using StatisticsWithJulia.c01_intro: cos_c
 using Test
 
 # Define a test for ccall with cos function

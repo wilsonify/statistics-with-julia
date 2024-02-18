@@ -4,7 +4,7 @@ using Distributions
 using StatsPlots
 using Measures
 using Plots; gr()
-using StatisticsWithJulia: generate_beta_data
+using StatisticsWithJulia.c04_data: generate_beta_data
 
 @testset "generate_beta_data test" begin
     Random.seed!(0)

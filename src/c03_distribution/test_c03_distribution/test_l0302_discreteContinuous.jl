@@ -1,6 +1,6 @@
 # Plotting discrete and continuous distributions
-using StatisticsWithJulia: pContinuous
-using StatisticsWithJulia: pContinuous2
+using StatisticsWithJulia.c03_distribution: pContinuous
+using StatisticsWithJulia.c03_distribution: pContinuous2
 using Measures
 using Plots; gr()
 using Test

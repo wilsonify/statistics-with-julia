@@ -1,4 +1,4 @@
-using StatisticsWithJulia: linear_congruential_generator
+using StatisticsWithJulia.c01_intro: linear_congruential_generator
 
 
 using Test

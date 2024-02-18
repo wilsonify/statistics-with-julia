@@ -3,7 +3,7 @@ using CSV
 using Statistics
 using Test
 using Random
-using StatisticsWithJulia: keep_complete_grade_and_price, replace_all_missing_names, replace_all_missing_dates, enrich_data_with_summary, summarize_purchaseData2
+using StatisticsWithJulia.c04_data: keep_complete_grade_and_price, replace_all_missing_names, replace_all_missing_dates, enrich_data_with_summary, summarize_purchaseData2
 using StatisticsWithJulia.TestingLibrary: are_dataframes_equal, dataframe_to_dict
 using StatisticsWithJulia.IOLibrary: read_purchaseData
 

@@ -3,12 +3,12 @@ using DataFrames
 using CSV
 using Statistics
 using Test
-using StatisticsWithJulia: compute_meanVect
-using StatisticsWithJulia: compute_covMat
-using StatisticsWithJulia: compute_mvParams
-using StatisticsWithJulia: mvParams_to_string
-using StatisticsWithJulia: write_string_to_file
-using StatisticsWithJulia: read_mvParams
+using StatisticsWithJulia.c04_data: compute_meanVect
+using StatisticsWithJulia.c04_data: compute_covMat
+using StatisticsWithJulia.c04_data: compute_mvParams
+using StatisticsWithJulia.c04_data: mvParams_to_string
+using StatisticsWithJulia.c04_data: write_string_to_file
+using StatisticsWithJulia.c04_data: read_mvParams
 using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
 using StatisticsWithJulia.IOLibrary: read_temperatures
 

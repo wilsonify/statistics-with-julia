@@ -1,7 +1,7 @@
 using Random
 using Distributions
 using StatsPlots
-using StatisticsWithJulia: generate_mixture_data
+using StatisticsWithJulia.c04_data: generate_mixture_data
 
 using Test
 @testset "generate_mixture_data Test" begin

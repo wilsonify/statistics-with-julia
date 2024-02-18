@@ -1,7 +1,7 @@
 
-using StatisticsWithJulia: fishing_simulation
-using StatisticsWithJulia: estimate_proportion_fish_caught
-using StatisticsWithJulia: plot_fishing_proportions
+using StatisticsWithJulia.c02_probability: fishing_simulation
+using StatisticsWithJulia.c02_probability: estimate_proportion_fish_caught
+using StatisticsWithJulia.c02_probability: plot_fishing_proportions
 using Test
 
 # Test the fishing_simulation function

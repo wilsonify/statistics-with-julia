@@ -1,5 +1,5 @@
 # A simple random variable
-using StatisticsWithJulia: randomName
+using StatisticsWithJulia.c03_distribution: randomName
 using StatsBase
 using Test
 using Plots; gr()

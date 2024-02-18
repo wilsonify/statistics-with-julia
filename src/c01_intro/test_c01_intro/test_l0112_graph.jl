@@ -1,6 +1,6 @@
 using Test
-using StatisticsWithJulia: initialize_graph_data
-using StatisticsWithJulia: create_graph_animation
+using StatisticsWithJulia.c01_intro: initialize_graph_data
+using StatisticsWithJulia.c01_intro: create_graph_animation
 
 # Define a test for the initialize_graph_data function
 @testset "Test initialize_graph_data function" begin

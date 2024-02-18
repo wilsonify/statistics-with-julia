@@ -1,6 +1,6 @@
 
 # The gamma function at 1/2
-using StatisticsWithJulia: g
+using StatisticsWithJulia.c03_distribution: g
 using QuadGK, SpecialFunctions
 using Test
 

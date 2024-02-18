@@ -1,0 +1,23 @@
+
+module c07_hypothesis
+    include("c07_hypothesis/l0701_infMeanSingleVarKnown.jl")
+    include("c07_hypothesis/l0702_infMeanSingleVarUnknown.jl")
+    include("c07_hypothesis/l0703_signTest.jl")
+    include("c07_hypothesis/l0704_TvsSign.jl")
+    include("c07_hypothesis/l0705_infMeanDiffVarKnown.jl")
+    include("c07_hypothesis/l0706_infMeanDiffVarAssumedEqual.jl")
+    include("c07_hypothesis/l0707_infMeanDiffVarAssumedUnequal.jl")
+    include("c07_hypothesis/l0708_dataBoxPlot.jl")
+    include("c07_hypothesis/l0708_sampleMeansANOVA.jl")
+    include("c07_hypothesis/l0709_ssDecomposition.jl")
+    include("c07_hypothesis/l0710_anovaFTest.jl")
+    include("c07_hypothesis/l0711_anovaFDistribution.jl")
+    include("c07_hypothesis/l0712_chiSqTest.jl")
+    include("c07_hypothesis/l0713_chiSqIndependence.jl")
+    include("c07_hypothesis/l0714_ksStatistic.jl")
+    include("c07_hypothesis/l0715_ksBrownian.jl")
+    include("c07_hypothesis/l0716_wald_wolfowitz.jl")
+    include("c07_hypothesis/l0717_power.jl")
+    include("c07_hypothesis/l0718_powerCurves.jl")
+    include("c07_hypothesis/l0719_pValDist.jl")
+end

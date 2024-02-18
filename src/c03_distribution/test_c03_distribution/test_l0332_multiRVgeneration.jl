@@ -1,6 +1,6 @@
 # Generating random vectors with desired mean and covariance
-using StatisticsWithJulia: generate_random_vectors_with_desired_mean_and_covariance
-using StatisticsWithJulia: stats
+using StatisticsWithJulia.c03_distribution: generate_random_vectors_with_desired_mean_and_covariance
+using StatisticsWithJulia.c03_distribution: stats
 using Distributions, LinearAlgebra, LaTeXStrings, Random, Plots
 using Test
 @testset "end_to_end" begin
