@@ -1,5 +1,5 @@
-name = "c06_confidence"
-uuid = "019bbd03-c5be-40f0-8efb-a42929d96552"
+name = "testing_library"
+uuid = "7d54cfbc-a6cc-4f1d-96c8-0ba718cc54d3"
 authors = ["Yoni Nazarathy", "Hayden Klok", "Tom Wilson"]
 version = "0.1.0"
 

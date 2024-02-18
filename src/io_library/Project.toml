@@ -1,6 +1,6 @@
-name = "c06_confidence"
-uuid = "019bbd03-c5be-40f0-8efb-a42929d96552"
-authors = ["Yoni Nazarathy", "Hayden Klok", "Tom Wilson"]
+name = "io_library"
+uuid = "bdc247ae-3e5c-4e6c-aa16-5598aaf2d7ef"
+authors = ["Tom Wilson"]
 version = "0.1.0"
 
 [deps]
