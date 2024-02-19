@@ -12,8 +12,8 @@ using c04_data: get_grade1,get_grade2,get_grade3
 using c04_data: get_names1,get_names2,get_names3
 using c04_data: read_purchaseData
 using c04_data: get_purchases
-using TestingLibrary: are_dataframes_equal
-using TestingLibrary: are_lists_equal
+using testing_library: are_dataframes_equal
+using testing_library: are_lists_equal
 using DataFrames
 using CSV
 using InlineStrings # we need String15 available for testing

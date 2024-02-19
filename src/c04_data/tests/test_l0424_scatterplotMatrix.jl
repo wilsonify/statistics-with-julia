@@ -3,7 +3,7 @@ using Measures
 using Plots; gr()
 using Test
 using c04_data: insertSpace
-using IOLibrary: read_iris_from_csv
+using io_library: read_iris_from_csv
 
 @testset "read_iris_data test" begin
     data = read_iris_from_csv("$(@__DIR__)/../../../data/iris.csv")

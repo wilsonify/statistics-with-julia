@@ -12,7 +12,7 @@ using c04_data: summarize_purchaseData1
 using c04_data.TestingLibrary: dataframe_to_dict
 using c04_data.TestingLibrary: are_dataframes_equal
 using c04_data: preprocess_purchaseData1
-using IOLibrary: read_purchaseData
+using io_library: read_purchaseData
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")
 

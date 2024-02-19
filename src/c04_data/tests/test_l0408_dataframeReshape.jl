@@ -3,7 +3,7 @@ using CSV
 using c04_data: horizontal_concatenate
 using c04_data: vertical_concatenate
 using c04_data: join_on_name
-using TestingLibrary: are_dataframes_equal
+using testing_library: are_dataframes_equal
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

@@ -4,8 +4,8 @@ using Statistics
 using Test
 using Random
 using c04_data: keep_complete_grade_and_price, replace_all_missing_names, replace_all_missing_dates, enrich_data_with_summary, summarize_purchaseData2
-using TestingLibrary: are_dataframes_equal, dataframe_to_dict
-using IOLibrary: read_purchaseData
+using testing_library: are_dataframes_equal, dataframe_to_dict
+using io_library: read_purchaseData
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

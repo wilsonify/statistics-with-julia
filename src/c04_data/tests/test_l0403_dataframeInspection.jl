@@ -4,8 +4,8 @@ using c04_data: get_column_names
 using c04_data: get_head
 using c04_data: get_tail
 using c04_data: get_description
-using TestingLibrary: are_dataframes_equal
-using TestingLibrary: dataframe_to_dict
+using testing_library: are_dataframes_equal
+using testing_library: dataframe_to_dict
 using DataFrames
 using CSV
 using Test

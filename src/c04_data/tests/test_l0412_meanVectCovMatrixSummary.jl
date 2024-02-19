@@ -9,8 +9,8 @@ using c04_data: compute_mvParams
 using c04_data: mvParams_to_string
 using c04_data: write_string_to_file
 using c04_data: read_mvParams
-using TestingLibrary: dataframe_to_dict
-using IOLibrary: read_temperatures
+using testing_library: dataframe_to_dict
+using io_library: read_temperatures
 
 
 path_to_data = abspath("$(@__DIR__)/../../../data")

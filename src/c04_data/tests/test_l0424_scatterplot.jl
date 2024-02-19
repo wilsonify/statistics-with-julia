@@ -1,7 +1,7 @@
 using DataFrames
 using CSV
 using Plots; gr();
-using IOLibrary: read_companyData
+using io_library: read_companyData
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

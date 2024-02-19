@@ -22,8 +22,8 @@ using c04_data: sample_correlation_matrix4
 using c04_data: sample_correlation_matrix5
 using c04_data: sample_correlation_matrix6
 using c04_data: Z_scores1, Z_scores2
-using IOLibrary: read_3featureData
-using TestingLibrary: is_all_approx_array
+using io_library: read_3featureData
+using testing_library: is_all_approx_array
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

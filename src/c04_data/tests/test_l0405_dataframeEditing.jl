@@ -1,13 +1,13 @@
 using DataFrames
 using CSV
 using Test
-using IOLibrary: read_purchaseData_immutable
-using IOLibrary: read_purchaseData_mutable
+using io_library: read_purchaseData_immutable
+using io_library: read_purchaseData_mutable
 using c04_data: maybe_set_first_name
 using c04_data: division_on_every_price
 using c04_data: rename_price
 using c04_data: recode_grade
-using TestingLibrary: are_dataframes_equal
+using testing_library: are_dataframes_equal
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")
