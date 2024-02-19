@@ -1,0 +1,11 @@
+
+include("test_read_3featureData.jl")
+include("test_read_ascombeData.jl")
+include("test_read_companyData.jl")
+include("test_read_fertilizer.jl")
+include("test_read_irisData.jl")
+include("test_read_machineData.jl")
+include("test_read_massCpuData.jl")
+include("test_read_purchaseData.jl")
+include("test_read_temperatures.jl")
+include("test_read_xclaraData.jl")
