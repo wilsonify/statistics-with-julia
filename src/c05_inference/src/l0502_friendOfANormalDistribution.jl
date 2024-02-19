@@ -128,3 +128,5 @@ function main_l0502_friendOfANormalDistribution()
 end
 
 export simulate_normal_samples
+export compute_yVarDensity
+export compute_yTStatDensity

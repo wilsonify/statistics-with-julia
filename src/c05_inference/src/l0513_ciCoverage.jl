@@ -12,19 +12,19 @@ using Random, Distributions, StatsPlots
 
 alpha = 0.05
 mu = 5.57
-L(obs) = obs - (1 - sqrt(alpha))
-U(obs) = obs + (1 - sqrt(alpha))
+L2(obs) = obs - (1 - sqrt(alpha))
+U2(obs) = obs + (1 - sqrt(alpha))
 
 function generate_data_point_triangle(mu)
     triDist = TriangularDist(mu - 1,mu + 1,mu)
     return rand(triDist)
 end
 
-function run_simulation(N)
+function run_simulation1(N)
     hitBounds, missBounds = zeros(N, 2), zeros(N,2)
     for i in 1:N
         observation = generate_data_point_triangle(mu)
-        LL, UU = L(observation), U(observation)
+        LL, UU = L2(observation), U2(observation)
         if LL <= mu && mu <= UU
             hitBounds[i, :] = [LL  UU - LL]
         else
@@ -45,7 +45,7 @@ function main_l0513_ciCoverage()
     # repeat the experiment N = 100 times
     for i in 1:N
         observation = rand(triDist)
-        LL, UU = L(observation), U(observation)
+        LL, UU = L2(observation), U2(observation)
         # record a confidence interval as a “hit” or “miss”
         if LL <= mu && mu <= UU
             hitBounds[i, :] = [LL  UU - LL]

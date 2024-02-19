@@ -17,7 +17,7 @@ function generate_data_uniform(n, A, B)
     rand(trueDist,n)
     end
 
-function run_simulation(nMax)
+function run_simulation2(nMax)
     N = 10^5
     nMin, nStep = 10, 10
     nn = Int(nMax / nStep)

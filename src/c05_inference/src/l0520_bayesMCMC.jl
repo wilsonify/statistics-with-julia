@@ -13,11 +13,18 @@ alpha, beta = 8, 2
 sig = 0.5
 lamRange = 0:0.01:10
 
-prior(lam) = pdf(Gamma(alpha, 1 / beta), lam)
-like(lam) = *([pdf(Poisson(lam),x) for x in data]...)
-posteriorUpToK(lam) = like(lam) * prior(lam)
+# define the prior.
+prior3_gamma(lam) = pdf(Gamma(alpha, 1 / beta), lam)
+# calculate the posterior by brute force
+like3_poisson(lam) = *([pdf(Poisson(lam),x) for x in data]...)
+# Bayes’ rule applied to densities with constant evidence aka marginal likelihood
+posteriorUpToK3(lam) = like3_poisson(lam) * prior3_gamma(lam)
+# define the folded normal distribution as a proposal density.
+# the folded normal arrises from the absolute value of a normally distributed variable
 foldedNormalPDF(x, mu) = (1 / sqrt(2 * pi*sig^2)) * (exp(-(x - mu)^2 / 2sig^2) + exp(-(x + mu)^2 / 2sig^2))
+# define a function for generating a proposal
 foldedNormalRV(mu) = abs(rand(Normal(mu,sig)))
+# compute closedFormBayesEstimate using the formula for the mean of a gamma distribution
 closedFormPosterior(lam) = pdf(Gamma(alpha + sum(data),1 / (beta + length(data))),lam)
 
 function sampler(piProb, qProp, rvProp)
@@ -82,29 +89,12 @@ function main_l0518_bayesUnivariate()
     # define the prior hyper-parameters
     alpha, beta = 8, 2
 
-    # define the prior.
-    prior(lam) = pdf(Gamma(alpha, 1 / beta), lam)
-
-    # calculate the posterior by brute force
-    like(lam) = *([pdf(Poisson(lam),x) for x in data]...)
-
-    # Bayes’ rule applied to densities with constant evidence aka marginal likelihood
-    posteriorUpToK(lam) = like(lam) * prior(lam)
-
     sig = 0.5
-    # define the folded normal distribution as a proposal density.
-    # the folded normal arrises from the absolute value of a normally distributed variable
-    foldedNormalPDF(x, mu) = (1 / sqrt(2 * pi*sig^2)) * (exp(-(x - mu)^2 / 2sig^2) + exp(-(x + mu)^2 / 2sig^2))
-    # define a function for generating a proposal
-    foldedNormalRV(mu) = abs(rand(Normal(mu,sig)))
 
-    # compute closedFormBayesEstimate using the formula for the mean of a gamma distribution
-    closedFormPosterior(lam) = pdf(Gamma(alpha + sum(data),1 / (beta + length(data))),lam)
-
-    mcmcSamples = sampler(posteriorUpToK,foldedNormalPDF,foldedNormalRV)
+    mcmcSamples = sampler(posteriorUpToK3,foldedNormalPDF,foldedNormalRV)
     println("MCMC Bayes Estimate: ",mean(mcmcSamples))
     lamRange = 0:0.01:10
-    y1=prior.(lamRange)
+    y1= prior3_gamma.(lamRange)
     y2=closedFormPosterior.(lamRange)
 
     stephist(

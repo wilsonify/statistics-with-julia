@@ -13,9 +13,9 @@ using Random, Distributions
 
 # set the confidence level
 alpha = 0.05
-# implement lower L() and upper U()
-L(obs) = obs - (1 - sqrt(alpha))
-U(obs) = obs + (1 - sqrt(alpha))
+# implement lower and upper
+L1(obs) = obs - (1 - sqrt(alpha))
+U1(obs) = obs + (1 - sqrt(alpha))
 
 function generate_data_triangle(mu)
     sample = rand(TriangularDist(mu - 1,mu + 1,mu))
@@ -28,6 +28,6 @@ function main_l0512_confidenceIntervalConcept()
     mu = 5.57
     # obtained the sample, a single observation.
     observation = rand(TriangularDist(mu - 1,mu + 1,mu))
-    println("Lower bound L: ", L(observation))
-    println("Upper bound U: ", U(observation))
+    println("Lower bound L: ", L1(observation))
+    println("Upper bound U: ", U1(observation))
 end
