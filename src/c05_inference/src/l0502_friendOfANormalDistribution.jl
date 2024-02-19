@@ -131,3 +131,4 @@ export simulate_normal_samples
 export compute_yMeanDensity
 export compute_yVarDensity
 export compute_yTStatDensity
+export plot_sample_vars

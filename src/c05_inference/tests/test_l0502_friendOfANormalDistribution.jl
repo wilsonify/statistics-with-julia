@@ -3,7 +3,7 @@ using c05_inference: simulate_normal_samples
 using c05_inference: compute_yMeanDensity
 using c05_inference: compute_yVarDensity
 using c05_inference: compute_yTStatDensity
-
+using c05_inference: plot_sample_means
 @testset "end-to-end" begin
     using Distributions, Plots
     mu, sigma = 10, 4
