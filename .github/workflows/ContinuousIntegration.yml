@@ -42,22 +42,22 @@ jobs:
         working-directory: src/c01_intro
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
-#      - name: Install c02_probability
-#        working-directory: src/c02_probability
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c03_distribution
-#        working-directory: src/c03_distribution
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c04_data
-#        working-directory: src/c04_data
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c05_inference
-#        working-directory: src/c05_inference
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
+      - name: Install c02_probability
+        working-directory: src/c02_probability
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+      - name: Install c03_distribution
+        working-directory: src/c03_distribution
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+      - name: Install c04_data
+        working-directory: src/c04_data
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+      - name: Install c05_inference
+        working-directory: src/c05_inference
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
 #      - name: Install c06_confidence
 #        working-directory: src/c06_confidence
 #        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
@@ -94,6 +94,20 @@ jobs:
 #        working-directory: src/c14_MyLib
 #        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
-      - name: Run Tests c01_intro
-        working-directory: src/c01_intro/tests
+
+      - name: Run Tests c02_probability
+        working-directory: src/c02_probability/tests
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
+
+      - name: Run Tests c03_distribution
+        working-directory: src/c03_distribution/tests
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
+
+      - name: Run Tests c04_data
+        working-directory: src/c04_data/tests
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
+
+      - name: Run Tests c05_inference
+        working-directory: src/c05_inference/tests
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
+
