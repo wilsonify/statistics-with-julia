@@ -6,7 +6,7 @@ on:
   - workflow_dispatch
 
 jobs:
-  test:
+  setup_internal:
     name: Julia ${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
@@ -58,56 +58,73 @@ jobs:
         working-directory: src/c05_inference
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
-#      - name: Install c06_confidence
-#        working-directory: src/c06_confidence
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c07_hypothesis
-#        working-directory: src/c07_hypothesis
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c08_regression
-#        working-directory: src/c08_regression
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c09_machine_learning
-#        working-directory: src/c09_machine_learning
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c10_simulation
-#        working-directory: src/c10_simulation
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c11_api
-#        working-directory: src/c11_api
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c12_toy_application
-#        working-directory: src/c12_toy_application
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c13_MyApp
-#        working-directory: src/c13_MyApp
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-#
-#      - name: Install c14_MyLib
-#        working-directory: src/c14_MyLib
-#        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+      - name: Install c06_confidence
+        working-directory: src/c06_confidence
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
+      - name: Install c07_hypothesis
+        working-directory: src/c07_hypothesis
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
-      - name: Run Tests c02_probability
+      - name: Install c08_regression
+        working-directory: src/c08_regression
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+      - name: Install c09_machine_learning
+        working-directory: src/c09_machine_learning
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+      - name: Install c10_simulation
+        working-directory: src/c10_simulation
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+  c02_probability:
+    needs: setup_internal
+    name: Run Tests c02_probability job
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
+    steps:
+      - name: Run Tests c02_probability step
         working-directory: src/c02_probability/tests
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
 
-      - name: Run Tests c03_distribution
+  c03_distribution:
+    needs: setup_internal
+    name: Run Tests c03_distribution job
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
+    steps:
+      - name: Run Tests c03_distribution step
         working-directory: src/c03_distribution/tests
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
-
-      - name: Run Tests c04_data
+  c04_data:
+    needs: setup_internal
+    name: Run Tests c04_data job
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
+    steps:
+      - name: Run Tests c04_data step
         working-directory: src/c04_data/tests
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
 
-      - name: Run Tests c05_inference
+  c05_inference:
+    needs: setup_internal
+    name: Run Tests c05_inference job
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
+    steps:
+      - name: Run Tests c05_inference step
         working-directory: src/c05_inference/tests
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
-
