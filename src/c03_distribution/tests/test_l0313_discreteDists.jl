@@ -1,4 +1,4 @@
-using StatisticsWithJulia.c03_distribution: summarizeDistributions
+using c03_distribution: summarizeDistributions
 using Distributions
 using Test
 @testset "end_to_end" begin

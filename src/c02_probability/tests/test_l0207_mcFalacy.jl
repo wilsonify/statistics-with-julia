@@ -1,7 +1,7 @@
 
-using StatisticsWithJulia.c02_probability: mc_estimate1
-using StatisticsWithJulia.c02_probability: mc_estimate2
-using StatisticsWithJulia.c02_probability: run_simulations_falacy
+using c02_probability: mc_estimate1
+using c02_probability: mc_estimate2
+using c02_probability: run_simulations_falacy
 
 using Test
 using Random

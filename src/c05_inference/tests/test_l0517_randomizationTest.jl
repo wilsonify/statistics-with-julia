@@ -1,6 +1,6 @@
 using Test
-using .StatisticsWithJulia.TestingLibrary: dataframe_to_dict
-using .StatisticsWithJulia.IOLibrary: read_fertilizer
+using .TestingLibrary: dataframe_to_dict
+using .IOLibrary: read_fertilizer
 
 @testset "read_fertilizer" begin
     path_to_here = @__DIR__

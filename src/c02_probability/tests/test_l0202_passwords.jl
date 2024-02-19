@@ -1,6 +1,6 @@
 
-using StatisticsWithJulia.c02_probability: gen_pw
-using StatisticsWithJulia.c02_probability: numMatch
+using c02_probability: gen_pw
+using c02_probability: numMatch
 using Test
 using Random
 

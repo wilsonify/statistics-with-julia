@@ -4,8 +4,8 @@ using Distributions
 using StatsPlots
 using Plots; gr()
 using Test
-using StatisticsWithJulia.c04_data: generate_normal_data
-using StatisticsWithJulia.c04_data: generate_exponential_data
+using c04_data: generate_normal_data
+using c04_data: generate_exponential_data
 
 @testset "generate_normal_data" begin
     n = 100

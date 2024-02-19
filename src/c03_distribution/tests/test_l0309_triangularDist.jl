@@ -1,7 +1,7 @@
 # Using the pdf(), cdf(), and quantile() functions with Distributions
-using StatisticsWithJulia.c03_distribution: TriangularPDF
-using StatisticsWithJulia.c03_distribution: TriangularCDF
-using StatisticsWithJulia.c03_distribution: TriangularInvCDF
+using c03_distribution: TriangularPDF
+using c03_distribution: TriangularCDF
+using c03_distribution: TriangularInvCDF
 using Distributions, Plots, LaTeXStrings
 using Test
 

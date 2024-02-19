@@ -1,5 +1,5 @@
 # Expectation via numerical integration
-using StatisticsWithJulia.c03_distribution: expect
+using c03_distribution: expect
 
 f1(x) = 3 / 4 * (1 - x^2)
 

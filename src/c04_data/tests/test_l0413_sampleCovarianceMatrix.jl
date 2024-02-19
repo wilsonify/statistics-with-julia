@@ -6,24 +6,24 @@ using CSV
 using Test
 using Random
 
-using StatisticsWithJulia.c04_data: df_to_array_3featureData
-using StatisticsWithJulia.c04_data: sample_mean_vector1
-using StatisticsWithJulia.c04_data: sample_mean_vector2
-using StatisticsWithJulia.c04_data: sample_mean_vector3
-using StatisticsWithJulia.c04_data: sample_covariance_matrix1
-using StatisticsWithJulia.c04_data: sample_covariance_matrix2
-using StatisticsWithJulia.c04_data: sample_covariance_matrix3
-using StatisticsWithJulia.c04_data: sample_covariance_matrix4
-using StatisticsWithJulia.c04_data: sample_covariance_matrix5
-using StatisticsWithJulia.c04_data: sample_correlation_matrix1
-using StatisticsWithJulia.c04_data: sample_correlation_matrix2
-using StatisticsWithJulia.c04_data: sample_correlation_matrix3
-using StatisticsWithJulia.c04_data: sample_correlation_matrix4
-using StatisticsWithJulia.c04_data: sample_correlation_matrix5
-using StatisticsWithJulia.c04_data: sample_correlation_matrix6
-using StatisticsWithJulia.c04_data: Z_scores1, Z_scores2
-using StatisticsWithJulia.IOLibrary: read_3featureData
-using StatisticsWithJulia.TestingLibrary: is_all_approx_array
+using c04_data: df_to_array_3featureData
+using c04_data: sample_mean_vector1
+using c04_data: sample_mean_vector2
+using c04_data: sample_mean_vector3
+using c04_data: sample_covariance_matrix1
+using c04_data: sample_covariance_matrix2
+using c04_data: sample_covariance_matrix3
+using c04_data: sample_covariance_matrix4
+using c04_data: sample_covariance_matrix5
+using c04_data: sample_correlation_matrix1
+using c04_data: sample_correlation_matrix2
+using c04_data: sample_correlation_matrix3
+using c04_data: sample_correlation_matrix4
+using c04_data: sample_correlation_matrix5
+using c04_data: sample_correlation_matrix6
+using c04_data: Z_scores1, Z_scores2
+using IOLibrary: read_3featureData
+using TestingLibrary: is_all_approx_array
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

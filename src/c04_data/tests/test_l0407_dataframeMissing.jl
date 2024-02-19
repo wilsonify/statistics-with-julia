@@ -2,14 +2,14 @@ using Statistics
 using DataFrames
 using CSV
 using Test
-using StatisticsWithJulia.c04_data: calculate_mean_price_no_missing
-using StatisticsWithJulia.c04_data: calculate_nanmean_price
-using StatisticsWithJulia.c04_data: sum_is_missing_name
-using StatisticsWithJulia.c04_data: replace_all_missing_grades
-using StatisticsWithJulia.c04_data: dropmissing_price
-using StatisticsWithJulia.c04_data: findall_complete
-using StatisticsWithJulia.TestingLibrary: are_lists_equal
-using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
+using c04_data: calculate_mean_price_no_missing
+using c04_data: calculate_nanmean_price
+using c04_data: sum_is_missing_name
+using c04_data: replace_all_missing_grades
+using c04_data: dropmissing_price
+using c04_data: findall_complete
+using TestingLibrary: are_lists_equal
+using TestingLibrary: are_dataframes_equal
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

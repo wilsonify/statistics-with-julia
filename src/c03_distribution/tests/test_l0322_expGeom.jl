@@ -1,7 +1,7 @@
-using StatisticsWithJulia.c03_distribution: generate_exp_data
-using StatisticsWithJulia.c03_distribution: process_exp_data
-using StatisticsWithJulia.c03_distribution: get_proportions
-using StatisticsWithJulia.c03_distribution: generate_matching_geom_data
+using c03_distribution: generate_exp_data
+using c03_distribution: process_exp_data
+using c03_distribution: get_proportions
+using c03_distribution: generate_matching_geom_data
 
 using StatsBase, Distributions, Plots; gr()
 using Test

@@ -1,10 +1,10 @@
 
-using StatisticsWithJulia.c02_probability: matchExists1
-using StatisticsWithJulia.c02_probability: matchExists2
-using StatisticsWithJulia.c02_probability: probEst
-using StatisticsWithJulia.c02_probability: bdEvent
-using StatisticsWithJulia.c02_probability: calculate_max_error
-using StatisticsWithJulia.c02_probability: run_simulation_birthday_problem
+using c02_probability: matchExists1
+using c02_probability: matchExists2
+using c02_probability: probEst
+using c02_probability: bdEvent
+using c02_probability: calculate_max_error
+using c02_probability: run_simulation_birthday_problem
 using Test
 
 @testset "Test matchExists1 function" begin

@@ -1,8 +1,8 @@
 # Hazard rates and the Weibull distribution
-using StatisticsWithJulia.c03_distribution: lambda
-using StatisticsWithJulia.c03_distribution: theta
-using StatisticsWithJulia.c03_distribution: hA
-using StatisticsWithJulia.c03_distribution: hB
+using c03_distribution: lambda
+using c03_distribution: theta
+using c03_distribution: hA
+using c03_distribution: hB
 using Distributions, Plots, LaTeXStrings
 using Test
 @testset "hazardsA" begin

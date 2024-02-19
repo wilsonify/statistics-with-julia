@@ -1,5 +1,5 @@
 using Test
-using StatisticsWithJulia.c02_probability: even_sum_probability
+using c02_probability: even_sum_probability
 @testset "Test even_sum_probability function" begin
     numSol, mcEst = even_sum_probability()
     numSol = round(numSol,digits=2)

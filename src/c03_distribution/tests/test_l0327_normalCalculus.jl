@@ -1,7 +1,7 @@
 # Numerical derivatives of the normal density
-using StatisticsWithJulia.c03_distribution: PhiA
-using StatisticsWithJulia.c03_distribution: PhiB
-using StatisticsWithJulia.c03_distribution: normalDensity
+using c03_distribution: PhiA
+using c03_distribution: PhiB
+using c03_distribution: normalDensity
 using Distributions, Calculus, SpecialFunctions, Plots
 using LaTeXStrings
 using Test

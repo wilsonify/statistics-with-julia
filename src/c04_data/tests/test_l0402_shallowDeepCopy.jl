@@ -1,9 +1,9 @@
 # Deep copy and shallow copy
-using StatisticsWithJulia.c04_data: immutable_behavior
-using StatisticsWithJulia.c04_data: no_copy_behavior
-using StatisticsWithJulia.c04_data: shallow_copy_outer_behavior
-using StatisticsWithJulia.c04_data: shallow_copy_inner_behavior
-using StatisticsWithJulia.c04_data: deep_copy_behavior
+using c04_data: immutable_behavior
+using c04_data: no_copy_behavior
+using c04_data: shallow_copy_outer_behavior
+using c04_data: shallow_copy_inner_behavior
+using c04_data: deep_copy_behavior
 using Test
 @testset "immutable_behavior" begin
     a = 10

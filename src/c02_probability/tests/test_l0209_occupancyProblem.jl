@@ -1,5 +1,5 @@
-using StatisticsWithJulia.c02_probability: occupancyAnalytic
-using StatisticsWithJulia.c02_probability: occupancyMC
+using c02_probability: occupancyAnalytic
+using c02_probability: occupancyMC
 using Test, Random
 
 @testset "occupancyAnalytic Tests" begin

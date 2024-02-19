@@ -2,8 +2,8 @@
 
 using Test
 using Distributions
-using StatisticsWithJulia.c05_inference: myT
-using StatisticsWithJulia.c05_inference: compute_mcQuantile
+using c05_inference: myT
+using c05_inference: compute_mcQuantile
 
 @testset "myT test" begin
     result = myT(3)

@@ -1,6 +1,6 @@
 using StatsPlots
 using Test
-using StatisticsWithJulia.IOLibrary: read_iris_from_csv
+using IOLibrary: read_iris_from_csv
 
 @testset "end_to_end" begin
     iris = read_iris_from_csv("$(@__DIR__)/../../../data/iris.csv")

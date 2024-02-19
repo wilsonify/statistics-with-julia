@@ -2,10 +2,10 @@ using Distributions
 using Random
 using Plots; gr()
 using Test
-using StatisticsWithJulia.c04_data: generate_data
-using StatisticsWithJulia.c04_data: create_bins
-using StatisticsWithJulia.c04_data: compute_histogram
-using StatisticsWithJulia.c04_data: plot_histogram
+using c04_data: generate_data
+using c04_data: create_bins
+using c04_data: compute_histogram
+using c04_data: plot_histogram
 
 
 @testset "generate_data test" begin

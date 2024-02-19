@@ -1,5 +1,5 @@
 using Test
-using StatisticsWithJulia.c05_inference: simulate_normal_samples
+using c05_inference: simulate_normal_samples
 
 @testset "end-to-end" begin
     using Distributions, Plots

@@ -1,5 +1,5 @@
 # The Box-Muller transform
-using StatisticsWithJulia.c03_distribution: Z
+using c03_distribution: Z
 using Random, Distributions, Plots
 using Test
 @testset "Z" begin

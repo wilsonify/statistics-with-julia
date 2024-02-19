@@ -1,6 +1,6 @@
 
-using StatisticsWithJulia.c02_probability: probDefectiveGivenParticles
-using StatisticsWithJulia.c02_probability: probParticles
+using c02_probability: probDefectiveGivenParticles
+using c02_probability: probParticles
 using Test
 using SpecialFunctions
 

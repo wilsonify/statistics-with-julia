@@ -1,7 +1,7 @@
 # Alternative representations of Rayleigh random variables
-using StatisticsWithJulia.c03_distribution: generate_rayleigh_data1
-using StatisticsWithJulia.c03_distribution: generate_rayleigh_data2
-using StatisticsWithJulia.c03_distribution: generate_rayleigh_data3
+using c03_distribution: generate_rayleigh_data1
+using c03_distribution: generate_rayleigh_data2
+using c03_distribution: generate_rayleigh_data3
 using Distributions, Random
 using Test
 @testset "generate_rayleigh_data1" begin

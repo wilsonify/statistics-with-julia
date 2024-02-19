@@ -1,9 +1,9 @@
 using DataFrames
 using CSV
-using StatisticsWithJulia.c04_data: horizontal_concatenate
-using StatisticsWithJulia.c04_data: vertical_concatenate
-using StatisticsWithJulia.c04_data: join_on_name
-using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
+using c04_data: horizontal_concatenate
+using c04_data: vertical_concatenate
+using c04_data: join_on_name
+using TestingLibrary: are_dataframes_equal
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

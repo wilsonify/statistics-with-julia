@@ -1,6 +1,6 @@
 # A sum of two triangular random variables
-using StatisticsWithJulia.c03_distribution: mgf
-using StatisticsWithJulia.c03_distribution: mgfPointEst
+using c03_distribution: mgf
+using c03_distribution: mgfPointEst
 using Distributions, Statistics, Plots
 
 using Test

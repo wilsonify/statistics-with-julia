@@ -1,5 +1,5 @@
 # Gamma random variable as a sum of exponentials
-using StatisticsWithJulia.c03_distribution: normalizedData
+using c03_distribution: normalizedData
 using Distributions, Plots
 using Test
 

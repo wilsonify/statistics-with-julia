@@ -1,7 +1,7 @@
 
-using StatisticsWithJulia.c02_probability: estimate_pA_modelI
-using StatisticsWithJulia.c02_probability: estimate_pA_modelIIest
-using StatisticsWithJulia.c02_probability: plotLatticePaths
+using c02_probability: estimate_pA_modelI
+using c02_probability: estimate_pA_modelIIest
+using c02_probability: plotLatticePaths
 using Test
 using Random
 Random.seed!(12)

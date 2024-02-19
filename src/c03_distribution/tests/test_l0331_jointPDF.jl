@@ -1,6 +1,6 @@
 # Visualizing a bivariate density
-using StatisticsWithJulia.c03_distribution: twoD_Riemann_sum_over_density
-using StatisticsWithJulia.c03_distribution: twoD_Riemann_sum_to_evaluate_probability
+using c03_distribution: twoD_Riemann_sum_over_density
+using c03_distribution: twoD_Riemann_sum_to_evaluate_probability
 using LaTeXStrings, Measures
 using Plots; gr()
 using Test

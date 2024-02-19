@@ -1,11 +1,11 @@
 using DataFrames
 using CSV
 using Test
-using StatisticsWithJulia.c04_data: create_a_reference
-using StatisticsWithJulia.c04_data: create_a_shallow_copy1
-using StatisticsWithJulia.c04_data: create_a_shallow_copy2
-using StatisticsWithJulia.c04_data: create_a_deep_copy
-using StatisticsWithJulia.c04_data: read_purchaseData
+using c04_data: create_a_reference
+using c04_data: create_a_shallow_copy1
+using c04_data: create_a_shallow_copy2
+using c04_data: create_a_deep_copy
+using c04_data: read_purchaseData
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")

@@ -1,5 +1,5 @@
 # Sampling from a weight vector
-using StatisticsWithJulia.c03_distribution: count_occurance
+using c03_distribution: count_occurance
 using StatsBase, Random
 using Test
 

@@ -1,4 +1,4 @@
-using StatisticsWithJulia.c02_probability: simulation_independent_events
+using c02_probability: simulation_independent_events
 
 using Test
 using Random

@@ -1,5 +1,5 @@
-using StatisticsWithJulia.c03_distribution: infimum
-using StatisticsWithJulia.c03_distribution: invCDF
+using c03_distribution: infimum
+using c03_distribution: invCDF
 using Plots; gr()
 using LaTeXStrings
 using Test

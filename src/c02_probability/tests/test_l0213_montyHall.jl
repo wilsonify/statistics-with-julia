@@ -1,5 +1,5 @@
 
-using StatisticsWithJulia.c02_probability: monty_hall_simulation
+using c02_probability: monty_hall_simulation
 using Test
 
 @testset "Monty Hall Problem Tests" begin

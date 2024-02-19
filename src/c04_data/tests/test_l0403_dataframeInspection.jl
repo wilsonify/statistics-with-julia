@@ -1,11 +1,11 @@
 # Creating and inspecting a DataFrame
-using StatisticsWithJulia.c04_data: get_size
-using StatisticsWithJulia.c04_data: get_column_names
-using StatisticsWithJulia.c04_data: get_head
-using StatisticsWithJulia.c04_data: get_tail
-using StatisticsWithJulia.c04_data: get_description
-using StatisticsWithJulia.TestingLibrary: are_dataframes_equal
-using StatisticsWithJulia.TestingLibrary: dataframe_to_dict
+using c04_data: get_size
+using c04_data: get_column_names
+using c04_data: get_head
+using c04_data: get_tail
+using c04_data: get_description
+using TestingLibrary: are_dataframes_equal
+using TestingLibrary: dataframe_to_dict
 using DataFrames
 using CSV
 using Test

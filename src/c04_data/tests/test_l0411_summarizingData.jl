@@ -4,7 +4,7 @@ using Statistics
 using StatsBase
 using DataFrames
 using Test
-using StatisticsWithJulia.IOLibrary: read_temperatures_subset
+using IOLibrary: read_temperatures_subset
 
 
 path_to_here = @__DIR__

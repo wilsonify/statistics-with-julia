@@ -1,5 +1,5 @@
 
-using StatisticsWithJulia.c02_probability: bayes_rule
+using c02_probability: bayes_rule
 using Test
 
 @testset "Bayes Rule Tests" begin

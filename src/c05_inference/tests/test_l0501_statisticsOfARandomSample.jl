@@ -1,5 +1,5 @@
 using Test
-using StatisticsWithJulia.c05_inference: simulate_exponential_samples
+using c05_inference: simulate_exponential_samples
 
 @testset "Exponential Distribution Test" begin
     lambda = 4.5  # Adjust lambda value as needed

@@ -1,7 +1,7 @@
 using DataFrames
 using CSV
 using StatsPlots
-using StatisticsWithJulia.IOLibrary: read_machine_data
+using IOLibrary: read_machine_data
 
 path_to_here = @__DIR__
 path_to_data = abspath("$path_to_here/../../../data")
