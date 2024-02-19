@@ -54,9 +54,11 @@ TimeSeries = "9e3dc215-6440-5c97-bce1-76c03772f85e"
 TimeZones = "f269a46b-ccf7-5d73-abea-4c690281aa53"
 URIs = "5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4"
 Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
+io_library = "bdc247ae-3e5c-4e6c-aa16-5598aaf2d7ef"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+testing_library = "7d54cfbc-a6cc-4f1d-96c8-0ba718cc54d3"
 
 [targets]
 test = ["Test"]
