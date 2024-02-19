@@ -78,6 +78,19 @@ jobs:
         working-directory: src/c10_simulation
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
+  c01_intro:
+    needs: setup_internal
+    name: Run Tests c01_intro job
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
+    steps:
+      - name: Run Tests c01_intro step
+        working-directory: src/c01_intro/tests
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
+
   c02_probability:
     needs: setup_internal
     name: Run Tests c02_probability job
