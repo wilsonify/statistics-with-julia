@@ -2,7 +2,7 @@
 using DataFrames
 using CSV
 using StatsPlots
-using .IOLibrary: read_machine_data
+using io_library: read_machine_data
 
 function main_l0422_boxplot()
     path_to_here = @__DIR__

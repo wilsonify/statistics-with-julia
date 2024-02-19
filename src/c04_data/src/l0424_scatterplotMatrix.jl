@@ -2,7 +2,7 @@
 
 using Measures
 using Plots; gr()
-using .IOLibrary: read_iris_from_csv
+using io_library: read_iris_from_csv
 
 function insertSpace(name)
     # we define a function that takes a string, name,

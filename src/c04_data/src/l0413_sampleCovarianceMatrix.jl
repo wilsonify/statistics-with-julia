@@ -5,7 +5,7 @@ using StatsBase
 using LinearAlgebra
 using DataFrames
 using CSV
-using .IOLibrary: read_3featureData
+using io_library: read_3featureData
 
 function df_to_array_3featureData(data)
     return convert(Array{Float64, 2}, Matrix(data))

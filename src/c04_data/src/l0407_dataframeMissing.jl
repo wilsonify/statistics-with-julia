@@ -2,7 +2,7 @@
 using Statistics
 using DataFrames
 using CSV
-using .IOLibrary: read_purchaseData
+using io_library: read_purchaseData
 
 
 function calculate_mean_price_no_missing(data)

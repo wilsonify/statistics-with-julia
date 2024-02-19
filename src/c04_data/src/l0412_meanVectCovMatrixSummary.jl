@@ -4,7 +4,7 @@ using DataFrames
 using CSV
 using Statistics
 
-using .IOLibrary: read_temperatures
+using io_library: read_temperatures
 
 function compute_meanVect(data)
     # for Brisbane and Gold Coast as the arrays brisT and gcT respectively.

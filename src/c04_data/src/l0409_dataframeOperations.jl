@@ -5,7 +5,7 @@ using CSV
 using Dates
 using Statistics
 using CategoricalArrays
-using .IOLibrary: read_purchaseData
+using io_library: read_purchaseData
 
 function select_non_missing(data)
     # some function require all values to be non-missing.

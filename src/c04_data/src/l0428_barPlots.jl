@@ -4,7 +4,7 @@ using DataFrames
 using CSV
 using CategoricalArrays
 using StatsPlots
-using .IOLibrary: read_companyData
+using io_library: read_companyData
 
 function main_l0428_barPlots()
     path_to_here = @__DIR__

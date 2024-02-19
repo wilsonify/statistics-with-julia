@@ -1,6 +1,6 @@
 using Test
 using .TestingLibrary: dataframe_to_dict
-using .IOLibrary: read_fertilizer
+using io_library: read_fertilizer
 
 @testset "read_fertilizer" begin
     path_to_here = @__DIR__

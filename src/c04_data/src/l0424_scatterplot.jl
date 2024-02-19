@@ -3,7 +3,7 @@ using DataFrames
 using CSV
 using Plots; gr()
 
-using .IOLibrary: read_companyData
+using io_library: read_companyData
 
 function main_l0424_scatterplot()
     path_to_here = @__DIR__

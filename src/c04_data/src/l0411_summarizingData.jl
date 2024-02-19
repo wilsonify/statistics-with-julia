@@ -4,7 +4,7 @@ using Statistics
 using StatsBase
 using DataFrames
 
-using .IOLibrary: read_temperatures_subset
+using io_library: read_temperatures_subset
 
 function main_l0411_summarizingData()
     path_to_here = @__DIR__

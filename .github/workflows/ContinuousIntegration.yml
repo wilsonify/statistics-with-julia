@@ -14,6 +14,9 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
+      - name: Install Lib QT5 widgets
+        run: sudo apt-get install -y libqt5widgets5
+
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
         with:
@@ -90,6 +93,9 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
+      - name: Install Lib QT5 widgets
+        run: sudo apt-get install -y libqt5widgets5
+
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
         with:
@@ -166,6 +172,9 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
+      - name: Install Lib QT5 widgets
+        run: sudo apt-get install -y libqt5widgets5
+
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
         with:
@@ -242,6 +251,9 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
+      - name: Install Lib QT5 widgets
+        run: sudo apt-get install -y libqt5widgets5
+
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
         with:
@@ -318,6 +330,9 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
+      - name: Install Lib QT5 widgets
+        run: sudo apt-get install -y libqt5widgets5
+
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
         with:

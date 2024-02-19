@@ -5,7 +5,7 @@ using Distributions
 using CSV
 using DataFrames
 using Measures
-using .IOLibrary: read_temperatures
+using io_library: read_temperatures
 
 function main_l0425_marginalHists()
     path_to_here = @__DIR__

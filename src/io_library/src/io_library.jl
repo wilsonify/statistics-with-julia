@@ -1,5 +1,5 @@
 
-module IOLibrary
+module io_library
     include("io_library/read_3featureData.jl")
     include("io_library/read_ascombeData.jl")
     include("io_library/read_companyData.jl")

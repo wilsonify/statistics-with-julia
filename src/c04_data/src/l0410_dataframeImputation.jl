@@ -3,7 +3,7 @@
 using DataFrames
 using CSV
 using Statistics
-using .IOLibrary: read_purchaseData
+using io_library: read_purchaseData
 
 function summarize_purchaseData2(data)
     # dropmissing() and by() are used to calculate the mean price of each group,

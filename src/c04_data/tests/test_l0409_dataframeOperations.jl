@@ -9,8 +9,8 @@ using c04_data: sort_on_date_ascending
 using c04_data: select_Price_greater_than_50000
 using c04_data: cast_grade_to_categorical
 using c04_data: summarize_purchaseData1
-using c04_data.TestingLibrary: dataframe_to_dict
-using c04_data.TestingLibrary: are_dataframes_equal
+using testing_library: dataframe_to_dict
+using testing_library: are_dataframes_equal
 using c04_data: preprocess_purchaseData1
 using io_library: read_purchaseData
 path_to_here = @__DIR__

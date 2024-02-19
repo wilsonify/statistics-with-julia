@@ -1,7 +1,7 @@
 # Violin Plot
 
 using StatsPlots
-using .IOLibrary: read_iris_from_csv
+using io_library: read_iris_from_csv
 
 function main_l0423_violinPlot()
     # the iris dataset from the RDatasets package is loaded as a DataFrame via the dataset function.
