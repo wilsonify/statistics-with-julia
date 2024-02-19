@@ -27,28 +27,6 @@ foldedNormalRV(mu) = abs(rand(Normal(mu,sig)))
 # compute closedFormBayesEstimate using the formula for the mean of a gamma distribution
 closedFormPosterior(lam) = pdf(Gamma(alpha + sum(data),1 / (beta + length(data))),lam)
 
-function sampler(piProb, qProp, rvProp)
-    lam = 1
-    warmN, N = 10^5, 10^6
-    samples = zeros(N - warmN)
-
-    for t in 1:N
-        while true
-            lamTry = rvProp(lam)
-            L = piProb(lamTry) / piProb(lam)
-            H = min(1,L*qProp(lam,lamTry) / qProp(lamTry,lam))
-            if rand() < H
-                lam = lamTry
-                if t > warmN
-                    samples[t - warmN] = lam
-                end
-                break
-            end
-        end
-    end
-    return samples
-end
-
 
 # define the sampler function.
 function sampler(piProb, qProp, rvProp)
