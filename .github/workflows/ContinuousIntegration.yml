@@ -9,14 +9,12 @@ jobs:
   c01_intro:
     name: c01_intro on Julia ${{ matrix.version }}
     runs-on: ubuntu-latest
+
     strategy:
       fail-fast: false
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
-      - name: Install Lib QT5 widgets
-        run: sudo apt update && sudo apt upgrade -y && sudo apt-get install -y libqt5widgets5
-
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
         with:
@@ -44,46 +42,6 @@ jobs:
       - name: Install c01_intro
         working-directory: src/c01_intro
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c02_probability
-        working-directory: src/c02_probability
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c03_distribution
-        working-directory: src/c03_distribution
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c04_data
-        working-directory: src/c04_data
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c05_inference
-        working-directory: src/c05_inference
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c06_confidence
-        working-directory: src/c06_confidence
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c07_hypothesis
-        working-directory: src/c07_hypothesis
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c08_regression
-        working-directory: src/c08_regression
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c09_machine_learning
-        working-directory: src/c09_machine_learning
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c10_simulation
-        working-directory: src/c10_simulation
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Run Tests c01_intro step
-        working-directory: src/c01_intro/tests
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
 
   c02_probability:
     name: c02_probability on Julia ${{ matrix.version }}
@@ -93,9 +51,6 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
-      - name: Install Lib QT5 widgets
-        run: sudo apt update && sudo apt upgrade -y && sudo apt-get install -y libqt5widgets5
-
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
         with:
@@ -120,44 +75,8 @@ jobs:
         working-directory: src/io_library
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
-      - name: Install c01_intro
-        working-directory: src/c01_intro
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
       - name: Install c02_probability
         working-directory: src/c02_probability
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c03_distribution
-        working-directory: src/c03_distribution
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c04_data
-        working-directory: src/c04_data
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c05_inference
-        working-directory: src/c05_inference
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c06_confidence
-        working-directory: src/c06_confidence
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c07_hypothesis
-        working-directory: src/c07_hypothesis
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c08_regression
-        working-directory: src/c08_regression
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c09_machine_learning
-        working-directory: src/c09_machine_learning
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c10_simulation
-        working-directory: src/c10_simulation
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
       - name: Run Tests c02_probability step
@@ -172,8 +91,6 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
-      - name: Install Lib QT5 widgets
-        run: sudo apt update && sudo apt upgrade -y && sudo apt-get install -y libqt5widgets5
 
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
@@ -199,44 +116,9 @@ jobs:
         working-directory: src/io_library
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
-      - name: Install c01_intro
-        working-directory: src/c01_intro
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c02_probability
-        working-directory: src/c02_probability
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
       - name: Install c03_distribution
         working-directory: src/c03_distribution
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c04_data
-        working-directory: src/c04_data
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c05_inference
-        working-directory: src/c05_inference
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c06_confidence
-        working-directory: src/c06_confidence
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c07_hypothesis
-        working-directory: src/c07_hypothesis
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c08_regression
-        working-directory: src/c08_regression
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c09_machine_learning
-        working-directory: src/c09_machine_learning
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c10_simulation
-        working-directory: src/c10_simulation
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
       - name: Run Tests c03_distribution step
@@ -251,8 +133,6 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
-      - name: Install Lib QT5 widgets
-        run: sudo apt update && sudo apt upgrade -y && sudo apt-get install -y libqt5widgets5
 
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
@@ -278,44 +158,8 @@ jobs:
         working-directory: src/io_library
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
-      - name: Install c01_intro
-        working-directory: src/c01_intro
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c02_probability
-        working-directory: src/c02_probability
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c03_distribution
-        working-directory: src/c03_distribution
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
       - name: Install c04_data
         working-directory: src/c04_data
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c05_inference
-        working-directory: src/c05_inference
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c06_confidence
-        working-directory: src/c06_confidence
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c07_hypothesis
-        working-directory: src/c07_hypothesis
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c08_regression
-        working-directory: src/c08_regression
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c09_machine_learning
-        working-directory: src/c09_machine_learning
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c10_simulation
-        working-directory: src/c10_simulation
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
       - name: Run Tests c04_data step
@@ -330,8 +174,6 @@ jobs:
       matrix:
         version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
     steps:
-      - name: Install Lib QT5 widgets
-        run: sudo apt update && sudo apt upgrade -y && sudo apt-get install -y libqt5widgets5
 
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
@@ -357,44 +199,8 @@ jobs:
         working-directory: src/io_library
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
-      - name: Install c01_intro
-        working-directory: src/c01_intro
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c02_probability
-        working-directory: src/c02_probability
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c03_distribution
-        working-directory: src/c03_distribution
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c04_data
-        working-directory: src/c04_data
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
       - name: Install c05_inference
         working-directory: src/c05_inference
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c06_confidence
-        working-directory: src/c06_confidence
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c07_hypothesis
-        working-directory: src/c07_hypothesis
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c08_regression
-        working-directory: src/c08_regression
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c09_machine_learning
-        working-directory: src/c09_machine_learning
-        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
-
-      - name: Install c10_simulation
-        working-directory: src/c10_simulation
         run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
 
       - name: Run Tests c05_inference step
