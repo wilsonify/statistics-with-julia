@@ -1,4 +1,6 @@
 using Test
+using Random
+using Distributions
 using c05_inference: simulate_exponential_samples
 
 @testset "Exponential Distribution Test" begin
