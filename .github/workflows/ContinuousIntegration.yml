@@ -7,7 +7,6 @@ on:
 
 jobs:
   c01_intro:
-    needs: setup_internal
     name: c01_intro on Julia ${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
@@ -84,7 +83,6 @@ jobs:
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
 
   c02_probability:
-    needs: setup_internal
     name: c02_probability on Julia ${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
@@ -161,7 +159,6 @@ jobs:
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
 
   c03_distribution:
-    needs: setup_internal
     name: c03_distribution on Julia ${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
@@ -238,7 +235,6 @@ jobs:
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
 
   c04_data:
-    needs: setup_internal
     name: c04_data on Julia ${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
@@ -315,7 +311,6 @@ jobs:
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
 
   c05_inference:
-    needs: setup_internal
     name: c05_inference on Julia ${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
