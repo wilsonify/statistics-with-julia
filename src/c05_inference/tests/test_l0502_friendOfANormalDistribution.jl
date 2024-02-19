@@ -1,7 +1,9 @@
 using Test
 using c05_inference: simulate_normal_samples
 using c05_inference: compute_yMeanDensity
+using c05_inference: compute_yMeanDensity
 using c05_inference: compute_yTStatDensity
+
 @testset "end-to-end" begin
     using Distributions, Plots
     mu, sigma = 10, 4

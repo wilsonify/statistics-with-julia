@@ -206,3 +206,43 @@ jobs:
       - name: Run Tests c05_inference step
         working-directory: src/c05_inference/tests
         run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
+  c06_confidence:
+    name: c06_confidence on Julia ${{ matrix.version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ '1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10' ]
+    steps:
+
+      - name: Setup Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: ${{ matrix.version }}
+        env:
+          JULIA_DEPOT_PATH: ~/.julia
+
+      - name: Restore Cached Julia dependencies
+        uses: actions/cache/restore@v3
+        with:
+          path: ~/.julia
+          key: ${{ runner.os }}-julia-${{ matrix.version }}-${{ hashFiles('scripts/setup.jl') }}
+
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install testing_library
+        working-directory: src/testing_library
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+      - name: Install io_library
+        working-directory: src/io_library
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+      - name: Install c06_confidence
+        working-directory: src/c06_confidence
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} dev.jl
+
+      - name: Run Tests c06_confidence step
+        working-directory: src/c06_confidence/tests
+        run: julia --project=~/.julia/environments/v${{ matrix.version }} runtests.jl
