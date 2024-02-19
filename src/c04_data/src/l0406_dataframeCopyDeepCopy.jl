@@ -3,10 +3,6 @@
 using DataFrames
 using CSV
 using io_library: read_purchaseData
-path_to_here = @__DIR__
-path_to_data = abspath("$path_to_here/../../data")
-
-
 
 function create_a_reference(data1)
     # create a reference
@@ -16,7 +12,6 @@ function create_a_reference(data1)
 end
 function create_a_shallow_copy1(data1)
     # create a shallow copy
-    data1 = CSV.read("$path_to_data/purchaseData.csv", DataFrame, copycols = true)
     data2 = copy(data1)
     data2.Name[1] = "EMILY" # does not affect data1.
     return data1
@@ -41,6 +36,8 @@ end
 
 function main_l0406_dataframeCopyDeepCopy()
     # create a data frame from a csv file where data1.Name[1] is the string MARYANNA.
+    path_to_here = @__DIR__
+    path_to_data = abspath("$path_to_here/../../data")
     data1 = read_purchaseData("$path_to_data/purchaseData.csv")
     println("Original value: ", data1.Name[1])
     data1 = create_a_reference(data1)

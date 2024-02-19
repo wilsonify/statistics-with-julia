@@ -3,7 +3,7 @@ using CSV
 using Dates
 using Statistics
 using CategoricalArrays
-using StatisticsWithJuliac.c04_data: select_non_missing
+using c04_data: select_non_missing
 using c04_data: cast_string_to_Date
 using c04_data: sort_on_date_ascending
 using c04_data: select_Price_greater_than_50000
