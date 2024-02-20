@@ -1,9 +1,12 @@
 
 using Test
 using c05_inference: statPair
+using c05_inference: sim_dataUni
+using c05_inference: sim_dataUniInd
 using c05_inference: sim_dataNorm
 using c05_inference: sim_dataNormInd
-using c05_inference: sim_dataUni
+using c05_inference: plot_swarm_uniform
+using c05_inference: plot_swarm_normal
 
 @testset "statPair test" begin
     n, N = 3, 10^5

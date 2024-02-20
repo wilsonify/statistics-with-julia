@@ -102,6 +102,7 @@ end
 
 
 export statPair
+export sim_dataUni
+export sim_dataUniInd
 export sim_dataNorm
 export sim_dataNormInd
-export sim_dataUni
