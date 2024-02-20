@@ -61,7 +61,7 @@ function sampler(piProb, qProp, rvProp)
     return samples
 end
 
-function main_l0518_bayesUnivariate()
+function main_l0520_bayesMCMC()
     data = [2, 1, 0, 0, 1, 0, 2, 2, 5, 2, 4, 0, 3, 2, 5, 0]
 
     # define the prior hyper-parameters
