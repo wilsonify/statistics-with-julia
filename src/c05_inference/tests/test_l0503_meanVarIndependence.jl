@@ -1,4 +1,10 @@
+
 using Test
+using c05_inference: statPair
+using c05_inference: sim_dataNorm
+using c05_inference: sim_dataNormInd
+using c05_inference: sim_dataUni
+
 @testset "statPair test" begin
 
     n, N = 3, 10^5

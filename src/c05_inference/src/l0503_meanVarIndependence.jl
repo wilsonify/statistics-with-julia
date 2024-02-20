@@ -16,23 +16,36 @@ function statPair(dist, n)
     [mean(sample), var(sample)]
 end
 
-function sim_dataUniInd(N, n)
+function sim_dataUni():
+    # define the standard uniform distribution mean of zero and standard deviation of one.
     stdUni = Uniform(-sqrt(3),sqrt(3))
-    result = [[mean(rand(stdUni,n)), var(rand(stdUni,n))] for _ in 1:N]
+    result = [statPair(stdUni,n) for _ in 1:N]
+return dataUni
+
+function sim_dataUniInd(N, n)
+    # define the standard uniform distribution mean of zero and standard deviation of one.
+    stdUni1 = Uniform(-sqrt(3),sqrt(3))
+    stdUni2 = Uniform(-sqrt(3),sqrt(3))
+    # calculate N pairs of sample means and variances from N sample groups.
+    result = [[mean(rand(stdUni1,n)), var(rand(stdUni2,n))] for _ in 1:N]
     return result
-    end
+end
 
 function sim_dataNorm(N, n)
+    # define the standard uniform distribution mean of zero and standard deviation of one.
     stdUni = Uniform(-sqrt(3),sqrt(3))
+    # calculate N pairs of sample means and variances from N sample groups.
     result = [statPair(Normal(),n) for _ in 1:N]
      return result
-     end
+end
 
 function sim_dataNormInd(N, n)
-        stdUni = Uniform(-sqrt(3),sqrt(3))
-     result = [[mean(rand(Normal(),n)), var(rand(Normal(),n))] for _ in 1:N]
-     return result
-     end
+    # define the standard uniform distribution mean of zero and standard deviation of one.
+    stdUni = Uniform(-sqrt(3),sqrt(3))
+    # calculate N pairs of sample means and variances from N sample groups.
+    result = [[mean(rand(Normal(),n)), var(rand(Normal(),n))] for _ in 1:N]
+    return result
+end
 
 function plot_swarm_uniform(dataUni, dataUniInd)
     p1 = scatter(first.(dataUni), last.(dataUni),  c = :blue, ms = 1, msw = 0, label = "Same group")
@@ -46,9 +59,12 @@ function plot_swarm_normal(dataNorm, dataNormInd)
 return p2
 end
 
+
+
 function main_l0503_meanVarIndependence()
     # define the standard uniform distribution mean of zero and standard deviation of one.
     stdUni = Uniform(-sqrt(3),sqrt(3))
+
     # set the number of observations for each sample n
     # set the number of sample groups N
     n, N = 3, 10^5
@@ -69,6 +85,7 @@ function main_l0503_meanVarIndependence()
     dataNorm_first = first.(dataNorm)
     dataNorm_last = last.(dataNorm)
 
+    # do the same from a separate standard normal distribution
     dataNormInd = [[mean(rand(Normal(),n)), var(rand(Normal(),n))] for _ in 1:N]
     dataNormInd_first = first.(dataNormInd)
     dataNormInd_last = last.(dataNormInd)
@@ -81,3 +98,9 @@ function main_l0503_meanVarIndependence()
 
     plot(p1, p2, ylims=(0,5), size=(800, 400))
 end
+
+
+export statPair
+export sim_dataNorm
+export sim_dataNormInd
+export sim_dataUni
