@@ -1,3 +1,6 @@
+#=
+
+=#
 using Distributions, LaTeXStrings, Plots; gr()
 
 alpha, beta = 8, 2

@@ -1,3 +1,6 @@
+#=
+
+=#
 using Distributions, Plots; gr()
 
 mu, sig = 2, 3

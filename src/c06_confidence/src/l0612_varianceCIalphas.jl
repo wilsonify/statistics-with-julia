@@ -1,3 +1,6 @@
+#=
+
+=#
 using Distributions, LaTeXStrings, Plots; gr()
 
 mu, sig = 2, 3

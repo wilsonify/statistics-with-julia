@@ -4,6 +4,8 @@ using c05_inference: compute_yMeanDensity
 using c05_inference: compute_yVarDensity
 using c05_inference: compute_yTStatDensity
 using c05_inference: plot_sample_means
+using c05_inference: plot_sample_vars
+
 @testset "end-to-end" begin
     using Distributions, Plots
     mu, sigma = 10, 4
