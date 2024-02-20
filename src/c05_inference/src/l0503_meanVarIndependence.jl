@@ -16,11 +16,11 @@ function statPair(dist, n)
     [mean(sample), var(sample)]
 end
 
-function sim_dataUni()
+function sim_dataUni(N,n)
     # define the standard uniform distribution mean of zero and standard deviation of one.
     stdUni = Uniform(-sqrt(3),sqrt(3))
     result = [statPair(stdUni,n) for _ in 1:N]
-    return dataUni
+    return result
 end
 
 function sim_dataUniInd(N, n)
