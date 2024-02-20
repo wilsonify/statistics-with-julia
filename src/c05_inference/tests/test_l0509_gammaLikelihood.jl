@@ -1,4 +1,7 @@
 using Test
+using c05_inference: generate_Gamma
+using c05_inference: likelihood_Gamma
+
 
 @testset "generate_Gamma" begin
     actualAlpha, actualLambda = 2, 3

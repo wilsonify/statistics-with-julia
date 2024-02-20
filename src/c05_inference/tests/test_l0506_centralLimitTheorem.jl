@@ -1,17 +1,20 @@
 using Test
 using Distributions, Plots; gr()
+using c05_inference: generate_uniform
+using c05_inference: generate_exponential
+using c05_inference: generate_normal
 
 @testset "generate_uniform" begin
     result = generate_uniform()
-    @test length(result) == N
+    @test length(result) == 10000000
 end
 @testset "generate_exponential" begin
     result = generate_exponential()
-    @test length(result) == N
+    @test length(result) == 10000000
 end
 @testset "generate_normal" begin
     result = generate_normal()
-    @test length(result) == N
+    @test length(result) == 10000000
 end
 
 @testset "end-to-end" begin

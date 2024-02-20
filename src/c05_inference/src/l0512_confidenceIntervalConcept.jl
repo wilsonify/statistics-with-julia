@@ -1,21 +1,33 @@
 #=
 given observations, compute Lower and Upper confidence bounds
 
-The virtue of the example is in presenting the 95% confidence interval,
-as output
+The virtue of the example is in presenting the 95% confidence interval, as output
 
 Based on the output (after rounding), we know that with 0.95 confidence,
 the unknown parameter lies in the range [5.2, 6.75].
 =#
-using Random, Distributions
+using Random
+using Distributions
 
-using Random, Distributions
+function L1(obs)
+    # implement lower bound
+    # set the confidence level
+    alpha = 0.05
+    root_alpha = sqrt(alpha)
+    right_quantile = 1 - root_alpha
+    result = obs - right_quantile
+    return result
+end
 
-# set the confidence level
-alpha = 0.05
-# implement lower and upper
-L1(obs) = obs - (1 - sqrt(alpha))
-U1(obs) = obs + (1 - sqrt(alpha))
+function U1(obs)
+    # implement upper bound
+    # set the confidence level
+    alpha = 0.05
+    root_alpha = sqrt(alpha)
+    right_quantile = 1 - root_alpha
+    result = obs + right_quantile
+    return result
+end
 
 function generate_data_triangle(mu)
     sample = rand(TriangularDist(mu - 1,mu + 1,mu))

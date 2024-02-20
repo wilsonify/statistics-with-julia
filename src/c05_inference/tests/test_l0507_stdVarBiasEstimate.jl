@@ -1,11 +1,11 @@
 using Test
+using c05_inference: estVar
 
-@testset "end_to_end" begin
+@testset "estVar" begin
 Random.seed!(0)
     trueVar = 1 / 12
     trueStd = sqrt(1 / 12)
     N = 10^7
-
     result = estVar(10)
     result = round(result,digits = 1)
     @test result == 0.1

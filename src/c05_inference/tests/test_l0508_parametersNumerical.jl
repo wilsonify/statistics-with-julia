@@ -2,6 +2,10 @@ using Test
 using Random
 using Distributions
 using NLsolve
+using c05_inference: sim_mHats
+using c05_inference: generate_data
+using c05_inference: m_k
+using c05_inference: equations!
 
 @testset "m_k" begin
 

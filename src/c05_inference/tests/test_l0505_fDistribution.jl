@@ -1,3 +1,7 @@
+using Test
+using c05_inference: generate_fValues
+using c05_inference: plot_fValues
+
 @testset "generate_fValues test" begin
 N = 1000
 mu, sigma = 10, 4
