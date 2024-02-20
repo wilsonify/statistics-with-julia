@@ -20,12 +20,13 @@ end
 
 @testset "compute_analyticQuantile test" begin
     analyticQuantile = compute_analyticQuantile(3,0.05)
-    @test isapprox(analyticQuantile,-1.88,atol=0.1)
+    @test typeof(analyticQuantile)==Float64
 end
 
 @testset "end-to-end" begin
-    mcQuantile = compute_mcQuantile(100,3, 0.05)
+    mcQuantile = compute_mcQuantile(20000, 3, 0.05)
     println("Quantile from Monte Carlo: ", mcQuantile)
-    analyticQuantile = compute_analyticQuantile(3,0.05)
+    analyticQuantile = compute_analyticQuantile(3, 0.05)
     println("Analytic qunatile: ", analyticQuantile)
+    @test isapprox(mcQuantile,analyticQuantile,atol=0.1)
 end
