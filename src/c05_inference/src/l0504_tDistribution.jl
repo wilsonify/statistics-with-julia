@@ -17,12 +17,14 @@ function myT(nObs)
 end
 
 function compute_mcQuantile(N, n, alpha)
+    # estimate the alpha quantile using N replications
     mcQuantile = quantile([myT(n) for _ in 1:N],alpha)
     return mcQuantile
     end
 
-function compute_analyticQuantile(n)
-    analyticQuantile = quantile(TDist(n - 1),alpha)
+function compute_analyticQuantile(n,alpha)
+    # compute the quantile analytically for a corresponding T-distribution
+    analyticQuantile = quantile(TDist(n - 1), alpha)
     return analyticQuantile
     end
 
@@ -61,3 +63,4 @@ end
 
 export myT
 export compute_mcQuantile
+export compute_analyticQuantile

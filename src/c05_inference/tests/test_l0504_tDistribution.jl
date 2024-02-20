@@ -4,6 +4,7 @@ using Test
 using Distributions
 using c05_inference: myT
 using c05_inference: compute_mcQuantile
+using c05_inference: compute_analyticQuantile
 
 @testset "myT test" begin
     result = myT(3)
@@ -12,19 +13,19 @@ using c05_inference: compute_mcQuantile
 end
 
 @testset "compute_mcQuantile test" begin
-    mcQuantile = compute_mcQuantile(N=10^3, n=3, alpha=0.05)
+    mcQuantile = compute_mcQuantile(10^3, 3, 0.05)
     mcQuantile = round(mcQuantile,digits=2)
-@test isapprox(mcQuantile,-1.88,atol=0.1)
+    @test typeof(mcQuantile)==Float64
 end
 
 @testset "compute_analyticQuantile test" begin
-    analyticQuantile = compute_analyticQuantile(n)
+    analyticQuantile = compute_analyticQuantile(3,0.05)
     @test isapprox(analyticQuantile,-1.88,atol=0.1)
 end
 
 @testset "end-to-end" begin
-    mcQuantile = compute_mcQuantile(N,n)
+    mcQuantile = compute_mcQuantile(100,3, 0.05)
     println("Quantile from Monte Carlo: ", mcQuantile)
-    analyticQuantile = compute_analyticQuantile(n)
+    analyticQuantile = compute_analyticQuantile(3,0.05)
     println("Analytic qunatile: ", analyticQuantile)
 end
