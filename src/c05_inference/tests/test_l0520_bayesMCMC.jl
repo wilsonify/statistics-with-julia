@@ -1,5 +1,8 @@
 using Test
-using c05_inference: sampler
+using LaTeXStrings
+using Distributions
+using Plots; gr()
+using c05_inference: sampler1
 using c05_inference: prior3_gamma
 using c05_inference: like3_poisson
 using c05_inference: posteriorUpToK3
