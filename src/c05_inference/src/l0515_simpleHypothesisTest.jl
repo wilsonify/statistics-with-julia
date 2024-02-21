@@ -3,7 +3,10 @@ Type I (blue) and Type II (green) errors.
 The rejection region based from τ = 17.5
 to the right is colored with red on the horizontal axis.
 =#
-using Distributions, StatsBase, Plots
+using Random
+using Distributions
+using StatsBase
+using Plots; gr()
 
 function compute_type_I_error(mu0, sd, tau)
     # compute α using ccdf(dist0)

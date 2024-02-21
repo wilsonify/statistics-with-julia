@@ -1,4 +1,8 @@
 using Test
+using Random
+using Distributions
+using StatsBase
+using Plots; gr()
 using c05_inference: compute_type_I_error
 using c05_inference: compute_type_II_error
 using c05_inference: plot_hypothesis_test
