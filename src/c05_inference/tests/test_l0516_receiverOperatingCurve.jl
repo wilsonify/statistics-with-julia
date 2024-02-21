@@ -1,3 +1,9 @@
+using Distributions
+using StatsBase
+using LaTeXStrings
+using Plots; gr()
+using Test
+
 @testset "end_to_end" begin
     mu0, mu1a, mu1b, mu1c, sd = 15, 16, 18, 20, 2
     tauGrid = 5:0.1:25

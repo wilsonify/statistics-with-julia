@@ -2,9 +2,19 @@
 Three ROCs for various points within the alternative hypothesis H1.
 =#
 
-using Distributions, StatsBase, LaTeXStrings, Plots; gr()
-using Distributions, StatsBase, LaTeXStrings, Plots; gr()
+using Distributions
+using StatsBase
+using LaTeXStrings
+using Plots; gr()
 
+
+function compute_false_positive(dist0, tauGrid)
+    return ccdf.(dist0, tauGrid)
+end
+
+function compute_true_positive(dist1, tauGrid)
+    return ccdf.(dist1, tauGrid)
+end
 
 function main_l0516_receiverOperatingCurve()
     mu0, mu1a, mu1b, mu1c, sd = 15, 16, 18, 20, 2
