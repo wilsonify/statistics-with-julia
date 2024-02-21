@@ -26,7 +26,10 @@ function plot_hypothesis_test(mu0, mu1, sd, tau)
     # grids of values that are used for plotting type I and type II error ranges.
     grid = 5:0.1:25
     h0grid, h1grid = tau:0.1:25, 5:0.1:tau
-
+    y1 = pdf.(dist0,grid)
+    y2 = pdf.(dist0, h0grid)
+    y3 = pdf.(dist1,grid)
+    y4 = pdf.(dist1, h1grid)
     plot(    grid,    y1,    c = :blue,    label = "Bolt type 15g"    )
     plot!(    h0grid,    y2,    c = :blue,    fa = 0.2,    fillrange = [0 1],    label = ""    )
     plot!(    grid,    y3,    c = :green,    label = "Bolt type 18g"    )
