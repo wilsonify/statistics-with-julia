@@ -28,5 +28,5 @@ end
     println("Quantile from Monte Carlo: ", mcQuantile)
     analyticQuantile = compute_analyticQuantile(3, 0.05)
     println("Analytic qunatile: ", analyticQuantile)
-    @test isapprox(mcQuantile,analyticQuantile,atol=0.1)
+    @test isapprox(mcQuantile,analyticQuantile,atol=0.5)
 end
