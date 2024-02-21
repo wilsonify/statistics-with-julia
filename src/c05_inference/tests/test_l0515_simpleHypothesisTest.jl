@@ -6,6 +6,7 @@ using Plots; gr()
 using c05_inference: compute_type_I_error
 using c05_inference: compute_type_II_error
 using c05_inference: plot_hypothesis_test
+using c05_inference: main_l0515_simpleHypothesisTest
 
 @testset "Type I Error" begin
     Random.seed!(0)
@@ -33,5 +34,6 @@ end
     @test P_Type_II == 0.4
 
     p1 = plot_hypothesis_test(mu0, mu1, sd, tau)
-    display(p1)
+
 end
+
