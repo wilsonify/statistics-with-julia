@@ -11,7 +11,7 @@ using c05_inference: foldedNormalRV
 using c05_inference: closedFormPosterior
 
 @testset "end_to_end" begin
-    mcmcSamples = sampler(posteriorUpToK3,foldedNormalPDF,foldedNormalRV)
+    mcmcSamples = sampler1(posteriorUpToK3,foldedNormalPDF,foldedNormalRV)
     result = mean(mcmcSamples)
     result = round(result,digits = 2)
     @test result == 2.07
