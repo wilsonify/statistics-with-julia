@@ -3,7 +3,7 @@ module c06_confidence
     include("l0601_onePopVKnown.jl")
     include("l0602_onePopVUnknown.jl")
     include("l0603_twoPopVKnown.jl")
-    #include("l0604_twoPopMVUnknownAEqual.jl")
+    include("l0604_twoPopMVUnknownAEqual.jl")
     #include("l0605_twoPopMVUnknownAUnequal.jl")
     #include("l0606_vDOF_comparison.jl")
     #include("l0607_proportionCI.jl")
