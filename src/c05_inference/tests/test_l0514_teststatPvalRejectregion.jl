@@ -3,6 +3,7 @@ using Distributions
 using Random
 using Statistics
 using Plots; gr()
+using c05_inference: SimulationData
 using c05_inference: ts
 using c05_inference: generate_simulation_data
 using c05_inference: compute_rejectionValue
