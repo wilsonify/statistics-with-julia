@@ -4,8 +4,10 @@ The prior triangular distribution in blue
 the posterior in red
 =#
 
-using Distributions, LaTeXStrings, Plots; gr()
-using Distributions, LaTeXStrings, Plots; gr()
+using Distributions
+using LaTeXStrings
+using Plots; gr()
+
 
 data = [2, 1, 0, 0, 1, 0, 2, 2, 5, 2, 4, 0, 3, 2, 5, 0]
 delta = 10^-2.

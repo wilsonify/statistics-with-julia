@@ -1,6 +1,7 @@
 using Test
-
-
+using Distributions
+using LaTeXStrings
+using Plots; gr()
 using c05_inference: prior1_triangle
 using c05_inference: like1_poisson
 using c05_inference: posteriorUpToK1
