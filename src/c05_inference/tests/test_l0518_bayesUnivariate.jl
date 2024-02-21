@@ -1,37 +1,47 @@
 using Test
-@testset "prior" begin
- result = prior(2)
+
+
+using c05_inference: prior1_triangle
+using c05_inference: like1_poisson
+using c05_inference: posteriorUpToK1
+using c05_inference: compute_K1
+using c05_inference: posterior1
+using c05_inference: compute_bayesEstimate1
+
+
+@testset "prior1_triangle" begin
+ result = prior1_triangle(2)
  result = round(result,digits = 2)
  @test result == 0.13
 end
-@testset "like" begin
-result = like(10)
+@testset "like1_poisson" begin
+result = like1_poisson(10)
  result = round(result,digits = 4)
  @test result == 0.0
 end
-@testset "posteriorUpToK" begin
-result = posteriorUpToK(3)
+@testset "posteriorUpToK1" begin
+result = posteriorUpToK1(3)
  result = round(result,digits = 4)
  @test result == 0.0
 end
-@testset "compute_K" begin
-result = compute_K()
+@testset "compute_K1" begin
+result = compute_K1()
   result = round(result,digits = 4)
   @test result == 0.0
 end
-@testset "posterior" begin
-result = posterior(5)
+@testset "posterior1" begin
+result = posterior1(5)
  result = round(result,digits = 4)
  @test result == 0.0
 end
-@testset "compute_bayesEstimate" begin
-result = compute_bayesEstimate()
+@testset "compute_bayesEstimate1" begin
+result = compute_bayesEstimate1()
   result = round(result,digits = 2)
   @test result == 1.94
 end
 
 @testset "end_to_end" begin
-    bayesEstimate = compute_bayesEstimate()
+    bayesEstimate = compute_bayesEstimate1()
     bayesEstimate = round(bayesEstimate,digits = 2)
     @test bayesEstimate == 1.94
     plot(lamRange, prior.(lamRange),     c = :blue, label = "Prior distribution")
