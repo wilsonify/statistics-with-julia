@@ -4,13 +4,13 @@ The distribution of the test statistic, X ∗ , under H0 .
 With α = 0.05 the rejection region is to the left of the black dashed line.
 In a speciﬁc sample, the test statistic is on the red line and we reject H0 .
 =#
-using Distributions, Random, Statistics, Plots; gr()
-using Distributions, Random, Statistics, Plots; gr()
+using Distributions
+using Random
+using Statistics
+using Plots; gr()
 
 # ts() calculates the test statistic from a sample.
 ts(sample) = maximum(sample) - minimum(sample)
-
-
 
 function main_l0514_teststatPvalRejectregion()
     Random.seed!(2)

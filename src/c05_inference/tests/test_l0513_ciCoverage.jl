@@ -1,3 +1,5 @@
+using Test
+using c05_inference: run_simulation1
 
 @testset "end_to_end" begin
     Random.seed!(2)
