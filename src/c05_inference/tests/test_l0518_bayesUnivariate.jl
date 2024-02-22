@@ -47,6 +47,6 @@ end
     bayesEstimate = compute_bayesEstimate1()
     bayesEstimate = round(bayesEstimate,digits = 2)
     @test bayesEstimate == 1.94
-    plot(lamRange, prior.(lamRange),     c = :blue, label = "Prior distribution")
-    plot!(lamRange, posterior.(lamRange),    c = :red, label = "Posterior distribution",    xlims = (0, 10), ylims = (0, 1.2),    xlabel = L"\lambda",ylabel = "Density")
+    plot(lamRange, prior1_triangle.(lamRange),     c = :blue, label = "Prior distribution")
+    plot!(lamRange, posterior1.(lamRange),    c = :red, label = "Posterior distribution",    xlims = (0, 10), ylims = (0, 1.2),    xlabel = L"\lambda",ylabel = "Density")
 end
