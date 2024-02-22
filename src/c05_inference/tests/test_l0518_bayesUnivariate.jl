@@ -42,6 +42,8 @@ result = compute_bayesEstimate1()
 end
 
 @testset "end_to_end" begin
+    delta = 10^-2.
+    lamRange = 0:delta:10
     bayesEstimate = compute_bayesEstimate1()
     bayesEstimate = round(bayesEstimate,digits = 2)
     @test bayesEstimate == 1.94
