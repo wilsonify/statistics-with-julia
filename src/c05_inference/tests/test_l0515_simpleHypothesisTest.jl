@@ -33,7 +33,7 @@ end
     @test P_Type_I == 0.11
     @test P_Type_II == 0.4
 
-    p1 = plot_hypothesis_test(mu0, mu1, sd, tau)
+    plot_hypothesis_test(mu0, mu1, sd, tau)
 
 end
 

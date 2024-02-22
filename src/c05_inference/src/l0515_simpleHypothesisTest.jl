@@ -36,7 +36,6 @@ function plot_hypothesis_test(mu0, mu1, sd, tau)
     plot!(    h1grid,    y4,    c = :green,    fa = 0.2,    fillrange = [0 1],    label = ""    )
     plot!(    [tau, 25],    [0, 0],    c = :red,    lw = 3,    label = "Rejection region",    xlims = (5, 25),    ylims = (0,0.25) ,    legend = :topleft,    xlabel = "x",    ylabel = "Density"    )
     annotate!([    (16, 0.02, text(L"\beta")), (18.5, 0.02, text(L"\alpha")), (15, 0.21, text(L"H_0")), (18, 0.21, text(L"H_1"))    ])
-    return p1
 end
 
 function main_l0515_simpleHypothesisTest()
@@ -110,7 +109,7 @@ function main_l0515_simpleHypothesisTest()
     (15, 0.21, text(L"H_0")),
     (18, 0.21, text(L"H_1"))
     ])
-    display(plot)
+
 end
 
 
