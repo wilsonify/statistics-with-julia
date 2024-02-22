@@ -4,8 +4,8 @@ using Distributions
 using HypothesisTests
 using DataFrames
 using io_library: read_machine_data
-using c05_inference: confidence_interval_unknown_equal_var_formula
-using c05_inference: confidence_interval_unknown_equal_var_builtin
+using c06_confidence: confidence_interval_unknown_equal_var_formula
+using c06_confidence: confidence_interval_unknown_equal_var_builtin
 
 @testset "read_machine" begin
     data = read_machine_data("$(@__DIR__)/../../../data/machine1.csv")[:,1]
