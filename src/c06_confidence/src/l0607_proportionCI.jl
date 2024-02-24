@@ -7,9 +7,16 @@ using CategoricalArrays # levels()
 using DataFrames
 using Distributions
 
+function sum_of_missing(arr)
+    is_missing  = ismissing.(arr)
+    result = sum(.!(is_missing))
+    return result
+    end
+
+
 function main_l0607_proportionCI()
     # load the data
-    data = CSV.read("$$(@__DIR__)/../../../data/purchaseData.csv", DataFrame, copycols = true)
+    data = CSV.read("$(@__DIR__)/../../../data/purchaseData.csv", DataFrame, copycols = true)
     # describe the the Grade column.
     println("Data points: ", nrow(data))
     # Note the use of CategoricalArrays.levels() from .
