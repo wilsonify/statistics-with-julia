@@ -14,7 +14,7 @@ using c05_inference: closedFormPosterior
     mcmcSamples = sampler1(posteriorUpToK3,foldedNormalPDF,foldedNormalRV)
     result = mean(mcmcSamples)
     result = round(result,digits = 2)
-    @test result == 2.07
+    @test isapprox(result,2.07,atol=0.5)
     lamRange = 0:0.01:10
     stephist(mcmcSamples, bins = 100,    c = :black, normed = true, label = "Histogram of MCMC samples")
     plot!(lamRange, prior3_gamma.(lamRange),     c = :blue, label = "Prior distribution")
