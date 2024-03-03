@@ -19,7 +19,7 @@ df(s1, s2, n1, n2) = (s1^2 / n1 + s2^2 / n2)^2 / ( (s1^2 / n1)^2 / (n1 - 1) + (s
 # Note that the number of quantiles is one more than the number of experiments, i.e. N+1.
 invVal(v, i, N) = quantile(TDist(v),i / (N + 1))
 
-function compute_tdArray()
+function compute_tdArray(N)
     tdArray = Array{Tuple{Float64,Float64}}(undef,N)
     for i in 1:N
         x1Data = rand(dist1, n1)

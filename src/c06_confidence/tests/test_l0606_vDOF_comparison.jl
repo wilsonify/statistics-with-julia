@@ -1,4 +1,5 @@
 using Test
+using Distributions
 using c06_confidence: compute_tdArray
 using c06_confidence: compute_coords
 
@@ -8,7 +9,7 @@ using c06_confidence: compute_coords
     mu2, sig2, n2 = 0, 30, 15
     dist1 = Normal(mu1, sig1)
     dist2 = Normal(mu2, sig2)
-    result = compute_tdArray()
+    result = compute_tdArray(N)
     @test length(result) == N
 end
 
