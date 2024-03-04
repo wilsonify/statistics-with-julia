@@ -2,6 +2,7 @@ using Test
 using Distributions
 using c06_confidence: compute_tdArray
 using c06_confidence: compute_coords
+using Plots; gr()
 
 @testset "compute_tdArray" begin
     N = 10^6

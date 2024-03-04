@@ -39,6 +39,9 @@ function compute_tdArray(N, mu1, sig1, mu2, sig2)
 end
 
 function compute_coords(tdArray)
+    N=length(tdArray)
+    n1=10
+    n2=20
     xCoords = Array{Float64}(undef,N)
     yCoords1 = Array{Float64}(undef,N)
     yCoords2 = Array{Float64}(undef,N)
