@@ -20,6 +20,7 @@ end
 end
 
 @testset "" begin
+    gradeInQuestion = "E"
     data = read_purchaseData("$(@__DIR__)/../../../data/purchaseData.csv")
     n = sum_of_missing(data.Grade)
     data2 = dropmissing(data[:, [:Grade]],:Grade)
@@ -34,10 +35,10 @@ end
 end
 
 @testset "" begin
+    gradeInQuestion = "E"
     data = read_purchaseData()
     n = sum_of_missing(data.Grade)
     data2 = dropmissing(data[:, [:Grade]],:Grade)
-    gradeInQuestion = "E"
     indicatorVector = data2.Grade .== gradeInQuestion
     numSuccess = sum(indicatorVector)
     phat = numSuccess/n
