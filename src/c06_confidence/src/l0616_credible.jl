@@ -1,5 +1,5 @@
 #=
-
+Credible intervals on a posterior distribution
 =#
 using Distributions, LaTeXStrings, Plots; gr()
 

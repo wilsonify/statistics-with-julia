@@ -1,5 +1,5 @@
 #=
-
+Actual α vs. α used in variance conﬁdence intervals
 =#
 using Distributions, LaTeXStrings, Plots; gr()
 

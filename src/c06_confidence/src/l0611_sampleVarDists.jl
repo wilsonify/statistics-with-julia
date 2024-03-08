@@ -1,5 +1,5 @@
 #=
-
+Comparison of sample variance distributions
 =#
 using Distributions, Plots; gr()
 

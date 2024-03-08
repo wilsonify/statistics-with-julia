@@ -1,5 +1,5 @@
 #=
-
+Coverage probability for bootstrap conﬁdence intervals
 =#
 using Random, Distributions
 

@@ -1,5 +1,5 @@
 #=
-
+Conﬁdence interval for the variance
 =#
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here = @__DIR__

@@ -1,5 +1,5 @@
 #=
-
+Prediction interval with unknown population mean and variance
 =#
 using Random, Statistics, Distributions, Plots; gr()
 Random.seed!(0)

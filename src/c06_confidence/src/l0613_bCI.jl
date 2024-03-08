@@ -1,5 +1,5 @@
 #=
-
+Bootstrap conﬁdence interval
 =#
 using DataFrames, Random, CSV, Distributions, Plots; gr()
 path_to_here = @__DIR__
