@@ -1,3 +1,6 @@
+#=
+
+=#
 using DataFrames, GLM, Statistics, LinearAlgebra, CSV
 
 data = CSV.read("L1L2data.csv")

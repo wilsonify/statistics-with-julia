@@ -1,3 +1,6 @@
+#=
+
+=#
 using MultivariateStats, RDatasets, PyPlot, LinearAlgebra, Flux.Data.MNIST
 
 imgs, labels   = MNIST.images(), MNIST.labels()

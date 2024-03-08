@@ -1,3 +1,6 @@
+#=
+
+=#
 using Distributions, PyPlot, Random
 
 seed = 1

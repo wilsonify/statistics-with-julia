@@ -1,3 +1,6 @@
+#=
+
+=#
 using Distributions, PyPlot, Random
 
 N, K, M = 10^2, 50, 10^3

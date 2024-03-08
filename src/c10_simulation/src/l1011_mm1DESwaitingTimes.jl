@@ -1,3 +1,6 @@
+#=
+
+=#
 using DataStructures, Distributions, StatsBase, PyPlot, Random
 
 function simMM1Wait(lambda, mu, T)

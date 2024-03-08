@@ -1,3 +1,6 @@
+#=
+
+=#
 using CSV, RDatasets, DataFrames, GLM, PyPlot
 
 df = CSV.read("weightHeight.csv")

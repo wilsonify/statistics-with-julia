@@ -1,3 +1,6 @@
+#=
+
+=#
 using LinearAlgebra, StatsBase, PyPlot, Random
 
 L = 10

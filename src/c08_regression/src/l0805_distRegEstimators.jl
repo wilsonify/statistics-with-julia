@@ -1,3 +1,6 @@
+#=
+
+=#
 using DataFrames, GLM, PyPlot, Distributions, LinearAlgebra
 
 beta0, beta1 = 2.0, 1.5

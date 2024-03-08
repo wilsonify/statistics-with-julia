@@ -1,3 +1,6 @@
+#=
+
+=#
 using Distributions, HypothesisTests
 
 p = [0.08, 0.12, 0.2, 0.2, 0.15, 0.25]

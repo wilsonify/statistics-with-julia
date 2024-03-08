@@ -1,3 +1,6 @@
+#=
+
+=#
 using CSV, TimeSeries, Dates, Statistics, Measures, StatsPlots, Plots; gr()
 df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)
 tsA = TimeArray(Date.(df.Day,Dates.DateFormat("m/d/y")),df.Users)

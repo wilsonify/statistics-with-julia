@@ -1,3 +1,6 @@
+#=
+
+=#
 using GLM, DataFrames, Distributions, PyPlot, CSV
 
 data = CSV.read("examData.csv")

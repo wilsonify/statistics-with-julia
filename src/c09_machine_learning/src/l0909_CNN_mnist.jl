@@ -1,3 +1,6 @@
+#=
+
+=#
 using Flux, Flux.Data.MNIST, Statistics, BSON, Random, Plots; gr()
 
 using Flux: onehotbatch, onecold, crossentropy

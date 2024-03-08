@@ -1,3 +1,6 @@
+#=
+
+=#
 using Flux.Data.MNIST, PyPlot, LinearAlgebra
 using Flux: onehotbatch
 

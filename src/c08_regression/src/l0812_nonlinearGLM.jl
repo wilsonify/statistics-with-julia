@@ -1,3 +1,6 @@
+#=
+
+=#
 using DataFrames, GLM, PyPlot, CSV
 
 data = CSV.read("polynomialData.csv")

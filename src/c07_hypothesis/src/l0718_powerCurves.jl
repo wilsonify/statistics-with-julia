@@ -1,3 +1,6 @@
+#=
+
+=#
 using Distributions, KernelDensity, PyPlot
 
 function tStat(mu0,mu,sig,n)

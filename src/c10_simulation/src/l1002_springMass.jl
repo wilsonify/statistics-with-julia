@@ -1,3 +1,6 @@
+#=
+
+=#
 using DifferentialEquations, PyPlot, LinearAlgebra
 
 k, b, M = 1.2, 0.3, 2.0

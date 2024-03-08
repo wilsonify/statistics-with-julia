@@ -1,3 +1,6 @@
+#=
+
+=#
 using Flux.Data.MNIST, LIBSVM, PyPlot
 
 imgs   = MNIST.images()

@@ -1,3 +1,6 @@
+#=
+
+=#
 using DataFrames, GLM, PyPlot, Distributions, CSV
 
 data = CSV.read("weightHeight.csv")

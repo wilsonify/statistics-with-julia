@@ -1,3 +1,6 @@
+#=
+
+=#
 using Flux, Flux.Data.MNIST, Statistics, BSON, StatsBase, Plots; gr()
 using Flux: onecold
 model= Chain(Conv((5, 5), 1=>8, relu), MaxPool((2,2)),

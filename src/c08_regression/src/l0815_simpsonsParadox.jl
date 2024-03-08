@@ -1,3 +1,6 @@
+#=
+
+=#
 using DataFrames, GLM, PyPlot, CSV
 
 df = CSV.read("IQalc.csv")
