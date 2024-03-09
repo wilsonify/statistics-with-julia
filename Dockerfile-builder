@@ -1,3 +1,3 @@
 FROM ghcr.io/wilsonify/stats-with-julia-base:latest
 COPY scripts/setup.jl /usr/src/scripts/setup.jl
-RUN julia --project=~/.julia/environments/v1.9 /usr/src/scripts/setup.jl
+RUN julia --project=~/.julia/environments/v1.10 /usr/src/scripts/setup.jl
