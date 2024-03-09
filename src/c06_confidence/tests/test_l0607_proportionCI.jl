@@ -24,8 +24,7 @@ end
     data = read_purchaseData("$(@__DIR__)/../../../data/purchaseData.csv")
     n = sum_of_missing(data.Grade)
     data2 = dropmissing(data[:, [:Grade]],:Grade)
-    gradeInQuestion = "E"
-    indicatorVector = data2.Grade .== gradeInQuestion
+    indicatorVector = data2.Grade .== "E"
     numSuccess = sum(indicatorVector)
     phat = numSuccess/n
     serr = sqrt(phat*(1-phat)/n)
@@ -36,10 +35,10 @@ end
 
 @testset "" begin
     gradeInQuestion = "E"
-    data = read_purchaseData()
+    data = read_purchaseData("$(@__DIR__)/../../../data/purchaseData.csv")
     n = sum_of_missing(data.Grade)
     data2 = dropmissing(data[:, [:Grade]],:Grade)
-    indicatorVector = data2.Grade .== gradeInQuestion
+    indicatorVector = data2.Grade .== "E"
     numSuccess = sum(indicatorVector)
     phat = numSuccess/n
     serr = sqrt(phat*(1-phat)/n)

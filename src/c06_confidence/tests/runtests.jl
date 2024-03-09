@@ -14,3 +14,4 @@ include("$(@__DIR__)/test_l0613_bCI.jl")
 include("$(@__DIR__)/test_l0614_bootstrapCI.jl")
 include("$(@__DIR__)/test_l0615_predictionInterval.jl")
 include("$(@__DIR__)/test_l0616_credible.jl")
+
