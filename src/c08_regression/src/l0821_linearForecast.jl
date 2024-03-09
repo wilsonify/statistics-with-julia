@@ -1,5 +1,5 @@
 #=
-
+Using linear regression for forecasting in a time series
 =#
 using CSV,DataFrames,Dates,GLM,Statistics,LinearAlgebra,Measures,Plots
 df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)

@@ -1,5 +1,5 @@
 #=
-
+Support vector machines
 =#
 using Flux.Data.MNIST, LIBSVM, PyPlot
 

@@ -1,5 +1,5 @@
 #=
-
+Differencing, autocorrelation and a correlogram of a time series
 =#
 using CSV, TimeSeries, Dates, Statistics, StatsBase, Measures, Plots; gr()
 df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)

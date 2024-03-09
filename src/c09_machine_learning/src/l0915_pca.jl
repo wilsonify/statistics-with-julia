@@ -1,5 +1,5 @@
 #=
-
+Principal component analysis on a simple dataset
 =#
 using Statistics, MultivariateStats, RDatasets, PyPlot, LinearAlgebra
 

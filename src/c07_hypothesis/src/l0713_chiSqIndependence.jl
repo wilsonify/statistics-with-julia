@@ -1,5 +1,5 @@
 #=
-
+Chi-squared for checking independence
 =#
 using Distributions
 

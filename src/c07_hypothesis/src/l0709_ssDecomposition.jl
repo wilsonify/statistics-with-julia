@@ -1,5 +1,5 @@
 #=
-
+Decomposing the sum of squares
 =#
 using Random, Statistics
 Random.seed!(1)

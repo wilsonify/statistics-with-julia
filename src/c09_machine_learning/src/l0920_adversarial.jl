@@ -1,5 +1,5 @@
 #=
-
+Training a generative adversarial network
 =#
 using Flux, MLDatasets, Statistics, Random, BSON
 using Flux.Optimise: update!

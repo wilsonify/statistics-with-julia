@@ -1,5 +1,5 @@
 #=
-
+Simulation and analysis using a generator matrix
 =#
 using StatsBase, Distributions, Random, LinearAlgebra
 Random.seed!(1)

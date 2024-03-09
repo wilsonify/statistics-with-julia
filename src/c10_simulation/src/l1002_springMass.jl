@@ -1,5 +1,5 @@
 #=
-
+Trajectory of a spring and mass system
 =#
 using DifferentialEquations, PyPlot, LinearAlgebra
 

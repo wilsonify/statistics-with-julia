@@ -1,9 +1,7 @@
 #=
-
+Two different ways of describing Markov chains
 =#
-#=
 
-=#
 using LinearAlgebra, Statistics, StatsBase, PyPlot
 
 n, N = 5, 10^6

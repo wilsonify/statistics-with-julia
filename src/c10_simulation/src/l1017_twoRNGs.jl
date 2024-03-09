@@ -1,5 +1,5 @@
 #=
-
+A case for two RNGs
 =#
 using Distributions, PyPlot, Random
 

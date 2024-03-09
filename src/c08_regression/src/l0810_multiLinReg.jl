@@ -1,5 +1,5 @@
 #=
-
+Plotting the studentized residuals
 =#
 using RDatasets, GLM, Statistics
 

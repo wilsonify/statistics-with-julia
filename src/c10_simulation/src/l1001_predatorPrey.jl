@@ -1,5 +1,5 @@
 #=
-
+Trajectory of a predator-prey model
 =#
 using PyPlot
 

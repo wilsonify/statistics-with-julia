@@ -1,5 +1,5 @@
 #=
-
+ECDF, actual and postulated CDF’s, and their differences
 =#
 using Random, Distributions, StatsBase, PyPlot, HypothesisTests
 Random.seed!(2)

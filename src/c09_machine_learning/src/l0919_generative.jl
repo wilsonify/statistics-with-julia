@@ -1,5 +1,5 @@
 #=
-
+Generating images from a pre-trained generative adversarial network
 =#
 using Flux, BSON, Random, Plots; gr()
 Random.seed!(0)

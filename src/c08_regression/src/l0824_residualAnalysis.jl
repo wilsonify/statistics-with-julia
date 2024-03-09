@@ -1,5 +1,5 @@
 #=
-
+Residual Analysis
 =#
 using DataFrames, GLM, PyPlot, Distributions, CSV
 

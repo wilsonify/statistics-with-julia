@@ -1,5 +1,5 @@
 #=
-
+Stochastic SEIR epidemic simulation
 =#
 using Distributions, Random, Plots; gr()
 Random.seed!(0)

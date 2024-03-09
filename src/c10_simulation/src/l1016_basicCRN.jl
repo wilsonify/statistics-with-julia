@@ -1,5 +1,5 @@
 #=
-
+Variance reduction via common random numbers
 =#
 using Distributions, PyPlot, Random
 

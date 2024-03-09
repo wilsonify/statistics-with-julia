@@ -1,5 +1,5 @@
 #=
-
+Chi-squared test for goodness of fit
 =#
 using Distributions, HypothesisTests
 

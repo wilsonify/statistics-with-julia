@@ -1,5 +1,5 @@
 #=
-
+Exploratory data analysis of a time series
 =#
 using CSV, TimeSeries, Dates, Statistics, Measures, StatsPlots, Plots; gr()
 df = CSV.read("../../data/oneOnEpsilonBlogs.csv",copycols = true)

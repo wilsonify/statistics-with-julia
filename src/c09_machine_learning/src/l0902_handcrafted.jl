@@ -1,5 +1,5 @@
 #=
-
+Attempting hand crafted machine learning
 =#
 using MLDatasets, StatsBase, Measures, Plots; gr()
 

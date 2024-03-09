@@ -1,5 +1,5 @@
 #=
-
+Distributions under different hypotheses
 =#
 using Random, Distributions, KernelDensity, PyPlot
 Random.seed!(1)

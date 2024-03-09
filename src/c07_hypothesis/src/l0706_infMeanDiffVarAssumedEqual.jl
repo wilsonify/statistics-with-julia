@@ -1,5 +1,5 @@
 #=
-
+Inference on difference of means, variances unknown, assumed equal
 =#
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here=@__DIR__

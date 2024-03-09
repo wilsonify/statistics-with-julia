@@ -1,5 +1,5 @@
 #=
-
+M/M/1 queue simulation
 =#
 using PyPlot, Distributions, Random
 Random.seed!(1)

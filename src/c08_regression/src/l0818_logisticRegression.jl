@@ -1,5 +1,5 @@
 #=
-
+Logistic regression
 =#
 using GLM, DataFrames, Distributions, PyPlot, CSV
 

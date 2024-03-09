@@ -1,5 +1,5 @@
 #=
-
+Logistic softmax regression for classification
 =#
 using Flux, Flux.Data.MNIST, Statistics, BSON, Random, StatsBase, Plots; gr()
 using Flux: params, onehotbatch, crossentropy, update!

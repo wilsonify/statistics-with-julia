@@ -1,5 +1,5 @@
 #=
-
+Distribution of the p-value
 =#
 using Random, Distributions, KernelDensity, PyPlot
 Random.seed!(1)

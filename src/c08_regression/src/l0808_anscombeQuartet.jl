@@ -1,5 +1,5 @@
 #=
-
+The Anscombe quartet datasets
 =#
 using RDatasets, DataFrames, GLM, PyPlot
 

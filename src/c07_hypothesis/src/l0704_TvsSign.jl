@@ -1,5 +1,5 @@
 #=
-
+Comparison of sign test and T-test
 =#
 using Random, Distributions, HypothesisTests, PyPlot
 

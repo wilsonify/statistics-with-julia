@@ -1,5 +1,5 @@
 #=
-
+Trajectory of a deterministic SEIR epidemic
 =#
 using DifferentialEquations, Plots; gr()
 beta, delta, gamma = 0.25, 0.2, 0.1

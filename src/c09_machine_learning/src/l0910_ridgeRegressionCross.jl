@@ -1,5 +1,5 @@
 #=
-
+Ridge regression with k-fold cross validation
 =#
 using RDatasets, DataFrames, Random, LinearAlgebra, MultivariateStats
 Random.seed!(0)

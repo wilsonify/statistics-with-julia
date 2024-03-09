@@ -1,5 +1,5 @@
 #=
-
+The distribution of the regression estimators
 =#
 using DataFrames, GLM, PyPlot, Distributions, LinearAlgebra
 

@@ -1,5 +1,5 @@
 #=
-
+Using a pre-trained neural network for classification
 =#
 using Flux, Flux.Data.MNIST, Statistics, BSON, StatsBase, Plots; gr()
 using Flux: onecold

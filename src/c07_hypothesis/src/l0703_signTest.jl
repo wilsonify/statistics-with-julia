@@ -1,5 +1,5 @@
 #=
-
+Non-parametric sign test
 =#
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here=@__DIR__

@@ -1,5 +1,5 @@
 #=
-
+Discrete event simulation for M/M/1 waiting times
 =#
 using DataStructures, Distributions, StatsBase, PyPlot, Random
 

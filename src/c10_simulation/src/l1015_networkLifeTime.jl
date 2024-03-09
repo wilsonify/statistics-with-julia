@@ -1,5 +1,5 @@
 #=
-
+Dynamic network reliability
 =#
 using LightGraphs, Distributions, PyPlot, StatsBase, Random
 Random.seed!(0)

@@ -1,5 +1,5 @@
 #=
-
+Regression with categorical variables - no interaction effects
 =#
 using CSV, RDatasets, DataFrames, GLM, PyPlot
 

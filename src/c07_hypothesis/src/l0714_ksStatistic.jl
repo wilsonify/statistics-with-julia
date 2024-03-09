@@ -1,5 +1,5 @@
 #=
-
+Comparisons of distributions of the K-S test statistic
 =#
 using Random, Distributions, StatsBase, HypothesisTests, PyPlot
 Random.seed!(0)

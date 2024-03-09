@@ -1,5 +1,5 @@
 #=
-
+L1 and L2 norm minimization by Monte Carlo guessing
 =#
 using DataFrames, Distributions, PyPlot, PyCall, Random, LinearAlgebra, CSV
 

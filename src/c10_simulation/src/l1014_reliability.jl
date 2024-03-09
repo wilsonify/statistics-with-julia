@@ -1,5 +1,5 @@
 #=
-
+Simple network reliability
 =#
 using PyPlot, LinearAlgebra, Random
 

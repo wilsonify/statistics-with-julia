@@ -1,5 +1,5 @@
 #=
-
+Trajectory of a predator-prey model with noise
 =#
 using PyPlot, Distributions, Random
 Random.seed!(1)

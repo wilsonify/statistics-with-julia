@@ -1,5 +1,5 @@
 #=
-
+A Q-Learning example
 =#
 using LinearAlgebra, StatsBase, PyPlot, Random
 

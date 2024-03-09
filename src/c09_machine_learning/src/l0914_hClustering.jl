@@ -1,5 +1,5 @@
 #=
-
+Carrying out hierarchical clustering
 =#
 using RDatasets, PyPlot, Clustering, Random, LinearAlgebra
 Random.seed!(1)

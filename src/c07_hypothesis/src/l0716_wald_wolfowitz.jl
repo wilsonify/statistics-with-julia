@@ -1,5 +1,5 @@
 #=
-
+The Wald-Wolfowitz runs test
 =#
 using CSV, GLM, StatsBase, Random, Distributions, Measures, Plots; gr()
 

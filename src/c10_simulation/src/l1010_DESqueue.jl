@@ -1,5 +1,5 @@
 #=
-
+Discrete event simulation of queues
 =#
 using Distributions, Random
 Random.seed!(1)

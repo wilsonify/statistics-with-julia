@@ -1,5 +1,5 @@
 #=
-
+Polynomial interpolation vs. a line
 =#
 using PyPlot
 

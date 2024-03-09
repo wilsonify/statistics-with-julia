@@ -1,5 +1,5 @@
 #=
-
+Simple linear regression with GLM
 =#
 using DataFrames, GLM, PyPlot, Statistics, CSV
 

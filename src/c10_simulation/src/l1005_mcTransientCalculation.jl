@@ -1,5 +1,5 @@
 #=
-
+Calculation of a matrix infinite geometric series
 =#
 using LinearAlgebra
 

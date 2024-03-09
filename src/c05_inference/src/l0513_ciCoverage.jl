@@ -1,6 +1,6 @@
 #=
-100 conﬁdence intervals.
-The blue conﬁdence interval bars contain the unknown parameter,
+100 confidence intervals.
+The blue confidence interval bars contain the unknown parameter,
 while the red ones do not.
 =#
 

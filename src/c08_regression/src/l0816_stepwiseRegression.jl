@@ -1,5 +1,5 @@
 #=
-
+stepwise elimination in linear models
 =#
 using RDatasets, GLM, PyPlot
 

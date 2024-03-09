@@ -51,7 +51,7 @@ function main_l0601_onePopVKnown()
     # calculate the value of z for 1 − α/2.
     # z does not depend on the sample heuristically approximately 1.65 when α = 10%.
     z = quantile(Normal(),1 - alpha / 2)
-    # evaluate the conﬁdence interval.
+    # evaluate the confidence interval.
     lower_calc = xBar - z*sig / sqrt(n)
     upper_calc = xBar + z*sig / sqrt(n)
     println("Calculating formula: ", (lower_calc, upper_calc))

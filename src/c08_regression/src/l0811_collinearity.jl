@@ -1,5 +1,5 @@
 #=
-
+Multiple linear regression
 =#
 using Distributions, GLM, DataFrames, PyPlot, Random, LinearAlgebra
 

@@ -1,5 +1,5 @@
 #=
-
+Power curves for different sample sizes
 =#
 using Distributions, KernelDensity, PyPlot
 

@@ -1,5 +1,5 @@
 #=
-
+Principal component analysis on MNIST
 =#
 using MultivariateStats, RDatasets, PyPlot, LinearAlgebra, Flux.Data.MNIST
 

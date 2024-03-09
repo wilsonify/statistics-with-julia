@@ -1,5 +1,5 @@
 #=
-
+Carrying out k-means via the Clustering package
 =#
 using Clustering, RDatasets, PyPlot
 

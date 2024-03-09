@@ -1,5 +1,5 @@
 #=
-
+Training convolutional neural networks
 =#
 using Flux, Flux.Data.MNIST, Statistics, BSON, Random, Plots; gr()
 

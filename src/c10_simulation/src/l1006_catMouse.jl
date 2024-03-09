@@ -1,5 +1,5 @@
 #=
-
+Markovian cat and mouse survival
 =#
 using Statistics, StatsBase, PyPlot, Random, LinearAlgebra
 Random.seed!(1)

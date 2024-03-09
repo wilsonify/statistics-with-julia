@@ -1,5 +1,5 @@
 #=
-
+Using Flux.jl and ADAM for optimization
 =#
 using Flux, Random, LinearAlgebra, CSV, DataFrames
 using Flux.Optimise: update!

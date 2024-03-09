@@ -1,5 +1,5 @@
 #=
-
+Using SGD for least squares
 =#
 using PyPlot, Random, Distributions
 

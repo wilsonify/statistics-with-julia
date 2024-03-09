@@ -1,5 +1,5 @@
 #=
-
+Exploring generalized linear models
 =#
 using GLM, RDatasets, DataFrames, Distributions, PyPlot, Random, LinearAlgebra
 Random.seed!(0)

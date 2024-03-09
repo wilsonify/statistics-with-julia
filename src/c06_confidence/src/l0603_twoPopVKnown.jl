@@ -1,5 +1,5 @@
 #=
-Two Sample Conﬁdence Intervals for the Diﬀerence in Means
+Two Sample Confidence Intervals for the Difference in Means
 
 # This listing is similar to those previously covered in this chapter.
 =#
@@ -36,7 +36,7 @@ function main_l0603_twoPopVKnown()
 	# calculate the quantile, z, on a standard Normal distribution
 	z = quantile(Normal(),1-alpha/2)
 
-	# In lines 11–12 the conﬁdence interval (6.8) is evaluated manually and printed as output.
+	# In lines 11–12 the confidence interval (6.8) is evaluated manually and printed as output.
 
 	lower = xBar1 - xBar2 - z*sqrt(sig1^2/n1+sig2^2/n2)
 	upper = xBar1 - xBar2 + z*sqrt(sig1^2/n1+sig2^2/n2)

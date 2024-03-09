@@ -1,5 +1,5 @@
 #=
-
+Backward elimination in linear models
 =#
 using StatsModels, RDatasets, DataFrames, GLM, Random
 Random.seed!(0)

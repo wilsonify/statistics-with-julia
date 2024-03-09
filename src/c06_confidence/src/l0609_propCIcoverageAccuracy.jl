@@ -1,5 +1,5 @@
 #=
-Coverage accuracy of a conﬁdence interval for proportions
+Coverage accuracy of a confidence interval for proportions
 =#
 using Random, Distributions, Measures, Plots; gr()
 

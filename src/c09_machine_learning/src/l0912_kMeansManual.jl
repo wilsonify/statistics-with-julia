@@ -1,5 +1,5 @@
 #=
-
+Manual implementation of k-means
 =#
 using RDatasets, PyPlot, Distributions, Random
 Random.seed!(1)

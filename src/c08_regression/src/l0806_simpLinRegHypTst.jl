@@ -1,5 +1,5 @@
 #=
-
+Statistical inference for simple linear regression
 =#
 using DataFrames, GLM, PyPlot, Distributions, CSV
 path_to_here = @__DIR__

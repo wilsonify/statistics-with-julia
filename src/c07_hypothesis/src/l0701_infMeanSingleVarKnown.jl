@@ -1,5 +1,5 @@
 #=
-
+Inference with single sample, population variance is known
 =#
 using CSV, Distributions, HypothesisTests, DataFrames
 path_to_here=@__DIR__

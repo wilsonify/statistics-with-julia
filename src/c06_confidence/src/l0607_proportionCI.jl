@@ -1,5 +1,5 @@
 #=
-Conﬁdence interval for a proportion
+Confidence interval for a proportion
 =#
 using CSV
 using DataFrames
@@ -41,7 +41,7 @@ function main_l0607_proportionCI()
     phat = numSuccess/n
     # calculate standard error
     serr = sqrt(phat*(1-phat)/n)
-    # determine the conﬁdence interval
+    # determine the confidence interval
     alpha = 0.05
     confidencePercent = 100*(1-alpha)
     zVal = quantile(Normal(),1-alpha/2)

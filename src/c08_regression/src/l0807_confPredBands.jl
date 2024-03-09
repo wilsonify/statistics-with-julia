@@ -1,5 +1,5 @@
 #=
-
+Confidence and prediction bands
 =#
 using DataFrames, GLM, PyPlot, Distributions, CSV
 

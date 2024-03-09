@@ -1,5 +1,5 @@
 #=
-
+Simpson’s paradox
 =#
 using DataFrames, GLM, PyPlot, CSV
 

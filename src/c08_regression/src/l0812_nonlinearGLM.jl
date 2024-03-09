@@ -1,5 +1,5 @@
 #=
-
+Exploring collinearity
 =#
 using DataFrames, GLM, PyPlot, CSV
 

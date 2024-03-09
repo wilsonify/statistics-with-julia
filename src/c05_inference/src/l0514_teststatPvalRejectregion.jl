@@ -2,7 +2,7 @@
 H0 is the null hypothesis.
 The distribution of the test statistic, X ∗ , under H0 .
 With α = 0.05 the rejection region is to the left of the black dashed line.
-In a speciﬁc sample, the test statistic is on the red line and we reject H0 .
+In a specific sample, the test statistic is on the red line and we reject H0 .
 =#
 using Distributions
 using Random

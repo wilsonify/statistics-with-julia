@@ -1,9 +1,7 @@
 #=
-
+Training dense neural networks
 =#
-#=
 
-=#
 using Flux, Flux.Data.MNIST, Random, Statistics, PyPlot
 using Flux: onehotbatch, onecold, crossentropy, throttle, @epochs
 using Base.Iterators: repeated, partition

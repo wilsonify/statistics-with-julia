@@ -1,5 +1,5 @@
 #=
-
+Computing least squares estimates
 =#
 using DataFrames, GLM, Statistics, LinearAlgebra, CSV
 
