@@ -68,6 +68,12 @@ test1.9:
 test_c04_data1.9:
 	/opt/julia/v1.9.4/bin/julia --project=~/.julia/environments/v1.9 test/test_c04_data/runtests.jl
 
+/home/thom/.julia/environments/v1.10/Project.toml:
+	/opt/julia/v1.10.4/bin/julia --project=~/.julia/environments/v1.10 setup.jl
+
+test1.10:
+	/opt/julia/v1.10.4/bin/julia --project=~/.julia/environments/v1.10 test/runtests.jl
+
 
 startup:
 	mkdir ~/.julia/config && cp startup.jl ~/.julia/config
