@@ -1,6 +1,6 @@
 
 base:
-	docker build --progress=plain -t "ghcr.io/wilsonify/stats-with-julia-base:latest" -f Dockerfile-base .
+    docker build --progress=plain -t "ghcr.io/wilsonify/stats-with-julia-base:latest" -f Dockerfile-base .
 
 builder:
 	docker build --progress=plain -t "ghcr.io/wilsonify/stats-with-julia-builder:latest" -f Dockerfile-builder .
